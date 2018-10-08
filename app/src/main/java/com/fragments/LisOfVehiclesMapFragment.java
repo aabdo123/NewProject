@@ -388,6 +388,8 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                         } else {
                             sliderBgLayout.setVisibility(View.VISIBLE);
 //                            mapStylingFab.hide(true);
+//                            mapStylingFab.hide(true);
+//                            mapStylingFab.hide(true);
                         }
                     }
 

@@ -81,10 +81,14 @@ import com.utilities.constants.AppConstant;
 import com.utilities.constants.SharesPrefConstants;
 import com.views.AlertDialogView;
 import com.views.Progress;
+import com.views.TextViewLight;
 import com.views.TextViewRegular;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.LinkedHashMap;
+import java.util.Locale;
 
 import static android.content.Context.LOCATION_SERVICE;
 
@@ -118,16 +122,42 @@ public class LisOfVehiclesMapFragment extends Fragment implements
 
     private com.github.clans.fab.FloatingActionButton mapStylingFab;
     public static SlideUp slideUp;
+    public static SlideUp slideUpSingleCar;
     private FrameLayout sliderBgLayout;
     private LinearLayout sliderView;
+    private LinearLayout singleSlideView;
 
     private CoordinatorLayout allViewSlideLayout;
     private RelativeLayout moreOptionsLayout;
+    private LinearLayout singleCarMoreOptionsLayout;
     private TextViewRegular sliderTitleTextView;
+    private TextViewLight singleCarSliderTitleTextView;
+    private TextViewLight singleSliderCarSliderTitleTextView;
+    private TextViewRegular singleSliderUpTitleTextView;
+    private TextViewRegular singleCarSliderAddressTextView;
+    private TextViewRegular kmTextView;
     private ImageView sliderArrowImageView;
+    private ImageView singleSliderUpArrowImageView;
+    private ImageView singleCarSliderArrowImageView;
 
     private RelativeLayout moreOptionsUpLayout;
     private TextViewRegular sliderUpTitleTextView;
+    private TextViewRegular timeTextView;
+    private TextViewRegular timerTextView;
+    private TextViewRegular infoTextView;
+    private TextViewRegular offTextView;
+    private TextViewRegular nATextView;
+    private TextViewRegular visaTextView;
+    private TextViewRegular barCodeTextView;
+    private TextViewRegular closedTextView;
+    private TextViewRegular beltTextView;
+    private TextViewRegular needlTextView;
+    private TextViewRegular gasTextView;
+    private TextViewRegular humanTextView;
+    private TextViewRegular cardTextView;
+    private TextViewRegular addressTextView;
+    private TextViewRegular mileageTextView;
+    private TextViewRegular workingTextView;
     private ImageView sliderUpArrowImageView;
 
     private GoogleApiClient googleApiClient;
@@ -264,17 +294,42 @@ public class LisOfVehiclesMapFragment extends Fragment implements
         mapStylingFab = (com.github.clans.fab.FloatingActionButton) rootView.findViewById(R.id.mapStylingFab);
         mMapView = (MapView) rootView.findViewById(R.id.mapView);
         sliderView = (LinearLayout) rootView.findViewById(R.id.slideView);
+        singleSlideView = (LinearLayout) rootView.findViewById(R.id.singleSlideView);
         sliderBgLayout = (FrameLayout) rootView.findViewById(R.id.sliderBgLayout);
 
         allViewSlideLayout = (CoordinatorLayout) rootView.findViewById(R.id.allViewSlideLayout);
 
         moreOptionsLayout = (RelativeLayout) rootView.findViewById(R.id.moreOptionsLayout);
+        singleCarMoreOptionsLayout = (LinearLayout) rootView.findViewById(R.id.singleCarMoreOptionsLayout);
         sliderTitleTextView = (TextViewRegular) rootView.findViewById(R.id.sliderTitleTextView);
+        singleCarSliderTitleTextView = (TextViewLight) rootView.findViewById(R.id.singleCarSliderTitleTextView);
+        singleSliderCarSliderTitleTextView = (TextViewLight) rootView.findViewById(R.id.singleSliderCarSliderTitleTextView);
+        singleCarSliderAddressTextView = (TextViewRegular) rootView.findViewById(R.id.singleCarSliderAddressTextView);
+        kmTextView = (TextViewRegular) rootView.findViewById(R.id.kmTextView);
+        singleSliderUpTitleTextView = (TextViewRegular) rootView.findViewById(R.id.singleSliderUpTitleTextView);
         sliderArrowImageView = (ImageView) rootView.findViewById(R.id.sliderArrowImageView);
+        singleSliderUpArrowImageView = (ImageView) rootView.findViewById(R.id.singleSliderUpArrowImageView);
 
         moreOptionsUpLayout = (RelativeLayout) rootView.findViewById(R.id.moreOptionsUpLayout);
         sliderUpTitleTextView = (TextViewRegular) rootView.findViewById(R.id.sliderUpTitleTextView);
+        timeTextView = (TextViewRegular) rootView.findViewById(R.id.timeTextView);
+        addressTextView = (TextViewRegular) rootView.findViewById(R.id.addressTextView);
+        cardTextView = (TextViewRegular) rootView.findViewById(R.id.cardTextView);
+        humanTextView = (TextViewRegular) rootView.findViewById(R.id.humanTextView);
+        gasTextView = (TextViewRegular) rootView.findViewById(R.id.gasTextView);
+        needlTextView = (TextViewRegular) rootView.findViewById(R.id.needlTextView);
+        beltTextView = (TextViewRegular) rootView.findViewById(R.id.beltTextView);
+        closedTextView = (TextViewRegular) rootView.findViewById(R.id.closedTextView);
+        barCodeTextView = (TextViewRegular) rootView.findViewById(R.id.barCodeTextView);
+        visaTextView = (TextViewRegular) rootView.findViewById(R.id.visaTextView);
+        nATextView = (TextViewRegular) rootView.findViewById(R.id.nATextView);
+        offTextView = (TextViewRegular) rootView.findViewById(R.id.offTextView);
+        infoTextView = (TextViewRegular) rootView.findViewById(R.id.infoTextView);
+        timerTextView = (TextViewRegular) rootView.findViewById(R.id.timerTextView);
+        mileageTextView = (TextViewRegular) rootView.findViewById(R.id.mileageTextView);
+        workingTextView = (TextViewRegular) rootView.findViewById(R.id.workingTextView);
         sliderUpArrowImageView = (ImageView) rootView.findViewById(R.id.sliderUpArrowImageView);
+        singleCarSliderArrowImageView = (ImageView) rootView.findViewById(R.id.singleCarSliderArrowImageView);
 
         mMapView.setZ(0);
         mapStylingFab.setZ(1);
@@ -282,15 +337,23 @@ public class LisOfVehiclesMapFragment extends Fragment implements
         allViewSlideLayout.setZ(3);
 
         setSlideUpBuilder();
+        setSingleSlideUpBuilder();
         addSlideUpFragment();
+
+        // slide visibility
+//        singleSlideView.setVisibility(View.GONE);
     }
 
     private void initListeners() {
         mapStylingFab.setOnClickListener(this);
 
         moreOptionsLayout.setOnClickListener(this);
+        singleCarMoreOptionsLayout.setOnClickListener(this);
         sliderTitleTextView.setOnClickListener(this);
+        singleCarSliderTitleTextView.setOnClickListener(this);
         sliderArrowImageView.setOnClickListener(this);
+        singleSliderUpArrowImageView.setOnClickListener(this);
+        singleCarSliderArrowImageView.setOnClickListener(this);
 
         sliderBgLayout.setOnClickListener(this);
         moreOptionsUpLayout.setOnClickListener(this);
@@ -302,20 +365,27 @@ public class LisOfVehiclesMapFragment extends Fragment implements
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.moreOptionsLayout:
+            case R.id.singleCarMoreOptionsLayout:
             case R.id.sliderTitleTextView:
             case R.id.sliderArrowImageView:
                 slideUp.show();
                 break;
-
+            case R.id.singleCarSliderArrowImageView: // single car view
+                slideUpSingleCar.show();
+                break;
+            case R.id.singleSliderUpArrowImageView:
+                slideUpSingleCar.hide();
+                break;
             case R.id.sliderBgLayout:
             case R.id.moreOptionsUpLayout:
             case R.id.sliderUpTitleTextView:
             case R.id.sliderUpArrowImageView:
                 slideUp.hide();
                 break;
-
             case R.id.mapStylingFab:
                 openMapStyleDialog();
+                break;
+            default:
                 break;
         }
     }
@@ -374,36 +444,80 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                 .build();
     }
 
-    private void setSingleSlideUpBuilder() {
-        slideUp = new SlideUpBuilder(sliderView)
-                .withListeners(new SlideUp.Listener.Events() {
-                    @Override
-                    public void onSlide(float percent) {
-                        sliderBgLayout.setAlpha(1 - (percent / 100));
-                        float rotateDegree = (percent / 100) * 180;
-                        AnimationUtils.rotateAnimation(rotateDegree, sliderUpArrowImageView);
-                        if (percent == 100) {
-                            sliderBgLayout.setVisibility(View.GONE);
-//                            mapStylingFab.show(true);
-                        } else {
-                            sliderBgLayout.setVisibility(View.VISIBLE);
-//                            mapStylingFab.hide(true);
-//                            mapStylingFab.hide(true);
-//                            mapStylingFab.hide(true);
-                        }
-                    }
-
-                    @Override
-                    public void onVisibilityChanged(int visibility) {
-                    }
-                })
-                .withStartGravity(Gravity.BOTTOM)
-                .withLoggingEnabled(true)
-                .withGesturesEnabled(true)
-                .withStartState(SlideUp.State.HIDDEN)
-                .withSlideFromOtherView(moreOptionsLayout)
-                .build();
+    private void viewSelected(boolean isSingle) {
+        if (isSingle) {
+            singleCarMoreOptionsLayout.setVisibility(View.VISIBLE);
+            moreOptionsLayout.setVisibility(View.GONE);
+        } else {
+            singleCarMoreOptionsLayout.setVisibility(View.GONE);
+            moreOptionsLayout.setVisibility(View.VISIBLE);
+        }
     }
+
+    private void setSingleSlideUpBuilder() {
+        try {
+            slideUpSingleCar = new SlideUpBuilder(singleSlideView)
+                    .withListeners(new SlideUp.Listener.Events() {
+                        @Override
+                        public void onSlide(float percent) {
+                            sliderBgLayout.setAlpha(1 - (percent / 100));
+                            float rotateDegree = (percent / 100) * 180;
+                            AnimationUtils.rotateAnimation(rotateDegree, singleSliderUpArrowImageView);
+                            if (percent == 100) {
+                                sliderBgLayout.setVisibility(View.GONE);
+                            } else {
+                                sliderBgLayout.setVisibility(View.VISIBLE);
+                            }
+                        }
+
+                        @Override
+                        public void onVisibilityChanged(int visibility) {
+                        }
+                    })
+                    .withStartGravity(Gravity.BOTTOM)
+                    .withLoggingEnabled(true)
+                    .withGesturesEnabled(true)
+                    .withStartState(SlideUp.State.HIDDEN)
+                    .withSlideFromOtherView(singleCarMoreOptionsLayout)
+                    .build();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    private void addHeaderTitle(AllVehiclesInHashModel markerModel) {
+        try {
+            if (markerModel != null) {
+                singleCarSliderTitleTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel().getLabel()));
+                singleSliderCarSliderTitleTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel().getLabel()));
+                if (markerModel.getAllVehicleModel() != null && markerModel.getAllVehicleModel().getLastLocation() != null && markerModel.getAllVehicleModel().getLastLocation().getAddress() != null) {
+                    singleCarSliderAddressTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel().getLastLocation().getAddress()));
+                    singleSliderUpTitleTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel().getLastLocation().getAddress()));
+                }
+                timeTextView.setText(String.format(Locale.getDefault(),"%s",Utils.parseTime(markerModel.getAllVehicleModel().getLastLocation().getRecordDateTime())));
+                kmTextView.setText(String.format(Locale.getDefault(),"%s km/h",markerModel.getAllVehicleModel().getLastLocation().getSpeed()));
+                timerTextView.setText(String.format(Locale.getDefault(),"%s",markerModel.getAllVehicleModel().getLastLocation().getDirection())); // fraction
+                infoTextView.setText(String.format(Locale.getDefault(),"%s",markerModel.getAllVehicleModel().getLastLocation().getVehicleStatus())); //
+                offTextView.setText(String.format(Locale.getDefault(),"%s","N/A"));// engen statuds
+                nATextView.setText(String.format(Locale.getDefault(),"%s","N/A")); //note not get
+                visaTextView.setText(String.format(Locale.getDefault(),"%s",markerModel.getAllVehicleModel().getPlateNumber()));
+                barCodeTextView.setText(String.format(Locale.getDefault(),"%s",markerModel.getAllVehicleModel().getSerialNumber()));
+                closedTextView.setText(String.format(Locale.getDefault(),"%s","N/A"));
+                beltTextView.setText(String.format(Locale.getDefault(),"%s","N/A"));
+                needlTextView.setText(String.format(Locale.getDefault(),"%s","N/A"));
+                gasTextView.setText(String.format(Locale.getDefault(),"%s","N/A"));
+                humanTextView.setText(String.format(Locale.getDefault(),"%s","N/A"));
+                cardTextView.setText(String.format(Locale.getDefault(),"%s","N/A"));
+                addressTextView.setText(String.format(Locale.getDefault(),"%s","N/A"));
+                mileageTextView.setText(String.format(Locale.getDefault(),"Mileage: %s",markerModel.getAllVehicleModel().getLastLocation().getTotalMileage()));
+                workingTextView.setText(String.format(Locale.getDefault(),"Working Hours: %s",markerModel.getAllVehicleModel().getLastLocation().getTotalWorkingHours()));
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+
 
     public void addSlideUpFragment() {
         if (isAdded()) {
@@ -466,6 +580,7 @@ public class LisOfVehiclesMapFragment extends Fragment implements
             myLocateManager.setAfterOnDismissListeners(() -> setVisibilityVehiclesMarkers(true));
         }
         slideUp.hide();
+        slideUpSingleCar.hide();
     }
 
     private void setVisibilityAllMarkers(boolean show) {
@@ -510,6 +625,7 @@ public class LisOfVehiclesMapFragment extends Fragment implements
             animateCameraAfterCluster();
         }
         slideUp.hide();
+        slideUpSingleCar.hide();
     }
 
     private void setMapTraffic(boolean isShowCliched) {
@@ -521,6 +637,7 @@ public class LisOfVehiclesMapFragment extends Fragment implements
         googleMap.setTrafficEnabled(isShowCliched);
         if (slideUp.isVisible()) {
             slideUp.hide();
+            slideUpSingleCar.hide();
         } else {
             slideUp.show();
         }
@@ -655,7 +772,15 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                 vehiclesHashMap.put(addMarker, inHashModel);
                 builder.include(lng);
                 googleMap.setOnMarkerClickListener(marker -> {
-                    Log.e("onMarkerClick", "@@@@@@@@@@@@@@@@@@@@@@@" + marker.getId());
+                    if (vehiclesHashMap != null && vehiclesHashMap.size() > 0) {
+                        AllVehiclesInHashModel markerModel = vehiclesHashMap.get(marker);
+                        if (markerModel != null) {
+                            addHeaderTitle(markerModel);
+                            addBodyView(markerModel);
+                            viewSelected(true);
+                        }
+                        Log.e("onMarkerClick", "@@@@@@@@@@@@@@@@@@@@@@@" + marker.getId());
+                    }
 //                    AllVehiclesInHashModel model = vehiclesHashMap.get(marker.getId());
 //                    ToastHelper.toastWarningLong(activity, model.getVehicleId() + "");
                     return false;
@@ -663,6 +788,17 @@ public class LisOfVehiclesMapFragment extends Fragment implements
             }
             bounds = builder.build();
             openFirstTime = false;
+        }
+    }
+
+    private void addBodyView(AllVehiclesInHashModel markerModel) {
+        try {
+
+
+
+
+        }catch (Exception ex){
+            ex.printStackTrace();
         }
     }
 

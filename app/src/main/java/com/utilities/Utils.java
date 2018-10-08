@@ -106,6 +106,18 @@ public class Utils {
         return "";
     }
 
+    public static String parseTime(String date){
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-dd-MM HH:mm:ss");
+        try {
+            Date date1 = format.parse(date.replace("T"," "));
+            String d= new SimpleDateFormat("M MMMM yyyy, HH:mm:ss a").format(date1);
+            return d;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return "";
+    }
+
     public static String getDeviceId(Context context) {
         String devceId = "";
         try {

@@ -1,0 +1,144 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom" />
+
+    <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/mapStylingFab"
+        style="@style/MenuButtonsSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|top"
+        android:layout_marginEnd="@dimen/dp_8"
+        android:layout_marginTop="@dimen/dp_72"
+        android:elevation="@dimen/dp_4"
+        android:src="@drawable/ic_map_layers" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/addressLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_8">
+
+            <ImageView
+                android:id="@+id/locationImageView"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:layout_alignParentStart="true"
+                android:contentDescription="@string/first_location"
+                android:src="@drawable/geo_fence" />
+
+            <com.views.TextViewRegular
+                android:id="@+id/addressTextView"
+                style="@style/smallWhiteText"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_toEndOf="@+id/locationImageView"
+                android:layout_toStartOf="@+id/arrowCheckBox"
+                android:text="@string/address"
+                android:textColor="@color/colorPrimary" />
+
+            <com.views.TextViewLight
+                android:id="@+id/streetTextView"
+                style="@style/smallWhiteText"
+                android:layout_below="@+id/addressTextView"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_toEndOf="@+id/locationImageView"
+                android:layout_toStartOf="@+id/arrowCheckBox"
+                android:text="@string/address"
+                android:textColor="@color/black" />
+
+            <CheckBox
+                android:id="@+id/arrowCheckBox"
+                android:layout_width="@dimen/dp_24"
+                android:layout_height="@dimen/dp_24"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/transparent"
+                android:button="@drawable/checkbox_arrow_down_x"
+                android:clickable="false"
+                android:contentDescription="@string/first_location" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@drawable/shadow" />
+
+        <include layout="@layout/layout_slider_address" />
+
+    </LinearLayout>
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/fabMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        fab:menu_colorNormal="@color/colorPrimary"
+        fab:menu_colorPressed="@color/colorPrimary"
+        fab:menu_colorRipple="@color/colorAccent"
+        fab:menu_icon="@drawable/ic_navigation_white">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/drawPathFab"
+            style="@style/MenuButtonsSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_compass_primary" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/changeMapTypeFab"
+            style="@style/MenuButtonsSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_map_coordinate_primary" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab34"
+            style="@style/MenuButtonsSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_light_primary"
+            android:visibility="gone" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/myLocationFab"
+            style="@style/MenuButtonsSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_user_direction" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/carLocationFab"
+            style="@style/MenuButtonsSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_navigation_primary" />
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/plusFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/dp_8"
+        android:src="@drawable/ic_plus_white"
+        app:backgroundTint="@color/colorPrimary">
+
+    </android.support.design.widget.FloatingActionButton>
+</FrameLayout>

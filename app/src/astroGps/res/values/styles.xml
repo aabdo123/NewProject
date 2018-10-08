@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="TimePickerTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent" tools:targetApi="lollipop">@color/colorAccent</item>
+        <item name="android:colorPrimary" tools:targetApi="lollipop">@color/colorAccent</item>
+        <item name="android:colorPrimaryDark" tools:targetApi="lollipop">@color/colorAccent</item>
+        <item name="colorControlActivated" tools:targetApi="lollipop">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
+    </style>
+
+    <style name="DatePickerTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent" tools:targetApi="lollipop">@color/colorAccent</item>
+        <item name="android:colorPrimary" tools:targetApi="lollipop">@color/colorAccent</item>
+        <item name="android:colorPrimaryDark" tools:targetApi="lollipop">@color/colorAccent</item>
+        <item name="colorControlActivated" tools:targetApi="lollipop">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
+    </style>
+
+</resources>

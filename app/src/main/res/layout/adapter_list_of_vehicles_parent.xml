@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_4"
+        android:orientation="horizontal"
+        android:weightSum="100">
+
+        <ImageView
+            android:id="@+id/mArrowExpandImageView"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="8"
+            android:src="@drawable/ic_arrow_down" />
+
+        <com.views.TextViewRegular
+            android:id="@+id/headerNameTextView"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/dp_4"
+            android:layout_weight="45"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_24"
+            android:layout_gravity="end"
+            android:layout_weight="10"
+            android:src="@drawable/period" />
+
+        <com.views.TextViewLight
+            style="@style/smallWhiteText"
+            android:layout_width="@dimen/dp_0"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/dp_4"
+            android:layout_weight="15"
+            android:text="@string/date"
+            android:textColor="@color/gray_dark" />
+
+        <ImageView
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_24"
+            android:layout_gravity="end"
+            android:layout_weight="10"
+            android:src="@drawable/clock" />
+
+        <com.views.TextViewLight
+            style="@style/smallWhiteText"
+            android:layout_width="@dimen/dp_0"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/dp_4"
+            android:layout_weight="10"
+            android:text="@string/time"
+            android:textColor="@color/gray_dark" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_margin="@dimen/dp_4"
+        android:background="@color/hint_gray" />
+</LinearLayout>

@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp_8"
+    android:orientation="vertical">
+
+    <Switch
+        android:id="@+id/notifySwitch"
+        style="@style/mediumGrayText"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_35"
+        android:text="@string/notify_by_sms" />
+
+    <LinearLayout
+        android:id="@+id/phonesLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_4"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tool:visibility="visible">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/phonesEditText"
+                style="@style/editTextReport"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/background_shape_border_white_corners"
+                android:hint="@string/phone_number"
+                android:inputType="phone"
+                android:textSize="@dimen/sp_16"
+                android:padding="@dimen/dp_4"
+                android:textAlignment="viewStart" />
+
+            <ImageView
+                android:id="@+id/addPhoneImageView"
+                android:layout_width="@dimen/dp_24"
+                android:layout_height="@dimen/dp_24"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:contentDescription="@string/hour"
+                android:src="@drawable/ic_add_phone" />
+
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/phonesRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp_4" />
+    </LinearLayout>
+</LinearLayout>

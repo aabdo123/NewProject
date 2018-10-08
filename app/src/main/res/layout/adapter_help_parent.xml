@@ -1,0 +1,11 @@
+<CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/headerNameTextView"
+    android:layout_width="@dimen/dp_24"
+    android:layout_height="@dimen/dp_24"
+    android:layout_marginStart="@dimen/dp_4"
+    android:drawableEnd="@drawable/plus_minus"
+    android:gravity="center_vertical"
+    android:textColor="@color/gray_dark"
+    android:padding="16dp"
+    android:textSize="12sp"
+    android:textStyle="bold" />

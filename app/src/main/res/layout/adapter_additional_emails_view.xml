@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/desEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/background_shape_border_white_corners"
+            android:hint="@string/description"
+            android:maxLines="5"
+            android:minHeight="@dimen/dp_40"
+            android:paddingBottom="@dimen/dp_4"
+            android:paddingEnd="@dimen/dp_30"
+            android:paddingStart="@dimen/dp_4"
+            android:paddingTop="@dimen/dp_4"
+            android:textAlignment="viewStart"
+            android:textColor="@color/gray_light"
+            android:textColorHint="@color/hint_gray"
+            android:textSize="@dimen/sp_16" />
+
+        <ImageView
+            android:id="@+id/addDesImageView"
+            android:layout_width="@dimen/dp_26"
+            android:layout_height="@dimen/dp_26"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:contentDescription="@string/hour"
+            android:src="@drawable/ic_pencil" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_16">
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/emailEditText"
+            style="@style/editTextReport"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/background_shape_border_white_corners"
+            android:hint="@string/additional_email"
+            android:padding="@dimen/dp_4"
+            android:textSize="@dimen/sp_16" />
+
+        <ImageView
+            android:id="@+id/addEmailImageView"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_24"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:contentDescription="@string/hour"
+            android:src="@drawable/ic_add_email" />
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/additionalEmailsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dp_4" />
+</LinearLayout>

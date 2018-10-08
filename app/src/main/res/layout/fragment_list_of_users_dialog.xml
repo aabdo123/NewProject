@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="top"
+    android:layout_margin="@dimen/dp_16"
+    android:background="@drawable/background_shape_white_top_corners"
+    android:orientation="vertical"
+    android:weightSum="100">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="top"
+        android:layout_weight="12"
+        android:background="@drawable/background_shape_primary"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_8">
+
+        <com.views.TextViewRegular
+            android:id="@+id/titleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:text="@string/list_of_users"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="78"
+        android:background="@color/app_background"
+        android:orientation="vertical">
+
+        <com.views.TextViewRegular
+            android:id="@+id/emptyListTextView"
+            style="@style/mediumGrayText"
+            android:layout_centerInParent="true"
+            android:text="@string/add"
+            android:textAlignment="center"
+            android:visibility="gone" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/listOfUsersRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"/>
+
+        <View style="@style/white_list_shadow" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:paddingStart="@dimen/activity_horizontal_margin">
+
+        <com.views.ButtonBold
+            android:id="@+id/cancelButton"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_35"
+            android:layout_margin="16dp"
+            android:background="@drawable/button_shape"
+            android:maxLines="1"
+            android:text="@string/cancel"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
+        <com.views.ButtonBold
+            android:id="@+id/doneButton"
+            style="@style/loginButton"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_35"
+            android:layout_margin="16dp"
+            android:background="@drawable/button_shape"
+            android:maxLines="1"
+            android:text="@string/done"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+</LinearLayout>
+

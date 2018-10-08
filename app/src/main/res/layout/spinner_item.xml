@@ -1,0 +1,5 @@
+<com.views.TextViewRegular xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_35"
+    android:textAlignment="viewStart"
+    android:textColor="@color/hint_gray" />

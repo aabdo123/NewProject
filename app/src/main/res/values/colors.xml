@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="app_background">#F8F8F8</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="hint_gray">#cccccc</color>
+    <color name="hint_gray_light">#EEEEEE</color>
+    <color name="trans_gray">#4bcccccc</color>
+    <color name="trans_black">#60000000</color>
+    <color name="gray_light">#a3a3a3</color>
+    <color name="gray_dark">#696969</color>
+    <color name="gray_darker">#808080</color>
+    <color name="text_gray_dark">#6C6C6C</color>
+    <color name="transparent">#00FFFFFF</color>
+
+    <color name="car_yellow">#EEB051</color>
+    <color name="car_orange">#F9B041</color>
+    <color name="car_green">#3FAD7A</color>
+    <color name="car_red">#F05A28</color>
+    <color name="m_black">#1d1d1d</color>
+
+</resources>

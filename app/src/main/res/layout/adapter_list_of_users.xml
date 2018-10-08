@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/selectedLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.views.TextViewRegular
+            android:id="@+id/reportsTypeTextView"
+            style="@style/mediumGrayText"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/arrowImageView"
+            android:padding="@dimen/dp_8" />
+
+        <ImageView
+            android:id="@+id/arrowImageView"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_16"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="@dimen/dp_16"
+            android:contentDescription="@string/cancel"
+            android:src="@drawable/ic_tick"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_05"
+        android:background="@color/gray_light" />
+</LinearLayout>

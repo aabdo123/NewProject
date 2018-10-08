@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/dp_16"
+        android:weightSum="100">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_4"
+            android:layout_weight="50"
+            android:background="@drawable/background_shape_orange_corners"
+            android:orientation="horizontal"
+            android:padding="@dimen/dp_4">
+
+            <ImageView
+                android:layout_width="@dimen/dp_24"
+                android:layout_height="@dimen/dp_24"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="@dimen/dp_8"
+                android:src="@drawable/expirng_users" />
+
+
+            <com.views.TextViewRegular
+                android:id="@+id/longtimeOfflineTextView"
+                style="@style/smallWhiteText"
+                android:layout_centerHorizontal="true"
+                android:paddingStart="@dimen/dp_16"
+                android:text="00"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+
+            <com.views.TextViewRegular
+                style="@style/smallWhiteText"
+                android:layout_below="@+id/longtimeOfflineTextView"
+                android:layout_centerHorizontal="true"
+                android:paddingStart="@dimen/dp_16"
+                android:text="@string/long_time_offline" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_4"
+            android:layout_weight="50"
+            android:background="@drawable/background_shape_red_corners"
+            android:orientation="horizontal"
+            android:padding="@dimen/dp_4">
+
+            <ImageView
+                android:layout_width="@dimen/dp_24"
+                android:layout_height="@dimen/dp_24"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="@dimen/dp_8"
+                android:src="@drawable/expirng_users" />
+
+
+            <com.views.TextViewRegular
+                android:id="@+id/expiringUsersTextView"
+                style="@style/smallWhiteText"
+                android:layout_centerHorizontal="true"
+                android:paddingStart="@dimen/dp_16"
+                android:text="00"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+
+            <com.views.TextViewRegular
+                android:id="@+id/expiringUsersLabelTextView"
+                style="@style/smallWhiteText"
+                android:textSize="@dimen/sp_11"
+                android:layout_marginTop="@dimen/dp_2"
+                android:layout_below="@+id/expiringUsersTextView"
+                android:layout_centerHorizontal="true"
+                android:text="@string/expiring_users" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/lastViewVehicleLayout"
+        android:layout_width="match_parent"
+        android:padding="@dimen/dp_8"
+        android:layout_height="wrap_content"
+        android:background="@color/app_background">
+
+        <com.views.TextViewRegular
+            android:id="@+id/plateNumberTextView"
+            style="@style/largeGrayDarkText"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/dp_16"
+            android:textColor="@color/gray_light"
+            android:textSize="@dimen/sp_14" />
+
+        <com.views.TextViewRegular
+            style="@style/smallWhiteText"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/plateNumberTextView"
+            android:layout_marginStart="@dimen/dp_16"
+            android:text="@string/last_view_vehicle"
+            android:textColor="@color/gray_light" />
+
+        <ImageView
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_40"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:scaleX="-1"
+            android:src="@drawable/ic_car_gray" />
+
+    </RelativeLayout>
+</LinearLayout>

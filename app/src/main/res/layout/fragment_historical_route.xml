@@ -1,0 +1,182 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true">
+
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/linearLayout2"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="top" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignEnd="@+id/mapView"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_4">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/mapStylingFab"
+            style="@style/MenuButtonsSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_map_layers" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/changeMapTypeFab"
+            style="@style/MenuButtonsSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_map_coordinate_primary" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/app_background"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/dp_8"
+            android:paddingEnd="@dimen/dp_8"
+            android:paddingStart="@dimen/dp_8"
+            android:paddingTop="@dimen/dp_8"
+            android:weightSum="100">
+
+            <LinearLayout
+                android:id="@+id/dateFromLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/dp_2"
+                android:layout_weight="40"
+                android:background="@drawable/background_shape_border_white_corners"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_4">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_24"
+                    android:layout_height="@dimen/dp_24"
+                    android:layout_gravity="center_vertical"
+                    android:contentDescription="@string/time"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_calendar_primary" />
+
+                <com.views.TextViewRegular
+                    android:id="@+id/dateFromTextView"
+                    style="@style/smallWhiteText"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="@dimen/dp_4"
+                    android:textColor="@color/m_black" />
+
+            </LinearLayout>
+
+            <com.views.TextViewRegular
+                style="@style/mediumWhiteText"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_32"
+                android:layout_gravity="center"
+                android:layout_weight="9"
+                android:background="@drawable/to_circle"
+                android:gravity="center"
+                android:text="@string/to"
+                android:textAlignment="center" />
+
+            <LinearLayout
+                android:id="@+id/dateToLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/dp_2"
+                android:layout_marginStart="@dimen/dp_2"
+                android:layout_weight="40"
+                android:background="@drawable/background_shape_border_white_corners"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_4">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_24"
+                    android:layout_height="@dimen/dp_24"
+                    android:layout_gravity="center_vertical"
+                    android:contentDescription="@string/time"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_calendar_primary" />
+
+                <com.views.TextViewRegular
+                    android:id="@+id/dateToTextView"
+                    style="@style/smallWhiteText"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="@dimen/dp_4"
+                    android:textColor="@color/m_black" />
+
+            </LinearLayout>
+
+
+            <com.views.TextViewRegular
+                android:id="@+id/goTextView"
+                style="@style/mediumWhiteText"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_32"
+                android:layout_gravity="center"
+                android:layout_weight="11"
+                android:background="@drawable/to_circle"
+                android:gravity="center"
+                android:text="@string/go"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/firstLocationImageView"
+                android:layout_width="@dimen/dp_48"
+                android:layout_height="@dimen/dp_48"
+                android:layout_alignParentStart="true"
+                android:contentDescription="@string/first_location"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_skip_previous" />
+
+            <ImageView
+                android:id="@+id/playImageView"
+                android:layout_width="@dimen/dp_48"
+                android:layout_height="@dimen/dp_48"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@string/play"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_play_arrow" />
+
+            <ImageView
+                android:id="@+id/pauseImageView"
+                android:layout_width="@dimen/dp_48"
+                android:layout_height="@dimen/dp_48"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@string/pause"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_pause"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/lastLocationImageView"
+                android:layout_width="@dimen/dp_48"
+                android:layout_height="@dimen/dp_48"
+                android:layout_alignParentEnd="true"
+                android:contentDescription="@string/last_location"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_skip_next" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

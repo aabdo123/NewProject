@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "966048255091",
+    "firebase_url": "https://saferoad-all.firebaseio.com",
+    "project_id": "saferoad-all",
+    "storage_bucket": "saferoad-all.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:966048255091:android:27414a5ade86b169",
+        "android_client_info": {
+          "package_name": "com.astroGps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "966048255091-t0fjpi9uihloqqdghq61kdicebkr2sm3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4A0Aagq0Rwt1kbLiDrtaWGOlqRn1Canc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:966048255091:android:a460cacb43cd9dba",
+        "android_client_info": {
+          "package_name": "com.saferoad.business"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "966048255091-t0fjpi9uihloqqdghq61kdicebkr2sm3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4A0Aagq0Rwt1kbLiDrtaWGOlqRn1Canc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

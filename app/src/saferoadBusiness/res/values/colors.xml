@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorAccent">#3AA395</color>
+    <color name="colorPrimary">#3996A5</color>
+    <color name="colorPrimaryDark">#3A82BC</color>
+
+    <color name="route">#3996A5</color>
+
+</resources>

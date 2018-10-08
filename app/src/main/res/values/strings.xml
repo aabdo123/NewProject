@@ -1,0 +1,337 @@
+<resources>
+    <!--<string name="app_name">Saferoad Business</string>-->
+    <!--<string name="app_version">App Version V 1.4</string>-->
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+
+    <string-array name="week_days">
+        <item>@string/sunday</item>
+        <item>@string/monday</item>
+        <item>@string/tuesday</item>
+        <item>@string/wednesday</item>
+        <item>@string/thursday</item>
+        <item>@string/friday</item>
+        <item>@string/saturday</item>
+    </string-array>
+
+    <string name="sunday">Sunday</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+
+    <string-array name="months">
+        <item>@string/january</item>
+        <item>@string/february</item>
+        <item>@string/march</item>
+        <item>@string/april</item>
+        <item>@string/may</item>
+        <item>@string/june</item>
+        <item>@string/july</item>
+        <item>@string/august</item>
+        <item>@string/september</item>
+        <item>@string/october</item>
+        <item>@string/november</item>
+        <item>@string/december</item>
+    </string-array>
+
+    <string name="north">North</string>
+    <string name="northeast">Northeast</string>
+    <string name="east">East</string>
+    <string name="southeast">Southeast</string>
+    <string name="south">South</string>
+    <string name="southwest">Southwest</string>
+    <string name="west">West</string>
+    <string name="northwest">Northwest</string>
+
+    <string-array name="direction">
+        <item>@string/north</item>
+        <item>@string/northeast</item>
+        <item>@string/east</item>
+        <item>@string/southeast</item>
+        <item>@string/south</item>
+        <item>@string/southwest</item>
+        <item>@string/west</item>
+        <item>@string/northwest</item>
+        <item>@string/north</item>
+    </string-array>
+
+    <!--<string name="january">January</string>-->
+    <!--<string name="february">February</string>-->
+    <!--<string name="march">March</string>-->
+    <!--<string name="april">April</string>-->
+    <!--<string name="may">May</string>-->
+    <!--<string name="june">June</string>-->
+    <!--<string name="july">July</string>-->
+    <!--<string name="august">August</string>-->
+    <!--<string name="september">September</string>-->
+    <!--<string name="october">October</string>-->
+    <!--<string name="november">November</string>-->
+    <!--<string name="december">December</string>-->
+
+    <string name="january">Jan</string>
+    <string name="february">Feb</string>
+    <string name="march">Mar</string>
+    <string name="april">Apr</string>
+    <string name="may">May</string>
+    <string name="june">Jun</string>
+    <string name="july">Jul</string>
+    <string name="august">Aug</string>
+    <string name="september">Sep</string>
+    <string name="october">Oct</string>
+    <string name="november">Nov</string>
+    <string name="december">Dec</string>
+
+    <string name="are_you_sure_do_want_to_change_language_to_arabic" translatable="false">هل انت متأكد من تغيير اللغة؟</string>
+    <string name="are_you_sure_do_want_to_change_language_to_english" translatable="false">Are you sure you want to change the language ?</string>
+    <string name="yes_ar" translatable="false">نعم</string>
+    <string name="no_ar" translatable="false">لا</string>
+    <string name="yes_en" translatable="false">Yes</string>
+    <string name="no_en" translatable="false">No</string>
+    <string name="change_langauge_ar" translatable="false">تغيير اللغة</string>
+    <string name="change_langauge_en" translatable="false">Change Language</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="password">Password</string>
+    <string name="forget_password">Forget Password ?</string>
+    <string name="username">Username</string>
+    <string name="login">Login</string>
+    <string name="home">Home</string>
+    <string name="user_management">User Management</string>
+    <string name="list_of_vehicles">List of vehicles</string>
+    <string name="alarm_notification">Alarm notification</string>
+    <string name="my_services_provider">My services provider</string>
+    <string name="about">About</string>
+    <string name="help">Help</string>
+    <string name="yes">Yes</string> 
+    <string name="no">No</string>
+
+    <string name="invalid_email">Invalid Email format</string>
+    <string name="error_phone_number_is_too_short">Phone Number Is Too Short.</string>
+
+
+    <string name="filed_is_required">Field is required</string>
+
+    <string name="nav_home">Home</string>
+    <string name="nav_user_management">User Management</string>
+    <string name="nav_list_of_vehicles">List Of Vehicles</string>
+    <string name="nav_geo_fence_list">Geofence List</string>
+    <string name="nav_landmark_list">Landmark List</string>
+    <string name="nav_map">Map</string>
+    <string name="nav_alarm_notification">Alarm Notification</string>
+    <string name="nav_my_services_provider">My Services Provider</string>
+    <string name="nav_language">العربية</string>
+    <string name="nav_help">Help</string>
+    <string name="nav_about">About Us</string>
+    <string name="nav_logout">Logout</string>
+
+    <string name="vehicle_online">Vehicle Online</string>
+    <string name="percentage">Percentage</string>
+    <string name="all">All</string>
+    <string name="offline">Offline</string>
+    <string name="online">Online</string>
+    <string name="alarm">Alarm</string>
+    <string name="expiring_users">Expiring Users</string>
+    <string name="long_time_offline">Long time offline</string>
+    <string name="last_view_vehicle">Last viewed vehicle</string>
+    <string name="time">Time</string>
+    <string name="date">Date</string>
+
+    <string-array name="nav_drawer_labels">
+        <item>@string/nav_home</item>
+        <!--<item>@string/nav_user_management</item>-->
+        <item>@string/nav_map</item>
+        <item>@string/nav_list_of_vehicles</item>
+        <item>@string/nav_geo_fence_list</item>
+        <item>@string/nav_landmark_list</item>
+        <item>@string/nav_alarm_notification</item>
+        <item>@string/nav_scheduled_reports</item>
+        <item>@string/nav_help</item>
+        <item>@string/nav_about</item>
+        <item>@string/nav_logout</item>
+    </string-array>
+
+    <string name="title_activity_maps">Map</string>
+    <string name="address_">Address :</string>
+    <string name="license_plate_number">License Plate Number</string>
+    <string name="location_mode">Location Mode</string>
+    <string name="used_count">Used Count</string>
+    <string name="upload_rate">Upload Rate</string>
+    <string name="battery_status">Battery Status</string>
+    <string name="direction">Direction</string>
+    <string name="mapCoordinate">Map Coordinate</string>
+    <string name="location_time">Location Time</string>
+    <string name="location_status">Location Status</string>
+    <string name="data_analysis">Data Analysis</string>
+    <string name="historical_route_playback">Historical Route Playback</string>
+    <string name="geo_fence">Geofence</string>
+    <string name="cancel">Cancel</string>
+    <string name="enable_gps">Enable GPS</string>
+    <string name="gps_disabled">GPS Disabled</string>
+    <string name="refresh_again">Refresh Again</string>
+    <string name="skip">Skip</string>
+    <string name="finish">Finish</string>
+    <string name="no_available_data">No Available Data</string>
+    <string name="last_location">Last Location</string>
+    <string name="first_location">First Location</string>
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="to">To</string>
+    <string name="go">Go</string>
+    <string name="vehicles_status">Vehicles Status</string>
+    <!--<string name="about_us_title_1">Telematics means saferoad</string>-->
+    <!--<string name="about_us_des_1">saferoad Information Technology is a Saudi based company that provides telematics solutions to the local &amp; international market since 2009, which is owned partially by Aramco Entrepreneurship Center (Waed).</string>-->
+    <!--<string name="about_us_title_2">Traffic Safety</string>-->
+    <!--<string name="about_us_des_2">The primary goal of saferoad is to reduce accident number and to help the drivers in Saudi Arabia to enhance their driving behavior. The effective contribution of saferoad technologies in regional economy let the company get many Regional and International awards.</string>-->
+    <!--<string name="saferoad_website">saferoad WebSite</string>-->
+    <string name="working_hours">Working Hours</string>
+    <string name="mileage">Mileage</string>
+    <string name="plate_name">Plate Name</string>
+    <string name="acc">ACC</string>
+    <string name="car_status">Car Status</string>
+    <string name="on">ON</string>
+    <string name="off">OFF</string>
+    <string name="running">Running</string>
+    <string name="idle">Idle</string>
+    <string name="stopped">Stopped</string>
+    <string name="over_street_speed">Over street speed</string>
+    <string name="over_speed">Over speed</string>
+    <string name="vehicle_disabled">Vehicle disabled</string>
+    <string name="vehicle_enabled">Vehicle enabled</string>
+    <string name="vehicles_list">Vehicles list</string>
+    <string name="logout">Logout</string>
+    <string name="are_you_sure_do_want_to_logout">Are you sure you want to logout?</string>
+    <string name="save_password">Save Password</string>
+    <string name="group">Group</string>
+    <string name="display_name">Display Name</string>
+    <string name="select_time_to">Select Time To</string>
+    <string name="select_time_from">Select Time From</string>
+    <string name="select_date_to">Select Date To</string>
+    <string name="select_date_from">Select Date From</string>
+    <string name="real_time_tracking">Real-time tracking</string>
+    <string name="address">Address</string>
+    <string name="status">Status</string>
+    <string name="status_">Status :</string>
+    <string name="geo_fence_in">Geofence In</string>
+    <string name="geo_fence_out">Geofence Out</string>
+    <string name="geo_fence_name">Geofence Name</string>
+    <string name="speed">Speed</string>
+    <string name="add">Add</string>
+    <string name="radius">Radius</string>
+    <string name="delete">Delete</string>
+    <string name="are_you_sure_you_want_to_delete">Are you sure you want to delete?</string>
+    <string name="geofence_is_added">Geofence Is Added</string>
+    <string name="nav_scheduled_reports">Scheduled Reports</string>
+    <string name="title_activity_add_reports">AddReportsActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="submit">Submit</string>
+    <string name="select_scheduled_frequency">Select Scheduled Frequency</string>
+    <string name="scheduled_frequency">Scheduled Frequency</string>
+
+    <string name="hour">Hour</string>
+    <string name="select_hour">Select Hour</string>
+
+    <string name="daily">Daily</string>
+    <string name="day">Day</string>
+    <string name="select_day">Select Day</string>
+
+    <string name="select_day_of_week">Select Day Of Week</string>
+    <string name="select_day_of_month">Select Day Of Month</string>
+
+    <string name="monthly">Monthly</string>
+    <string name="month">Month</string>
+    <string name="select_month">Select Month/Day</string>
+
+    <string name="quarterly">Quarterly</string>
+    <string name="quarter_year">Quarter year</string>
+    <string name="select_quarter_year">Select Day Every Quarter</string>
+
+    <string name="half_yearly">Half Yearly</string>
+    <string name="half_year">Half Year</string>
+    <string name="select_half_year">Select Day Every Half Year</string>
+
+    <string name="first_half">First Half</string>
+    <string name="second_half">Second Half</string>
+
+    <string name="first_quarter">First Quarter</string>
+    <string name="second_quarter">Second Quarter</string>
+    <string name="third_quarter">Third Quarter</string>
+    <string name="forth_quarter">Forth Quarter</string>
+
+    <string name="weekly">Weekly</string>
+    <string name="yearly">Yearly</string>
+
+    <string name="select">Select</string>
+    <string name="email">Email</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="notify_by_sms">Notify By SMS</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="additional_email">Additional Emails</string>
+    <string name="please_select_report_first">Please select reports type first.</string>
+    <string name="please_select_atleast_one_vehicle">Please select at least one vehicle.</string>
+    <string name="please_select_atleast_one_username">Please select at least one user.</string>
+    <string name="done">Done</string>
+    <string name="list_of_users">List of Users</string>
+    <string name="pre"><![CDATA[<<pre]]></string>
+    <string name="something_went_worng">Something went wrong, Please try again.</string>
+    <string name="are_you_sure_do_want_to_exit">Are you sure you want to exit ?</string>
+    <string name="press_add_to_new_report">Press + to create new Scheduled Reports.</string>
+    <string name="this_number_has_been_added_before">This phone number has been added before</string>
+    <string name="this_email_has_been_added_before">This Email has been added before</string>
+    <string name="first_day">First Day</string>
+    <string name="last_day">Last Day</string>
+    <string name="please_fill_all_frequency_components">Please fill all frequency components </string>
+    <string name="reports_type">Reports Type</string>
+    <string name="description">Description</string>
+    <string name="send">Send</string>
+    <string name="added_successfully">Added Successfully</string>
+    <string name="connection_error">Connection Error</string>
+    <string name="please_check_your_internet_connection">Please Check Your Internet Connection.</string>
+    <string name="keep_me_logged_in">Keep me logged in</string>
+    <string name="remember_me">Remember me</string>
+    <string name="fetching_route_please_wait">Fetching route, Please wait...</string>
+    <string name="wrong_username_or_password">Wrong Username Or Password</string>
+    <string name="show">Show</string>
+    <string name="locate">Locate</string>
+    <string name="more_options">More Options</string>
+    <string name="landmark">Landmark</string>
+    <string name="traffic">Traffic</string>
+    <string name="clustering">Clustering</string>
+    <string name="km">Km</string>
+    <string name="hide">Hide</string>
+    <string name="please_wait_until_map_show">Please wait until map show</string>
+    <string name="invalid_address">Invalid Address</string>
+    <string name="street">Street</string>
+    <string name="select_vehicles_for_geo_fence">Select Vehicles for Geofence</string>
+    <string name="meter">m</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="locate_des">Draw a route between start point and end point and Measures  the distance and time for this route</string>
+    <string name="traffic_des">Dispalyes traffic conditions on major roads and highways</string>
+    <string name="geo_fence_des">Creating virtual boundaries on the map</string>
+    <string name="start_point_address">Start Point Address</string>
+    <string name="end_point_address">End Point Address</string>
+    <string name="office">Office</string>
+    <string name="bank">Bank</string>
+    <string name="building">Building</string>
+    <string name="school">School</string>
+    <string name="university">University</string>
+    <string name="landmark_name">Landmark Name</string>
+
+    <string name="select_map_style">Select Map Style</string>
+    <string name="standard">Standard</string>
+    <string name="silver">Silver</string>
+    <string name="aubergine">Aubergine</string>
+    <string name="retro">Retro</string>
+    <string name="night">Night</string>
+    <string name="dark">Dark</string>
+    <string name="landmark_name_is_required">Landmark Name is required</string>
+    <string name="landmark_home">Home</string>
+    <string name="recognizable_objects_for_places_on_the_map">Recognizable objects for places on the map</string>
+    <string name="dispaly_the_number_of_aggregated_vehicles">Display the number of aggregated vehicles</string>
+
+</resources>

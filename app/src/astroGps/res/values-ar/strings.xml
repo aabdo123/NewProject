@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">AstroGPS</string>
+    <string name="app_version">اصدار التطبيق النسخة 1.0</string>
+
+    <string name="about_us_title_1">AstroGPS</string>
+    <string name="about_us_des_1">
+    This app works with Astro GPS Tracking Devices Series, i.e. Astro101, Astro201, Astro301, Astro401 and Astro400e (all devices are available at www.tomotek.com.cn)
+        Astro Devices are the newest GPS tracking innovation from TOMO Tech. The super simple Astro GPS mobile application with an esthetically designed user interface (UI), giving the Astro solution a much more user friendly experience.
+        \nThe platform consists of:
+        \n -A very simple Mobile application (Astro GPS App), with monitoring and reporting functionality.
+        \n -The main solution screens, can be browsed using PC web browser, give full accessibility to system admin, including users management, reports, screens, full solution control.
+        \n -The user end Astro devices, to be attached to the targeted vehicle.
+        \n -An extendable database, which ultimately can meet various functional requirements and needs.
+        \n\n With Astro GPS Solution, your vehicle will be upgraded to be smart as you like it.
+        \n Our devices are compatible with all kind of vehicles cars, trucks, jet skis, Engines or even non-enginic equipments.
+    </string>
+
+    <string name="about_us_title_2">Busy? No problem, Astro GPS Solution and applications will simplify monitoring and controlling your fleet everywhere at anytime.</string>
+
+    <string name="about_us_des_2">
+        - Real-time fleet locations:
+        \n Make better decisions with accurate information updated every minute.
+        \n\n - Accurate usage reports:
+        \n Reduce paperwork and human error. Generate reports that can show you comparison of vehicle usage.
+        \n\n - Utilize assets:
+        \n Reports will help you identify underutilized and overutilized vehicles
+        \n\n - Bill customers of leased equipment:
+        \n Get reports on the hours leased equipment was operated. Or even if it was operated on holidays
+        \n\n - Reduce the rate of accidents:
+        \n Improve the driving behaviors of your employees, improve your employee safety while reducing maintenance costs.
+        \n That’s not even everything! Customized sensor solutions,  Trip tracking, vehicle insights, a web dashboard and more are all included.
+    </string>
+
+    <string name="saferoad_website">موقع AstroGPS</string>
+
+    <string name="are_you_sure_do_want_to_exit_saferoad">Are you sure you want to exit AstroGPS?</string>
+
+</resources>

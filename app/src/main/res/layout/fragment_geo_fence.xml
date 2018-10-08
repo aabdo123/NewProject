@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.views.MyMapView
+                android:id="@+id/mapView"
+                android:layout_width="match_parent"
+                android:layout_height="320dp" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/mapStylingFab"
+                style="@style/MenuButtonsSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="@dimen/dp_8"
+                android:elevation="@dimen/dp_4"
+                android:src="@drawable/ic_map_layers" />
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:padding="@dimen/dp_16">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:layout_marginTop="@dimen/dp_8"
+                android:background="@drawable/background_shape_border_white_corners">
+
+                <com.views.TextViewLight
+                    android:id="@+id/radiusTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/dp_4"
+                    android:text="@string/radius"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/hint_gray"
+                    android:textSize="@dimen/sp_16" />
+
+            </RelativeLayout>
+
+            <com.views.AppCompatEditTextLight
+                android:id="@+id/geoNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:layout_marginTop="@dimen/dp_8"
+                android:background="@drawable/background_shape_border_white_corners"
+                android:hint="@string/geo_fence_name"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:padding="@dimen/dp_4"
+                android:textColor="@color/gray_light"
+                android:textColorHint="@color/hint_gray"
+                android:textSize="@dimen/sp_16" />
+
+            <com.views.AppCompatEditTextLight
+                android:id="@+id/geoSpeedEditText"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:layout_marginTop="@dimen/dp_8"
+                android:background="@drawable/background_shape_border_white_corners"
+                android:hint="@string/speed"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:maxLength="3"
+                android:padding="@dimen/dp_4"
+                android:textColor="@color/gray_light"
+                android:textColorHint="@color/hint_gray"
+                android:textSize="@dimen/sp_16" />
+
+            <RelativeLayout
+                android:id="@+id/vehicleListLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:background="@drawable/background_shape_border_white_corners"
+                android:minHeight="@dimen/dp_45">
+
+                <com.views.TextViewLight
+                    android:id="@+id/vehicleListTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/dp_4"
+                    android:layout_toStartOf="@+id/emptyListImageView"
+                    android:text="@string/select_vehicles_for_geo_fence"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/hint_gray"
+                    android:textSize="@dimen/sp_16" />
+
+                <ImageView
+                    android:id="@+id/emptyListImageView"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:contentDescription="@string/delete"
+                    android:padding="@dimen/dp_8"
+                    android:src="@drawable/ic_cancel_gray"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_8">
+
+                <com.views.TextViewLight
+                    style="@style/mediumGrayText"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/geoInSwitch"
+                    android:text="@string/geo_fence_in"
+                    android:textAlignment="textStart" />
+
+                <Switch
+                    android:id="@+id/geoInSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:checked="true" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:background="@color/hint_gray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_8">
+
+                <com.views.TextViewLight
+                    style="@style/mediumGrayText"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/geoOutSwitch"
+                    android:text="@string/geo_fence_out"
+                    android:textAlignment="textStart" />
+
+                <Switch
+                    android:id="@+id/geoOutSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:checked="true" />
+            </RelativeLayout>
+
+            <com.views.ButtonBold
+                android:id="@+id/addGeoButton"
+                style="@style/loginButton"
+                android:layout_width="@dimen/dp_250"
+                android:layout_height="@dimen/dp_40"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/dp_16"
+                android:background="@drawable/button_shape"
+                android:text="@string/add"
+                android:textAllCaps="false" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

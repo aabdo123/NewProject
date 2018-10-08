@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.views.MyMapView
+                android:id="@+id/mapView"
+                android:layout_width="match_parent"
+                android:layout_height="320dp" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/mapStylingFab"
+                style="@style/MenuButtonsSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="@dimen/dp_8"
+                android:elevation="@dimen/dp_4"
+                android:src="@drawable/ic_map_layers" />
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:padding="@dimen/dp_16">
+
+            <com.views.AppCompatEditTextLight
+                android:id="@+id/landmarkNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:layout_marginTop="@dimen/dp_8"
+                android:background="@drawable/background_shape_border_white_corners"
+                android:hint="@string/landmark_name"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:padding="@dimen/dp_4"
+                android:textColor="@color/gray_light"
+                android:textColorHint="@color/hint_gray"
+                android:textSize="@dimen/sp_16" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_85"
+                android:layout_marginTop="@dimen/dp_8"
+                android:background="@drawable/background_shape_border_white_corners">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/landmarkRecyclerView"
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/dp_8"
+                    android:layout_height="match_parent"
+                    android:scrollbars="horizontal" />
+            </RelativeLayout>
+
+
+            <com.views.ButtonBold
+                android:id="@+id/addLandmarkButton"
+                style="@style/loginButton"
+                android:layout_width="@dimen/dp_250"
+                android:layout_height="@dimen/dp_40"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/dp_16"
+                android:background="@drawable/button_shape"
+                android:text="@string/add"
+                android:textAllCaps="false" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

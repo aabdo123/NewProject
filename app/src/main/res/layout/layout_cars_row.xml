@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/includeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:weightSum="100">
+
+    <RelativeLayout
+        android:id="@+id/allCarsLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="33.5"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/allCarImageView"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_16"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="top"
+            android:layout_marginEnd="@dimen/dp_4"
+            android:layout_marginStart="@dimen/dp_4"
+            android:layout_marginTop="@dimen/dp_13"
+            android:src="@drawable/all" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/seperatorOneImageView"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/allCarImageView"
+            android:layout_toStartOf="@+id/seperatorOneImageView"
+            android:orientation="vertical">
+
+            <com.views.TextViewRegular
+                android:id="@+id/allCarsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp_18" />
+
+            <com.views.TextViewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/all"
+                android:textAlignment="center"
+                android:paddingBottom="@dimen/dp_4"
+                android:textColor="@color/gray_dark"
+                android:textSize="@dimen/sp_12" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/seperatorOneImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_55"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="@dimen/dp_4"
+            android:layout_marginTop="@dimen/dp_4"
+            android:padding="@dimen/dp_4"
+            android:src="@drawable/seperator" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/carsOnlineLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="33.5"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/carOnlineImageView"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_16"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="top"
+            android:layout_marginEnd="@dimen/dp_4"
+            android:layout_marginStart="@dimen/dp_4"
+            android:layout_marginTop="@dimen/dp_13"
+            android:src="@drawable/online" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/seperatorTwoImageView"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/carOnlineImageView"
+            android:layout_toStartOf="@+id/seperatorTwoImageView"
+            android:orientation="vertical">
+
+            <com.views.TextViewRegular
+                android:id="@+id/carsOnlineTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:textAlignment="center"
+                android:textColor="@color/car_green"
+                android:textSize="@dimen/sp_18" />
+
+            <com.views.TextViewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/online"
+                android:paddingBottom="@dimen/dp_4"
+                android:textAlignment="center"
+                android:textColor="@color/gray_dark"
+                android:textSize="@dimen/sp_12" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/seperatorTwoImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_55"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="@dimen/dp_4"
+            android:layout_marginTop="@dimen/dp_4"
+            android:padding="@dimen/dp_4"
+            android:src="@drawable/seperator" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/carsOfflineLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="33"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/carOfflineImageView"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_16"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="top"
+            android:layout_marginEnd="@dimen/dp_4"
+            android:layout_marginStart="@dimen/dp_4"
+            android:layout_marginTop="@dimen/dp_13"
+            android:src="@drawable/offline" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/carOfflineImageView"
+            android:orientation="vertical">
+
+            <com.views.TextViewRegular
+                android:id="@+id/carsOfflineTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:textAlignment="center"
+                android:textColor="@color/car_yellow"
+                android:textSize="@dimen/sp_18" />
+
+            <com.views.TextViewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/offline"
+                android:paddingBottom="@dimen/dp_4"
+                android:textAlignment="center"
+                android:textColor="@color/gray_dark"
+                android:textSize="@dimen/sp_12" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</LinearLayout>

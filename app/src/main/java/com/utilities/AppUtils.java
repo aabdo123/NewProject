@@ -5,11 +5,17 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 
+import com.application.MyApplication;
 import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.BuildConfig;
@@ -196,6 +202,43 @@ public class AppUtils {
         }
     }
 
+    public static BitmapDescriptor getCarIconAlpha(String carStatus) {
+        switch (carStatus) {
+            case "0":
+                return BitmapDescriptorFactory.fromBitmap(drawAlpha(BitmapFactory.decodeResource(MyApplication.getAppContext().getResources(), R.drawable.car_0)));
+            case "1":
+                return BitmapDescriptorFactory.fromBitmap(drawAlpha(BitmapFactory.decodeResource(MyApplication.getAppContext().getResources(), R.drawable.car_1)));
+            case "100":
+                return BitmapDescriptorFactory.fromBitmap(drawAlpha(BitmapFactory.decodeResource(MyApplication.getAppContext().getResources(), R.drawable.car_100)));
+            case "101":
+                return BitmapDescriptorFactory.fromBitmap(drawAlpha(BitmapFactory.decodeResource(MyApplication.getAppContext().getResources(), R.drawable.car_101)));
+            case "2":
+                return BitmapDescriptorFactory.fromBitmap(drawAlpha(BitmapFactory.decodeResource(MyApplication.getAppContext().getResources(), R.drawable.car_2)));
+            case "201":
+                return BitmapDescriptorFactory.fromBitmap(drawAlpha(BitmapFactory.decodeResource(MyApplication.getAppContext().getResources(), R.drawable.car_201)));
+            case "202":
+                return BitmapDescriptorFactory.fromBitmap(drawAlpha(BitmapFactory.decodeResource(MyApplication.getAppContext().getResources(), R.drawable.car_202)));
+            case "5":
+                return BitmapDescriptorFactory.fromBitmap(drawAlpha(BitmapFactory.decodeResource(MyApplication.getAppContext().getResources(), R.drawable.car_5)));
+            case "600":
+                return BitmapDescriptorFactory.fromBitmap(drawAlpha(BitmapFactory.decodeResource(MyApplication.getAppContext().getResources(), R.drawable.car_600)));
+            default:
+                return BitmapDescriptorFactory.fromBitmap(drawAlpha(BitmapFactory.decodeResource(MyApplication.getAppContext().getResources(), R.drawable.car_0)));
+        }
+    }
+
+    public static Bitmap drawAlpha(Bitmap src) {
+        int width = src.getWidth();
+        int height = src.getHeight();
+        Bitmap transBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(transBitmap);
+        canvas.drawARGB(0, 0, 0, 0);
+        // config paint
+        final Paint paint = new Paint();
+        paint.setAlpha(50);
+        canvas.drawBitmap(src, 0, 0, paint);
+        return transBitmap;
+    }
 
     public static Drawable getCarIconDrawable(Context context, String carStatus) {
         switch (carStatus) {

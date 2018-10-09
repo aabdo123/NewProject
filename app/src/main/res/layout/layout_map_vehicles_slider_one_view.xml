@@ -55,11 +55,11 @@
                         android:id="@+id/singleSliderCarSliderTitleTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:ellipsize="end"
-                        android:maxLines="1"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
                         android:layout_marginStart="@dimen/dp_16"
+                        android:ellipsize="end"
+                        android:maxLines="1"
                         android:textColor="@color/white"
                         tools:ignore="RelativeOverlap" />
                 </LinearLayout>
@@ -81,11 +81,11 @@
                         android:id="@+id/singleSliderUpTitleTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:ellipsize="end"
-                        android:maxLines="1"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
                         android:layout_marginStart="@dimen/dp_16"
+                        android:ellipsize="end"
+                        android:maxLines="1"
                         android:textColor="@color/white"
                         android:textSize="13sp"
                         tools:ignore="RelativeOverlap" />
@@ -118,12 +118,12 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/dp_10"
-                    android:paddingStart="@dimen/dp_20"
-                    android:paddingEnd="@dimen/dp_20"
-                    android:paddingTop="@dimen/dp_10"
                     android:background="@drawable/bottom_shapes_blue"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/dp_10"
+                    android:paddingEnd="@dimen/dp_20"
+                    android:paddingStart="@dimen/dp_20"
+                    android:paddingTop="@dimen/dp_10">
 
                     <ImageView
                         android:layout_width="@dimen/dp_25"
@@ -138,11 +138,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:ellipsize="end"
-                        android:maxLines="1"
                         android:layout_marginEnd="@dimen/dp_10"
                         android:layout_marginStart="@dimen/dp_10"
+                        android:ellipsize="end"
                         android:gravity="center"
+                        android:maxLines="1"
                         android:textColor="@color/colorPrimary"
                         android:textSize="13sp"
                         tools:ignore="RelativeOverlap" />
@@ -152,12 +152,12 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/dp_10"
-                    android:paddingStart="@dimen/dp_20"
-                    android:paddingEnd="@dimen/dp_20"
-                    android:paddingTop="@dimen/dp_10"
                     android:background="@drawable/bottom_shapes_blue"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/dp_10"
+                    android:paddingEnd="@dimen/dp_20"
+                    android:paddingStart="@dimen/dp_20"
+                    android:paddingTop="@dimen/dp_10">
 
                     <ImageView
                         android:layout_width="@dimen/dp_30"
@@ -171,13 +171,13 @@
                         android:id="@+id/kmTextView"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:ellipsize="end"
-                        android:maxLines="1"
                         android:layout_gravity="center|start"
                         android:layout_marginEnd="@dimen/_5_dp"
                         android:layout_marginStart="@dimen/_5_dp"
                         android:layout_weight="1"
+                        android:ellipsize="end"
                         android:gravity="center|start"
+                        android:maxLines="1"
                         android:textColor="@color/colorPrimary"
                         android:textSize="13sp"
                         tools:ignore="RelativeOverlap" />
@@ -200,15 +200,15 @@
 
                     <com.views.TextViewRegular
                         android:id="@+id/timerTextView"
-                        android:ellipsize="end"
-                        android:maxLines="1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|start"
                         android:layout_marginEnd="@dimen/_5_dp"
                         android:layout_marginStart="@dimen/_5_dp"
                         android:layout_weight="1"
+                        android:ellipsize="end"
                         android:gravity="center|start"
+                        android:maxLines="1"
                         android:textColor="@color/colorPrimary"
                         android:textSize="13sp"
                         tools:ignore="RelativeOverlap" />
@@ -216,17 +216,16 @@
                 </LinearLayout>
 
 
-
                 <LinearLayout
                     android:layout_width="match_parent"
 
                     android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/dp_10"
-                    android:paddingStart="@dimen/dp_20"
-                    android:paddingEnd="@dimen/dp_20"
-                    android:paddingTop="@dimen/dp_10"
                     android:background="@drawable/bottom_shapes_blue"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/dp_10"
+                    android:paddingEnd="@dimen/dp_20"
+                    android:paddingStart="@dimen/dp_20"
+                    android:paddingTop="@dimen/dp_10">
 
                     <ImageView
                         android:layout_width="@dimen/dp_25"
@@ -240,12 +239,12 @@
                         android:id="@+id/infoTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:ellipsize="end"
-                        android:maxLines="1"
                         android:layout_gravity="center"
                         android:layout_marginEnd="@dimen/dp_10"
                         android:layout_marginStart="@dimen/dp_10"
+                        android:ellipsize="end"
                         android:gravity="center"
+                        android:maxLines="1"
                         android:textColor="@color/colorPrimary"
                         android:textSize="13sp"
                         tools:ignore="RelativeOverlap" />
@@ -253,16 +252,15 @@
                 </LinearLayout>
 
 
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/dp_10"
-                    android:paddingStart="@dimen/dp_20"
-                    android:paddingEnd="@dimen/dp_20"
-                    android:paddingTop="@dimen/dp_10"
                     android:background="@drawable/bottom_shapes_blue"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/dp_10"
+                    android:paddingEnd="@dimen/dp_20"
+                    android:paddingStart="@dimen/dp_20"
+                    android:paddingTop="@dimen/dp_10">
 
                     <ImageView
                         android:layout_width="@dimen/dp_30"
@@ -275,14 +273,14 @@
                     <com.views.TextViewRegular
                         android:id="@+id/offTextView"
                         android:layout_width="0dp"
-                        android:ellipsize="end"
-                        android:maxLines="1"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|start"
                         android:layout_marginEnd="@dimen/_5_dp"
                         android:layout_marginStart="@dimen/_5_dp"
                         android:layout_weight="1"
+                        android:ellipsize="end"
                         android:gravity="center|start"
+                        android:maxLines="1"
                         android:textColor="@color/colorPrimary"
                         android:textSize="13sp"
                         tools:ignore="RelativeOverlap" />
@@ -306,14 +304,14 @@
                     <com.views.TextViewRegular
                         android:id="@+id/nATextView"
                         android:layout_width="0dp"
-                        android:ellipsize="end"
-                        android:maxLines="1"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|start"
                         android:layout_marginEnd="@dimen/_5_dp"
                         android:layout_marginStart="@dimen/_5_dp"
                         android:layout_weight="1"
+                        android:ellipsize="end"
                         android:gravity="center|start"
+                        android:maxLines="1"
                         android:textColor="@color/colorPrimary"
                         android:textSize="13sp"
                         tools:ignore="RelativeOverlap" />
@@ -321,16 +319,15 @@
                 </LinearLayout>
 
 
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/dp_10"
-                    android:paddingStart="@dimen/dp_20"
-                    android:paddingEnd="@dimen/dp_20"
-                    android:paddingTop="@dimen/dp_10"
                     android:background="@drawable/bottom_shapes_blue"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/dp_10"
+                    android:paddingEnd="@dimen/dp_20"
+                    android:paddingStart="@dimen/dp_20"
+                    android:paddingTop="@dimen/dp_10">
 
                     <ImageView
                         android:layout_width="@dimen/dp_30"
@@ -349,8 +346,8 @@
                         android:layout_marginStart="@dimen/_5_dp"
                         android:layout_weight="1"
                         android:ellipsize="end"
-                        android:maxLines="1"
                         android:gravity="center|start"
+                        android:maxLines="1"
                         android:textColor="@color/colorPrimary"
                         android:textSize="13sp"
                         tools:ignore="RelativeOverlap" />
@@ -380,8 +377,8 @@
                         android:layout_marginStart="@dimen/_5_dp"
                         android:layout_weight="1"
                         android:ellipsize="end"
-                        android:maxLines="1"
                         android:gravity="center|start"
+                        android:maxLines="1"
                         android:textColor="@color/colorPrimary"
                         android:textSize="13sp"
                         tools:ignore="RelativeOverlap" />
@@ -389,16 +386,15 @@
                 </LinearLayout>
 
 
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/dp_10"
-                    android:paddingStart="@dimen/dp_20"
-                    android:paddingEnd="@dimen/dp_20"
-                    android:paddingTop="@dimen/dp_10"
                     android:background="@drawable/bottom_shapes_blue"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/dp_10"
+                    android:paddingEnd="@dimen/dp_20"
+                    android:paddingStart="@dimen/dp_20"
+                    android:paddingTop="@dimen/dp_10">
 
                     <ImageView
                         android:layout_width="@dimen/dp_30"
@@ -411,14 +407,14 @@
                     <com.views.TextViewRegular
                         android:id="@+id/closedTextView"
                         android:layout_width="0dp"
-                        android:ellipsize="end"
-                        android:maxLines="1"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|start"
                         android:layout_marginEnd="@dimen/_5_dp"
                         android:layout_marginStart="@dimen/_5_dp"
                         android:layout_weight="1"
+                        android:ellipsize="end"
                         android:gravity="center|start"
+                        android:maxLines="1"
                         android:textColor="@color/colorPrimary"
                         android:textSize="13sp"
                         tools:ignore="RelativeOverlap" />
@@ -446,10 +442,10 @@
                         android:layout_gravity="center|start"
                         android:layout_marginEnd="@dimen/_5_dp"
                         android:layout_marginStart="@dimen/_5_dp"
-                        android:ellipsize="end"
-                        android:maxLines="1"
                         android:layout_weight="1"
+                        android:ellipsize="end"
                         android:gravity="center|start"
+                        android:maxLines="1"
                         android:textColor="@color/colorPrimary"
                         android:textSize="13sp"
                         tools:ignore="RelativeOverlap" />
@@ -457,17 +453,15 @@
                 </LinearLayout>
 
 
-
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/dp_10"
-                    android:paddingStart="@dimen/dp_20"
-                    android:paddingEnd="@dimen/dp_20"
-                    android:paddingTop="@dimen/dp_10"
                     android:background="@drawable/bottom_shapes_blue"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/dp_10"
+                    android:paddingEnd="@dimen/dp_20"
+                    android:paddingStart="@dimen/dp_20"
+                    android:paddingTop="@dimen/dp_10">
 
                     <ImageView
                         android:layout_width="@dimen/dp_25"
@@ -482,12 +476,12 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|start"
-                        android:ellipsize="end"
-                        android:maxLines="1"
                         android:layout_marginEnd="@dimen/_5_dp"
                         android:layout_marginStart="@dimen/_5_dp"
                         android:layout_weight="1"
+                        android:ellipsize="end"
                         android:gravity="center|start"
+                        android:maxLines="1"
                         android:textColor="@color/colorPrimary"
                         android:textSize="13sp"
                         tools:ignore="RelativeOverlap" />
@@ -495,10 +489,10 @@
                     <View
                         android:layout_width="@dimen/_2_dp"
                         android:layout_height="match_parent"
-                        android:layout_marginEnd="@dimen/_15_dp"
-                        android:layout_marginTop="@dimen/_2_dp"
                         android:layout_marginBottom="@dimen/_2_dp"
+                        android:layout_marginEnd="@dimen/_15_dp"
                         android:layout_marginStart="@dimen/_15_dp"
+                        android:layout_marginTop="@dimen/_2_dp"
                         android:background="@color/colorPrimary" />
 
 
@@ -512,15 +506,15 @@
 
                     <com.views.TextViewRegular
                         android:id="@+id/gasTextView"
-                        android:ellipsize="end"
-                        android:maxLines="1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|start"
                         android:layout_marginEnd="@dimen/_5_dp"
                         android:layout_marginStart="@dimen/_5_dp"
                         android:layout_weight="1"
+                        android:ellipsize="end"
                         android:gravity="center|start"
+                        android:maxLines="1"
                         android:textColor="@color/colorPrimary"
                         android:textSize="13sp"
                         tools:ignore="RelativeOverlap" />
@@ -528,16 +522,15 @@
                 </LinearLayout>
 
 
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/dp_10"
-                    android:paddingStart="@dimen/dp_20"
-                    android:paddingEnd="@dimen/dp_20"
-                    android:paddingTop="@dimen/dp_10"
                     android:background="@drawable/bottom_shapes_blue"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/dp_10"
+                    android:paddingEnd="@dimen/dp_20"
+                    android:paddingStart="@dimen/dp_20"
+                    android:paddingTop="@dimen/dp_10">
 
                     <ImageView
                         android:layout_width="@dimen/dp_30"
@@ -555,8 +548,8 @@
                         android:layout_marginEnd="@dimen/_5_dp"
                         android:layout_marginStart="@dimen/_5_dp"
                         android:layout_weight="1"
-                        android:gravity="center|start"
                         android:ellipsize="end"
+                        android:gravity="center|start"
                         android:maxLines="1"
                         android:textColor="@color/colorPrimary"
                         android:textSize="13sp"
@@ -586,8 +579,8 @@
                         android:layout_marginEnd="@dimen/_5_dp"
                         android:layout_marginStart="@dimen/_5_dp"
                         android:layout_weight="1"
-                        android:gravity="center|start"
                         android:ellipsize="end"
+                        android:gravity="center|start"
                         android:maxLines="1"
                         android:textColor="@color/colorPrimary"
                         android:textSize="13sp"
@@ -599,12 +592,12 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/dp_10"
-                    android:paddingStart="@dimen/dp_20"
-                    android:paddingEnd="@dimen/dp_20"
-                    android:paddingTop="@dimen/dp_10"
                     android:background="@drawable/bottom_shapes_blue"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/dp_10"
+                    android:paddingEnd="@dimen/dp_20"
+                    android:paddingStart="@dimen/dp_20"
+                    android:paddingTop="@dimen/dp_10">
 
                     <ImageView
                         android:layout_width="@dimen/dp_25"
@@ -617,13 +610,13 @@
                     <com.views.TextViewRegular
                         android:id="@+id/addressTextView"
                         android:layout_width="wrap_content"
-                        android:ellipsize="end"
-                        android:maxLines="1"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginEnd="@dimen/dp_10"
                         android:layout_marginStart="@dimen/dp_10"
+                        android:ellipsize="end"
                         android:gravity="center"
+                        android:maxLines="1"
                         android:textColor="@color/colorPrimary"
                         android:textSize="13sp"
                         tools:ignore="RelativeOverlap" />
@@ -633,12 +626,12 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/dp_10"
-                    android:paddingStart="@dimen/dp_10"
-                    android:paddingEnd="@dimen/dp_10"
-                    android:paddingTop="@dimen/dp_10"
                     android:background="@drawable/bottom_shapes_blue"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/dp_10"
+                    android:paddingEnd="@dimen/dp_10"
+                    android:paddingStart="@dimen/dp_10"
+                    android:paddingTop="@dimen/dp_10">
 
 
                     <com.views.TextViewRegular
@@ -646,13 +639,13 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|start"
-                        android:layout_weight="1"
-                        android:ellipsize="end"
-                        android:maxLines="1"
-                        android:text="Mileage: 0 KM"
-                        android:gravity="center|start"
                         android:layout_marginEnd="@dimen/_5_dp"
                         android:layout_marginStart="@dimen/_5_dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center|start"
+                        android:maxLines="1"
+                        android:text="Mileage: 0 KM"
                         android:textColor="@color/colorPrimary"
                         android:textSize="13sp"
                         tools:ignore="RelativeOverlap" />
@@ -667,15 +660,15 @@
                     <com.views.TextViewRegular
                         android:id="@+id/workingTextView"
                         android:layout_width="0dp"
-                        android:ellipsize="end"
-                        android:maxLines="1"
-                        android:text="Mileage: 0 KM"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|start"
-                        android:layout_weight="1"
-                        android:gravity="center|start"
                         android:layout_marginEnd="@dimen/_5_dp"
                         android:layout_marginStart="@dimen/_5_dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center|start"
+                        android:maxLines="1"
+                        android:text="Mileage: 0 KM"
                         android:textColor="@color/colorPrimary"
                         android:textSize="13sp"
                         tools:ignore="RelativeOverlap" />

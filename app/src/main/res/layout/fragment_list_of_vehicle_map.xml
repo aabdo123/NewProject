@@ -195,7 +195,7 @@
 
         <include
             layout="@layout/layout_map_vehicles_slider_one_view"
-            tools:visibility="g one" />
+            tools:visibility="gone" />
 
     </android.support.design.widget.CoordinatorLayout>
 </RelativeLayout>

@@ -380,7 +380,14 @@ public class LisOfVehiclesMapFragment extends Fragment implements
             case R.id.moreOptionsUpLayout:
             case R.id.sliderUpTitleTextView:
             case R.id.sliderUpArrowImageView:
-                slideUp.hide();
+                try {
+                    if (slideUp != null)
+                        slideUp.hide();
+                    if (slideUpSingleCar != null)
+                        slideUpSingleCar.hide();
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
                 break;
             case R.id.mapStylingFab:
                 openMapStyleDialog();
@@ -494,29 +501,11 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                     singleCarSliderAddressTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel().getLastLocation().getAddress()));
                     singleSliderUpTitleTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel().getLastLocation().getAddress()));
                 }
-                timeTextView.setText(String.format(Locale.getDefault(),"%s",Utils.parseTime(markerModel.getAllVehicleModel().getLastLocation().getRecordDateTime())));
-                kmTextView.setText(String.format(Locale.getDefault(),"%s km/h",markerModel.getAllVehicleModel().getLastLocation().getSpeed()));
-                timerTextView.setText(String.format(Locale.getDefault(),"%s",markerModel.getAllVehicleModel().getLastLocation().getDirection())); // fraction
-                infoTextView.setText(String.format(Locale.getDefault(),"%s",markerModel.getAllVehicleModel().getLastLocation().getVehicleStatus())); //
-                offTextView.setText(String.format(Locale.getDefault(),"%s","N/A"));// engen statuds
-                nATextView.setText(String.format(Locale.getDefault(),"%s","N/A")); //note not get
-                visaTextView.setText(String.format(Locale.getDefault(),"%s",markerModel.getAllVehicleModel().getPlateNumber()));
-                barCodeTextView.setText(String.format(Locale.getDefault(),"%s",markerModel.getAllVehicleModel().getSerialNumber()));
-                closedTextView.setText(String.format(Locale.getDefault(),"%s","N/A"));
-                beltTextView.setText(String.format(Locale.getDefault(),"%s","N/A"));
-                needlTextView.setText(String.format(Locale.getDefault(),"%s","N/A"));
-                gasTextView.setText(String.format(Locale.getDefault(),"%s","N/A"));
-                humanTextView.setText(String.format(Locale.getDefault(),"%s","N/A"));
-                cardTextView.setText(String.format(Locale.getDefault(),"%s","N/A"));
-                addressTextView.setText(String.format(Locale.getDefault(),"%s","N/A"));
-                mileageTextView.setText(String.format(Locale.getDefault(),"Mileage: %s",markerModel.getAllVehicleModel().getLastLocation().getTotalMileage()));
-                workingTextView.setText(String.format(Locale.getDefault(),"Working Hours: %s",markerModel.getAllVehicleModel().getLastLocation().getTotalWorkingHours()));
             }
         } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
-
 
 
     public void addSlideUpFragment() {
@@ -743,20 +732,21 @@ public class LisOfVehiclesMapFragment extends Fragment implements
         googleMap.getUiSettings().setMyLocationButtonEnabled(false);
         googleMap.getUiSettings().setMapToolbarEnabled(false);
         googleMap.setTrafficEnabled(false);
-
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                startSignalRSerivce();
-                setLocationIfNeeded();
+        googleMap.setOnMapClickListener(latLng -> {
+            if (singleCarMoreOptionsLayout.getVisibility() == View.VISIBLE) {
+                addAndHideViews(0, true);
+                viewSelected(false);
             }
+        });
+        new Handler().postDelayed(() -> {
+            startSignalRSerivce();
+            setLocationIfNeeded();
         }, 1000);
     }
 
     private void addVehiclesMarkers() {
         if (openFirstTime) {
             if (Utils.isNotEmptyList(vehiclesList))
-                // when onMapReady Call back again set new hashmap
                 vehiclesHashMap = new LinkedHashMap<>();
             for (AllVehiclesInHashModel.AllVehicleModel allVehicleModel : vehiclesList) {
                 AllVehiclesInHashModel inHashModel = new AllVehiclesInHashModel();
@@ -778,11 +768,9 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                             addHeaderTitle(markerModel);
                             addBodyView(markerModel);
                             viewSelected(true);
+                            addAndHideViews(markerModel.getVehicleId(), false);
                         }
-                        Log.e("onMarkerClick", "@@@@@@@@@@@@@@@@@@@@@@@" + marker.getId());
                     }
-//                    AllVehiclesInHashModel model = vehiclesHashMap.get(marker.getId());
-//                    ToastHelper.toastWarningLong(activity, model.getVehicleId() + "");
                     return false;
                 });
             }
@@ -791,13 +779,63 @@ public class LisOfVehiclesMapFragment extends Fragment implements
         }
     }
 
+    private void addAndHideViews(int vehicleId, boolean isReactedMap) {
+        googleMap.clear();
+        Marker addMarker;
+        if (vehiclesHashMap != null && vehiclesHashMap.size() > 0) {
+            for (AllVehiclesInHashModel.AllVehicleModel allVehicleModel : vehiclesList) {
+                AllVehiclesInHashModel inHashModel = new AllVehiclesInHashModel();
+                inHashModel.setVehicleId(allVehicleModel.getVehicleID());
+                inHashModel.setAllVehicleModel(allVehicleModel);
+                LatLng lng = new LatLng(allVehicleModel.getLastLocation().getLatitude(), allVehicleModel.getLastLocation().getLongitude());
+                if (isReactedMap) {
+                    addMarker = googleMap.addMarker(new MarkerOptions().position(lng)
+                            .icon(AppUtils.getCarIcon(allVehicleModel.getLastLocation().getVehicleStatus()))
+                            .anchor(0.5f, 0.5f)
+                            .rotation((float) allVehicleModel.getLastLocation().getDirection())
+                            .flat(true));
+                } else if (vehicleId == allVehicleModel.getVehicleID()) {
+                    addMarker = googleMap.addMarker(new MarkerOptions().position(lng)
+                            .icon(AppUtils.getCarIcon(allVehicleModel.getLastLocation().getVehicleStatus()))
+                            .anchor(0.5f, 0.5f)
+                            .rotation((float) allVehicleModel.getLastLocation().getDirection())
+                            .flat(true));
+                } else {
+                    addMarker = googleMap.addMarker(new MarkerOptions().position(lng)
+                            .icon(AppUtils.getCarIconAlpha(allVehicleModel.getLastLocation().getVehicleStatus()))
+                            .anchor(0.5f, 0.5f)
+                            .rotation((float) allVehicleModel.getLastLocation().getDirection())
+                            .flat(true));
+                }
+                inHashModel.setMarker(addMarker);
+                vehiclesHashMap.put(addMarker, inHashModel);
+                builder.include(lng);
+            }
+            bounds = builder.build();
+        }
+    }
+
+
     private void addBodyView(AllVehiclesInHashModel markerModel) {
         try {
-
-
-
-
-        }catch (Exception ex){
+            timeTextView.setText(String.format(Locale.getDefault(), "%s", Utils.parseTime(markerModel.getAllVehicleModel().getLastLocation().getRecordDateTime())));
+            kmTextView.setText(String.format(Locale.getDefault(), "%s km/h", markerModel.getAllVehicleModel().getLastLocation().getSpeed()));
+            timerTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel().getLastLocation().getDirection())); // fraction
+            infoTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel().getLastLocation().getVehicleStatus())); //
+            offTextView.setText(String.format(Locale.getDefault(), "%s", "N/A"));// engen statuds
+            nATextView.setText(String.format(Locale.getDefault(), "%s", "N/A")); //note not get
+            visaTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel().getPlateNumber()));
+            barCodeTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel().getSerialNumber()));
+            closedTextView.setText(String.format(Locale.getDefault(), "%s", "N/A"));
+            beltTextView.setText(String.format(Locale.getDefault(), "%s", "N/A"));
+            needlTextView.setText(String.format(Locale.getDefault(), "%s", "N/A"));
+            gasTextView.setText(String.format(Locale.getDefault(), "%s", "N/A"));
+            humanTextView.setText(String.format(Locale.getDefault(), "%s", "N/A"));
+            cardTextView.setText(String.format(Locale.getDefault(), "%s", "N/A"));
+            addressTextView.setText(String.format(Locale.getDefault(), "%s", "N/A"));
+            mileageTextView.setText(String.format(Locale.getDefault(), "Mileage: %s", markerModel.getAllVehicleModel().getLastLocation().getTotalMileage()));
+            workingTextView.setText(String.format(Locale.getDefault(), "Working Hours: %s", markerModel.getAllVehicleModel().getLastLocation().getTotalWorkingHours()));
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
     }

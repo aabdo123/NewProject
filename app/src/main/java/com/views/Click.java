@@ -6,4 +6,5 @@ package com.views;
 
 public interface Click {
     void onClick();
+    void addMaps();
 }

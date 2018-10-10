@@ -80,6 +80,7 @@ import com.utilities.Utils;
 import com.utilities.constants.AppConstant;
 import com.utilities.constants.SharesPrefConstants;
 import com.views.AlertDialogView;
+import com.views.Click;
 import com.views.Progress;
 import com.views.TextViewLight;
 import com.views.TextViewRegular;
@@ -540,7 +541,7 @@ public class LisOfVehiclesMapFragment extends Fragment implements
         }
     }
 
-    private void setLocateManager() {
+    private void setLocateManager() { //TODO
         if (myLocateManager == null) {
 //            setVisibilityVehiclesMarkers(false);
 //            setVisibilityAllMarkers(false);
@@ -552,7 +553,20 @@ public class LisOfVehiclesMapFragment extends Fragment implements
             }
             myLocateManager = new MyLocateManager(context, rootView, googleMap, vehiclesHashMap, myCurrentLatLng);
             myLocateManager.setViews(mMapView);
-            myLocateManager.setAfterOnDismissListeners(() -> setVisibilityVehiclesMarkers(true));
+            myLocateManager.setAfterOnDismissListeners(new Click() {
+                @Override
+                public void onClick() {
+                    setVisibilityVehiclesMarkers(true);
+                }
+
+                @Override
+                public void addMaps() {
+                    if (googleMap != null) {
+                        openFirstTime = true;
+                        addVehiclesMarkers();
+                    }
+                }
+            });
         } else {
             myLocateManager.removeViewPopup();
             myLocateManager = null;
@@ -566,7 +580,20 @@ public class LisOfVehiclesMapFragment extends Fragment implements
             }
             myLocateManager = new MyLocateManager(context, rootView, googleMap, vehiclesHashMap, myCurrentLatLng);
             myLocateManager.setViews(mMapView);
-            myLocateManager.setAfterOnDismissListeners(() -> setVisibilityVehiclesMarkers(true));
+            myLocateManager.setAfterOnDismissListeners(new Click() {
+                @Override
+                public void onClick() {
+                    setVisibilityVehiclesMarkers(true);
+                }
+
+                @Override
+                public void addMaps() {
+                    if (googleMap != null) {
+                        openFirstTime = true;
+                        addVehiclesMarkers();
+                    }
+                }
+            });
         }
         slideUp.hide();
         slideUpSingleCar.hide();

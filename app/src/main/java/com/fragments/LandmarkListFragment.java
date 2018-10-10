@@ -80,6 +80,11 @@ public class LandmarkListFragment extends Fragment {
             public void onClick() {
                 isEmptyListTextVisible(true);
             }
+
+            @Override
+            public void addMaps() {
+
+            }
         });
         landmarkRecyclerView.setAdapter(landmarksAdapter);
     }

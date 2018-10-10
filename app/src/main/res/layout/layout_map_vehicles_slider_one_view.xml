@@ -465,7 +465,7 @@
 
                     <ImageView
                         android:layout_width="@dimen/dp_25"
-                        android:layout_height="@dimen/dp_25"
+                        android:layout_height="@dimen/dp_35"
                         android:layout_gravity="center"
                         android:contentDescription="@string/more_options"
                         android:gravity="center"

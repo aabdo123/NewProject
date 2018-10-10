@@ -56,16 +56,16 @@
             android:textColor="@color/white"
             android:visibility="gone" />
 
-        <com.views.ButtonBold
-            android:id="@+id/endButton"
-            android:layout_width="@dimen/dp_250"
-            android:layout_height="@dimen/dp_45"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/button_shape"
-            android:text="@string/select"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:visibility="gone" />
+        <!--<com.views.ButtonBold-->
+            <!--android:id="@+id/endButton"-->
+            <!--android:layout_width="@dimen/dp_250"-->
+            <!--android:layout_height="@dimen/dp_45"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:background="@drawable/button_shape"-->
+            <!--android:text="@string/select"-->
+            <!--android:textAllCaps="false"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:visibility="gone" />-->
     </LinearLayout>
 
     <android.support.design.widget.CoordinatorLayout

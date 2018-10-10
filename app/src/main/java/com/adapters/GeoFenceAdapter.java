@@ -153,6 +153,11 @@ public class GeoFenceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 notifyItemRangeChanged(position, arrayList.size());
                 deleteGeofenceApiCall(model.getID());
             }
+
+            @Override
+            public void addMaps() {
+
+            }
         });
     }
 

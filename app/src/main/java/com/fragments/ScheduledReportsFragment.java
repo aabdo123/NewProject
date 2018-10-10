@@ -80,6 +80,11 @@ public class ScheduledReportsFragment extends Fragment {
             public void onClick() {
                 isEmptyListTextVisible(true);
             }
+
+            @Override
+            public void addMaps() {
+
+            }
         });
         reportsRecyclerView.setAdapter(scheduledReportsAdapter);
     }

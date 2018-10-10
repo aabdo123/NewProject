@@ -1,12 +1,15 @@
 package com.managers.map_managers;
 
 import android.content.Context;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.adapters.SelectedLocationsAdapter;
 import com.github.clans.fab.FloatingActionButton;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -19,6 +22,8 @@ import com.google.android.gms.maps.model.Marker;
 
 import com.R;
 import com.models.AllVehiclesInHashModel;
+import com.models.LatLogModel;
+import com.models.LocationLocateModel;
 import com.utilities.AnimationUtils;
 import com.utilities.AppUtils;
 import com.utilities.Route;
@@ -27,13 +32,21 @@ import com.utilities.constants.AppConstant;
 import com.utilities.map.MapUtils;
 import com.views.ButtonBold;
 import com.views.Click;
-import com.views.ClickWithTwoParam;
+import com.views.SpeedyLinearLayoutManager;
 import com.views.TextViewLight;
 import com.views.TextViewRegular;
 
+import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.Locale;
+import java.util.logging.Handler;
 
 import static android.content.Context.LAYOUT_INFLATER_SERVICE;
+import static com.adapters.SelectedLocationsAdapter.END_HIDDEN;
+import static com.adapters.SelectedLocationsAdapter.END_OPENED;
+import static com.adapters.SelectedLocationsAdapter.START_HIDDEN;
+import static com.adapters.SelectedLocationsAdapter.START_OPENED;
 
 public class MyLocateManager implements View.OnClickListener {
 
@@ -47,7 +60,7 @@ public class MyLocateManager implements View.OnClickListener {
 
     private MapView mapView;
     private ButtonBold startButton;
-    private ButtonBold endButton;
+    //    private ButtonBold endButton;
     private ImageView locateMarkerImageView;
 
     private LatLng myCurrentLatLng;
@@ -55,6 +68,7 @@ public class MyLocateManager implements View.OnClickListener {
     private LatLng blueMarkerAddress;
 
     private ImageView cancelImageView;
+    private RecyclerView listOfLocationsRecyclerView;
     private ImageView startMarkerImageView;
     private View dividerView;
     private ImageView endMarkerImageView;
@@ -65,15 +79,18 @@ public class MyLocateManager implements View.OnClickListener {
     private TextViewRegular distanceTextView;
     private TextViewRegular durationTextView;
     private LinearLayout routeInfoLayout;
+    private ArrayList<Route> routeArrayList;
 
     private FloatingActionButton mapStylingFab;
-
+    int counter = 0;
     private Marker redMarker;
     private Marker blueMarker;
     private Click afterOnDismiss;
-
+    private ArrayList<LatLogModel> selectedLocations;
+    private ArrayList<LocationLocateModel> locationLocateModels;
     private LatLngBounds.Builder builder;
     private LatLngBounds bounds;
+    private SelectedLocationsAdapter locationsAdapter;
 
     private interface UpdatePopup {
         void updateAddressFrom(String govFrom, String strFrom);
@@ -81,6 +98,9 @@ public class MyLocateManager implements View.OnClickListener {
         void updateAddressTo(String govTo, String strTo);
 
         void updateDistance(String distance, String duration);
+
+
+        void updateDistanceList(ArrayList<LocationLocateModel> locationLocateModels);
     }
 
     public MyLocateManager(Context context, View view, GoogleMap googleMap, LinkedHashMap<Marker, AllVehiclesInHashModel> vehiclesHashMap, LatLng myCurrentLatLng) {
@@ -96,7 +116,7 @@ public class MyLocateManager implements View.OnClickListener {
         builder = new LatLngBounds.Builder();
         locateMarkerImageView = (ImageView) rootView.findViewById(R.id.locateMarkerImageView);
         startButton = (ButtonBold) rootView.findViewById(R.id.startButton);
-        endButton = (ButtonBold) rootView.findViewById(R.id.endButton);
+//        endButton = (ButtonBold) rootView.findViewById(R.id.endButton);
         locateMarkerImageView.setVisibility(View.VISIBLE);
         mapStylingFab = rootView.findViewById(R.id.mapStylingFab);
         setListeners();
@@ -109,25 +129,35 @@ public class MyLocateManager implements View.OnClickListener {
 
     private void setListeners() {
         startButton.setOnClickListener(this);
-        endButton.setOnClickListener(this);
+//        endButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.startButton:
-                onRedButtonClick();
+                if (counter == 0) {
+                    onRedButtonClick();
+                    counter++;
+                } else {
+                    onBlueButtonClick();
+                }
                 break;
-
-            case R.id.endButton:
-                onBlueButtonClick();
+            default:
                 break;
         }
     }
 
     private void onRedButtonClick() {
+        startButton.setText(String.format(Locale.getDefault(), "%s", context.getResources().getString(R.string.add)));
         if (redMarkerAddress == null) {
             redMarkerAddress = googleMap.getCameraPosition().target;
+            if (selectedLocations.size() == 2) {
+                LatLogModel latLogModel = new LatLogModel(START_OPENED);
+                latLogModel.setLatLng(redMarkerAddress);
+                selectedLocations.set(0, latLogModel);
+                notifyAdapterOfLocations();
+            }
         }
         String[] arr = MapUtils.getAddressByLatLng(context, redMarkerAddress);
         if (arr == null || arr.length == 0) {
@@ -141,20 +171,66 @@ public class MyLocateManager implements View.OnClickListener {
 
         redMarker = googleMap.addMarker(MapUtils.createMarker(redMarkerAddress, MapUtils.bitmapDescriptorFromVector(R.drawable.locate_marker_start)));
         locateMarkerImageView.setImageResource(R.drawable.locate_marker_end);
-        startButton.setVisibility(View.GONE);
-        endButton.setVisibility(View.VISIBLE);
+
+//        startButton.setVisibility(View.GONE);
+//        endButton.setVisibility(View.VISIBLE);
 
         builder.include(redMarkerAddress);
         updatePopup.updateAddressFrom(arr[0], arr[3]);
     }
 
     private void onBlueButtonClick() {
-        if (blueMarkerAddress == null) {
+        try {
             blueMarkerAddress = googleMap.getCameraPosition().target;
+            builder.include(blueMarkerAddress);
+            googleMap.addMarker(MapUtils.createMarker(blueMarkerAddress, MapUtils.bitmapDescriptorFromVector(R.drawable.locate_marker_end)));
+            drawPathOnMap();
+            LatLogModel latLogModel = new LatLogModel(END_OPENED);
+            latLogModel.setLatLng(blueMarkerAddress);
+            if (selectedLocations != null && selectedLocations.size() == 2) {
+                if (selectedLocations.get(1).getLatLng() == null) {
+                    selectedLocations.set(1, latLogModel);
+                } else {
+                    selectedLocations.add(latLogModel);
+                }
+            } else if (selectedLocations != null) {
+                selectedLocations.add(latLogModel);
+            }
+            notifyAdapterOfLocations();
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
+    }
 
-        builder.include(blueMarkerAddress);
-        drawPathOnMap(redMarkerAddress, blueMarkerAddress);
+    private void drawPathOnMap() {
+        try {
+            if (routeArrayList == null)
+                routeArrayList = new ArrayList<>();
+            route = new Route();
+            route.drawMultiRoute(googleMap, context, selectedLocations.get(selectedLocations.size() - 1).getLatLng() != null ? selectedLocations.get(selectedLocations.size() - 1).getLatLng() : redMarkerAddress, blueMarkerAddress, false, AppUtils.getRouteLanguage());
+            route.setDistanceListener((text, text1) -> {
+                if (text.equals("error")) {
+                    ToastHelper.toastInfo(context, context.getString(R.string.invalid_address));
+                } else {
+                    //onRouteSuccess();
+                    LocationLocateModel locationLocateModel = new LocationLocateModel();
+                    locationLocateModel.setDistance(text);
+                    locationLocateModel.setDuration(text1);
+                    locationLocateModels.add(locationLocateModel);
+                    updatePopup.updateDistanceList(locationLocateModels);
+                    if (selectedLocations != null && selectedLocations.size() > selectedLocations.size() - 1) {
+                        int position = selectedLocations.size() - 1;
+                        LatLogModel latLogModel = selectedLocations.get(position);
+                        latLogModel.setLocationLocateModel(locationLocateModel);
+                        selectedLocations.set(position, latLogModel);
+                        locationsAdapter.notifyItemChanged(position);
+                    }
+                }
+            });
+            routeArrayList.add(route);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     private void onRouteSuccess() {
@@ -164,7 +240,6 @@ public class MyLocateManager implements View.OnClickListener {
 
         blueMarker = googleMap.addMarker(MapUtils.createMarker(blueMarkerAddress, MapUtils.bitmapDescriptorFromVector(R.drawable.locate_marker_end)));
         locateMarkerImageView.setVisibility(View.GONE);
-        endButton.setVisibility(View.GONE);
 
         bounds = builder.build();
         animateCamera();
@@ -192,11 +267,11 @@ public class MyLocateManager implements View.OnClickListener {
                     @Override
                     public void onCameraIdle() {
                         //get latlng at the center by calling
-                        if (startButton.getVisibility() == View.VISIBLE) {
-                            redMarkerAddress = googleMap.getCameraPosition().target;
-                        } else {
-                            blueMarkerAddress = googleMap.getCameraPosition().target;
-                        }
+//                        if (startButton.getVisibility() == View.VISIBLE) {
+//                            redMarkerAddress = googleMap.getCameraPosition().target;
+//                        } else {
+//                            blueMarkerAddress = googleMap.getCameraPosition().target;
+//                        }
                     }
                 });
             }
@@ -210,7 +285,9 @@ public class MyLocateManager implements View.OnClickListener {
 
         mapView.addView(popupView);
         popupView.setFocusable(false);
-
+        listOfLocationsRecyclerView = (RecyclerView) popupView.findViewById(R.id.listOfLocationsRecyclerView);
+//        listOfLocationsRecyclerView.setLayoutManager(new LinearLayoutManager(context));
+        listOfLocationsRecyclerView.setLayoutManager(new SpeedyLinearLayoutManager(context, SpeedyLinearLayoutManager.VERTICAL, false));
         cancelImageView = (ImageView) popupView.findViewById(R.id.cancelImageView);
         startMarkerImageView = (ImageView) popupView.findViewById(R.id.startMarkerImageView);
         dividerView = popupView.findViewById(R.id.dividerView);
@@ -222,7 +299,10 @@ public class MyLocateManager implements View.OnClickListener {
         distanceTextView = (TextViewRegular) popupView.findViewById(R.id.distanceTextView);
         durationTextView = (TextViewRegular) popupView.findViewById(R.id.durationTextView);
         routeInfoLayout = (LinearLayout) popupView.findViewById(R.id.routeInfoLayout);
-
+        selectedLocations = new ArrayList<>();
+        locationLocateModels = new ArrayList<>();
+        selectedLocations.add(new LatLogModel(START_HIDDEN));
+        selectedLocations.add(new LatLogModel(END_HIDDEN));
         hideMapStylingFab();
         updatePopup = new UpdatePopup() {
             @Override
@@ -239,9 +319,34 @@ public class MyLocateManager implements View.OnClickListener {
 
             @Override
             public void updateDistance(String distance, String duration) {
-                routeInfoLayout.setVisibility(View.VISIBLE);
-                distanceTextView.setText(distance);
-                durationTextView.setText(duration);
+                try {
+                    routeInfoLayout.setVisibility(View.VISIBLE);
+                    distanceTextView.setText(distance);
+                    durationTextView.setText(duration);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }
+
+            @Override
+            public void updateDistanceList(ArrayList<LocationLocateModel> locationLocateModels) {
+                try {
+                    routeInfoLayout.setVisibility(View.VISIBLE);
+                    Double distance = 0.0;
+                    Double duration = 0.0;
+                    for (LocationLocateModel locationLocateModel : locationLocateModels) {
+                        String distanceString = locationLocateModel.getDistance().replaceAll("([a-z])", "");
+                        distanceString = distanceString.replaceAll(" ", "");
+                        String durationString = locationLocateModel.getDuration().replaceAll("([a-z])", "");
+                        durationString = durationString.replaceAll(" ", "");
+                        distance = Double.valueOf(distanceString) + distance;
+                        duration = Double.valueOf(durationString) + duration;
+                    }
+                    distanceTextView.setText(String.format(Locale.getDefault(), "%.2f km", distance));
+                    durationTextView.setText(String.format(Locale.getDefault(), "%s mins", duration));
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
             }
         };
 
@@ -264,6 +369,27 @@ public class MyLocateManager implements View.OnClickListener {
                     onDismissPopup();
                 }
             });
+        initAdapterOfLocations();
+    }
+
+
+    private void initAdapterOfLocations() {
+        try {
+            locationsAdapter = new SelectedLocationsAdapter(context, selectedLocations);
+            listOfLocationsRecyclerView.setAdapter(locationsAdapter);
+            locationsAdapter.notifyDataSetChanged();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    private void notifyAdapterOfLocations() {
+        try {
+            locationsAdapter.notifyDataSetChanged();
+            listOfLocationsRecyclerView.smoothScrollToPosition(selectedLocations.size());
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     public void removeViewPopup() {
@@ -273,6 +399,11 @@ public class MyLocateManager implements View.OnClickListener {
     private void onDismissPopup() {
         if (route != null)
             route.clearRoute();
+        if (routeArrayList!=null && routeArrayList.size()>0){
+            for (Route route : routeArrayList){
+                route.clearRoute();
+            }
+        }
 //        new MyResetMapManager(context, googleMap).addVehiclesMarkers(vehiclesHashMap, true);
         AnimationUtils.expand(rootView.findViewById(R.id.moreOptionsLayout));
 
@@ -284,41 +415,22 @@ public class MyLocateManager implements View.OnClickListener {
             startButton.setVisibility(View.GONE);
         }
 
-        if (endButton.getVisibility() == View.VISIBLE) {
-            endButton.setVisibility(View.GONE);
-        }
+//        if (endButton.getVisibility() == View.VISIBLE) {
+//            endButton.setVisibility(View.GONE);
+//        }
 
         if (redMarker != null) {
             redMarker.remove();
         }
-
+        googleMap.clear();
         if (blueMarker != null) {
             blueMarker.remove();
         }
         afterOnDismiss.onClick();
+        afterOnDismiss.addMaps();
         showMapStylingFab();
     }
 
-    private void drawPathOnMap(LatLng start, LatLng end) {
-        if (route == null) {
-            route = new Route();
-            route.drawRoute(googleMap, context, start, end, false, AppUtils.getRouteLanguage());
-            route.setDistanceListener(new ClickWithTwoParam() {
-                @Override
-                public void onClick(String text, String text1) {
-                    if (text.equals("error")) {
-                        ToastHelper.toastInfo(context, context.getString(R.string.invalid_address));
-                    } else {
-                        onRouteSuccess();
-                        updatePopup.updateDistance(text, text1);
-                    }
-                }
-            });
-        } else {
-            route.clearRoute();
-            route = null;
-        }
-    }
 
     private void animateCamera(LatLng locationCamera) {
         CameraPosition cameraPosition = new CameraPosition.Builder().target(locationCamera).zoom(AppConstant.ZOOM_VALUE_18).build();

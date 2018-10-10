@@ -111,6 +111,24 @@ public class Route {
         return false;
     }
 
+    public void drawMultiRoute(GoogleMap map, Context c, LatLng source, LatLng dest, boolean withIndications, String language) {
+        try {
+            mMap = map;
+            context = c;
+            if (line != null) {
+                line.remove();
+            }
+
+            lang = language;
+            String url = makeURL(source.latitude, source.longitude, dest.latitude, dest.longitude, "driving");
+//        new connectAsyncTask(url, withIndications).execute();
+            drawMultiPathApiCall(url, withIndications);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+
     public void drawRoute(GoogleMap map, Context c, LatLng source, LatLng dest, boolean withIndications, String language) {
         mMap = map;
         context = c;
@@ -244,6 +262,31 @@ public class Route {
         return poly;
     }
 
+    private void drawMultiPathApiCall(String urlPass, final boolean withSteps) {
+        final ProgressDialog progressDialog;
+        progressDialog = new ProgressDialog(context);
+        progressDialog.setMessage(context.getString(R.string.fetching_route_please_wait));
+        progressDialog.setIndeterminate(true);
+        progressDialog.show();
+
+        Utils.checkConnectingToInternet(mContext);
+        BusinessManager.getJsonFromUrl(urlPass, new ApiCallResponseString() {
+            @Override
+            public void onSuccess(int statusCode, String responseObject) {
+                progressDialog.dismiss();
+                if (responseObject != null) {
+                    drawMultiPath(responseObject, withSteps);
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, String errorResponse) {
+                progressDialog.dismiss();
+            }
+        });
+    }
+
+
     private void drawPathApiCall(String urlPass, final boolean withSteps) {
         final ProgressDialog progressDialog;
         progressDialog = new ProgressDialog(context);
@@ -306,6 +349,69 @@ public class Route {
 //        }
 //    }
 
+
+    private void drawMultiPath(String result, boolean withSteps) {
+        try {
+//            clearRoute();
+            //Tranform the string into a json object
+            final JSONObject json = new JSONObject(result);
+            JSONArray routeArray = json.getJSONArray("routes");
+
+            JSONObject routes = routeArray.getJSONObject(0);
+            JSONObject overviewPolylines = routes.getJSONObject("overview_polyline");
+            String encodedString = overviewPolylines.getString("points");
+            List<LatLng> list = decodePoly(encodedString);
+
+            if (line != null) {
+                line.remove();
+            }
+
+            for (int z = 0; z < list.size() - 1; z++) {
+                LatLng src = list.get(z);
+                LatLng dest = list.get(z + 1);
+                line = mMap.addPolyline(new PolylineOptions()
+                        .add(new LatLng(src.latitude, src.longitude), new LatLng(dest.latitude, dest.longitude))
+                        .width(AppConstant.POLY_THICKNESS)
+                        .color(ContextCompat.getColor(context, R.color.route))
+                        .geodesic(true));
+                polylines.add(line);
+            }
+
+            JSONArray arrayLegs = routes.getJSONArray("legs");
+            JSONObject legs = arrayLegs.getJSONObject(0);
+
+            JSONObject distanceObj = legs.getJSONObject("distance");
+            distance = distanceObj.getString("text");
+
+            JSONObject durationObj = legs.getJSONObject("duration");
+            duration = durationObj.getString("text");
+
+            if (clickWithTwoParam != null)
+                clickWithTwoParam.onClick(distance, duration);
+            if (withSteps) {
+//                JSONArray arrayLegs = routes.getJSONArray("legs");
+//                JSONObject legs = arrayLegs.getJSONObject(0);
+                JSONArray stepsArray = legs.getJSONArray("steps");
+                //put initial point
+
+                for (int i = 0; i < stepsArray.length(); i++) {
+                    Step step = new Step(stepsArray.getJSONObject(i));
+                    mMap.addMarker(new MarkerOptions()
+                            .position(step.location)
+                            .title(step.distance)
+                            .snippet(step.instructions)
+                            .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+                }
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+            clickWithTwoParam.onClick("error", "error");
+        } catch (Exception e) {
+            e.printStackTrace();
+            clickWithTwoParam.onClick("error", "error");
+        }
+    }
+
     private void drawPath(String result, boolean withSteps) {
         try {
             clearRoute();
@@ -342,7 +448,8 @@ public class Route {
             JSONObject durationObj = legs.getJSONObject("duration");
             duration = durationObj.getString("text");
 
-            clickWithTwoParam.onClick(distance ,duration);
+            if (clickWithTwoParam != null)
+                clickWithTwoParam.onClick(distance, duration);
             if (withSteps) {
 //                JSONArray arrayLegs = routes.getJSONArray("legs");
 //                JSONObject legs = arrayLegs.getJSONObject(0);
@@ -360,10 +467,10 @@ public class Route {
             }
         } catch (JSONException e) {
             e.printStackTrace();
-            clickWithTwoParam.onClick("error" ,"error");
-        } catch (Exception e){
+            clickWithTwoParam.onClick("error", "error");
+        } catch (Exception e) {
             e.printStackTrace();
-            clickWithTwoParam.onClick("error" ,"error");
+            clickWithTwoParam.onClick("error", "error");
         }
     }
 

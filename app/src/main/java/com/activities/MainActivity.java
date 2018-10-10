@@ -311,6 +311,11 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
             public void onClick() {
                 MAIN_ACTIVITY.finishAffinity();
             }
+
+            @Override
+            public void addMaps() {
+
+            }
         });
     }
 
@@ -324,6 +329,11 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 finish();
+            }
+
+            @Override
+            public void addMaps() {
+
             }
         });
     }
@@ -358,13 +368,21 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
             nButton = getString(R.string.no_ar);
         }
 
-        AlertDialogView.twoButtonDialog(MAIN_ACTIVITY, MAIN_ACTIVITY, message, title, yButton, nButton, () -> {
-            if (PreferencesManager.getInstance().getStringValue(SharesPrefConstants.LANGUAGE).equals(AppConstant.LANGUAGE_AR)) {
-                PreferencesManager.getInstance().setStringValue(AppConstant.LANGUAGE_EN, SharesPrefConstants.LANGUAGE);
-            } else {
-                PreferencesManager.getInstance().setStringValue(AppConstant.LANGUAGE_AR, SharesPrefConstants.LANGUAGE);
+        AlertDialogView.twoButtonDialog(MAIN_ACTIVITY, MAIN_ACTIVITY, message, title, yButton, nButton, new Click() {
+            @Override
+            public void onClick() {
+                if (PreferencesManager.getInstance().getStringValue(SharesPrefConstants.LANGUAGE).equals(AppConstant.LANGUAGE_AR)) {
+                    PreferencesManager.getInstance().setStringValue(AppConstant.LANGUAGE_EN, SharesPrefConstants.LANGUAGE);
+                } else {
+                    PreferencesManager.getInstance().setStringValue(AppConstant.LANGUAGE_AR, SharesPrefConstants.LANGUAGE);
+                }
+                changeLanguage();
             }
-            changeLanguage();
+
+            @Override
+            public void addMaps() {
+
+            }
         });
     }
 

@@ -46,6 +46,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.RandomAccessFile;
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -68,6 +69,11 @@ public class Utils {
             AlertDialogView.oneButtonDialog(_context, _context.getString(R.string.please_check_your_internet_connection), _context.getString(R.string.connection_error), _context.getString(R.string.done), new Click() {
                 @Override
                 public void onClick() {
+                }
+
+                @Override
+                public void addMaps() {
+
                 }
             });
         }
@@ -106,13 +112,13 @@ public class Utils {
         return "";
     }
 
-    public static String parseTime(String date){
+    public static String parseTime(String date) {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-dd-MM HH:mm:ss");
         try {
-            Date date1 = format.parse(date.replace("T"," "));
-            String d= new SimpleDateFormat("M MMMM yyyy, HH:mm:ss a").format(date1);
+            Date date1 = format.parse(date.replace("T", " "));
+            String d = new SimpleDateFormat("M MMMM yyyy, HH:mm:ss a").format(date1);
             return d;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return "";
@@ -157,12 +163,12 @@ public class Utils {
         }
     }
 
-    public static double getRandomNumber(double max, double min){
+    public static double getRandomNumber(double max, double min) {
         Random r = new Random();
         return min + (max - min) * r.nextDouble();
     }
 
-    public static int getRandomNumber(int max, int min){
+    public static int getRandomNumber(int max, int min) {
         Random rand = new Random();
         return rand.nextInt(max) + min;
     }
@@ -477,7 +483,7 @@ public class Utils {
 //        return REAL_FORMATTER.format(value);
 //    }
 
-    public static int colorInt(String colorHex){
+    public static int colorInt(String colorHex) {
         return Color.parseColor(colorHex);
     }
 

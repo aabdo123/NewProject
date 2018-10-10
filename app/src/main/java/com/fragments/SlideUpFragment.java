@@ -76,23 +76,17 @@ public class SlideUpFragment extends Fragment {
     private void implementAdapter() {
         list = new ArrayList<>();
         list = getSlideUpList();
-        SlideUpAdapter slideUpAdapter = new SlideUpAdapter(activity, list, new ClickStatus() {
-            @Override
-            public void onClick(boolean isShowCliched, int position) {
-                SlideUpItemsModel model = list.get(position);
-                mParentListener.onClickShow(isShowCliched, false, model.getId());
-            }
-        }, new ClickOnList() {
-            @Override
-            public void onClick(int position) {
-                SlideUpItemsModel model = list.get(position);
-                if (position == 0) {
-                    list.get(1).setShowClicked(false);// cluster
+        SlideUpAdapter slideUpAdapter = new SlideUpAdapter(activity, list, (isShowCliched, position) -> {
+            SlideUpItemsModel model = list.get(position);
+            mParentListener.onClickShow(isShowCliched, false, model.getId());
+        }, position -> {
+            SlideUpItemsModel model = list.get(position);
+            if (position == 0) {
+                list.get(1).setShowClicked(false);// cluster
 //                    list.get(3).setShowClicked(false);// landmark
 //                    list.get(4).setShowClicked(false);// geo-fence
-                }
-                mParentListener.onClickShow(false, true, model.getId());
             }
+            mParentListener.onClickShow(false, true, model.getId());
         });
         sliderRecyclerView.setAdapter(slideUpAdapter);
         slideUpAdapter.notifyDataSetChanged();

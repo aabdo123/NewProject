@@ -326,6 +326,11 @@ public class AddReportsActivity extends BaseActivity implements View.OnClickList
             public void onClick() {
                 ADD_REPORTS_ACTIVITY.finish();
             }
+
+            @Override
+            public void addMaps() {
+
+            }
         });
 //        super.onBackPressed();
     }

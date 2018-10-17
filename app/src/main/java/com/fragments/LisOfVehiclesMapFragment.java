@@ -434,14 +434,31 @@ public class LisOfVehiclesMapFragment extends Fragment implements
             if (mainChecks != null && mainChecks.size() > 0) {
                 List<Item> mainItemsFull = new ArrayList<>();
                 for (Item item : mainChecks) {
-                    if (item.getVehicleID() > 0) {
+                    if (item.getID() == null) {
                         mainItemsFull.add(item);
                     }
                 }
-
-
-
-
+                String request = new Gson().toJson(mainItemsFull);
+                AllVehiclesInHashModel.AllVehicleModel.LastLocation[] vehicleModel = new Gson().fromJson(request, AllVehiclesInHashModel.AllVehicleModel.LastLocation[].class);
+                List<AllVehiclesInHashModel.AllVehicleModel.LastLocation> arrayFromApi = Arrays.asList(vehicleModel);
+                if (vehiclesList != null) {
+                    if (vehiclesList.size() > 0) {
+                        vehiclesList.clear();
+                    }
+                    if (vehiclesHashMap != null && vehiclesHashMap.size() > 0) {
+                        vehiclesHashMap.clear();
+                    }
+                    for (AllVehiclesInHashModel.AllVehicleModel.LastLocation allVehicleModel : arrayFromApi) {
+                        AllVehiclesInHashModel.AllVehicleModel allVehicleModel1 = new AllVehiclesInHashModel.AllVehicleModel();
+                        allVehicleModel1.setVehicleID(allVehicleModel.getVehicleID());
+                        allVehicleModel1.setLastLocation(allVehicleModel);
+                        vehiclesList.add(allVehicleModel1);
+                    }
+                    openFirstTime = true;
+                    if (googleMap != null)
+                        googleMap.clear();
+                    addVehiclesMarkers();
+                }
             }
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -563,7 +580,7 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                     if (!item.isChecked()) {
                         mainChecks.remove(counter);
                     } else {
-                        mainChecks.addAll(itemLists);
+                        mainChecks.add(item);
                     }
                 }
                 counter++;
@@ -1001,37 +1018,42 @@ public class LisOfVehiclesMapFragment extends Fragment implements
     }
 
     private void addVehiclesMarkers() {
-        if (openFirstTime) {
-            if (Utils.isNotEmptyList(vehiclesList))
-                vehiclesHashMap = new LinkedHashMap<>();
-            for (AllVehiclesInHashModel.AllVehicleModel allVehicleModel : vehiclesList) {
-                AllVehiclesInHashModel inHashModel = new AllVehiclesInHashModel();
-                inHashModel.setVehicleId(allVehicleModel.getVehicleID());
-                inHashModel.setAllVehicleModel(allVehicleModel);
-                LatLng lng = new LatLng(allVehicleModel.getLastLocation().getLatitude(), allVehicleModel.getLastLocation().getLongitude());
-                Marker addMarker = googleMap.addMarker(new MarkerOptions().position(lng)
-                        .icon(AppUtils.getCarIcon(allVehicleModel.getLastLocation().getVehicleStatus()))
-                        .anchor(0.5f, 0.5f)
-                        .rotation((float) allVehicleModel.getLastLocation().getDirection())
-                        .flat(true));
-                inHashModel.setMarker(addMarker);
-                vehiclesHashMap.put(addMarker, inHashModel);
-                builder.include(lng);
-                googleMap.setOnMarkerClickListener(marker -> {
-                    if (vehiclesHashMap != null && vehiclesHashMap.size() > 0) {
-                        AllVehiclesInHashModel markerModel = vehiclesHashMap.get(marker);
-                        if (markerModel != null) {
-                            addHeaderTitle(markerModel);
-                            addBodyView(markerModel);
-                            viewSelected(true);
-                            addAndHideViews(markerModel.getVehicleId(), false);
+        try {
+            if (openFirstTime) {
+                if (Utils.isNotEmptyList(vehiclesList))
+                    vehiclesHashMap = new LinkedHashMap<>();
+                for (AllVehiclesInHashModel.AllVehicleModel allVehicleModel : vehiclesList) {
+                    AllVehiclesInHashModel inHashModel = new AllVehiclesInHashModel();
+                    if (allVehicleModel.getVehicleID() != null)
+                        inHashModel.setVehicleId(allVehicleModel.getVehicleID());
+                    inHashModel.setAllVehicleModel(allVehicleModel);
+                    LatLng lng = new LatLng(allVehicleModel.getLastLocation().getLatitude(), allVehicleModel.getLastLocation().getLongitude());
+                    Marker addMarker = googleMap.addMarker(new MarkerOptions().position(lng)
+                            .icon(AppUtils.getCarIcon(allVehicleModel.getLastLocation().getVehicleStatus()))
+                            .anchor(0.5f, 0.5f)
+                            .rotation((float) allVehicleModel.getLastLocation().getDirection())
+                            .flat(true));
+                    inHashModel.setMarker(addMarker);
+                    vehiclesHashMap.put(addMarker, inHashModel);
+                    builder.include(lng);
+                    googleMap.setOnMarkerClickListener(marker -> {
+                        if (vehiclesHashMap != null && vehiclesHashMap.size() > 0) {
+                            AllVehiclesInHashModel markerModel = vehiclesHashMap.get(marker);
+                            if (markerModel != null) {
+                                addHeaderTitle(markerModel);
+                                addBodyView(markerModel);
+                                viewSelected(true);
+                                addAndHideViews(markerModel.getVehicleId(), false);
+                            }
                         }
-                    }
-                    return false;
-                });
+                        return false;
+                    });
+                }
+                bounds = builder.build();
+                openFirstTime = false;
             }
-            bounds = builder.build();
-            openFirstTime = false;
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
     }
 

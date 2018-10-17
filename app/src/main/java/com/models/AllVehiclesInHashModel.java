@@ -38,7 +38,7 @@ public class AllVehiclesInHashModel{
         this.allVehicleModel = allVehicleModel;
     }
 
-    public class AllVehicleModel implements Parcelable{
+    public static class AllVehicleModel implements Parcelable{
         @SerializedName("VehicleID")
         @Expose
         private Integer vehicleID;
@@ -56,7 +56,7 @@ public class AllVehiclesInHashModel{
         private LastLocation lastLocation;
 
 
-        protected AllVehicleModel(Parcel in) {
+        public AllVehicleModel(Parcel in) {
             if (in.readByte() == 0) {
                 vehicleID = null;
             } else {
@@ -78,6 +78,10 @@ public class AllVehiclesInHashModel{
                 return new AllVehicleModel[size];
             }
         };
+
+        public AllVehicleModel() {
+
+        }
 
         public Integer getVehicleID() {
             return vehicleID;

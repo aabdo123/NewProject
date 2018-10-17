@@ -14,6 +14,7 @@ public interface ApiConstants {
 
     String VEHICLES = "vehicles";
     String DASHBOARD = "dashboard?vehicleid=";
+    String VEHICLE_TREE = "VehicleTree";
 
     String DATA_ANALYSIS = "Reports?VehicleID=";
     String PAGE = "&Page=";

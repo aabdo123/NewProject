@@ -23,16 +23,21 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 
+import com.R;
+import com.adapters.ExpandableAdapter;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
@@ -56,21 +61,24 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-
-import com.mancj.slideup.SlideUp;
-import com.mancj.slideup.SlideUpBuilder;
-
-import com.R;
+import com.google.gson.Gson;
+import com.managers.ApiCallResponseString;
+import com.managers.BusinessManager;
 import com.managers.PreferencesManager;
-import com.managers.map_managers.VehiclesClusterManager;
 import com.managers.map_managers.MyGeoFenceManager;
 import com.managers.map_managers.MyLandmarkManager;
 import com.managers.map_managers.MyLocateManager;
 import com.managers.map_managers.MyMapStyleManager;
+import com.managers.map_managers.VehiclesClusterManager;
+import com.mancj.slideup.SlideUp;
+import com.mancj.slideup.SlideUpBuilder;
 import com.models.AllVehiclesInHashModel;
+import com.models.Item;
 import com.models.ListOfVehiclesModel;
 import com.models.SignalRCommandModel;
 import com.models.SignalRModel;
+import com.multilevelview.MultiLevelRecyclerView;
+import com.multilevelview.models.RecyclerViewItem;
 import com.services.SignalR;
 import com.services.SignalRService;
 import com.utilities.AnimationUtils;
@@ -85,10 +93,14 @@ import com.views.Progress;
 import com.views.TextViewLight;
 import com.views.TextViewRegular;
 
-import java.text.SimpleDateFormat;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Arrays;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Locale;
 
 import static android.content.Context.LOCATION_SERVICE;
@@ -122,6 +134,7 @@ public class LisOfVehiclesMapFragment extends Fragment implements
     private LinkedHashMap<Marker, AllVehiclesInHashModel> vehiclesHashMap = new LinkedHashMap<>();
 
     private com.github.clans.fab.FloatingActionButton mapStylingFab;
+    //    private com.github.clans.fab.FloatingActionButton listStylingFab;
     public static SlideUp slideUp;
     public static SlideUp slideUpSingleCar;
     private FrameLayout sliderBgLayout;
@@ -169,11 +182,13 @@ public class LisOfVehiclesMapFragment extends Fragment implements
     private MyLandmarkManager myLandmarkManager;
     private MyMapStyleManager myMapStyleManager;
     private VehiclesClusterManager vehiclesClusterManager;
-
+    private ListView listView;
+    private List<Item> list;
+    private String jsonStringList = "[{\"title\":\"Main\",\"children\":[{\"title\":\"List\",\"children\":[{\"title\":\"Extended Child 111\",\"children\":[{\"title\":\"Super Extended Child 1111\",\"children\":[{\"VehicleID\":1968,\"Label\":\"123456789012\",\"PlateNumber\":\"1234567891\",\"SerialNumber\":\"12431231\",\"LastLocation\":{\"VehicleID\":1968,\"Speed\":0,\"TotalMileage\":0,\"TotalWorkingHours\":0,\"Direction\":0,\"Latitude\":0,\"Longitude\":0,\"Address\":\"Vehicle not connected yet\",\"StreetSpeed\":0,\"VehicleStatus\":\"5\",\"RecordDateTime\":\"2018-10-14T09:44:42.1590868+00:00\",\"IsOnline\":false,\"EngineStatus\":false,\"RecordTime\":null,\"Status\":null}},{\"VehicleID\":1968,\"Label\":\"123456789012\",\"PlateNumber\":\"1234567891\",\"SerialNumber\":\"12431231\",\"LastLocation\":{\"VehicleID\":1968,\"Speed\":0,\"TotalMileage\":0,\"TotalWorkingHours\":0,\"Direction\":0,\"Latitude\":0,\"Longitude\":0,\"Address\":\"Vehicle not connected yet\",\"StreetSpeed\":0,\"VehicleStatus\":\"5\",\"RecordDateTime\":\"2018-10-14T09:44:42.1590868+00:00\",\"IsOnline\":false,\"EngineStatus\":false,\"RecordTime\":null,\"Status\":null}}]}]},{\"title\":\"Extended Child 112\",\"children\":[]},{\"title\":\"Extended Child 113\",\"children\":[]}]},{\"title\":\"Child 12\",\"children\":[{\"title\":\"Extended Child 121\",\"children\":[]},{\"title\":\"Extended Child 122\",\"children\":[]}]},{\"title\":\"Child 13\",\"children\":[]}]},{\"title\":\"Root 2\",\"children\":[{\"title\":\"Child 21\",\"children\":[{\"title\":\"Extended Child 211\",\"children\":[]},{\"title\":\"Extended Child 212\",\"children\":[]},{\"title\":\"Extended Child 213\",\"children\":[]}]},{\"title\":\"Child 22\",\"children\":[{\"title\":\"Extended Child 221\",\"children\":[]},{\"title\":\"Extended Child 222\",\"children\":[]}]},{\"title\":\"Child 23\",\"children\":[]}]},{\"title\":\"Root 1\",\"children\":[]}]";
     private LatLngBounds.Builder builder = new LatLngBounds.Builder();
     private LatLngBounds bounds;
     private boolean openFirstTime = true;
-
+    private List<Item> mainChecks;
 
     private boolean isRandomZoomChanged = false;
     private int randomZoom;
@@ -293,6 +308,7 @@ public class LisOfVehiclesMapFragment extends Fragment implements
 
     private void initViews() {
         mapStylingFab = (com.github.clans.fab.FloatingActionButton) rootView.findViewById(R.id.mapStylingFab);
+//        listStylingFab = (com.github.clans.fab.FloatingActionButton) rootView.findViewById(R.id.listStylingFab);
         mMapView = (MapView) rootView.findViewById(R.id.mapView);
         sliderView = (LinearLayout) rootView.findViewById(R.id.slideView);
         singleSlideView = (LinearLayout) rootView.findViewById(R.id.singleSlideView);
@@ -331,9 +347,11 @@ public class LisOfVehiclesMapFragment extends Fragment implements
         workingTextView = (TextViewRegular) rootView.findViewById(R.id.workingTextView);
         sliderUpArrowImageView = (ImageView) rootView.findViewById(R.id.sliderUpArrowImageView);
         singleCarSliderArrowImageView = (ImageView) rootView.findViewById(R.id.singleCarSliderArrowImageView);
+        listView = (ListView) rootView.findViewById(R.id.listView);
 
         mMapView.setZ(0);
         mapStylingFab.setZ(1);
+//        listStylingFab.setZ(1);
         sliderBgLayout.setZ(2);
         allViewSlideLayout.setZ(3);
 
@@ -347,6 +365,7 @@ public class LisOfVehiclesMapFragment extends Fragment implements
 
     private void initListeners() {
         mapStylingFab.setOnClickListener(this);
+//        listStylingFab.setOnClickListener(this);
 
         moreOptionsLayout.setOnClickListener(this);
         singleCarMoreOptionsLayout.setOnClickListener(this);
@@ -404,6 +423,216 @@ public class LisOfVehiclesMapFragment extends Fragment implements
             PreferencesManager.getInstance().setBooleanValue(false, SharesPrefConstants.IS_MAP_STYLE_CHANGED);
         }
     }
+
+    public void showExpandableList() {
+        expandable();
+    }
+
+
+    private void addCarsOnMap() {
+        try {
+            if (mainChecks != null && mainChecks.size() > 0) {
+                List<Item> mainItemsFull = new ArrayList<>();
+                for (Item item : mainChecks) {
+                    if (item.getVehicleID() > 0) {
+                        mainItemsFull.add(item);
+                    }
+                }
+
+
+
+
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+
+    private void expandable() {
+        Progress.showLoadingDialog(activity);
+        BusinessManager.getMainVehiclesList(new ApiCallResponseString() {
+            @Override
+            public void onSuccess(int statusCode, String responseObject) {
+                try {
+                    list = new ArrayList<>();
+                    mainChecks = new ArrayList<>();
+                    final List<Item> itemLists = (List<Item>) list;
+                    JSONObject jsonObject = new JSONObject(responseObject);
+                    nestedLoop(jsonObject, 0);
+                    final android.app.Dialog dialogAndroidAppCus = new android.app.Dialog(context);
+                    dialogAndroidAppCus.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                    dialogAndroidAppCus.setContentView(R.layout.view_expandable_dialog);
+                    TextViewRegular addReportButton = (TextViewRegular) dialogAndroidAppCus.findViewById(R.id.addReportButton);
+                    addReportButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            dialogAndroidAppCus.dismiss();
+                            addCarsOnMap();
+                        }
+                    });
+                    dialogAndroidAppCus.setCancelable(true);
+                    dialogAndroidAppCus.show();
+                    final MultiLevelRecyclerView multiLevelRecyclerView = (MultiLevelRecyclerView) dialogAndroidAppCus.findViewById(R.id.rv_list);
+                    Progress.dismissLoadingDialog();
+                    multiLevelRecyclerView.setLayoutManager(new LinearLayoutManager(context));
+                    final ExpandableAdapter expandableAdapter = new ExpandableAdapter(context, itemLists, multiLevelRecyclerView, new ExpandableAdapter.ActionsInterface() {
+                        @Override
+                        public void ItemClicked(Item item, int position, boolean checkedState, String clickState) {
+                            Progress.showLoadingDialog(activity);
+                            BusinessManager.getMainVehiclesListWithQuery(item.getID(), new ApiCallResponseString() {
+                                @Override
+                                public void onSuccess(int statusCode, String responseObject) {
+                                    Progress.dismissLoadingDialog();
+                                    try {
+                                        Item[] vehicleModel = new Gson().fromJson(responseObject, Item[].class);
+                                        List<Item> arrayFromApi = Arrays.asList(vehicleModel);
+                                        for (int x = 0; x < arrayFromApi.size(); x++) {
+                                            arrayFromApi.get(x).setLevel(item.getLevel());
+                                        }
+                                        Item mainItemsList = itemLists.get(position);
+                                        if (mainItemsList.getChildren() != null) {
+                                            mainItemsList.getChildren().clear();
+                                            List<?> newRepositoryArrayListFromChildrenToCHilde = mainItemsList.getChilds();
+                                            mainItemsList.addChildren((List<RecyclerViewItem>) newRepositoryArrayListFromChildrenToCHilde);
+                                        }
+                                        List<?> arrayFromApiCasting = arrayFromApi;
+                                        List<RecyclerViewItem> castedArrayFromApiCasting = ((List<RecyclerViewItem>) arrayFromApiCasting);
+                                        List<RecyclerViewItem> newRepositoryArrayList = new ArrayList<>();
+                                        if (mainItemsList.getChildren() != null) {
+                                            List<RecyclerViewItem> castedMainItemsList = ((List<RecyclerViewItem>) mainItemsList.getChildren());
+                                            newRepositoryArrayList.addAll(castedMainItemsList);
+                                        }
+                                        newRepositoryArrayList.addAll(castedArrayFromApiCasting);
+                                        // check box selection
+                                        if (item != null && item.getChildren() != null && item.getChildren().size() > 0) {
+                                            List<?> newIsChecked = newRepositoryArrayList;
+                                            List<Item> casted = ((List<Item>) newIsChecked);
+                                            for (int x = 0; x < casted.size(); x++) {
+                                                Item itemMain = casted.get(x);
+                                                itemMain.setChecked(checkedState);
+                                            }
+                                            checkCheckedVials(casted, clickState, "add");
+                                        }
+                                        //
+                                        mainItemsList.addChildren(newRepositoryArrayList);
+                                        multiLevelRecyclerView.toggleItemsGroup(position);
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+
+                                @Override
+                                public void onFailure(int statusCode, String errorResponse) {
+                                    try {
+                                        Progress.dismissLoadingDialog();
+                                        if (statusCode > 0 && responseObject != null) {
+                                            List<Item> casted = new ArrayList<>();
+                                            casted.add(item);
+                                            checkCheckedVials(casted, clickState, "remove");
+                                        }
+                                    } catch (Exception ex) {
+                                        ex.printStackTrace();
+                                    }
+                                }
+                            });
+                        }
+                    });
+                    multiLevelRecyclerView.setAdapter(expandableAdapter);
+                    multiLevelRecyclerView.setToggleItemOnClick(false);
+                    multiLevelRecyclerView.setAccordion(false);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, String errorResponse) {
+                Progress.dismissLoadingDialog();
+            }
+        });
+    }
+
+
+    private void checkCheckedVials(List<Item> itemLists, String state, String addState) {
+        try {
+            int counter = 0;
+            for (Item item : itemLists) {
+                if (state.equalsIgnoreCase("checked")) {
+                    if (!item.isChecked()) {
+                        mainChecks.remove(counter);
+                    } else {
+                        mainChecks.addAll(itemLists);
+                    }
+                }
+                counter++;
+            }
+            if (addState.equalsIgnoreCase("add") && state.equalsIgnoreCase("checked")) {
+                mainChecks.addAll(itemLists);
+            }
+            Log.e("s", "s");
+            //nestedLoop(itemLists, 0);
+            //Log.e("s", "s");
+//            for (int x = 0; x < itemLists.size(); x++) {
+//                if (itemLists.get(x) != null && itemLists.get(x).getVehicleID() > 0 && (itemLists.get(x).isChecked() || itemLists.get(x).isClicked())) {
+//
+//
+//                }
+//            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+
+    private void nestedLoop(List<Item> itemList, int level) {
+        try {
+            int length = itemList.size();
+            for (int i = 0; i < length; i++) {
+                level = level + 1;
+                if (itemList.get(i) != null && itemList.get(i).getChildren() != null) {
+                    int childrenSize = itemList.get(i).getChildren().size();
+                    List<?> itemMainLists = itemList.get(i).getChildren();
+                    List<Item> castedArrayFromApiCasting = ((List<Item>) itemMainLists);
+                    if (childrenSize > 0) {
+                        nestedLoop(castedArrayFromApiCasting, level);
+                    }
+                    mainChecks.addAll(castedArrayFromApiCasting);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private void nestedLoop(JSONObject levelList, int level) {
+        try {
+            JSONArray jsonArrayStringList = levelList.getJSONArray("Childs");
+            int length = jsonArrayStringList.length();
+            for (int i = 0; i < length; i++) {
+                JSONObject itemObject = jsonArrayStringList.getJSONObject(i);
+                if (itemObject.has("Childs") && !itemObject.isNull("Childs")) {
+                    int childrenSize = itemObject.getJSONArray("Childs").length();
+                    if (childrenSize > 0) {
+                        level = level + 1;
+                        nestedLoop(itemObject, level);
+                    }
+                    List<?> itemsList = Item.parseArray(itemObject.getJSONArray("Childs"));
+                    Item items = Item.parse(itemObject);
+                    List<RecyclerViewItem> children = ((List<RecyclerViewItem>) itemsList);
+                    items.addChildren(children);
+                    items.setLevel(level);
+                    list.add(items);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
 
     private void setMapStyleDialog() {
         myMapStyleManager = new MyMapStyleManager(fragmentActivity, googleMap);
@@ -845,23 +1074,43 @@ public class LisOfVehiclesMapFragment extends Fragment implements
 
     private void addBodyView(AllVehiclesInHashModel markerModel) {
         try {
-            timeTextView.setText(String.format(Locale.getDefault(), "%s", Utils.parseTime(markerModel.getAllVehicleModel().getLastLocation().getRecordDateTime())));
-            kmTextView.setText(String.format(Locale.getDefault(), "%s km/h", markerModel.getAllVehicleModel().getLastLocation().getSpeed()));
-            timerTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel().getLastLocation().getDirection())); // fraction
-            infoTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel().getLastLocation().getVehicleStatus())); //
-            offTextView.setText(String.format(Locale.getDefault(), "%s", "N/A"));// engen statuds
-            nATextView.setText(String.format(Locale.getDefault(), "%s", "N/A")); //note not get
-            visaTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel().getPlateNumber()));
-            barCodeTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel().getSerialNumber()));
-            closedTextView.setText(String.format(Locale.getDefault(), "%s", "N/A"));
-            beltTextView.setText(String.format(Locale.getDefault(), "%s", "N/A"));
-            needlTextView.setText(String.format(Locale.getDefault(), "%s", "N/A"));
-            gasTextView.setText(String.format(Locale.getDefault(), "%s", "N/A"));
-            humanTextView.setText(String.format(Locale.getDefault(), "%s", "N/A"));
-            cardTextView.setText(String.format(Locale.getDefault(), "%s", "N/A"));
-            addressTextView.setText(String.format(Locale.getDefault(), "%s", "N/A"));
-            mileageTextView.setText(String.format(Locale.getDefault(), "Mileage: %s", markerModel.getAllVehicleModel().getLastLocation().getTotalMileage()));
-            workingTextView.setText(String.format(Locale.getDefault(), "Working Hours: %s", markerModel.getAllVehicleModel().getLastLocation().getTotalWorkingHours()));
+            if (markerModel != null && markerModel.getAllVehicleModel() != null && markerModel.getAllVehicleModel().getLastLocation() != null && markerModel.getAllVehicleModel().getLastLocation().getRecordDateTime() != null)
+                timeTextView.setText(String.format(Locale.getDefault(), "%s", Utils.parseTime(markerModel.getAllVehicleModel().getLastLocation().getRecordDateTime())));
+
+            if (markerModel != null && markerModel.getAllVehicleModel() != null && markerModel.getAllVehicleModel().getLastLocation() != null)
+                kmTextView.setText(String.format(Locale.getDefault(), "%s km/h", markerModel.getAllVehicleModel().getLastLocation().getSpeed()));
+
+            if (markerModel != null && markerModel.getAllVehicleModel() != null && markerModel.getAllVehicleModel().getLastLocation() != null)
+                timerTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel().getLastLocation().getDirection())); // fraction
+
+            if (markerModel != null && markerModel.getAllVehicleModel() != null && markerModel.getAllVehicleModel().getLastLocation() != null && markerModel.getAllVehicleModel().getLastLocation().getVehicleStatus() != null)
+                infoTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel().getLastLocation().getVehicleStatus())); //
+
+            if (markerModel != null && markerModel.getAllVehicleModel() != null && markerModel.getAllVehicleModel().getLastLocation() != null && markerModel.getAllVehicleModel().getLastLocation().getVehicleStatus() != null)
+                offTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel().getLastLocation().getVehicleStatus()));// engen statuds
+
+            if (markerModel != null && markerModel.getAllVehicleModel() != null && markerModel.getAllVehicleModel().getLastLocation() != null && markerModel.getAllVehicleModel().getPlateNumber() != null)
+                visaTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel().getPlateNumber()));
+
+            if (markerModel != null && markerModel.getAllVehicleModel() != null && markerModel.getAllVehicleModel().getLastLocation() != null && markerModel.getAllVehicleModel().getSerialNumber() != null)
+                barCodeTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel().getSerialNumber()));
+
+            nATextView.setText(String.format(Locale.getDefault(), "%s", "N/A")); // capten view
+            closedTextView.setText(String.format(Locale.getDefault(), "%s", "N/A")); // vehicle OpenDoors view
+            beltTextView.setText(String.format(Locale.getDefault(), "%s", "N/A")); // seat bilt
+            needlTextView.setText(String.format(Locale.getDefault(), "%s", "N/A")); // needel view
+            gasTextView.setText(String.format(Locale.getDefault(), "%s", "N/A")); // gas view
+            humanTextView.setText(String.format(Locale.getDefault(), "%s", "N/A")); // persons view
+            cardTextView.setText(String.format(Locale.getDefault(), "%s", "N/A")); // sim card view
+
+            if (markerModel != null && markerModel.getAllVehicleModel() != null && markerModel.getAllVehicleModel().getLastLocation() != null && markerModel.getAllVehicleModel().getLastLocation().getAddress() != null)
+                addressTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel().getLastLocation().getAddress())); //
+
+            if (markerModel != null && markerModel.getAllVehicleModel() != null && markerModel.getAllVehicleModel().getLastLocation() != null)
+                mileageTextView.setText(String.format(Locale.getDefault(), "Mileage: %s", markerModel.getAllVehicleModel().getLastLocation().getTotalMileage()));
+
+            if (markerModel != null && markerModel.getAllVehicleModel() != null && markerModel.getAllVehicleModel().getLastLocation() != null)
+                workingTextView.setText(String.format(Locale.getDefault(), "Working Hours: %s", markerModel.getAllVehicleModel().getLastLocation().getTotalWorkingHours()));
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -1094,7 +1343,6 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                     .addOnConnectionFailedListener(new GoogleApiClient.OnConnectionFailedListener() {
                         @Override
                         public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-
                             Log.d("Location error", "Location error " + connectionResult.getErrorCode());
                         }
                     }).build();

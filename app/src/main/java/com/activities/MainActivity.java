@@ -49,6 +49,7 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
     private Toolbar toolbar;
     private TextViewRegular toolbarTitleTextView;
     private ImageView addReportButton;
+    private ImageView expandableListButton;
     private Stack<String> pageTitleList = new Stack<>();
     private boolean isReplacer = false;
 
@@ -69,6 +70,7 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         toolbarTitleTextView = (TextViewRegular) findViewById(R.id.toolbarTitleTextView);
         addReportButton = (ImageView) findViewById(R.id.addReportButton);
+        expandableListButton = (ImageView) findViewById(R.id.expandableListButton);
         drawerFragment = (FragmentDrawer) getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
         drawerFragment.setUp(R.id.fragment_navigation_drawer, drawer, toolbar);
         drawerFragment.setDrawerListener(this);
@@ -81,6 +83,14 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
 //                displayView(R.string.nav_scheduled_reports, getString(R.string.nav_scheduled_reports));
 //                call(ReportsIncludedFragment.newInstance(), "");
                 Utils.openActivity(MAIN_ACTIVITY, AddReportsActivity.class);
+            }
+        });
+        expandableListButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.container_body);
+                LisOfVehiclesMapFragment lisOfVehiclesMapFragment = (LisOfVehiclesMapFragment) fragment;
+                lisOfVehiclesMapFragment.showExpandableList();
             }
         });
     }
@@ -142,7 +152,7 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
 //                new FragmentCaller().call(MAIN_ACTIVITY, null);
                 break;
 
-            case R.string.nav_map:
+            case R.string.nav_map://0795258181
                 new MyStartMapViewManager(MAIN_ACTIVITY);
                 break;
 
@@ -232,6 +242,11 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
                 } else {
                     hideImageToolbar();
                 }
+                if (title.equals(getString(R.string.nav_map))) {
+                    showExpandableImageToolbar();
+                } else {
+                    hideExpandableImageToolbar();
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -253,6 +268,11 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
                     showImageToolbar();
                 } else {
                     hideImageToolbar();
+                }
+                if (title.equals(getString(R.string.nav_map))) {
+                    showExpandableImageToolbar();
+                } else {
+                    hideExpandableImageToolbar();
                 }
             }
         } catch (Exception e) {
@@ -303,6 +323,14 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
 
     public void showImageToolbar() {
         addReportButton.setVisibility(View.VISIBLE);
+    }
+
+    public void hideExpandableImageToolbar() {
+        expandableListButton.setVisibility(View.GONE);
+    }
+
+    public void showExpandableImageToolbar() {
+        expandableListButton.setVisibility(View.VISIBLE);
     }
 
     private void backDialog() {

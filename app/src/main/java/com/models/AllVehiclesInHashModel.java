@@ -175,6 +175,9 @@ public class AllVehiclesInHashModel{
             @SerializedName("IsOnline")
             @Expose
             private Boolean isOnline;
+            @SerializedName("EngineStatus")
+            @Expose
+            private Boolean engineStatus;
 
             protected LastLocation(Parcel in) {
                 if (in.readByte() == 0) {
@@ -198,6 +201,7 @@ public class AllVehiclesInHashModel{
                 recordDateTime = in.readString();
                 byte tmpIsOnline = in.readByte();
                 isOnline = tmpIsOnline == 0 ? null : tmpIsOnline == 1;
+                engineStatus = tmpIsOnline == 0 ? null : tmpIsOnline == 1;
             }
 
             public final Creator<LastLocation> CREATOR = new Creator<LastLocation>() {
@@ -211,6 +215,14 @@ public class AllVehiclesInHashModel{
                     return new LastLocation[size];
                 }
             };
+
+            public Boolean getEngineStatus() {
+                return engineStatus;
+            }
+
+            public void setEngineStatus(Boolean engineStatus) {
+                this.engineStatus = engineStatus;
+            }
 
             public Integer getVehicleID() {
                 return vehicleID;

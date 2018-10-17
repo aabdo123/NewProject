@@ -112,6 +112,43 @@ public class BusinessManager {
         });
     }
 
+    public static void getMainVehiclesList(final ApiCallResponseString callResponse) {
+        final String url = ApiConstants.ROOT_API + ApiConstants.VEHICLE_TREE;
+        RequestParams params = new RequestParams();
+        ConnectionManager.doRequestText(AppConstant.GET, url, params, new TextHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, String responseString) {
+                Log.e("postVehicles", url + "  >>> " + statusCode + "\n>>>>" + responseString);
+                callResponse.onSuccess(statusCode, responseString);
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                Log.e("postVehicles", url + "   >>>   " + statusCode + "  >>>>  ", throwable);
+                Log.e("postVehicles", url + "   >>>   " + statusCode + "  >>>>  " + String.valueOf(responseString));
+                callResponse.onFailure(statusCode, responseString);
+            }
+        });
+    }
+
+    public static void getMainVehiclesListWithQuery(String id, final ApiCallResponseString callResponse) {
+        final String url = ApiConstants.ROOT_API + ApiConstants.VEHICLE_TREE + "?query=" + id;
+        RequestParams params = new RequestParams();
+        ConnectionManager.doRequestText(AppConstant.GET, url, params, new TextHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, String responseString) {
+                Log.e("postVehicles", url + "  >>> " + statusCode + "\n>>>>" + responseString);
+                callResponse.onSuccess(statusCode, responseString);
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                Log.e("postVehicles", url + "   >>>   " + statusCode + "  >>>>  ", throwable);
+                Log.e("postVehicles", url + "   >>>   " + statusCode + "  >>>>  " + String.valueOf(responseString));
+                callResponse.onFailure(statusCode, responseString);
+            }
+        });
+    }
 
     public static void getJsonFromUrl(final String url, final ApiCallResponseString callResponse) {
         ConnectionManager.doRequestText(AppConstant.GET, url, null, new TextHttpResponseHandler() {
@@ -242,7 +279,7 @@ public class BusinessManager {
 
     public static void postGeoFence(String vehicleId, String geoName, double longitude, double latitude, String radius, String speed, boolean isin, boolean isout, final ApiCallResponseString callResponse) {
 //        final String url = ApiConstants.ROOT_API + ApiConstants.GEO_FECES;
-      final String url = ApiConstants.ROOT_API + ApiConstants.GEO_FECES_ + vehicleId + "&geofenceName=" + geoName + "&Longitude=" + longitude + "&Latitude=" + latitude +
+        final String url = ApiConstants.ROOT_API + ApiConstants.GEO_FECES_ + vehicleId + "&geofenceName=" + geoName + "&Longitude=" + longitude + "&Latitude=" + latitude +
                 "&Radius=" + radius + "&Speed=" + speed + "&isin=" + isin + "&isout=" + isout;
         RequestParams params = new RequestParams();
 //        params.put("VehicleID", vehicleId);

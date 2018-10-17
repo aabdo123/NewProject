@@ -44,7 +44,7 @@ public class MyStartMapViewManager {
             @Override
             public void onFailure(int statusCode, String errorResponse) {
                 Progress.dismissLoadingDialog();
-//                ((MainActivity) activity).call(LisOfVehiclesMapFragment.newInstance(new ArrayList<>(), new ArrayList<>()), activity.getString(R.string.nav_map));
+ //                ((MainActivity) activity).call(LisOfVehiclesMapFragment.newInstance(new ArrayList<>(), new ArrayList<>()), activity.getString(R.string.nav_map));
             }
         });
     }

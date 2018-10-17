@@ -39,6 +39,18 @@
                     android:layout_marginEnd="@dimen/dp_16"
                     android:contentDescription="@string/add"
                     android:src="@drawable/fab_add" />
+
+                <ImageView
+                    android:id="@+id/expandableListButton"
+                    android:layout_width="@dimen/dp_30"
+                    android:layout_height="@dimen/dp_30"
+                    android:visibility="gone"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:contentDescription="@string/add"
+                    android:src="@drawable/fab_add" />
+
             </RelativeLayout>
 
         </android.support.v7.widget.Toolbar>

@@ -12,16 +12,32 @@
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom" />
 
-    <com.github.clans.fab.FloatingActionButton
-        android:id="@+id/mapStylingFab"
-        style="@style/MenuButtonsSmall"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/mapView"
-        android:layout_alignTop="@+id/mapView"
-        android:layout_margin="@dimen/dp_8"
-        android:elevation="@dimen/dp_4"
-        android:src="@drawable/ic_map_layers" />
+        android:layout_alignParentEnd="true"
+        android:orientation="vertical">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/mapStylingFab"
+            style="@style/MenuButtonsSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_8"
+            android:elevation="@dimen/dp_4"
+            android:src="@drawable/ic_map_layers" />
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="225dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginBottom="@dimen/dp_50"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="-7dp"
+            android:visibility="gone" />
+    </LinearLayout>
+
 
     <ImageView
         android:id="@+id/locateMarkerImageView"
@@ -57,15 +73,15 @@
             android:visibility="gone" />
 
         <!--<com.views.ButtonBold-->
-            <!--android:id="@+id/endButton"-->
-            <!--android:layout_width="@dimen/dp_250"-->
-            <!--android:layout_height="@dimen/dp_45"-->
-            <!--android:layout_gravity="center_horizontal"-->
-            <!--android:background="@drawable/button_shape"-->
-            <!--android:text="@string/select"-->
-            <!--android:textAllCaps="false"-->
-            <!--android:textColor="@color/white"-->
-            <!--android:visibility="gone" />-->
+        <!--android:id="@+id/endButton"-->
+        <!--android:layout_width="@dimen/dp_250"-->
+        <!--android:layout_height="@dimen/dp_45"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:background="@drawable/button_shape"-->
+        <!--android:text="@string/select"-->
+        <!--android:textAllCaps="false"-->
+        <!--android:textColor="@color/white"-->
+        <!--android:visibility="gone" />-->
     </LinearLayout>
 
     <android.support.design.widget.CoordinatorLayout
@@ -130,8 +146,8 @@
 
                     <ImageView
                         android:layout_width="@dimen/dp_25"
-                        android:layout_gravity="center"
                         android:layout_height="@dimen/dp_20"
+                        android:layout_gravity="center"
                         android:background="@drawable/ic_car_filled" />
 
                     <com.views.TextViewLight
@@ -140,9 +156,9 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/dp_16"
                         android:ellipsize="end"
                         android:maxLines="1"
-                        android:layout_marginStart="@dimen/dp_16"
                         android:text="@string/more_options"
                         android:textColor="@color/white"
                         tools:ignore="RelativeOverlap" />
@@ -157,19 +173,19 @@
 
                     <ImageView
                         android:layout_width="@dimen/dp_25"
-                        android:layout_gravity="center"
                         android:layout_height="@dimen/dp_20"
+                        android:layout_gravity="center"
                         android:background="@drawable/ic_marker_white" />
 
                     <com.views.TextViewRegular
                         android:id="@+id/singleCarSliderAddressTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:ellipsize="end"
-                        android:maxLines="1"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
                         android:layout_marginStart="@dimen/dp_16"
+                        android:ellipsize="end"
+                        android:maxLines="1"
                         android:text="@string/more_options"
                         android:textColor="@color/white"
                         android:textSize="13sp"

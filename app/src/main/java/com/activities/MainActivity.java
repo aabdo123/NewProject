@@ -113,7 +113,7 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
                     return;
                 }
             }
-
+            hideExpandableImageToolbar();
             // TODO to be removed
             if (isReplacer) {
                 pageTitleList.pop();

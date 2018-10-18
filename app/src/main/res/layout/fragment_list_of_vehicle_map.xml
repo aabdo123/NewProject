@@ -159,7 +159,6 @@
                         android:layout_marginStart="@dimen/dp_16"
                         android:ellipsize="end"
                         android:maxLines="1"
-                        android:text="@string/more_options"
                         android:textColor="@color/white"
                         tools:ignore="RelativeOverlap" />
                 </LinearLayout>

@@ -138,6 +138,7 @@
     <string name="vehicles_list">قائمة المركبات</string>
     <string name="logout">تسجيل الخروج</string>
     <string name="are_you_sure_do_want_to_logout">هل تريد بالتأكيد تسجيل الخروج؟</string>
+    <string name="vehicles">مركبة</string>
     <!--<string name="are_you_sure_do_want_to_exit_saferoad">هل تريد بالتأكيد الخروج من saferoad؟</string>-->
     <string name="save_password">حفظ كلمة المرور</string>
     <string name="group">مجموعة</string>
@@ -263,4 +264,5 @@
     <string name="landmark_home">المنزل</string>
     <string name="recognizable_objects_for_places_on_the_map">مواضع لمناطق يمكن تمييزها على الخريطة</string>
     <string name="dispaly_the_number_of_aggregated_vehicles">إظهار عدد المركبات المجمعة</string>
+    <string name="filter_list">فلتر</string>
 </resources>

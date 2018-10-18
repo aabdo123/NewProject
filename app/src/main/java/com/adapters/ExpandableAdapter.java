@@ -1,9 +1,7 @@
 package com.adapters;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +9,6 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.R;
 import com.models.Item;
@@ -63,34 +60,57 @@ public class ExpandableAdapter extends MultiLevelAdapter {
         mItem = mListItems.get(position);
         try {
             if (mItem.getID() != null) {
-                mViewHolder.carImageView.setVisibility(View.GONE);
-            } else {
-                mViewHolder.carImageView.setVisibility(View.VISIBLE);
-                if (mItem.getVehicleStatus() != null) {
-                    mViewHolder.carImageView.setBackground(AppUtils.getCarIconDrawable(mContext, mItem.getVehicleStatus()));
+                String firstOne = mItem.getID().substring(0, 1);
+                if (firstOne.equalsIgnoreCase("G")) {
+                    mViewHolder.carImageView.setVisibility(View.GONE);
+                    mViewHolder.mainWidth.setVisibility(View.GONE);
+                } else {
+                    mViewHolder.carImageView.setVisibility(View.VISIBLE);
+                    mViewHolder.mainWidth.setVisibility(View.VISIBLE);
+                    if (mItem.getVehicleStatus() != null) {
+                        mViewHolder.carImageView.setBackground(AppUtils.getCarIconDrawable(mContext, mItem.getVehicleStatus()));
+                    }
                 }
             }
+
+//            else {
+//                mViewHolder.carImageView.setVisibility(View.VISIBLE);
+//                if (mItem.getVehicleStatus() != null) {
+//                    mViewHolder.carImageView.setBackground(AppUtils.getCarIconDrawable(mContext, mItem.getVehicleStatus()));
+//                }
+//            }
             if (mItem.hasChildren() && mItem.getChildren().size() > 0) {
 //                setExpandButton(mViewHolder.mExpandIcon, mItem.isExpanded());
                 mViewHolder.mExpandButton.setVisibility(View.VISIBLE);
+                mViewHolder.mSubtitle.setVisibility(View.VISIBLE);
+                mViewHolder.mSubtitle.setText(String.format(Locale.getDefault(), "%s %s", mItem.getChildren().size(), mContext.getResources().getString(R.string.vehicles)));
             } else {
                 mViewHolder.mExpandButton.setVisibility(View.GONE);
+                mViewHolder.mSubtitle.setVisibility(View.GONE);
             }
             mViewHolder.mTitle.setText(String.format(Locale.getDefault(), "%s", mItem.getName() != null ? mItem.getName() : mItem.getVehicleDisplayName() != null ? mItem.getVehicleDisplayName() : ""));
-//            mViewHolder.mSubtitle.setText(String.format(Locale.getDefault(), "%s", mItem.getID() != null ? mItem.getID() : mItem.getVehicleID() > 0 ? mItem.getVehicleID() : ""));
+
+
+//
+//            if (mItem.isClicked()) {
+//                mViewHolder.mExpandIcon.setRotation(-180);
+//            } else {
+//                mViewHolder.mExpandIcon.setRotation(0);
+//            }
+
 
             if (mItem.isClicked()) {
-                mViewHolder.mExpandIcon.setRotation(-180);
+                mViewHolder.mExpandIcon.setBackground(mContext.getResources().getDrawable(R.drawable.group_collapse));
             } else {
-                mViewHolder.mExpandIcon.setRotation(0);
+                mViewHolder.mExpandIcon.setBackground(mContext.getResources().getDrawable(R.drawable.group_expand));
             }
+
 
             if (mItem.isChecked()) {
                 mViewHolder.checkBoxCheckBox.setChecked(true);
             } else {
                 mViewHolder.checkBoxCheckBox.setChecked(false);
             }
-
 
 
 //            Item item = mListItems.get(position);
@@ -174,10 +194,12 @@ public class ExpandableAdapter extends MultiLevelAdapter {
         private CheckBox checkBoxCheckBox;
         private ImageView carImageView;
         private LinearLayout mainItemViewLinearLayout;
+        private View mainWidth;
 
         Holder(View itemView) {
             super(itemView);
             mTitle = (TextView) itemView.findViewById(R.id.title);
+            mainWidth = (View) itemView.findViewById(R.id.mainWidth);
             mSubtitle = (TextView) itemView.findViewById(R.id.subtitle);
             mExpandIcon = (ImageView) itemView.findViewById(R.id.image_view);
             mTextBox = (LinearLayout) itemView.findViewById(R.id.text_box);
@@ -191,6 +213,8 @@ public class ExpandableAdapter extends MultiLevelAdapter {
                     mExpandButton.performClick();
                 }
             });
+
+
             mExpandButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -199,11 +223,12 @@ public class ExpandableAdapter extends MultiLevelAdapter {
                         Item item = mListItems.get(position);
                         if (!item.isClicked()) {
                             item.setClicked(true);
-                            actionsInterface.ItemClicked(item, position, item.isChecked(), "click");
-                            mExpandIcon.animate().rotation(-180).start();
+//                            actionsInterface.ItemClicked(item, position, item.isChecked(), "click");
+                            mMultiLevelRecyclerView.toggleItemsGroup(position);
+                            mExpandIcon.setBackground(mContext.getResources().getDrawable(R.drawable.group_collapse));
                         } else {
                             item.setClicked(false);
-                            mExpandIcon.animate().rotation(0).start();
+                            mExpandIcon.setBackground(mContext.getResources().getDrawable(R.drawable.group_expand));
                             mMultiLevelRecyclerView.toggleItemsGroup(position);
                         }
 //                        mMultiLevelRecyclerView.toggleItemsGroup(position);
@@ -216,19 +241,19 @@ public class ExpandableAdapter extends MultiLevelAdapter {
                 @Override
                 public void onClick(View v) {
                     try {
+                        String state = "vehicle";
                         int position = getAdapterPosition();
                         Item item = mListItems.get(position);
                         item.setChecked(!item.isChecked());
-                        if (!item.isClicked()) {
-                            item.setClicked(true);
-                            actionsInterface.ItemClicked(item, position, item.isChecked(), "checked");
-                            mExpandIcon.animate().rotation(-180).start();
-                        } else {
-                            item.setClicked(false);
-                            mExpandIcon.animate().rotation(0).start();
-                            mMultiLevelRecyclerView.toggleItemsGroup(position);
+                        if (item.getID() != null) {
+                            String firstOne = item.getID().substring(0, 1);
+                            if (firstOne.equalsIgnoreCase("G")) {
+                                state = "grope";
+                            }else {
+                                state = "vehicle";
+                            }
                         }
-//                        mMultiLevelRecyclerView.toggleItemsGroup(position);
+                        actionsInterface.ItemClicked(item, position, item.isChecked(), state);
                     } catch (Exception ex) {
                         ex.printStackTrace();
                     }

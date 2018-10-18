@@ -65,6 +65,7 @@ import com.google.gson.Gson;
 import com.managers.ApiCallResponseString;
 import com.managers.BusinessManager;
 import com.managers.PreferencesManager;
+import com.managers.ShortTermManager;
 import com.managers.map_managers.MyGeoFenceManager;
 import com.managers.map_managers.MyLandmarkManager;
 import com.managers.map_managers.MyLocateManager;
@@ -189,6 +190,7 @@ public class LisOfVehiclesMapFragment extends Fragment implements
     private LatLngBounds bounds;
     private boolean openFirstTime = true;
     private List<Item> mainChecks;
+    private ExpandableAdapter expandableAdapter;
 
     private boolean isRandomZoomChanged = false;
     private int randomZoom;
@@ -431,33 +433,43 @@ public class LisOfVehiclesMapFragment extends Fragment implements
 
     private void addCarsOnMap() {
         try {
-            if (mainChecks != null && mainChecks.size() > 0) {
+            if (list != null && list.size() > 0) {
                 List<Item> mainItemsFull = new ArrayList<>();
-                for (Item item : mainChecks) {
-                    if (item.getID() == null) {
-                        mainItemsFull.add(item);
+                for (Item item : list) {
+
+
+                    if (item.isChecked()) {
+                        if (item.getID() != null) {
+                            String firstOne = item.getID().substring(0, 1);
+                            if (firstOne.equalsIgnoreCase("V")) {
+                                mainItemsFull.add(item);
+                            }
+                        }
                     }
                 }
-                String request = new Gson().toJson(mainItemsFull);
-                AllVehiclesInHashModel.AllVehicleModel.LastLocation[] vehicleModel = new Gson().fromJson(request, AllVehiclesInHashModel.AllVehicleModel.LastLocation[].class);
-                List<AllVehiclesInHashModel.AllVehicleModel.LastLocation> arrayFromApi = Arrays.asList(vehicleModel);
-                if (vehiclesList != null) {
-                    if (vehiclesList.size() > 0) {
-                        vehiclesList.clear();
+                if (mainItemsFull.size() > 0) {
+                    String request = new Gson().toJson(mainItemsFull);
+                    AllVehiclesInHashModel.AllVehicleModel.LastLocation[] vehicleModel = new Gson().fromJson(request, AllVehiclesInHashModel.AllVehicleModel.LastLocation[].class);
+                    List<AllVehiclesInHashModel.AllVehicleModel.LastLocation> arrayFromApi = Arrays.asList(vehicleModel);
+                    if (vehiclesList != null) {
+                        if (vehiclesList.size() > 0) {
+                            vehiclesList.clear();
+                        }
+                        if (vehiclesHashMap != null && vehiclesHashMap.size() > 0) {
+                            vehiclesHashMap.clear();
+                        }
+                        for (AllVehiclesInHashModel.AllVehicleModel.LastLocation allVehicleModel : arrayFromApi) {
+                            AllVehiclesInHashModel.AllVehicleModel allVehicleModel1 = new AllVehiclesInHashModel.AllVehicleModel();
+                            allVehicleModel1.setVehicleID(allVehicleModel.getVehicleID() != null ? allVehicleModel.getVehicleID() : 0);
+                            allVehicleModel1.setLastLocation(allVehicleModel);
+                            allVehicleModel1.setLabel(allVehicleModel.getVehicleDisplayName() != null ? allVehicleModel.getVehicleDisplayName() : "");
+                            vehiclesList.add(allVehicleModel1);
+                        }
+                        openFirstTime = true;
+                        if (googleMap != null)
+                            googleMap.clear();
+                        addVehiclesMarkers();
                     }
-                    if (vehiclesHashMap != null && vehiclesHashMap.size() > 0) {
-                        vehiclesHashMap.clear();
-                    }
-                    for (AllVehiclesInHashModel.AllVehicleModel.LastLocation allVehicleModel : arrayFromApi) {
-                        AllVehiclesInHashModel.AllVehicleModel allVehicleModel1 = new AllVehiclesInHashModel.AllVehicleModel();
-                        allVehicleModel1.setVehicleID(allVehicleModel.getVehicleID());
-                        allVehicleModel1.setLastLocation(allVehicleModel);
-                        vehiclesList.add(allVehicleModel1);
-                    }
-                    openFirstTime = true;
-                    if (googleMap != null)
-                        googleMap.clear();
-                    addVehiclesMarkers();
                 }
             }
         } catch (Exception ex) {
@@ -467,162 +479,193 @@ public class LisOfVehiclesMapFragment extends Fragment implements
 
 
     private void expandable() {
-        Progress.showLoadingDialog(activity);
-        BusinessManager.getMainVehiclesList(new ApiCallResponseString() {
-            @Override
-            public void onSuccess(int statusCode, String responseObject) {
-                try {
-                    list = new ArrayList<>();
-                    mainChecks = new ArrayList<>();
-                    final List<Item> itemLists = (List<Item>) list;
-                    JSONObject jsonObject = new JSONObject(responseObject);
-                    nestedLoop(jsonObject, 0);
-                    final android.app.Dialog dialogAndroidAppCus = new android.app.Dialog(context);
-                    dialogAndroidAppCus.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                    dialogAndroidAppCus.setContentView(R.layout.view_expandable_dialog);
-                    TextViewRegular addReportButton = (TextViewRegular) dialogAndroidAppCus.findViewById(R.id.addReportButton);
-                    addReportButton.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            dialogAndroidAppCus.dismiss();
-                            addCarsOnMap();
+        if (ShortTermManager.getInstance().getRequestMapsExpendableList() == null) {
+            Progress.showLoadingDialog(activity);
+            BusinessManager.getMainVehiclesList(new ApiCallResponseString() {
+                @Override
+                public void onSuccess(int statusCode, String responseObject) {
+                    try {
+                        if (responseObject != null) {
+                            ShortTermManager.getInstance().setRequestMapsExpendableList(responseObject);
                         }
-                    });
-                    dialogAndroidAppCus.setCancelable(true);
-                    dialogAndroidAppCus.show();
-                    final MultiLevelRecyclerView multiLevelRecyclerView = (MultiLevelRecyclerView) dialogAndroidAppCus.findViewById(R.id.rv_list);
-                    Progress.dismissLoadingDialog();
-                    multiLevelRecyclerView.setLayoutManager(new LinearLayoutManager(context));
-                    final ExpandableAdapter expandableAdapter = new ExpandableAdapter(context, itemLists, multiLevelRecyclerView, new ExpandableAdapter.ActionsInterface() {
-                        @Override
-                        public void ItemClicked(Item item, int position, boolean checkedState, String clickState) {
-                            Progress.showLoadingDialog(activity);
-                            BusinessManager.getMainVehiclesListWithQuery(item.getID(), new ApiCallResponseString() {
-                                @Override
-                                public void onSuccess(int statusCode, String responseObject) {
-                                    Progress.dismissLoadingDialog();
-                                    try {
-                                        Item[] vehicleModel = new Gson().fromJson(responseObject, Item[].class);
-                                        List<Item> arrayFromApi = Arrays.asList(vehicleModel);
-                                        for (int x = 0; x < arrayFromApi.size(); x++) {
-                                            arrayFromApi.get(x).setLevel(item.getLevel());
-                                        }
-                                        Item mainItemsList = itemLists.get(position);
-                                        if (mainItemsList.getChildren() != null) {
-                                            mainItemsList.getChildren().clear();
-                                            List<?> newRepositoryArrayListFromChildrenToCHilde = mainItemsList.getChilds();
-                                            mainItemsList.addChildren((List<RecyclerViewItem>) newRepositoryArrayListFromChildrenToCHilde);
-                                        }
-                                        List<?> arrayFromApiCasting = arrayFromApi;
-                                        List<RecyclerViewItem> castedArrayFromApiCasting = ((List<RecyclerViewItem>) arrayFromApiCasting);
-                                        List<RecyclerViewItem> newRepositoryArrayList = new ArrayList<>();
-                                        if (mainItemsList.getChildren() != null) {
-                                            List<RecyclerViewItem> castedMainItemsList = ((List<RecyclerViewItem>) mainItemsList.getChildren());
-                                            newRepositoryArrayList.addAll(castedMainItemsList);
-                                        }
-                                        newRepositoryArrayList.addAll(castedArrayFromApiCasting);
-                                        // check box selection
-                                        if (item != null && item.getChildren() != null && item.getChildren().size() > 0) {
-                                            List<?> newIsChecked = newRepositoryArrayList;
-                                            List<Item> casted = ((List<Item>) newIsChecked);
-                                            for (int x = 0; x < casted.size(); x++) {
-                                                Item itemMain = casted.get(x);
-                                                itemMain.setChecked(checkedState);
-                                            }
-                                            checkCheckedVials(casted, clickState, "add");
-                                        }
-                                        //
-                                        mainItemsList.addChildren(newRepositoryArrayList);
-                                        multiLevelRecyclerView.toggleItemsGroup(position);
-                                    } catch (Exception e) {
-                                        e.printStackTrace();
-                                    }
-                                }
-
-                                @Override
-                                public void onFailure(int statusCode, String errorResponse) {
-                                    try {
-                                        Progress.dismissLoadingDialog();
-                                        if (statusCode > 0 && responseObject != null) {
-                                            List<Item> casted = new ArrayList<>();
-                                            casted.add(item);
-                                            checkCheckedVials(casted, clickState, "remove");
-                                        }
-                                    } catch (Exception ex) {
-                                        ex.printStackTrace();
-                                    }
-                                }
-                            });
-                        }
-                    });
-                    multiLevelRecyclerView.setAdapter(expandableAdapter);
-                    multiLevelRecyclerView.setToggleItemOnClick(false);
-                    multiLevelRecyclerView.setAccordion(false);
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-
-            @Override
-            public void onFailure(int statusCode, String errorResponse) {
-                Progress.dismissLoadingDialog();
-            }
-        });
-    }
-
-
-    private void checkCheckedVials(List<Item> itemLists, String state, String addState) {
-        try {
-            int counter = 0;
-            for (Item item : itemLists) {
-                if (state.equalsIgnoreCase("checked")) {
-                    if (!item.isChecked()) {
-                        mainChecks.remove(counter);
-                    } else {
-                        mainChecks.add(item);
+                        mainApiCall(responseObject);
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
                     }
                 }
-                counter++;
-            }
-            if (addState.equalsIgnoreCase("add") && state.equalsIgnoreCase("checked")) {
-                mainChecks.addAll(itemLists);
-            }
-            Log.e("s", "s");
-            //nestedLoop(itemLists, 0);
-            //Log.e("s", "s");
-//            for (int x = 0; x < itemLists.size(); x++) {
-//                if (itemLists.get(x) != null && itemLists.get(x).getVehicleID() > 0 && (itemLists.get(x).isChecked() || itemLists.get(x).isClicked())) {
-//
-//
-//                }
-//            }
-        } catch (Exception ex) {
-            ex.printStackTrace();
+
+                @Override
+                public void onFailure(int statusCode, String errorResponse) {
+                    Progress.dismissLoadingDialog();
+                }
+            });
+        } else {
+            mainApiCall(ShortTermManager.getInstance().getRequestMapsExpendableList());
         }
     }
 
-
-    private void nestedLoop(List<Item> itemList, int level) {
+    private void mainApiCall(String responseObject) {
         try {
-            int length = itemList.size();
-            for (int i = 0; i < length; i++) {
-                level = level + 1;
-                if (itemList.get(i) != null && itemList.get(i).getChildren() != null) {
-                    int childrenSize = itemList.get(i).getChildren().size();
-                    List<?> itemMainLists = itemList.get(i).getChildren();
-                    List<Item> castedArrayFromApiCasting = ((List<Item>) itemMainLists);
-                    if (childrenSize > 0) {
-                        nestedLoop(castedArrayFromApiCasting, level);
-                    }
-                    mainChecks.addAll(castedArrayFromApiCasting);
+            list = new ArrayList<>();
+            mainChecks = new ArrayList<>();
+            final List<Item> itemLists = (List<Item>) list;
+            JSONObject jsonObject = new JSONObject(responseObject);
+            nestedLoop(jsonObject, 0);
+            final android.app.Dialog dialogAndroidAppCus = new android.app.Dialog(context);
+            dialogAndroidAppCus.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            dialogAndroidAppCus.setContentView(R.layout.view_expandable_dialog);
+            TextViewRegular addReportButton = (TextViewRegular) dialogAndroidAppCus.findViewById(R.id.addReportButton);
+            addReportButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dialogAndroidAppCus.dismiss();
+                    addCarsOnMap();
                 }
-            }
-        } catch (Exception e) {
+            });
+            dialogAndroidAppCus.setCancelable(true);
+            dialogAndroidAppCus.show();
+            final MultiLevelRecyclerView multiLevelRecyclerView = (MultiLevelRecyclerView) dialogAndroidAppCus.findViewById(R.id.rv_list);
+            Progress.dismissLoadingDialog();
+            multiLevelRecyclerView.setLayoutManager(new LinearLayoutManager(context));
+            expandableAdapter = new ExpandableAdapter(context, itemLists, multiLevelRecyclerView, new ExpandableAdapter.ActionsInterface() {
+                @Override
+                public void ItemClicked(Item item, int position, boolean checkedState, String clickState) {
+                    if (!checkedState) {
+                        try {
+                            if (item != null && item.getChildren() != null && item.getChilds() != null && clickState.equalsIgnoreCase("grope")) {
+                                List<?> arrayFromApiCasting = item.getChildren();
+                                List<Item> arrayFrom = (List<Item>) arrayFromApiCasting;
+                                for (int x = 0; x < arrayFrom.size(); x++) {
+                                    arrayFrom.get(x).setChecked(false);
+                                }
+                                ArrayList<Item> mainArrayList = new ArrayList<>(arrayFrom);
+                                item.setChilds(mainArrayList);
+                                List<?> arrays = (List<Item>) mainArrayList;
+                                item.addChildren((List<RecyclerViewItem>) arrays);
+                                for (int x = 0; x < item.getChilds().size(); x++) {
+                                    for (int y = 0; y < itemLists.size(); y++) {
+                                        if (item.getChilds().get(x).getID().equalsIgnoreCase(itemLists.get(y).getID())) {
+                                            itemLists.set(y, item.getChilds().get(x));
+                                        }
+                                    }
+                                }
+                                expandableAdapter.notifyDataSetChanged();
+                            } else if (clickState.equalsIgnoreCase("vehicle")) {
+                                for (int y = 0; y < itemLists.size(); y++) {
+                                    if (item != null && item.getID().equalsIgnoreCase(itemLists.get(y).getID())) {
+                                        itemLists.set(y, item);
+                                    }
+                                }
+                                expandableAdapter.notifyDataSetChanged();
+                            }
+                        } catch (Exception ex) {
+                            ex.printStackTrace();
+                        }
+                    } else {
+                        Progress.showLoadingDialog(activity);
+                        BusinessManager.getMainVehiclesListWithQuery(item.getID(), new ApiCallResponseString() {
+                            @Override
+                            public void onSuccess(int statusCode, String responseObject) {
+                                Progress.dismissLoadingDialog();
+                                try {
+                                    //
+                                    Item[] vehicleModel = new Gson().fromJson(responseObject, Item[].class);
+                                    List<Item> arrayFromApi = Arrays.asList(vehicleModel);
+                                    for (int x = 0; x < arrayFromApi.size(); x++) {
+                                        arrayFromApi.get(x).setLevel(item.getLevel());
+                                    }
+                                    //
+                                    Item mainItemsList = itemLists.get(position);
+                                    if (mainItemsList != null && mainItemsList.getChildren() != null && clickState.equalsIgnoreCase("grope")) {
+                                        List<?> arrayFromApiCasting = mainItemsList.getChildren();
+                                        List<Item> arrayFrom = (List<Item>) arrayFromApiCasting;
+                                        if (arrayFrom.size() == arrayFromApi.size()) {
+                                            for (int x = 0; x < arrayFromApi.size(); x++) {
+                                                arrayFromApi.get(x).setName(arrayFrom.get(x).getName());
+                                                arrayFromApi.get(x).setID(arrayFrom.get(x).getID());
+                                                arrayFromApi.get(x).setChecked(arrayFrom.get(x).isChecked());
+                                                arrayFromApi.get(x).setClicked(arrayFrom.get(x).isClicked());
+                                            }
+                                        }
+                                    } else if (mainItemsList != null) {
+                                        if (clickState.equalsIgnoreCase("vehicle")) {
+                                            if (arrayFromApi.size() > 0) {
+                                                arrayFromApi.get(0).setName(mainItemsList.getName());
+                                                arrayFromApi.get(0).setID(mainItemsList.getID());
+                                                arrayFromApi.get(0).setChecked(mainItemsList.isChecked());
+                                                arrayFromApi.get(0).setClicked(mainItemsList.isClicked());
+                                            }
+                                        }
+                                    }
+                                    if (clickState.equalsIgnoreCase("grope")) {
+                                        // state = "grope";
+                                        if (item.isChecked()) {
+                                            for (int x = 0; x < arrayFromApi.size(); x++) {
+                                                arrayFromApi.get(x).setChecked(true);
+                                            }
+                                        } else {
+                                            for (int x = 0; x < arrayFromApi.size(); x++) {
+                                                arrayFromApi.get(x).setChecked(false);
+                                            }
+                                        }
+                                    } else {
+                                        if (arrayFromApi.size() > 0)
+                                            if (item.isChecked()) {
+                                                arrayFromApi.get(0).setChecked(true);
+                                            } else {
+                                                arrayFromApi.get(0).setChecked(false);
+                                            }
+                                    }
+                                    if (mainItemsList != null && mainItemsList.getChildren() != null && clickState.equalsIgnoreCase("grope")) {
+                                        List<?> newRepositoryArrayListFromChildrenToCHilde = arrayFromApi;
+                                        mainItemsList.addChildren((List<RecyclerViewItem>) newRepositoryArrayListFromChildrenToCHilde);
+                                        ArrayList<Item> arrayList = new ArrayList<>(arrayFromApi);
+                                        mainItemsList.setChilds(arrayList);
+                                        itemLists.get(position).setChilds(arrayList);
+                                        itemLists.get(position).addChildren((List<RecyclerViewItem>) newRepositoryArrayListFromChildrenToCHilde);
+                                    }
+
+                                    for (int x = 0; x < arrayFromApi.size(); x++) {
+                                        for (int y = 0; y < itemLists.size(); y++) {
+                                            if (arrayFromApi.get(x).getID().equalsIgnoreCase(itemLists.get(y).getID())) {
+                                                itemLists.set(y, arrayFromApi.get(x));
+                                            }
+                                        }
+                                    }
+                                    expandableAdapter.notifyDataSetChanged();
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                            }
+
+                            @Override
+                            public void onFailure(int statusCode, String errorResponse) {
+                                try {
+                                    Progress.dismissLoadingDialog();
+                                } catch (Exception ex) {
+                                    ex.printStackTrace();
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+
+            multiLevelRecyclerView.setAdapter(expandableAdapter);
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    for (int x = 0; x < list.size(); x++) {
+                        multiLevelRecyclerView.toggleItemsGroup(x);
+                    }
+                }
+            }, 200);
+            multiLevelRecyclerView.setToggleItemOnClick(false);
+            multiLevelRecyclerView.setAccordion(false);
+        } catch (JSONException e) {
             e.printStackTrace();
         }
     }
-
 
     private void nestedLoop(JSONObject levelList, int level) {
         try {
@@ -641,6 +684,7 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                     List<RecyclerViewItem> children = ((List<RecyclerViewItem>) itemsList);
                     items.addChildren(children);
                     items.setLevel(level);
+                    items.setClicked(true);
                     list.add(items);
                 }
             }
@@ -742,8 +786,9 @@ public class LisOfVehiclesMapFragment extends Fragment implements
     private void addHeaderTitle(AllVehiclesInHashModel markerModel) {
         try {
             if (markerModel != null) {
-                singleCarSliderTitleTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel().getLabel()));
-                singleSliderCarSliderTitleTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel().getLabel()));
+                if (markerModel.getAllVehicleModel() != null && markerModel.getAllVehicleModel().getLabel() != null)
+                    singleCarSliderTitleTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel().getLabel()));
+                singleSliderCarSliderTitleTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel() != null && markerModel.getAllVehicleModel().getLabel() != null ? markerModel.getAllVehicleModel().getLabel() : ""));
                 if (markerModel.getAllVehicleModel() != null && markerModel.getAllVehicleModel().getLastLocation() != null && markerModel.getAllVehicleModel().getLastLocation().getAddress() != null) {
                     singleCarSliderAddressTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel().getLastLocation().getAddress()));
                     singleSliderUpTitleTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel().getLastLocation().getAddress()));
@@ -1117,13 +1162,19 @@ public class LisOfVehiclesMapFragment extends Fragment implements
             if (markerModel != null && markerModel.getAllVehicleModel() != null && markerModel.getAllVehicleModel().getLastLocation() != null && markerModel.getAllVehicleModel().getSerialNumber() != null)
                 barCodeTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel().getSerialNumber()));
 
+            if (markerModel != null && markerModel.getAllVehicleModel() != null && markerModel.getAllVehicleModel().getLastLocation() != null)
+                closedTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel().getLastLocation().getDoorStatus()));
+            if (markerModel != null && markerModel.getAllVehicleModel() != null && markerModel.getAllVehicleModel().getLastLocation() != null && markerModel.getAllVehicleModel().getLastLocation().getSimCardNumber() != null)
+                cardTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel().getLastLocation().getSimCardNumber())); // sim card view
+            if (markerModel != null && markerModel.getAllVehicleModel() != null && markerModel.getAllVehicleModel().getLastLocation() != null && markerModel.getAllVehicleModel().getLastLocation().getFuel() != null)
+                gasTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel().getLastLocation().getFuel())); // sim card view
+
+
             nATextView.setText(String.format(Locale.getDefault(), "%s", "N/A")); // capten view
-            closedTextView.setText(String.format(Locale.getDefault(), "%s", "N/A")); // vehicle OpenDoors view
+            // vehicle OpenDoors view
             beltTextView.setText(String.format(Locale.getDefault(), "%s", "N/A")); // seat bilt
             needlTextView.setText(String.format(Locale.getDefault(), "%s", "N/A")); // needel view
-            gasTextView.setText(String.format(Locale.getDefault(), "%s", "N/A")); // gas view
             humanTextView.setText(String.format(Locale.getDefault(), "%s", "N/A")); // persons view
-            cardTextView.setText(String.format(Locale.getDefault(), "%s", "N/A")); // sim card view
 
             if (markerModel != null && markerModel.getAllVehicleModel() != null && markerModel.getAllVehicleModel().getLastLocation() != null && markerModel.getAllVehicleModel().getLastLocation().getAddress() != null)
                 addressTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel().getLastLocation().getAddress())); //

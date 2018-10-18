@@ -183,6 +183,7 @@
     <string name="to">To</string>
     <string name="go">Go</string>
     <string name="vehicles_status">Vehicles Status</string>
+    <string name="vehicles">Vehicles</string>
     <!--<string name="about_us_title_1">Telematics means saferoad</string>-->
     <!--<string name="about_us_des_1">saferoad Information Technology is a Saudi based company that provides telematics solutions to the local &amp; international market since 2009, which is owned partially by Aramco Entrepreneurship Center (Waed).</string>-->
     <!--<string name="about_us_title_2">Traffic Safety</string>-->
@@ -333,5 +334,6 @@
     <string name="landmark_home">Home</string>
     <string name="recognizable_objects_for_places_on_the_map">Recognizable objects for places on the map</string>
     <string name="dispaly_the_number_of_aggregated_vehicles">Display the number of aggregated vehicles</string>
+    <string name="filter_list">Filter List</string>
 
 </resources>

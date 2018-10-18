@@ -60,6 +60,9 @@ public class Item  extends RecyclerViewItem {
     @SerializedName("RecordDateTime")
     @Expose
     private String recordDateTime;
+    @SerializedName("PlateNumber")
+    @Expose
+    private String plateNumber;
     @SerializedName("IsOnline")
     @Expose
     private Boolean isOnline;
@@ -70,6 +73,14 @@ public class Item  extends RecyclerViewItem {
 
     public void setVehicleDisplayName(String vehicleDisplayName) {
         VehicleDisplayName = vehicleDisplayName;
+    }
+
+    public String getPlateNumber() {
+        return plateNumber;
+    }
+
+    public void setPlateNumber(String plateNumber) {
+        this.plateNumber = plateNumber;
     }
 
     public Integer getVehicleID() {

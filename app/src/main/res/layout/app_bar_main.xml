@@ -49,7 +49,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginEnd="@dimen/dp_16"
                     android:contentDescription="@string/add"
-                    android:src="@drawable/fab_add" />
+                    android:src="@drawable/ic_cars_main" />
 
             </RelativeLayout>
 

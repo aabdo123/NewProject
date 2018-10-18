@@ -7,6 +7,31 @@
     android:orientation="horizontal"
     android:padding="16dp">
 
+    <View
+        android:id="@+id/mainWidth"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="@dimen/_5_dp"
+        android:layout_marginStart="@dimen/_5_dp"
+        android:gravity="center"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/expand_field"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="@dimen/_5_dp"
+        android:layout_marginStart="@dimen/_5_dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:contentDescription="@null" />
+
+    </LinearLayout>
+
     <CheckBox
         android:id="@+id/checkBoxCheckBox"
         android:layout_width="wrap_content"
@@ -20,7 +45,7 @@
     <ImageView
         android:id="@+id/carImageView"
         android:layout_width="20dp"
-        android:layout_height="40dp"
+        android:layout_height="35dp"
         android:layout_gravity="center"
         android:background="@drawable/car_0"
         android:clickable="false"
@@ -32,40 +57,50 @@
         android:id="@+id/text_box"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:layout_weight="1"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/subtitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:textSize="14sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/expand_field"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="0"
-        android:gravity="center">
-
-        <ImageView
-            android:id="@+id/image_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="@null"
-            android:src="@drawable/ic_keyboard_arrow_up_black"
-            android:tint="#4e4e4e" />
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/_5_dp"
+            android:layout_marginStart="@dimen/_5_dp"
+            android:gravity="center"
+            android:text=""
+            android:textSize="14sp" />
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/button_shape_black_tanrs"
+                android:gravity="start"
+                android:paddingBottom="@dimen/_5_dp"
+                android:paddingEnd="@dimen/_5_dp"
+                android:paddingStart="@dimen/_5_dp"
+                android:paddingTop="@dimen/_5_dp"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+        </LinearLayout>
     </LinearLayout>
+
 
 </LinearLayout>

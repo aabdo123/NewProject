@@ -4,6 +4,8 @@ public class LocationLocateModel {
 
     private String distance;
     private String duration;
+    private String distanceValue;
+    private String durationValue;
 
 
     public String getDistance() {
@@ -20,5 +22,22 @@ public class LocationLocateModel {
 
     public void setDuration(String duration) {
         this.duration = duration;
+    }
+
+
+    public String getDistanceValue() {
+        return distanceValue;
+    }
+
+    public void setDistanceValue(String distanceValue) {
+        this.distanceValue = distanceValue;
+    }
+
+    public String getDurationValue() {
+        return durationValue;
+    }
+
+    public void setDurationValue(String durationValue) {
+        this.durationValue = durationValue;
     }
 }

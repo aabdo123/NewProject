@@ -5,5 +5,5 @@ package com.views;
  */
 
 public interface ClickWithTwoParam {
-    void onClick(String text, String text1);
+    void onClick(String distanceString, String durationString, String distanceValue, String durationValue);
 }

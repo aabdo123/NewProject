@@ -334,6 +334,12 @@
     <string name="landmark_home">Home</string>
     <string name="recognizable_objects_for_places_on_the_map">Recognizable objects for places on the map</string>
     <string name="dispaly_the_number_of_aggregated_vehicles">Display the number of aggregated vehicles</string>
-    <string name="filter_list">Filter List</string>
+    <string name="filter_list">Vehicles List</string>
+    <string name="min">min</string>
+    <string name="_0_00_km">0.00 KM</string>
+    <string name="_0_00_min">0.00 min</string>
+    <string name="n_a">N/A</string>
+    <string name="km_h">km/h</string>
+
 
 </resources>

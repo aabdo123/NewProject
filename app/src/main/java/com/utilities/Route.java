@@ -51,6 +51,8 @@ public class Route {
     List<Polyline> polylines = new ArrayList<Polyline>();
     private String distance;
     private String duration;
+    private String distanceValue;
+    private String durationValue;
     private ClickWithTwoParam clickWithTwoParam;
 
     public void setDistanceListener(ClickWithTwoParam clickWithTwoParam) {
@@ -382,12 +384,14 @@ public class Route {
 
             JSONObject distanceObj = legs.getJSONObject("distance");
             distance = distanceObj.getString("text");
+            distanceValue = distanceObj.getString("value");
 
             JSONObject durationObj = legs.getJSONObject("duration");
             duration = durationObj.getString("text");
+            durationValue = durationObj.getString("value");
 
             if (clickWithTwoParam != null)
-                clickWithTwoParam.onClick(distance, duration);
+                clickWithTwoParam.onClick(distance, duration, distanceValue, durationValue);
             if (withSteps) {
 //                JSONArray arrayLegs = routes.getJSONArray("legs");
 //                JSONObject legs = arrayLegs.getJSONObject(0);
@@ -403,12 +407,9 @@ public class Route {
                             .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 }
             }
-        } catch (JSONException e) {
-            e.printStackTrace();
-            clickWithTwoParam.onClick("error", "error");
         } catch (Exception e) {
             e.printStackTrace();
-            clickWithTwoParam.onClick("error", "error");
+            clickWithTwoParam.onClick("error", "error", "error", "error");
         }
     }
 
@@ -444,12 +445,14 @@ public class Route {
 
             JSONObject distanceObj = legs.getJSONObject("distance");
             distance = distanceObj.getString("text");
+            distanceValue = distanceObj.getString("value");
 
             JSONObject durationObj = legs.getJSONObject("duration");
             duration = durationObj.getString("text");
+            durationValue = durationObj.getString("value");
 
             if (clickWithTwoParam != null)
-                clickWithTwoParam.onClick(distance, duration);
+                clickWithTwoParam.onClick(distance, duration, distanceValue, durationValue);
             if (withSteps) {
 //                JSONArray arrayLegs = routes.getJSONArray("legs");
 //                JSONObject legs = arrayLegs.getJSONObject(0);
@@ -465,12 +468,9 @@ public class Route {
                             .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
                 }
             }
-        } catch (JSONException e) {
-            e.printStackTrace();
-            clickWithTwoParam.onClick("error", "error");
         } catch (Exception e) {
             e.printStackTrace();
-            clickWithTwoParam.onClick("error", "error");
+            clickWithTwoParam.onClick("error", "error", "error", "error");
         }
     }
 

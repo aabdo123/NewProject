@@ -407,8 +407,8 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
             route.drawRoute(googleMap, context, myCurrentLatLng, carLatLng, false, AppConstant.LANGUAGE_EN);
             route.setDistanceListener(new ClickWithTwoParam() {
                 @Override
-                public void onClick(String text, String text1) {
-                    if (text.equals("error")) {
+                public void onClick(String distanceString, String durationString, String distanceValue, String durationValue) {
+                    if (distanceString.equals("error")) {
                         ToastHelper.toastInfo(context, context.getString(R.string.invalid_address));
                     }
                 }

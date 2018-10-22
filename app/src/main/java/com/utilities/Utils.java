@@ -46,6 +46,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.RandomAccessFile;
 import java.math.BigDecimal;
+import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -112,12 +113,14 @@ public class Utils {
         return "";
     }
 
-    public static String parseTime(String date) {
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-dd-MM HH:mm:ss");
+    public static String parseTime(String dateFrom) {
         try {
-            Date date1 = format.parse(date.replace("T", " "));
-            String d = new SimpleDateFormat("M MMMM yyyy, HH:mm:ss a").format(date1);
-            return d;
+            SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+            SimpleDateFormat outputFormat = new SimpleDateFormat("dd MMMM yyyy, HH:mm:ss a");
+            Date date = inputFormat.parse(dateFrom);
+            String formattedDate = outputFormat.format(date);
+            System.out.println(formattedDate);
+            return formattedDate;
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -386,7 +389,14 @@ public class Utils {
         bd = bd.setScale(decimalPlace, BigDecimal.ROUND_HALF_UP);
         return bd;
     }
+    public static double round(double value, int places) {
+        if (places < 0) throw new IllegalArgumentException();
 
+        long factor = (long) Math.pow(10, places);
+        value = value * factor;
+        long tmp = Math.round(value);
+        return (double) tmp / factor;
+    }
     public static String convertListToArray(List<String> selectedList) {
         String selected = "";
         String array;

@@ -145,13 +145,13 @@
                     android:id="@+id/distanceTextView"
                     style="@style/mediumGrayText"
                     android:layout_gravity="center"
-                    android:text="0.00 KM" />
+                    android:text="@string/_0_00_km" />
 
                 <com.views.TextViewRegular
                     android:id="@+id/durationTextView"
                     style="@style/smallGrayText"
                     android:layout_gravity="center"
-                    android:text="0.00 min" />
+                    android:text="@string/_0_00_min" />
 
             </LinearLayout>
         </LinearLayout>

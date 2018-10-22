@@ -59,7 +59,7 @@ public class MapUtils {
 //            }
 //            String street = strReturnedAddress.toString();
 
-            strings = new String[]{city, state, country, street};
+            strings = new String[]{city != null ? city : state, state, country, street};
 //            String address = addresses.get(0).getAddressLine(0); // If any additional address line present than only, check with max available address lines by getMaxAddressLineIndex()
 //            String postalCode = addresses.get(0).getPostalCode();
 //            String knownName = addresses.get(0).getFeatureName(); // Only if available else return NULL
@@ -141,8 +141,6 @@ public class MapUtils {
 //                return;
 //        }
 //    }
-
-
 
 
     public void animateMarker(final Marker marker, final LatLng toPosition, final boolean hideMarker) {

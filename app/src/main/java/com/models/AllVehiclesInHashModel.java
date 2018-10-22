@@ -188,15 +188,40 @@ public class AllVehiclesInHashModel {
             @SerializedName("RecordDateTime")
             @Expose
             private String recordDateTime;
+            @SerializedName("Mileage")
+            @Expose
+            private String mileage;
+            @SerializedName("WorkingHours")
+            @Expose
+            private String workingHours;
+            @SerializedName("Serial")
+            @Expose
+            private String serial;
             @SerializedName("IsOnline")
             @Expose
             private Boolean isOnline;
             @SerializedName("EngineStatus")
             @Expose
             private Boolean engineStatus;
+
+            @SerializedName("SeatBeltStatus")
+            @Expose
+            private String seatBeltStatus;
+            @SerializedName("Temper")
+            @Expose
+            private String temper;
+            @SerializedName("DriverName")
+            @Expose
+            private String driverName;
+            @SerializedName("GroupName")
+            @Expose
+            private String groupName;
+            @SerializedName("Temperature")
+            @Expose
+            private String temperature;
             @SerializedName("DoorStatus")
             @Expose
-            private Boolean doorStatus;
+            private String doorStatus;
 
 
             protected LastLocation(Parcel in) {
@@ -223,12 +248,19 @@ public class AllVehiclesInHashModel {
                 VehicleDisplayName = in.readString();
                 vehicleStatus = in.readString();
                 recordDateTime = in.readString();
+                mileage = in.readString();
+                workingHours = in.readString();
+                serial = in.readString();
                 byte tmpIsOnline = in.readByte();
                 isOnline = tmpIsOnline == 0 ? null : tmpIsOnline == 1;
                 byte tmpEngineStatus = in.readByte();
                 engineStatus = tmpEngineStatus == 0 ? null : tmpEngineStatus == 1;
-                byte tmpDoorStatus = in.readByte();
-                doorStatus = tmpDoorStatus == 0 ? null : tmpDoorStatus == 1;
+                seatBeltStatus = in.readString();
+                temper = in.readString();
+                driverName = in.readString();
+                groupName = in.readString();
+                temperature = in.readString();
+                doorStatus = in.readString();
             }
 
             @Override
@@ -258,22 +290,38 @@ public class AllVehiclesInHashModel {
                 dest.writeString(VehicleDisplayName);
                 dest.writeString(vehicleStatus);
                 dest.writeString(recordDateTime);
+                dest.writeString(mileage);
+                dest.writeString(workingHours);
+                dest.writeString(serial);
                 dest.writeByte((byte) (isOnline == null ? 0 : isOnline ? 1 : 2));
                 dest.writeByte((byte) (engineStatus == null ? 0 : engineStatus ? 1 : 2));
-                dest.writeByte((byte) (doorStatus == null ? 0 : doorStatus ? 1 : 2));
+                dest.writeString(seatBeltStatus);
+                dest.writeString(temper);
+                dest.writeString(driverName);
+                dest.writeString(groupName);
+                dest.writeString(temperature);
+                dest.writeString(doorStatus);
+            }
+
+            public String getTemperature() {
+                return temperature;
+            }
+
+            public void setTemperature(String temperature) {
+                this.temperature = temperature;
+            }
+
+            public String getDoorStatus() {
+                return doorStatus;
+            }
+
+            public void setDoorStatus(String doorStatus) {
+                this.doorStatus = doorStatus;
             }
 
             @Override
             public int describeContents() {
                 return 0;
-            }
-
-            public String getVehicleDisplayName() {
-                return VehicleDisplayName;
-            }
-
-            public void setVehicleDisplayName(String vehicleDisplayName) {
-                VehicleDisplayName = vehicleDisplayName;
             }
 
             public final Creator<LastLocation> CREATOR = new Creator<LastLocation>() {
@@ -287,6 +335,80 @@ public class AllVehiclesInHashModel {
                     return new LastLocation[size];
                 }
             };
+
+
+            public Boolean getOnline() {
+                return isOnline;
+            }
+
+            public void setOnline(Boolean online) {
+                isOnline = online;
+            }
+
+            public String getSeatBeltStatus() {
+                return seatBeltStatus;
+            }
+
+            public void setSeatBeltStatus(String seatBeltStatus) {
+                this.seatBeltStatus = seatBeltStatus;
+            }
+
+            public String getTemper() {
+                return temper;
+            }
+
+            public void setTemper(String temper) {
+                this.temper = temper;
+            }
+
+            public String getDriverName() {
+                return driverName;
+            }
+
+            public void setDriverName(String driverName) {
+                this.driverName = driverName;
+            }
+
+            public String getGroupName() {
+                return groupName;
+            }
+
+            public void setGroupName(String groupName) {
+                this.groupName = groupName;
+            }
+
+            public String getMileage() {
+                return mileage;
+            }
+
+            public void setMileage(String mileage) {
+                this.mileage = mileage;
+            }
+
+            public String getWorkingHours() {
+                return workingHours;
+            }
+
+            public void setWorkingHours(String workingHours) {
+                this.workingHours = workingHours;
+            }
+
+            public String getSerial() {
+                return serial;
+            }
+
+            public void setSerial(String serial) {
+                this.serial = serial;
+            }
+
+            public String getVehicleDisplayName() {
+                return VehicleDisplayName;
+            }
+
+            public void setVehicleDisplayName(String vehicleDisplayName) {
+                VehicleDisplayName = vehicleDisplayName;
+            }
+
 
             public String getPlateNumber() {
                 return plateNumber;
@@ -304,13 +426,7 @@ public class AllVehiclesInHashModel {
                 this.engineStatus = engineStatus;
             }
 
-            public Boolean getDoorStatus() {
-                return doorStatus;
-            }
 
-            public void setDoorStatus(Boolean doorStatus) {
-                this.doorStatus = doorStatus;
-            }
 
             public Integer getVehicleID() {
                 return vehicleID;

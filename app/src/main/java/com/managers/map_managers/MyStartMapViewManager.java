@@ -27,39 +27,39 @@ public class MyStartMapViewManager {
     private ArrayList<AllVehiclesInHashModel.AllVehicleModel> mapList;
     private String responseObj = null;
 
-    public MyStartMapViewManager(Activity activity){
+    public MyStartMapViewManager(Activity activity) {
         this.activity = activity;
         getVehiclesApiCall();
     }
 
     private void getVehiclesApiCall() {
-        Progress.showLoadingDialog(activity);
-        BusinessManager.postVehicles(new ApiCallResponseString() {
-            @Override
-            public void onSuccess(int statusCode, String responseObject) {
-                responseObj = responseObject;
-                initListFromApi(responseObj);
-            }
-
-            @Override
-            public void onFailure(int statusCode, String errorResponse) {
-                Progress.dismissLoadingDialog();
- //                ((MainActivity) activity).call(LisOfVehiclesMapFragment.newInstance(new ArrayList<>(), new ArrayList<>()), activity.getString(R.string.nav_map));
-            }
-        });
+        initListFromApi();
+//        Progress.showLoadingDialog(activity);
+//        BusinessManager.postVehicles(new ApiCallResponseString() {
+//            @Override
+//            public void onSuccess(int statusCode, String responseObject) {
+//                responseObj = responseObject;
+//                initListFromApi(responseObj);
+//            }
+//
+//            @Override
+//            public void onFailure(int statusCode, String errorResponse) {
+//                Progress.dismissLoadingDialog();
+// //                ((MainActivity) activity).call(LisOfVehiclesMapFragment.newInstance(new ArrayList<>(), new ArrayList<>()), activity.getString(R.string.nav_map));
+//            }
+//        });
     }
 
-    private void initListFromApi(String responseObject) {
-        ListOfVehiclesModel.VehicleModel[] vehicleModel = ((MainActivity) activity).gHelper().fromJson(responseObject, ListOfVehiclesModel.VehicleModel[].class);
-        listOfVehiclesModels = new ArrayList<ListOfVehiclesModel>();
-        ListOfVehiclesModel listOfVehiclesModel = new ListOfVehiclesModel();
-        listOfVehiclesModel.setHeader(activity.getString(R.string.vehicles_list));
-        listOfVehiclesModel.setVehicleModel(Arrays.asList(vehicleModel));
-        listOfVehiclesModels.add(listOfVehiclesModel);
-        initListFromApiWithoutHeader(responseObj);
-        // SET UP DATA IN VIEWS
-        if (Utils.isNotEmptyList(mapList)) {
+    private void initListFromApi() {
+        try {
+            listOfVehiclesModels = new ArrayList<ListOfVehiclesModel>();
+            ListOfVehiclesModel listOfVehiclesModel = new ListOfVehiclesModel();
+            listOfVehiclesModel.setHeader(activity.getString(R.string.vehicles_list));
+            listOfVehiclesModels.add(listOfVehiclesModel);
+            // SET UP DATA IN VIEWS
             ((MainActivity) activity).call(LisOfVehiclesMapFragment.newInstance(mapList, listOfVehiclesModels), activity.getString(R.string.nav_map));
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
     }
 
@@ -70,7 +70,7 @@ public class MyStartMapViewManager {
     }
 
 
-    public void viewAllMarkers(ArrayList<AllVehiclesInHashModel.AllVehicleModel> vehiclesList ){
+    public void viewAllMarkers(ArrayList<AllVehiclesInHashModel.AllVehicleModel> vehiclesList) {
         LatLngBounds.Builder builder = new LatLngBounds.Builder();
         for (AllVehiclesInHashModel.AllVehicleModel allVehicleModel : vehiclesList) {
             LatLng lng = new LatLng(allVehicleModel.getLastLocation().getLatitude(), allVehicleModel.getLastLocation().getLongitude());

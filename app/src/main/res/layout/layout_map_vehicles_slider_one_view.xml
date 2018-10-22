@@ -645,7 +645,7 @@
                         android:ellipsize="end"
                         android:gravity="center|start"
                         android:maxLines="1"
-                        android:text="Mileage: 0 KM"
+                        android:text=""
                         android:textColor="@color/colorPrimary"
                         android:textSize="13sp"
                         tools:ignore="RelativeOverlap" />
@@ -668,7 +668,7 @@
                         android:ellipsize="end"
                         android:gravity="center|start"
                         android:maxLines="1"
-                        android:text="Mileage: 0 KM"
+                        android:text=""
                         android:textColor="@color/colorPrimary"
                         android:textSize="13sp"
                         tools:ignore="RelativeOverlap" />

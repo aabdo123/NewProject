@@ -91,9 +91,16 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
                 Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.container_body);
                 LisOfVehiclesMapFragment lisOfVehiclesMapFragment = (LisOfVehiclesMapFragment) fragment;
                 lisOfVehiclesMapFragment.showExpandableList();
+                if (MyLocateManager.popupView != null && MyLocateManager.popupView.getVisibility() == View.VISIBLE) {
+                    if (MyLocateManager.popupView.getParent() != null) {
+                        ((ViewGroup) MyLocateManager.popupView.getParent()).removeView(MyLocateManager.popupView);
+                    }
+                }
             }
         });
     }
+
+
 
     @Override
     public void onBackPressed() {
@@ -106,7 +113,6 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
                 LisOfVehiclesMapFragment.slideUp.hide();
                 return;
             }
-
             if (MyLocateManager.popupView != null && MyLocateManager.popupView.getVisibility() == View.VISIBLE) {
                 if (MyLocateManager.popupView.getParent() != null) {
                     ((ViewGroup) MyLocateManager.popupView.getParent()).removeView(MyLocateManager.popupView);
@@ -292,6 +298,11 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
                 ft.commit();
                 pageTitleList.push(title);
                 toolbarTitleTextView.setText(title);
+                if (title.equals(getString(R.string.nav_map))) {
+                    showExpandableImageToolbar();
+                } else {
+                    hideExpandableImageToolbar();
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();

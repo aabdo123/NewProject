@@ -15,14 +15,14 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Item  extends RecyclerViewItem {
+public class Item extends RecyclerViewItem {
 
     String text = "";
 
     String secondText = "";
     private String ID = "";
     private String Name = "";
-    private String VehicleStatus = "";
+
     private ArrayList<Item> Childs;
     private boolean isChecked;
     private boolean isClicked;
@@ -66,6 +66,145 @@ public class Item  extends RecyclerViewItem {
     @SerializedName("IsOnline")
     @Expose
     private Boolean isOnline;
+    @SerializedName("Fuel")
+    @Expose
+    private String fuel;
+
+    @SerializedName("SimCardNumber")
+    @Expose
+    private String simCardNumber;
+
+    @SerializedName("VehicleStatus")
+    @Expose
+    private String VehicleStatus = "";
+
+    @SerializedName("Mileage")
+    @Expose
+    private String mileage;
+    @SerializedName("WorkingHours")
+    @Expose
+    private String workingHours;
+    @SerializedName("Serial")
+    @Expose
+    private String serial;
+    @SerializedName("EngineStatus")
+    @Expose
+    private Boolean engineStatus;
+
+    @SerializedName("SeatBeltStatus")
+    @Expose
+    private String seatBeltStatus;
+    @SerializedName("Temper")
+    @Expose
+    private String temper;
+    @SerializedName("DriverName")
+    @Expose
+    private String driverName;
+    @SerializedName("GroupName")
+    @Expose
+    private String groupName;
+    @SerializedName("Temperature")
+    @Expose
+    private String temperature;
+    @SerializedName("DoorStatus")
+    @Expose
+    private String doorStatus;
+
+    public String getTemperature() {
+        return temperature;
+    }
+
+    public void setTemperature(String temperature) {
+        this.temperature = temperature;
+    }
+
+    public String getDoorStatus() {
+        return doorStatus;
+    }
+
+    public void setDoorStatus(String doorStatus) {
+        this.doorStatus = doorStatus;
+    }
+
+    public String getSeatBeltStatus() {
+        return seatBeltStatus;
+    }
+
+    public void setSeatBeltStatus(String seatBeltStatus) {
+        this.seatBeltStatus = seatBeltStatus;
+    }
+
+    public String getTemper() {
+        return temper;
+    }
+
+    public void setTemper(String temper) {
+        this.temper = temper;
+    }
+
+    public String getDriverName() {
+        return driverName;
+    }
+
+    public void setDriverName(String driverName) {
+        this.driverName = driverName;
+    }
+
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
+    public String getFuel() {
+        return fuel;
+    }
+
+    public void setFuel(String fuel) {
+        this.fuel = fuel;
+    }
+
+    public String getSimCardNumber() {
+        return simCardNumber;
+    }
+
+    public void setSimCardNumber(String simCardNumber) {
+        this.simCardNumber = simCardNumber;
+    }
+
+    public String getMileage() {
+        return mileage;
+    }
+
+    public void setMileage(String mileage) {
+        this.mileage = mileage;
+    }
+
+    public String getWorkingHours() {
+        return workingHours;
+    }
+
+    public void setWorkingHours(String workingHours) {
+        this.workingHours = workingHours;
+    }
+
+    public String getSerial() {
+        return serial;
+    }
+
+    public void setSerial(String serial) {
+        this.serial = serial;
+    }
+
+    public Boolean getEngineStatus() {
+        return engineStatus;
+    }
+
+    public void setEngineStatus(Boolean engineStatus) {
+        this.engineStatus = engineStatus;
+    }
 
     public String getVehicleDisplayName() {
         return VehicleDisplayName;

@@ -28,6 +28,7 @@ import com.utilities.AnimationUtils;
 import com.utilities.AppUtils;
 import com.utilities.Route;
 import com.utilities.ToastHelper;
+import com.utilities.Utils;
 import com.utilities.constants.AppConstant;
 import com.utilities.map.MapUtils;
 import com.views.ButtonBold;
@@ -208,7 +209,7 @@ public class MyLocateManager implements View.OnClickListener {
                 routeArrayList = new ArrayList<>();
             route = new Route();
             route.drawMultiRoute(googleMap, context, selectedLocations.get(selectedLocations.size() - 1).getLatLng() != null ? selectedLocations.get(selectedLocations.size() - 1).getLatLng() : redMarkerAddress, blueMarkerAddress, false, AppUtils.getRouteLanguage());
-            route.setDistanceListener((text, text1) -> {
+            route.setDistanceListener((text, text1, distanceValue, durationValue) -> {
                 if (text.equals("error")) {
                     ToastHelper.toastInfo(context, context.getString(R.string.invalid_address));
                 } else {
@@ -216,6 +217,8 @@ public class MyLocateManager implements View.OnClickListener {
                     LocationLocateModel locationLocateModel = new LocationLocateModel();
                     locationLocateModel.setDistance(text);
                     locationLocateModel.setDuration(text1);
+                    locationLocateModel.setDistanceValue(distanceValue);
+                    locationLocateModel.setDurationValue(durationValue);
                     locationLocateModels.add(locationLocateModel);
                     updatePopup.updateDistanceList(locationLocateModels);
                     if (selectedLocations != null && selectedLocations.size() > selectedLocations.size() - 1) {
@@ -332,18 +335,16 @@ public class MyLocateManager implements View.OnClickListener {
             public void updateDistanceList(ArrayList<LocationLocateModel> locationLocateModels) {
                 try {
                     routeInfoLayout.setVisibility(View.VISIBLE);
-                    Double distance = 0.0;
-                    Double duration = 0.0;
+                    Double distance = 0.0;;// /1000
+                    Double duration = 0.0;// /60
                     for (LocationLocateModel locationLocateModel : locationLocateModels) {
-                        String distanceString = locationLocateModel.getDistance().replaceAll("([a-z])", "");
-                        distanceString = distanceString.replaceAll(" ", "");
-                        String durationString = locationLocateModel.getDuration().replaceAll("([a-z])", "");
-                        durationString = durationString.replaceAll(" ", "");
-                        distance = Double.valueOf(distanceString) + distance;
-                        duration = Double.valueOf(durationString) + duration;
+                        Double distanceValueDouble = Utils.round(Double.valueOf(locationLocateModel.getDistanceValue()), 2)/1000;
+                        Double durationValueDouble = Utils.round(Double.valueOf(locationLocateModel.getDurationValue()), 2)/60;
+                        distance = distanceValueDouble + distance;
+                        duration = durationValueDouble + duration;
                     }
-                    distanceTextView.setText(String.format(Locale.getDefault(), "%.2f km", distance));
-                    durationTextView.setText(String.format(Locale.getDefault(), "%s mins", duration));
+                    distanceTextView.setText(String.format(Locale.getDefault(), "%.2f %s", distance, context.getString(R.string.km)));
+                    durationTextView.setText(String.format(Locale.getDefault(), "%.2f %s", duration, context.getString(R.string.min)));
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
@@ -399,8 +400,8 @@ public class MyLocateManager implements View.OnClickListener {
     private void onDismissPopup() {
         if (route != null)
             route.clearRoute();
-        if (routeArrayList!=null && routeArrayList.size()>0){
-            for (Route route : routeArrayList){
+        if (routeArrayList != null && routeArrayList.size() > 0) {
+            for (Route route : routeArrayList) {
                 route.clearRoute();
             }
         }

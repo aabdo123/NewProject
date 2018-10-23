@@ -48,7 +48,7 @@ public class MapUtils {
             if (city == null)
                 city = returnedAddress.getLocality();
             else
-                city = returnedAddress.getAdminArea();
+                city = returnedAddress.getSubLocality();
             String state = returnedAddress.getAdminArea();
             String country = returnedAddress.getCountryName();
             String street = returnedAddress.getAddressLine(0);

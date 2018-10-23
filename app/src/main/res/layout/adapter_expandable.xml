@@ -36,6 +36,8 @@
         android:id="@+id/checkBoxCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5_dp"
+        android:layout_marginEnd="@dimen/_5_dp"
         android:layout_gravity="center"
         android:focusable="false"
         android:focusableInTouchMode="false"

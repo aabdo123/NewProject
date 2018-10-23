@@ -22,10 +22,11 @@ public class Item extends RecyclerViewItem {
     String secondText = "";
     private String ID = "";
     private String Name = "";
-
+    private Item parent;
     private ArrayList<Item> Childs;
     private boolean isChecked;
     private boolean isClicked;
+    private boolean isGroupChecked;
     private List<ListOfVehiclesModel.VehicleModel.LastLocation> lastLocationList;
     @SerializedName("VehicleID")
     @Expose
@@ -109,6 +110,22 @@ public class Item extends RecyclerViewItem {
     @SerializedName("DoorStatus")
     @Expose
     private String doorStatus;
+
+    public boolean isGroupChecked() {
+        return isGroupChecked;
+    }
+
+    public void setGroupChecked(boolean groupChecked) {
+        isGroupChecked = groupChecked;
+    }
+
+    public Item getParent() {
+        return parent;
+    }
+
+    public void setParent(Item parent) {
+        this.parent = parent;
+    }
 
     public String getTemperature() {
         return temperature;

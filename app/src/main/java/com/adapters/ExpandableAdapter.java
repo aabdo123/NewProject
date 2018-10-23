@@ -2,6 +2,7 @@ package com.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import com.models.Item;
 import com.multilevelview.MultiLevelAdapter;
 import com.multilevelview.MultiLevelRecyclerView;
 import com.utilities.AppUtils;
+import com.utilities.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -104,7 +106,11 @@ public class ExpandableAdapter extends MultiLevelAdapter {
             } else {
                 mViewHolder.mExpandIcon.setBackground(mContext.getResources().getDrawable(R.drawable.group_expand));
             }
-
+//            if (mItem.isGroupChecked()) {
+//                mViewHolder.checkBoxCheckBox.setButtonDrawable(mContext.getResources().getDrawable(R.drawable.ic_semi_hecked));
+//            } else {
+//                mViewHolder.checkBoxCheckBox.setButtonDrawable(mContext.getResources().getDrawable(R.drawable.check_box_state));
+//            }
 
             if (mItem.isChecked()) {
                 mViewHolder.checkBoxCheckBox.setChecked(true);
@@ -112,6 +118,12 @@ public class ExpandableAdapter extends MultiLevelAdapter {
                 mViewHolder.checkBoxCheckBox.setChecked(false);
             }
 
+            if (position == 0) {
+                ((ViewGroup.MarginLayoutParams) mViewHolder.mExpandButton.getLayoutParams()).leftMargin = Utils.pxToDp(5);
+            } else {
+                ((ViewGroup.MarginLayoutParams) mViewHolder.mExpandButton.getLayoutParams()).leftMargin = Utils.pxToDp(20);
+            }
+//            Log.e("s","s");
 
 //            Item item = mListItems.get(position);
 //            switch (item.getLevel()) {
@@ -182,8 +194,7 @@ public class ExpandableAdapter extends MultiLevelAdapter {
         // indent child items
         // Note: the parent item should start at zero to have no indentation
         // e.g. in populateFakeData(); the very first Item shold be instantiate like this: Item item = new Item(0);
-//        float density = mContext.getResources().getDisplayMetrics().density;
-//        ((ViewGroup.MarginLayoutParams) mViewHolder.mTextBox.getLayoutParams()).leftMargin = (int) ((getItemViewType(position) * 20) * density + 0.5f);
+
     }
 
     private class Holder extends RecyclerView.ViewHolder {
@@ -210,7 +221,7 @@ public class ExpandableAdapter extends MultiLevelAdapter {
             mTextBox.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mExpandButton.performClick();
+                    checkBoxCheckBox.performClick();
                 }
             });
 
@@ -249,7 +260,7 @@ public class ExpandableAdapter extends MultiLevelAdapter {
                             String firstOne = item.getID().substring(0, 1);
                             if (firstOne.equalsIgnoreCase("G")) {
                                 state = "grope";
-                            }else {
+                            } else {
                                 state = "vehicle";
                             }
                         }

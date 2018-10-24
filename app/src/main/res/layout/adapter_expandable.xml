@@ -4,79 +4,92 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:foreground="?selectableItemBackground"
-    android:orientation="horizontal"
-    android:padding="16dp">
+    android:orientation="vertical">
+
 
     <View
-        android:id="@+id/mainWidth"
-        android:layout_width="40dp"
-        android:layout_height="match_parent"
-        android:layout_marginEnd="@dimen/_5_dp"
-        android:layout_marginStart="@dimen/_5_dp"
-        android:gravity="center"
-        android:visibility="gone" />
-
-    <LinearLayout
-        android:id="@+id/expand_field"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_marginEnd="@dimen/_5_dp"
-        android:layout_marginStart="@dimen/_5_dp"
-        android:gravity="center">
-
-        <ImageView
-            android:id="@+id/image_view"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:contentDescription="@null" />
-
-    </LinearLayout>
-
-    <CheckBox
-        android:id="@+id/checkBoxCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_5_dp"
-        android:layout_marginEnd="@dimen/_5_dp"
-        android:layout_gravity="center"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        android:gravity="center"
-        android:textColor="#efefef" />
-
-    <ImageView
-        android:id="@+id/carImageView"
-        android:layout_width="20dp"
-        android:layout_height="35dp"
-        android:layout_gravity="center"
-        android:background="@drawable/car_0"
-        android:clickable="false"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray_dark"
         android:gravity="center" />
 
     <LinearLayout
-        android:id="@+id/text_box"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_weight="1"
+        android:layout_marginBottom="@dimen/_5_dp"
+        android:layout_marginTop="@dimen/_5_dp"
+        android:foreground="?selectableItemBackground"
         android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
+
+        <View
+            android:id="@+id/mainWidth"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
             android:layout_marginEnd="@dimen/_5_dp"
             android:layout_marginStart="@dimen/_5_dp"
             android:gravity="center"
-            android:text=""
-            android:textSize="14sp" />
+            android:visibility="gone" />
 
         <LinearLayout
+            android:id="@+id/expand_field"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/_5_dp"
+            android:layout_marginStart="@dimen/_5_dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/image_view"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <CheckBox
+                android:id="@+id/checkBoxCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/_5_dp"
+                android:layout_marginStart="@dimen/_5_dp"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:gravity="center"
+                android:textColor="#efefef" />
+
+            <View
+                android:id="@+id/greenView"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_centerInParent="true"
+                android:background="@color/car_green"
+                android:gravity="center"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/carImageView"
+            android:layout_width="18dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:background="@drawable/car_0"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:id="@+id/text_box"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -86,23 +99,43 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/subtitle"
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:layout_marginEnd="@dimen/_5_dp"
+                android:layout_marginStart="@dimen/_5_dp"
+                android:gravity="center|start"
+                android:text=""
+                android:textSize="11sp" />
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="@drawable/button_shape_black_tanrs"
-                android:gravity="start"
-                android:paddingBottom="@dimen/_5_dp"
-                android:paddingEnd="@dimen/_5_dp"
-                android:paddingStart="@dimen/_5_dp"
-                android:paddingTop="@dimen/_5_dp"
-                android:text=""
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:visibility="gone" />
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/button_shape_blacks"
+                    android:gravity="start"
+                    android:paddingBottom="2dp"
+                    android:paddingEnd="2dp"
+                    android:paddingStart="2dp"
+                    android:paddingTop="2dp"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:visibility="gone" />
+            </LinearLayout>
         </LinearLayout>
+
+
     </LinearLayout>
-
-
 </LinearLayout>

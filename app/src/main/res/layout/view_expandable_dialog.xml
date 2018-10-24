@@ -12,7 +12,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
+        android:background="@drawable/button_shape_blue"
         app:popupTheme="@style/AppTheme.PopupOverlay">
 
         <RelativeLayout
@@ -24,6 +24,7 @@
                 style="@style/largeWhiteText"
                 android:layout_centerInParent="true"
                 android:gravity="center"
+                android:textSize="13sp"
                 android:layout_centerVertical="true"
                 android:text="@string/filter_list" />
 
@@ -31,6 +32,7 @@
             <com.views.TextViewRegular
                 android:id="@+id/addReportButton"
                 style="@style/smallWhiteText"
+                android:padding="@dimen/_5_dp"
                 android:layout_marginStart="@dimen/_5_dp"
                 android:layout_marginEnd="@dimen/_5_dp"
                 android:layout_alignParentEnd="true"

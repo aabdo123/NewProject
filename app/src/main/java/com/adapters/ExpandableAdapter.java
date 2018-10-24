@@ -106,11 +106,11 @@ public class ExpandableAdapter extends MultiLevelAdapter {
             } else {
                 mViewHolder.mExpandIcon.setBackground(mContext.getResources().getDrawable(R.drawable.group_expand));
             }
-//            if (mItem.isGroupChecked()) {
-//                mViewHolder.checkBoxCheckBox.setButtonDrawable(mContext.getResources().getDrawable(R.drawable.ic_semi_hecked));
-//            } else {
-//                mViewHolder.checkBoxCheckBox.setButtonDrawable(mContext.getResources().getDrawable(R.drawable.check_box_state));
-//            }
+            if (mItem.isGroupChecked()) {
+                mViewHolder.greenView.setVisibility(View.VISIBLE);
+            } else {
+                mViewHolder.greenView.setVisibility(View.GONE);
+            }
 
             if (mItem.isChecked()) {
                 mViewHolder.checkBoxCheckBox.setChecked(true);
@@ -206,11 +206,13 @@ public class ExpandableAdapter extends MultiLevelAdapter {
         private ImageView carImageView;
         private LinearLayout mainItemViewLinearLayout;
         private View mainWidth;
+        private View greenView;
 
         Holder(View itemView) {
             super(itemView);
             mTitle = (TextView) itemView.findViewById(R.id.title);
             mainWidth = (View) itemView.findViewById(R.id.mainWidth);
+            greenView = (View) itemView.findViewById(R.id.greenView);
             mSubtitle = (TextView) itemView.findViewById(R.id.subtitle);
             mExpandIcon = (ImageView) itemView.findViewById(R.id.image_view);
             mTextBox = (LinearLayout) itemView.findViewById(R.id.text_box);

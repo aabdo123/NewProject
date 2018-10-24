@@ -150,7 +150,7 @@
                         android:layout_gravity="center"
                         android:background="@drawable/ic_car_filled" />
 
-                    <com.views.TextViewLight
+                    <com.views.TextViewRegular
                         android:id="@+id/singleCarSliderTitleTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -176,7 +176,7 @@
                         android:layout_gravity="center"
                         android:background="@drawable/ic_marker_white" />
 
-                    <com.views.TextViewRegular
+                    <com.views.TextViewLight
                         android:id="@+id/singleCarSliderAddressTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

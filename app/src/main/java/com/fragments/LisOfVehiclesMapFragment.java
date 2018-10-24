@@ -444,11 +444,15 @@ public class LisOfVehiclesMapFragment extends Fragment implements
             if (list != null && list.size() > 0) {
                 List<Item> mainItemsFull = new ArrayList<>();
                 for (Item item : list) {
-                    if (item.isChecked()) {
-                        if (item.getID() != null) {
-                            String firstOne = item.getID().substring(0, 1);
-                            if (firstOne.equalsIgnoreCase("V")) {
-                                mainItemsFull.add(item);
+                    if (item.getChilds() != null && item.getChilds().size() > 0) {
+                        for (Item chideItem : item.getChilds()) {
+                            if (chideItem.getID() != null) {
+                                String firstOne = chideItem.getID().substring(0, 1);
+                                if (firstOne.equalsIgnoreCase("V")) {
+                                    if (chideItem.isChecked()) {
+                                        mainItemsFull.add(chideItem);
+                                    }
+                                }
                             }
                         }
                     }
@@ -1424,7 +1428,7 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                                 }
                             }
                         }
-                    }catch (Exception ex){
+                    } catch (Exception ex) {
                         ex.printStackTrace();
                     }
                     return false;

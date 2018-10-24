@@ -88,7 +88,6 @@ public class VehiclesClusterManager implements ClusterManager.OnClusterClickList
         for (MyClusterItem item : myClusterItems) {
             mClusterManager.removeItem(item);
         }
-//        mClusterManager.clearItems();
     }
 
     public void clearVehiclesCluster() {

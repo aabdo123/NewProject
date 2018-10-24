@@ -13,8 +13,10 @@ import android.view.ViewGroup;
 
 import com.R;
 import com.adapters.SlideUpAdapter;
+import com.managers.PreferencesManager;
 import com.models.SlideUpItemsModel;
 import com.utilities.Utils;
+import com.utilities.constants.SharesPrefConstants;
 import com.views.ClickOnList;
 import com.views.ClickStatus;
 
@@ -26,7 +28,7 @@ public class SlideUpFragment extends Fragment {
     private FragmentActivity activity;
     private RecyclerView sliderRecyclerView;
     private List<SlideUpItemsModel> list;
-
+    private SlideUpAdapter slideUpAdapter;
     private OnChildFragmentInteractionListener mParentListener;
 
     public interface OnChildFragmentInteractionListener {
@@ -76,7 +78,7 @@ public class SlideUpFragment extends Fragment {
     private void implementAdapter() {
         list = new ArrayList<>();
         list = getSlideUpList();
-        SlideUpAdapter slideUpAdapter = new SlideUpAdapter(activity, list, (isShowCliched, position) -> {
+         slideUpAdapter = new SlideUpAdapter(activity, list, (isShowCliched, position) -> {
             SlideUpItemsModel model = list.get(position);
             mParentListener.onClickShow(isShowCliched, false, model.getId());
         }, position -> {
@@ -92,6 +94,19 @@ public class SlideUpFragment extends Fragment {
         slideUpAdapter.notifyDataSetChanged();
     }
 
+    public void notifyAdapterItemOneCluster() {
+      try {
+          if (slideUpAdapter!=null){
+              PreferencesManager.getInstance().setBooleanValue(false, SharesPrefConstants.IS_CLUSTER_SHOW_SLIDE_MENU);
+              SlideUpItemsModel model = list.get(1);
+              model.setShowClicked(false);
+              slideUpAdapter.notifyDataSetChanged();
+          }
+      }catch (Exception ex){
+          ex.printStackTrace();
+      }
+    }
+
     @Override
     public void onDetach() {
         super.onDetach();
@@ -103,7 +118,7 @@ public class SlideUpFragment extends Fragment {
         list.add(new SlideUpItemsModel(0, true, false, Utils.colorInt("#F3A536"), getString(R.string.locate), getString(R.string.locate_des), getResources().getDrawable(R.drawable.ic_locate), getResources().getDrawable(R.drawable.button_shape_black_tanrs)));
         list.add(new SlideUpItemsModel(1, false, true, Utils.colorInt("#58E2C2"), getString(R.string.clustering), getString(R.string.dispaly_the_number_of_aggregated_vehicles), getResources().getDrawable(R.drawable.ic_clustering), getResources().getDrawable(R.drawable.button_shape_black_tanrs)));
         list.add(new SlideUpItemsModel(2, false, true, Utils.colorInt("#BB27DD"), getString(R.string.traffic), getString(R.string.traffic_des), getResources().getDrawable(R.drawable.ic_traffic_light), getResources().getDrawable(R.drawable.button_shape_gray_tanrs)));
-        list.add(new SlideUpItemsModel(3, true,  true,Utils.colorInt("#CD0B24"), getString(R.string.landmark), getString(R.string.recognizable_objects_for_places_on_the_map), getResources().getDrawable(R.drawable.ic_landmark), getResources().getDrawable(R.drawable.button_shape_gray_tanrs)));
+        list.add(new SlideUpItemsModel(3, true, true, Utils.colorInt("#CD0B24"), getString(R.string.landmark), getString(R.string.recognizable_objects_for_places_on_the_map), getResources().getDrawable(R.drawable.ic_landmark), getResources().getDrawable(R.drawable.button_shape_gray_tanrs)));
         list.add(new SlideUpItemsModel(4, true, true, Utils.colorInt("#B9E78B"), getResources().getString(R.string.geo_fence), getResources().getString(R.string.geo_fence_des), getResources().getDrawable(R.drawable.ic_globe_location), getResources().getDrawable(R.drawable.button_shape_black_tanrs)));
         return list;
     }

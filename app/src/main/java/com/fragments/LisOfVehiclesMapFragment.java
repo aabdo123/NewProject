@@ -199,6 +199,7 @@ public class LisOfVehiclesMapFragment extends Fragment implements
     private boolean isRandomZoomChanged = false;
     private int randomZoom;
     private android.app.Dialog dialogAndroidAppCus;
+    private static SlideUpFragment slideUpFragment;
 //    private Marker addMarker;
 
     public LisOfVehiclesMapFragment() {
@@ -1110,7 +1111,8 @@ public class LisOfVehiclesMapFragment extends Fragment implements
     public void addSlideUpFragment() {
         if (isAdded()) {
             FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
-            transaction.replace(R.id.sliderContainer, SlideUpFragment.newInstance()).commit();
+            slideUpFragment = slideUpFragment.newInstance();
+            transaction.replace(R.id.sliderContainer, slideUpFragment).commit();
         }
     }
 
@@ -1395,15 +1397,35 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                     builder.include(lng);
                 }
                 googleMap.setOnMarkerClickListener(marker -> {
-                    AllVehiclesInHashModel.AllVehicleModel tag = (AllVehiclesInHashModel.AllVehicleModel) marker.getTag();
-                    if (vehiclesHashMap != null && vehiclesHashMap.size() > 0) {
-                        AllVehiclesInHashModel markerModel = vehiclesHashMap.get(marker);
-                        if (markerModel != null) {
-                            addHeaderTitle(markerModel);
-                            addBodyView(markerModel);
-                            viewSelected(true);
-                            addAndHideViews(markerModel.getVehicleId(), false);
+                    try {
+                        if (vehiclesClusterManager != null) {
+                            if (slideUpFragment != null)
+                                slideUpFragment.notifyAdapterItemOneCluster();
+                            setClusterManager(false, false, 1);
                         }
+                        if (vehiclesHashMap != null && vehiclesHashMap.size() > 0) {
+                            AllVehiclesInHashModel markerModel = vehiclesHashMap.get(marker);
+                            if (markerModel != null) {
+                                addHeaderTitle(markerModel);
+                                addBodyView(markerModel);
+                                viewSelected(true);
+                                addAndHideViews(markerModel.getVehicleId(), false);
+                            } else {
+                                LatLng latLng = marker.getPosition();
+                                List<AllVehiclesInHashModel> allVehiclesInHashModels = new ArrayList<AllVehiclesInHashModel>(vehiclesHashMap.values());
+                                for (AllVehiclesInHashModel allVehiclesInHash : allVehiclesInHashModels) {
+                                    if (latLng != null && allVehiclesInHash != null && allVehiclesInHash.getAllVehicleModel() != null && allVehiclesInHash.getAllVehicleModel().getLastLocation() != null)
+                                        if (latLng.latitude == allVehiclesInHash.getAllVehicleModel().getLastLocation().getLatitude()) {
+                                            addHeaderTitle(allVehiclesInHash);
+                                            addBodyView(allVehiclesInHash);
+                                            viewSelected(true);
+                                            addAndHideViews(allVehiclesInHash.getVehicleId(), false);
+                                        }
+                                }
+                            }
+                        }
+                    }catch (Exception ex){
+                        ex.printStackTrace();
                     }
                     return false;
                 });

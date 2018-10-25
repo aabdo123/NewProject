@@ -145,7 +145,7 @@
                         android:gravity="center"
                         android:maxLines="1"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="13sp"
+                        android:textSize="11sp"
                         tools:ignore="RelativeOverlap" />
 
                 </LinearLayout>
@@ -180,7 +180,7 @@
                         android:gravity="center|start"
                         android:maxLines="1"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="13sp"
+                        android:textSize="11sp"
                         tools:ignore="RelativeOverlap" />
 
                     <View
@@ -211,7 +211,7 @@
                         android:gravity="center|start"
                         android:maxLines="1"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="13sp"
+                        android:textSize="11sp"
                         tools:ignore="RelativeOverlap" />
 
                 </LinearLayout>
@@ -247,7 +247,7 @@
                         android:gravity="center"
                         android:maxLines="1"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="13sp"
+                        android:textSize="11sp"
                         tools:ignore="RelativeOverlap" />
 
                 </LinearLayout>
@@ -283,7 +283,7 @@
                         android:gravity="center|start"
                         android:maxLines="1"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="13sp"
+                        android:textSize="11sp"
                         tools:ignore="RelativeOverlap" />
 
                     <View
@@ -314,7 +314,7 @@
                         android:gravity="center|start"
                         android:maxLines="1"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="13sp"
+                        android:textSize="11sp"
                         tools:ignore="RelativeOverlap" />
 
                 </LinearLayout>
@@ -348,9 +348,9 @@
                         android:layout_weight="1"
                         android:ellipsize="end"
                         android:gravity="center|start"
-                        android:maxLines="1"
+                        android:maxLines="2"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="13sp"
+                        android:textSize="11sp"
                         tools:ignore="RelativeOverlap" />
 
                     <View
@@ -379,9 +379,9 @@
                         android:layout_weight="1"
                         android:ellipsize="end"
                         android:gravity="center|start"
-                        android:maxLines="1"
+                        android:maxLines="2"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="13sp"
+                        android:textSize="11sp"
                         tools:ignore="RelativeOverlap" />
 
                 </LinearLayout>
@@ -417,7 +417,7 @@
                         android:gravity="center|start"
                         android:maxLines="1"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="13sp"
+                        android:textSize="11sp"
                         tools:ignore="RelativeOverlap" />
 
                     <View
@@ -448,7 +448,7 @@
                         android:gravity="center|start"
                         android:maxLines="1"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="13sp"
+                        android:textSize="11sp"
                         tools:ignore="RelativeOverlap" />
 
                 </LinearLayout>
@@ -484,7 +484,7 @@
                         android:gravity="center|start"
                         android:maxLines="1"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="13sp"
+                        android:textSize="11sp"
                         tools:ignore="RelativeOverlap" />
 
                     <View
@@ -517,7 +517,7 @@
                         android:gravity="center|start"
                         android:maxLines="1"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="13sp"
+                        android:textSize="11sp"
                         tools:ignore="RelativeOverlap" />
 
                 </LinearLayout>
@@ -553,7 +553,7 @@
                         android:gravity="center|start"
                         android:maxLines="1"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="13sp"
+                        android:textSize="11sp"
                         tools:ignore="RelativeOverlap" />
 
                     <View
@@ -582,9 +582,9 @@
                         android:layout_weight="1"
                         android:ellipsize="end"
                         android:gravity="center|start"
-                        android:maxLines="1"
+                        android:maxLines="2"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="13sp"
+                        android:textSize="11sp"
                         tools:ignore="RelativeOverlap" />
 
                 </LinearLayout>
@@ -617,7 +617,7 @@
                         android:layout_marginStart="@dimen/dp_10"
                         android:gravity="center"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="13sp"
+                        android:textSize="11sp"
                         tools:ignore="RelativeOverlap" />
 
                 </LinearLayout>
@@ -646,7 +646,7 @@
                         android:maxLines="4"
                         android:text=""
                         android:textColor="@color/colorPrimary"
-                        android:textSize="13sp"
+                        android:textSize="11sp"
                         tools:ignore="RelativeOverlap" />
 
                     <View
@@ -669,7 +669,7 @@
                         android:maxLines="4"
                         android:text=""
                         android:textColor="@color/colorPrimary"
-                        android:textSize="13sp"
+                        android:textSize="11sp"
                         tools:ignore="RelativeOverlap" />
 
                 </LinearLayout>

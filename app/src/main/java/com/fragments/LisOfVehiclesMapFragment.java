@@ -190,6 +190,7 @@ public class LisOfVehiclesMapFragment extends Fragment implements
     private VehiclesClusterManager vehiclesClusterManager;
     private ListView listView;
     private List<Item> list;
+    private List<Item> mainArrayOfVehiclesList = new ArrayList<>();
     private LatLngBounds.Builder builder = new LatLngBounds.Builder();
     private LatLngBounds bounds;
     private boolean openFirstTime = true;
@@ -441,21 +442,16 @@ public class LisOfVehiclesMapFragment extends Fragment implements
 
     private void addCarsOnMap() {
         try {
-            if (list != null && list.size() > 0) {
+            if (mainArrayOfVehiclesList != null) {
                 List<Item> mainItemsFull = new ArrayList<>();
-                for (Item item : list) {
-                    if (item.getChilds() != null && item.getChilds().size() > 0) {
-                        for (Item chideItem : item.getChilds()) {
-                            if (chideItem.getID() != null) {
-                                String firstOne = chideItem.getID().substring(0, 1);
-                                if (firstOne.equalsIgnoreCase("V")) {
-                                    if (chideItem.isChecked()) {
-                                        mainItemsFull.add(chideItem);
-                                    }
-                                }
-                            }
+                if (mainArrayOfVehiclesList.size() > 0) {
+                    for (Item item : mainArrayOfVehiclesList) {
+                        if (item.isChecked()) {
+                            mainItemsFull.add(item);
                         }
                     }
+                } else {
+                    mainItemsFull.clear();
                 }
                 List<AllVehiclesInHashModel.AllVehicleModel.LastLocation> arrayFromApi = null;
                 if (mainItemsFull.size() > 0) {
@@ -570,6 +566,8 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                                         list.get(x).setGroupChecked(false);
                                     }
                                 }
+                                if (mainArrayOfVehiclesList.size() > 0)
+                                    mainArrayOfVehiclesList.clear();
                                 expandableAdapter.notifyDataSetChanged();
                             } else {
                                 unChecked(item, itemLists, clickState);
@@ -631,6 +629,34 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                         }
                     }
                 }
+
+                if (item.getChildren() != null && item.getChildren().size() > 0) {
+                    List<?> arrayFromApiCastings = item.getChildren();
+                    List<Item> arrayFroms = (List<Item>) arrayFromApiCastings;
+                    for (int x = 0; x < arrayFroms.size(); x++) {
+                        for (int y = 0; y < mainArrayOfVehiclesList.size(); y++) {
+                            if (arrayFroms.get(x).getID().equalsIgnoreCase(mainArrayOfVehiclesList.get(y).getID())) {
+                                mainArrayOfVehiclesList.remove(y);
+                            }
+                        }
+                    }
+                }
+                int isCheckedState = 0;
+                for (int y = 1; y < itemLists.size(); y++) {
+                    if (itemLists.get(y).isChecked()) {
+                        isCheckedState = isCheckedState + 1;
+                    }
+                }
+                if (isCheckedState == itemLists.size()) {
+                    itemLists.get(0).setGroupChecked(false);
+                    itemLists.get(0).setChecked(true);
+                } else if (isCheckedState > 0) {
+                    itemLists.get(0).setGroupChecked(true);
+                    itemLists.get(0).setChecked(false);
+                } else {
+                    itemLists.get(0).setGroupChecked(false);
+                    itemLists.get(0).setChecked(false);
+                }
                 expandableAdapter.notifyDataSetChanged();
             } else if (clickState.equalsIgnoreCase("vehicle")) {
                 for (int y = 0; y < itemLists.size(); y++) {
@@ -684,6 +710,12 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                 } else {
                     itemLists.get(0).setGroupChecked(false);
                     itemLists.get(0).setChecked(false);
+                }
+                for (int y = 0; y < mainArrayOfVehiclesList.size(); y++) {
+                    if (item != null)
+                        if (item.getID().equalsIgnoreCase(mainArrayOfVehiclesList.get(y).getID())) {
+                            mainArrayOfVehiclesList.remove(y);
+                        }
                 }
                 expandableAdapter.notifyDataSetChanged();
             }
@@ -771,6 +803,9 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                         }
                     }
                     //
+                    if (mainArrayOfVehiclesList.size() > 0)
+                        mainArrayOfVehiclesList.clear();
+                    mainArrayOfVehiclesList.addAll(arrayFromApi);
                     expandableAdapter.notifyDataSetChanged();
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -864,6 +899,7 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                             }
                         }
                     }
+
                     // sime check
                     if (clickState.equalsIgnoreCase("vehicle")) {
                         if (item.getParent() != null) {
@@ -941,6 +977,15 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                     } else {
                         itemLists.get(0).setGroupChecked(true);
                         itemLists.get(0).setChecked(false);
+                    }
+
+                    for (int x = 0; x < arrayFromApi.size(); x++) {
+                        if (arrayFromApi.get(x).isChecked()) {
+                            String firstOne = arrayFromApi.get(x).getID().substring(0, 1);
+                            if (firstOne.equalsIgnoreCase("V")) {
+                                mainArrayOfVehiclesList.add(arrayFromApi.get(x));
+                            }
+                        }
                     }
                     expandableAdapter.notifyDataSetChanged();
                 } catch (Exception e) {
@@ -1553,7 +1598,7 @@ public class LisOfVehiclesMapFragment extends Fragment implements
 
 
             if (markerModel != null && markerModel.getAllVehicleModel() != null && markerModel.getAllVehicleModel().getLastLocation() != null && markerModel.getAllVehicleModel().getLastLocation().getTemper() != null)
-                needlTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel().getLastLocation().getTemper().equalsIgnoreCase("0") ? context.getString(R.string.n_a) : markerModel.getAllVehicleModel().getLastLocation().getTemper()));
+                needlTextView.setText(String.format(Locale.getDefault(), "%s", (markerModel.getAllVehicleModel().getLastLocation().getTemper().equalsIgnoreCase("0") || markerModel.getAllVehicleModel().getLastLocation().getTemper().equalsIgnoreCase("0.0")) ? context.getString(R.string.n_a) : markerModel.getAllVehicleModel().getLastLocation().getTemper()));
             else
                 needlTextView.setText(String.format(Locale.getDefault(), "%s", context.getString(R.string.n_a)));
 
@@ -1574,7 +1619,8 @@ public class LisOfVehiclesMapFragment extends Fragment implements
 
 
             if (markerModel != null && markerModel.getAllVehicleModel() != null && markerModel.getAllVehicleModel().getLastLocation() != null && markerModel.getAllVehicleModel().getLastLocation().getMileage() != null) {
-                mileageTextView.setText(String.format(Locale.getDefault(), "%s %s %s", context.getString(R.string.mileage), markerModel.getAllVehicleModel().getLastLocation().getMileage(), context.getString(R.string.km)));
+                Double value =  Double.valueOf(markerModel.getAllVehicleModel().getLastLocation().getMileage());
+                mileageTextView.setText(String.format(Locale.getDefault(), "%s %.2f %s", context.getString(R.string.mileage),value, context.getString(R.string.km)));
                 mileageTextView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -1584,12 +1630,12 @@ public class LisOfVehiclesMapFragment extends Fragment implements
             } else if (markerModel != null && markerModel.getAllVehicleModel() != null && markerModel.getAllVehicleModel().getLastLocation() != null)
                 mileageTextView.setText(String.format(Locale.getDefault(), "%s %s %s", context.getString(R.string.mileage), markerModel.getAllVehicleModel().getLastLocation().getTotalMileage(), context.getString(R.string.km)));
             else
-                mileageTextView.setText(String.format(Locale.getDefault(), "%s %s %s", context.getString(R.string.mileage), "0.0", context.getString(R.string.km)));
+                mileageTextView.setText(String.format(Locale.getDefault(), "%s %s %s", context.getString(R.string.mileage), "0.00", context.getString(R.string.km)));
 
 
             if (markerModel != null && markerModel.getAllVehicleModel() != null && markerModel.getAllVehicleModel().getLastLocation() != null && markerModel.getAllVehicleModel().getLastLocation().getWorkingHours() != null) {
                 Double valueCalc = Double.valueOf(markerModel.getAllVehicleModel().getLastLocation().getWorkingHours()) / 3600;
-                workingTextView.setText(String.format(Locale.getDefault(), "%s %s", context.getString(R.string.working_hours), valueCalc));
+                workingTextView.setText(String.format(Locale.getDefault(), "%s %.2f", context.getString(R.string.working_hours), valueCalc));
                 workingTextView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -1597,7 +1643,7 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                     }
                 });
             } else
-                workingTextView.setText(String.format(Locale.getDefault(), "%s %s", context.getString(R.string.working_hours), "0.0"));
+                workingTextView.setText(String.format(Locale.getDefault(), "%s %s", context.getString(R.string.working_hours), "0.00"));
 
 
         } catch (Exception ex) {

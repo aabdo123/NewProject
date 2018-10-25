@@ -15,6 +15,7 @@ import com.R;
 import com.models.Item;
 import com.multilevelview.MultiLevelAdapter;
 import com.multilevelview.MultiLevelRecyclerView;
+import com.multilevelview.models.RecyclerViewItem;
 import com.utilities.AppUtils;
 import com.utilities.Utils;
 
@@ -85,7 +86,18 @@ public class ExpandableAdapter extends MultiLevelAdapter {
 //                setExpandButton(mViewHolder.mExpandIcon, mItem.isExpanded());
                 mViewHolder.mExpandButton.setVisibility(View.VISIBLE);
                 mViewHolder.mSubtitle.setVisibility(View.VISIBLE);
-                mViewHolder.mSubtitle.setText(String.format(Locale.getDefault(), "%s %s", mItem.getChildren().size(), mContext.getResources().getString(R.string.vehicles)));
+                if (position == 0) {
+                    List<RecyclerViewItem> getChildren = new ArrayList<>();
+                    for (int x = 0; x < mItem.getChildren().size(); x++) {
+                        if (mItem.getChildren().get(x) != null && mItem.getChildren().size() > 0) {
+                            if (mItem.getChildren().get(x) != null && mItem.getChildren().get(x).getChildren() != null && mItem.getChildren().get(x).getChildren().size() > 0)
+                                getChildren.addAll(mItem.getChildren().get(x).getChildren());
+                        }
+                    }
+                    mViewHolder.mSubtitle.setText(String.format(Locale.getDefault(), "%s %s", getChildren.size() > 0 ? getChildren.size() : "0", mContext.getResources().getString(R.string.vehicles)));
+                } else {
+                    mViewHolder.mSubtitle.setText(String.format(Locale.getDefault(), "%s %s", mItem.getChildren().size(), mContext.getResources().getString(R.string.vehicles)));
+                }
             } else {
                 mViewHolder.mExpandButton.setVisibility(View.GONE);
                 mViewHolder.mSubtitle.setVisibility(View.GONE);

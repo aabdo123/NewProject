@@ -115,8 +115,8 @@ public class Utils {
 
     public static String parseTime(String dateFrom) {
         try {
-            SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
-            SimpleDateFormat outputFormat = new SimpleDateFormat("dd MMMM yyyy, HH:mm:ss a");
+            SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
+            SimpleDateFormat outputFormat = new SimpleDateFormat("dd MMMM yyyy, hh:mm:ss a");
             Date date = inputFormat.parse(dateFrom);
             String formattedDate = outputFormat.format(date);
             System.out.println(formattedDate);

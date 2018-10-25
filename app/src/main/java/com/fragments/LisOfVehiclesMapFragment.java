@@ -1619,8 +1619,8 @@ public class LisOfVehiclesMapFragment extends Fragment implements
 
 
             if (markerModel != null && markerModel.getAllVehicleModel() != null && markerModel.getAllVehicleModel().getLastLocation() != null && markerModel.getAllVehicleModel().getLastLocation().getMileage() != null) {
-                Double value =  Double.valueOf(markerModel.getAllVehicleModel().getLastLocation().getMileage());
-                mileageTextView.setText(String.format(Locale.getDefault(), "%s %.2f %s", context.getString(R.string.mileage),value, context.getString(R.string.km)));
+                Double value = Double.valueOf(markerModel.getAllVehicleModel().getLastLocation().getMileage());
+                mileageTextView.setText(String.format(Locale.getDefault(), "%s %.2f %s", context.getString(R.string.mileage), value, context.getString(R.string.km)));
                 mileageTextView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -1645,7 +1645,8 @@ public class LisOfVehiclesMapFragment extends Fragment implements
             } else
                 workingTextView.setText(String.format(Locale.getDefault(), "%s %s", context.getString(R.string.working_hours), "0.00"));
 
-
+            if (markerModel != null)
+                PreferencesManager.getInstance().setIntegerValue(markerModel.getVehicleId(), SharesPrefConstants.LAST_VIEW_VEHICLE_ID);
         } catch (Exception ex) {
             ex.printStackTrace();
         }

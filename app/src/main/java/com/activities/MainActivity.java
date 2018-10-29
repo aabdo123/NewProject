@@ -27,6 +27,7 @@ import com.fragments.LandmarkListFragment;
 import com.fragments.LisOfVehiclesMapFragment;
 import com.fragments.ListOfVehiclesFragment;
 import com.fragments.ScheduledReportsFragment;
+import com.managers.ShortTermManager;
 import com.managers.map_managers.MyLocateManager;
 import com.managers.PreferencesManager;
 import com.managers.map_managers.MyStartMapViewManager;
@@ -119,7 +120,6 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
                     return;
                 }
             }
-            hideExpandableImageToolbar();
             // TODO to be removed
             if (isReplacer) {
                 pageTitleList.pop();
@@ -130,6 +130,12 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
             toolbarTitleTextView.setText(pageTitleList.get(pageTitleList.size() - 1));
             //            ConnectionManager.cancelAllRequests();
             super.onBackPressed();
+            if (toolbarTitleTextView.getText().equals(getString(R.string.nav_map))) {
+                showExpandableImageToolbar();
+            } else {
+                hideExpandableImageToolbar();
+            }
+
             if (toolbarTitleTextView.getText().equals(getString(R.string.nav_scheduled_reports))) {
                 showImageToolbar();
             } else {
@@ -367,6 +373,7 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
                 Intent intent = new Intent(MAIN_ACTIVITY, SplashActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
+                ShortTermManager.getInstance().clear();
                 finish();
             }
 

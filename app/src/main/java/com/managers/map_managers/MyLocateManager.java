@@ -21,6 +21,7 @@ import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 
 import com.R;
+import com.managers.PreferencesManager;
 import com.models.AllVehiclesInHashModel;
 import com.models.LatLogModel;
 import com.models.LocationLocateModel;
@@ -30,6 +31,7 @@ import com.utilities.Route;
 import com.utilities.ToastHelper;
 import com.utilities.Utils;
 import com.utilities.constants.AppConstant;
+import com.utilities.constants.SharesPrefConstants;
 import com.utilities.map.MapUtils;
 import com.views.ButtonBold;
 import com.views.Click;
@@ -92,6 +94,7 @@ public class MyLocateManager implements View.OnClickListener {
     private LatLngBounds.Builder builder;
     private LatLngBounds bounds;
     private SelectedLocationsAdapter locationsAdapter;
+    private LandMarkCheck landMarkCheck;
 
     private interface UpdatePopup {
         void updateAddressFrom(String govFrom, String strFrom);
@@ -104,12 +107,13 @@ public class MyLocateManager implements View.OnClickListener {
         void updateDistanceList(ArrayList<LocationLocateModel> locationLocateModels);
     }
 
-    public MyLocateManager(Context context, View view, GoogleMap googleMap, LinkedHashMap<Marker, AllVehiclesInHashModel> vehiclesHashMap, LatLng myCurrentLatLng) {
+    public MyLocateManager(Context context, View view, GoogleMap googleMap, LinkedHashMap<Marker, AllVehiclesInHashModel> vehiclesHashMap, LatLng myCurrentLatLng ) {
         this.context = context;
         this.googleMap = googleMap;
         this.vehiclesHashMap = vehiclesHashMap;
         this.rootView = view;
         this.myCurrentLatLng = myCurrentLatLng;
+
     }
 
     public void setViews(MapView mMapView) {
@@ -126,6 +130,10 @@ public class MyLocateManager implements View.OnClickListener {
 
     public void setAfterOnDismissListeners(Click afterOnDismiss) {
         this.afterOnDismiss = afterOnDismiss;
+    }
+
+    public void setLandMarkListeners(LandMarkCheck landMarkListeners) {
+        this.landMarkCheck = landMarkListeners;
     }
 
     private void setListeners() {
@@ -150,7 +158,7 @@ public class MyLocateManager implements View.OnClickListener {
     }
 
     private void onRedButtonClick() {
-        startButton.setText(String.format(Locale.getDefault(), "%s", context.getResources().getString(R.string.add)));
+        startButton.setText(String.format(Locale.getDefault(), "%s", context.getResources().getString(R.string.select)));
         if (redMarkerAddress == null) {
             redMarkerAddress = googleMap.getCameraPosition().target;
             if (selectedLocations.size() == 2) {
@@ -335,16 +343,17 @@ public class MyLocateManager implements View.OnClickListener {
             public void updateDistanceList(ArrayList<LocationLocateModel> locationLocateModels) {
                 try {
                     routeInfoLayout.setVisibility(View.VISIBLE);
-                    Double distance = 0.0;;// /1000
+                    Double distance = 0.0;// /1000
                     Double duration = 0.0;// /60
                     for (LocationLocateModel locationLocateModel : locationLocateModels) {
-                        Double distanceValueDouble = Utils.round(Double.valueOf(locationLocateModel.getDistanceValue()), 2)/1000;
-                        Double durationValueDouble = Utils.round(Double.valueOf(locationLocateModel.getDurationValue()), 2)/60;
+                        Double distanceValueDouble = Utils.round(Double.valueOf(locationLocateModel.getDistanceValue()), 2) / 1000;
+                        Double durationValueDouble = Utils.round(Double.valueOf(locationLocateModel.getDurationValue()), 2) / 60;
                         distance = distanceValueDouble + distance;
                         duration = durationValueDouble + duration;
                     }
                     distanceTextView.setText(String.format(Locale.getDefault(), "%.2f %s", distance, context.getString(R.string.km)));
-                    durationTextView.setText(String.format(Locale.getDefault(), "%.2f %s", duration, context.getString(R.string.min)));
+                    Long longValueCalc = Math.round(duration);
+                    durationTextView.setText(String.format(Locale.getDefault(), "%.0f %s", Double.valueOf(longValueCalc), context.getString(R.string.min)));
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
@@ -354,6 +363,9 @@ public class MyLocateManager implements View.OnClickListener {
         if (((ViewGroup) popupView.getParent()) != null)
             cancelImageView.setOnClickListener(v -> {
                 ((ViewGroup) popupView.getParent()).removeView(popupView);
+//                if (slideUpFragment != null && PreferencesManager.getInstance().getBooleanValue(SharesPrefConstants.IS_LANDMARK_SHOW_SLIDE_MENU)) {
+//                    slideUpFragment.showLandMark(true);
+//                }
             });
         else
             cancelImageView.setOnClickListener(v -> removeViewPopup());
@@ -396,6 +408,10 @@ public class MyLocateManager implements View.OnClickListener {
     public void removeViewPopup() {
         mapView.removeView(popupView);
     }
+    public interface LandMarkCheck{
+        void landMark();
+
+    }
 
     private void onDismissPopup() {
         if (route != null)
@@ -430,12 +446,19 @@ public class MyLocateManager implements View.OnClickListener {
         afterOnDismiss.onClick();
         afterOnDismiss.addMaps();
         showMapStylingFab();
+        landMarkCheck.landMark();
     }
 
 
     private void animateCamera(LatLng locationCamera) {
-        CameraPosition cameraPosition = new CameraPosition.Builder().target(locationCamera).zoom(AppConstant.ZOOM_VALUE_18).build();
-        googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+        try {
+            if (locationCamera != null) {
+                CameraPosition cameraPosition = new CameraPosition.Builder().target(locationCamera).zoom(AppConstant.ZOOM_VALUE_18).build();
+                googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     private void animateCamera() {

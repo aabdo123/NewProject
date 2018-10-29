@@ -94,12 +94,27 @@ public class SlideUpFragment extends Fragment {
         slideUpAdapter.notifyDataSetChanged();
     }
 
+    public void showLandMark(boolean state) {
+        try {
+            if (slideUpAdapter!=null){
+                PreferencesManager.getInstance().setBooleanValue(state, SharesPrefConstants.IS_LANDMARK_SHOW_SLIDE_MENU);
+                SlideUpItemsModel model = list.get(3);
+                mParentListener.onClickShow(true, false, model.getId());
+                slideUpAdapter.notifyDataSetChanged();
+            }
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+    }
+
+
     public void notifyAdapterItemOneCluster() {
       try {
           if (slideUpAdapter!=null){
               PreferencesManager.getInstance().setBooleanValue(false, SharesPrefConstants.IS_CLUSTER_SHOW_SLIDE_MENU);
               SlideUpItemsModel model = list.get(1);
-              model.setShowClicked(false);
+//              model.setShowClicked(false);
+              mParentListener.onClickShow(true, false, model.getId());
               slideUpAdapter.notifyDataSetChanged();
           }
       }catch (Exception ex){

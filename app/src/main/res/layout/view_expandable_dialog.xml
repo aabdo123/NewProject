@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/transparent"
     android:layout_gravity="center"
     android:orientation="vertical">
 
@@ -58,6 +59,7 @@
 
     <com.multilevelview.MultiLevelRecyclerView
         android:id="@+id/rv_list"
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

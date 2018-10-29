@@ -551,7 +551,7 @@
                         android:layout_weight="1"
                         android:ellipsize="end"
                         android:gravity="center|start"
-                        android:maxLines="1"
+                        android:maxLines="2"
                         android:textColor="@color/colorPrimary"
                         android:textSize="11sp"
                         tools:ignore="RelativeOverlap" />
@@ -615,7 +615,7 @@
                         android:layout_gravity="center"
                         android:layout_marginEnd="@dimen/dp_10"
                         android:layout_marginStart="@dimen/dp_10"
-                        android:gravity="center"
+                        android:gravity="start"
                         android:textColor="@color/colorPrimary"
                         android:textSize="11sp"
                         tools:ignore="RelativeOverlap" />

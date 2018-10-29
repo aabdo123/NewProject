@@ -48,5 +48,8 @@ public class ShortTermManager {
         ShortTermManager.authToken = authToken;
     }
 
+    public void clear(){
+        this.requestMapsExpendableList = null;
+    }
 
 }

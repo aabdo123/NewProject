@@ -113,7 +113,7 @@ public class ExpandableAdapter extends MultiLevelAdapter {
 //            }
 
 
-            if (mItem.isClicked()) {
+            if (mItem.isExpanded()) {
                 mViewHolder.mExpandIcon.setBackground(mContext.getResources().getDrawable(R.drawable.group_collapse));
             } else {
                 mViewHolder.mExpandIcon.setBackground(mContext.getResources().getDrawable(R.drawable.group_expand));
@@ -131,9 +131,17 @@ public class ExpandableAdapter extends MultiLevelAdapter {
             }
 
             if (position == 0) {
-                ((ViewGroup.MarginLayoutParams) mViewHolder.mExpandButton.getLayoutParams()).leftMargin = Utils.pxToDp(5);
+                if (AppUtils.isArabic()) {
+                    ((ViewGroup.MarginLayoutParams) mViewHolder.mExpandButton.getLayoutParams()).rightMargin = Utils.pxToDp(50);
+                } else {
+                    ((ViewGroup.MarginLayoutParams) mViewHolder.mExpandButton.getLayoutParams()).leftMargin = Utils.pxToDp(50);
+                }
             } else {
-                ((ViewGroup.MarginLayoutParams) mViewHolder.mExpandButton.getLayoutParams()).leftMargin = Utils.pxToDp(20);
+                if (AppUtils.isArabic()) {
+                    ((ViewGroup.MarginLayoutParams) mViewHolder.mExpandButton.getLayoutParams()).rightMargin = Utils.pxToDp(150);
+                } else {
+                    ((ViewGroup.MarginLayoutParams) mViewHolder.mExpandButton.getLayoutParams()).leftMargin = Utils.pxToDp(150);
+                }
             }
 //            Log.e("s","s");
 
@@ -246,17 +254,41 @@ public class ExpandableAdapter extends MultiLevelAdapter {
                     try {
                         int position = getAdapterPosition();
                         Item item = mListItems.get(position);
-                        if (!item.isClicked()) {
-                            item.setClicked(true);
-//                            actionsInterface.ItemClicked(item, position, item.isChecked(), "click");
-                            mMultiLevelRecyclerView.toggleItemsGroup(position);
-                            mExpandIcon.setBackground(mContext.getResources().getDrawable(R.drawable.group_collapse));
+                        if (position == 0) {
+                            if (!item.isExpanded()) {
+                                item.setClicked(true);
+                                for (int x = 0; x < mListItems.size(); x++) {
+                                    mListItems.get(x).setClicked(true);
+                                    String vehicle = mListItems.get(x).getID();
+                                    String firstOne = vehicle.substring(0, 1);
+                                    if (firstOne.equalsIgnoreCase("G")) {
+                                        mMultiLevelRecyclerView.toggleItemsGroup(x);
+                                    }
+                                }
+                                mExpandIcon.setBackground(mContext.getResources().getDrawable(R.drawable.group_collapse));
+                            } else {
+                                item.setClicked(false);
+                                mExpandIcon.setBackground(mContext.getResources().getDrawable(R.drawable.group_expand));
+                                for (int x = 0; x < mListItems.size(); x++) {
+                                    mListItems.get(x).setClicked(false);
+                                    String vehicle = mListItems.get(x).getID();
+                                    String firstOne = vehicle.substring(0, 1);
+                                    if (firstOne.equalsIgnoreCase("G")) {
+                                        mMultiLevelRecyclerView.toggleItemsGroup(x);
+                                    }
+                                }
+                            }
                         } else {
-                            item.setClicked(false);
-                            mExpandIcon.setBackground(mContext.getResources().getDrawable(R.drawable.group_expand));
-                            mMultiLevelRecyclerView.toggleItemsGroup(position);
+                            if (!item.isExpanded()) {
+                                item.setClicked(true);
+                                mMultiLevelRecyclerView.toggleItemsGroup(position);
+                                mExpandIcon.setBackground(mContext.getResources().getDrawable(R.drawable.group_collapse));
+                            } else {
+                                mExpandIcon.setBackground(mContext.getResources().getDrawable(R.drawable.group_expand));
+                                mMultiLevelRecyclerView.toggleItemsGroup(position);
+                                item.setClicked(false);
+                            }
                         }
-//                        mMultiLevelRecyclerView.toggleItemsGroup(position);
                     } catch (Exception ex) {
                         ex.printStackTrace();
                     }
@@ -286,4 +318,6 @@ public class ExpandableAdapter extends MultiLevelAdapter {
             });
         }
     }
+
+
 }

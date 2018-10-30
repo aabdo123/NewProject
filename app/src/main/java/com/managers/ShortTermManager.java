@@ -6,6 +6,8 @@ public class ShortTermManager {
     private static boolean isFromGuest = false;
     private boolean isFirstShare = false;
     private String requestMapsExpendableList;
+    private Object landMarkRequest;
+    private Object geoFenceRequest;
 
 
 
@@ -32,6 +34,14 @@ public class ShortTermManager {
         return isFirstShare;
     }
 
+    public Object getLandMarkRequest() {
+        return landMarkRequest;
+    }
+
+    public void setLandMarkRequest(Object landMarkRequest) {
+        this.landMarkRequest = landMarkRequest;
+    }
+
     public boolean isFromGuest() {
         return isFromGuest;
     }
@@ -48,8 +58,18 @@ public class ShortTermManager {
         ShortTermManager.authToken = authToken;
     }
 
+    public Object getGeoFenceRequest() {
+        return geoFenceRequest;
+    }
+
+    public void setGeoFenceRequest(Object geoFenceRequest) {
+        this.geoFenceRequest = geoFenceRequest;
+    }
+
     public void clear(){
         this.requestMapsExpendableList = null;
+        this.landMarkRequest = null;
+        this.geoFenceRequest = null;
     }
 
 }

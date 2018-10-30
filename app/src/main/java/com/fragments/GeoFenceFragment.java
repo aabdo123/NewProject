@@ -23,11 +23,14 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.R;
 import com.activities.MainActivity;
+import com.managers.ApiCallResponse;
 import com.managers.ApiCallResponseString;
 import com.managers.BusinessManager;
 import com.managers.PreferencesManager;
+import com.managers.ShortTermManager;
 import com.managers.map_managers.MyGeoFenceManager;
 import com.managers.map_managers.MyMapStyleManager;
+import com.models.GeoFenceModel;
 import com.models.ListOfVehiclesModel;
 import com.utilities.ToastHelper;
 import com.utilities.Utils;
@@ -45,6 +48,7 @@ import com.views.TextViewLight;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Locale;
 
 /**
@@ -379,11 +383,28 @@ public class GeoFenceFragment extends Fragment implements MapStyleDialogFragment
                 new ApiCallResponseString() {
                     @Override
                     public void onSuccess(int statusCode, String responseObject) {
-                        Progress.dismissLoadingDialog();
-                        if (responseObject.equals("true"))
-                            onSuccessSaveGeoFence();
-                        else
-                            ToastHelper.toastWarningLong(activity, activity.getString(R.string.something_went_worng));
+                        try {
+                            BusinessManager.postGeoFenceList("-1", new ApiCallResponse() {
+                                @Override
+                                public void onSuccess(int statusCode, Object responseObjectApi) {
+                                    Progress.dismissLoadingDialog();
+                                    if (responseObject.equals("true")) {
+                                        ShortTermManager.getInstance().setGeoFenceRequest(responseObjectApi);
+                                        onSuccessSaveGeoFence();
+                                    } else {
+                                        ToastHelper.toastWarningLong(activity, activity.getString(R.string.something_went_worng));
+                                    }
+                                }
+
+                                @Override
+                                public void onFailure(int statusCode, String errorResponse) {
+                                    Progress.dismissLoadingDialog();
+                                    ToastHelper.toastWarningLong(activity, activity.getString(R.string.something_went_worng));
+                                }
+                            });
+                        } catch (Exception ex) {
+                            ex.printStackTrace();
+                        }
                     }
 
                     @Override

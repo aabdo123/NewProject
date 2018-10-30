@@ -94,6 +94,20 @@ public class SlideUpFragment extends Fragment {
         slideUpAdapter.notifyDataSetChanged();
     }
 
+    public void showGeofence(boolean state) {
+        try {
+            if (slideUpAdapter!=null){
+                PreferencesManager.getInstance().setBooleanValue(state, SharesPrefConstants.IS_GEOFENCE_SHOW_SLIDE_MENU);
+                SlideUpItemsModel model = list.get(4);
+                mParentListener.onClickShow(true, false, model.getId());
+                slideUpAdapter.notifyDataSetChanged();
+            }
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+    }
+
+
     public void showLandMark(boolean state) {
         try {
             if (slideUpAdapter!=null){
@@ -108,13 +122,12 @@ public class SlideUpFragment extends Fragment {
     }
 
 
-    public void notifyAdapterItemOneCluster() {
+    public void notifyAdapterItemOneCluster(boolean state) {
       try {
           if (slideUpAdapter!=null){
-              PreferencesManager.getInstance().setBooleanValue(false, SharesPrefConstants.IS_CLUSTER_SHOW_SLIDE_MENU);
+              PreferencesManager.getInstance().setBooleanValue(state, SharesPrefConstants.IS_CLUSTER_SHOW_SLIDE_MENU);
               SlideUpItemsModel model = list.get(1);
-//              model.setShowClicked(false);
-              mParentListener.onClickShow(true, false, model.getId());
+              mParentListener.onClickShow(state, false, model.getId());
               slideUpAdapter.notifyDataSetChanged();
           }
       }catch (Exception ex){

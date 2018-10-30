@@ -122,6 +122,7 @@ public class VehiclesDialogFragment extends DialogFragment {
 
     private void initAdapter() {
         if (Utils.isNotEmptyList(listOfVehiclesForGeoFence)) {
+            if (listOfVehiclesForGeoFence != null && listOfVehiclesForGeoFence.size() > 0 && listOfVehiclesForGeoFence.get(0).getVehicleModel() != null)
             if (Utils.isNotEmptyList(listOfVehiclesForGeoFence.get(0).getVehicleModel())) {
                 adapter = new VehiclesGeoFenceAdapter(context, listOfVehiclesForGeoFence);
                 vehiclesRecyclerView.setLayoutManager(new LinearLayoutManager(context));
@@ -134,15 +135,17 @@ public class VehiclesDialogFragment extends DialogFragment {
 
     private List<String> getVehiclesIdsList() {
         vehiclesIds = new ArrayList<>();
-        for (ListOfVehiclesModel.VehicleModel ids : listOfVehiclesForGeoFence.get(0).getVehicleModel()) {
-            if (ids.isSelected())
-                vehiclesIds.add(String.valueOf(ids.getVehicleID()));
-        }
+        if (listOfVehiclesForGeoFence != null && listOfVehiclesForGeoFence.size() > 0 && listOfVehiclesForGeoFence.get(0).getVehicleModel() != null)
+            for (ListOfVehiclesModel.VehicleModel ids : listOfVehiclesForGeoFence.get(0).getVehicleModel()) {
+                if (ids.isSelected())
+                    vehiclesIds.add(String.valueOf(ids.getVehicleID()));
+            }
         return vehiclesIds;
     }
 
     private List<String> getVehiclesLabelsList() {
         vehiclesLabels = new ArrayList<>();
+        if (listOfVehiclesForGeoFence != null && listOfVehiclesForGeoFence.size() > 0 && listOfVehiclesForGeoFence.get(0).getVehicleModel() != null)
         for (ListOfVehiclesModel.VehicleModel ids : listOfVehiclesForGeoFence.get(0).getVehicleModel()) {
             if (ids.isSelected())
                 vehiclesLabels.add(ids.getLabel());

@@ -52,7 +52,6 @@ public class VehiclesClusterManager implements ClusterManager.OnClusterClickList
     }
 
     private void addToClusterList() {
-//        myClusterItems = new ArrayList<>();
         for (LinkedHashMap.Entry<Marker, AllVehiclesInHashModel> mapEntry : vehiclesHashMap.entrySet()) {
             AllVehiclesInHashModel vehiclesInHashModel = mapEntry.getValue();
             AllVehiclesInHashModel.AllVehicleModel.LastLocation lastLocation = vehiclesInHashModel.getAllVehicleModel().getLastLocation();
@@ -60,28 +59,20 @@ public class VehiclesClusterManager implements ClusterManager.OnClusterClickList
             MyClusterItem clusterItem = new MyClusterItem(lng,
                     vehiclesInHashModel.getAllVehicleModel().getLabel(),
                     (float) vehiclesInHashModel.getAllVehicleModel().getLastLocation().getDirection(),
-                    AppUtils.getCarIcon(lastLocation.getVehicleStatus()));
+                    vehiclesInHashModel.isFaded() ? AppUtils.getCarIconAlpha(lastLocation.getVehicleStatus()) : AppUtils.getCarIcon(lastLocation.getVehicleStatus()));
             myClusterItems.add(clusterItem);
         }
     }
 
     public void startVehiclesClustering() {
         mClusterManager = new ClusterManager<>(context, googleMap);
-//        mClusterManager.setAlgorithm(new PreCachingAlgorithmDecorator<>(new GridBasedAlgorithm<>()));
-//        mClusterManager.setAlgorithm(new GridBasedAlgorithm<MyClusterItem>());
         googleMap.setOnCameraIdleListener(mClusterManager);
         mClusterManager.addItems(myClusterItems);
         mClusterManager.cluster();
-
         MarkerClusterRenderer customRenderer = new MarkerClusterRenderer(context, googleMap, mClusterManager);
         mClusterManager.setRenderer(customRenderer);
         mClusterManager.onCameraIdle();
-
-        // Mbdy2an no need
         mClusterManager.setOnClusterClickListener(this);
-//        mClusterManager.setOnClusterInfoWindowClickListener(this);
-//        mClusterManager.setOnClusterItemClickListener(this);
-//        mClusterManager.setOnClusterItemInfoWindowClickListener(this);
     }
 
     public void removeVehiclesCluster() {
@@ -104,8 +95,6 @@ public class VehiclesClusterManager implements ClusterManager.OnClusterClickList
 
         @Override
         protected void onBeforeClusterItemRendered(MyClusterItem item, MarkerOptions markerOptions) {
-            // use this to make your change to the marker option
-            // for the marker before it gets render on the map
             markerOptions.icon(item.getMarkerIcon());
             markerOptions.rotation(item.getDirection());
             markerOptions.anchor(0.5f, 0.5f);
@@ -114,30 +103,41 @@ public class VehiclesClusterManager implements ClusterManager.OnClusterClickList
 
         @Override
         protected void onClusterItemRendered(MyClusterItem clusterItem, Marker marker) {
+            for (LinkedHashMap.Entry<Marker, AllVehiclesInHashModel> mapEntry : vehiclesHashMap.entrySet()) {
+                AllVehiclesInHashModel vehiclesInHashModel = mapEntry.getValue();
+                LatLng latLng = marker.getPosition();
+                if (latLng.latitude == vehiclesInHashModel.getAllVehicleModel().getLastLocation().getLatitude()) {
+
+
+                }
+
+            }
+
+
+            LatLng latLng = marker.getPosition();
+            List<AllVehiclesInHashModel> allVehiclesInHashModels = new ArrayList<AllVehiclesInHashModel>(vehiclesHashMap.values());
+            for (AllVehiclesInHashModel allVehiclesInHash : allVehiclesInHashModels) {
+
+            }
+
+
             super.onClusterItemRendered(clusterItem, marker);
         }
 
         @Override
         protected void onBeforeClusterRendered(Cluster<MyClusterItem> cluster, MarkerOptions markerOptions) {
-
             final Drawable clusterIcon = context.getResources().getDrawable(R.drawable.ic_cluster_circle);
-//            clusterIcon.setColorFilter(context.getResources().getColor(android.R.color.holo_orange_light), PorterDuff.Mode.SRC_ATOP);
-
             mClusterIconGenerator.setBackground(clusterIcon);
             mClusterIconGenerator.setTextAppearance(context, R.style.clusterText);
-
-////            modify padding for one or two digit numbers
             if (cluster.getSize() < 10) {
                 mClusterIconGenerator.setContentPadding(40, 20, 0, 0);
             } else {
                 mClusterIconGenerator.setContentPadding(30, 20, 0, 0);
             }
-
             Bitmap icon = mClusterIconGenerator.makeIcon(String.valueOf(cluster.getSize()));
             markerOptions.icon(BitmapDescriptorFactory.fromBitmap(icon));
         }
 
-        // 3ashn y3mel radner dyman
         @Override
         protected boolean shouldRenderAsCluster(Cluster cluster) {
             // Always render clusters.

@@ -18,7 +18,9 @@ import com.fragments.GeoFenceFragment;
 import com.fragments.LisOfVehiclesMapFragment;
 import com.managers.ApiCallResponse;
 import com.managers.BusinessManager;
+import com.managers.ShortTermManager;
 import com.models.GeoFenceModel;
+import com.models.LandmarkModel;
 import com.models.ListOfVehiclesModel;
 import com.utilities.ToastHelper;
 import com.utilities.Utils;
@@ -155,22 +157,47 @@ public class MyGeoFenceManager {
     }
 
     private void geoFenceListApiCall() {
-        Progress.showLoadingDialog(activity);
-        geoFenceList = new ArrayList<>();
-        BusinessManager.postGeoFenceList("-1", new ApiCallResponse() {
-            @Override
-            public void onSuccess(int statusCode, Object responseObject) {
-                Progress.dismissLoadingDialog();
-                GeoFenceModel[] geoFenceModel = (GeoFenceModel[]) responseObject;
+        try {
+            if (geoFenceList == null) {
+                geoFenceList = new ArrayList<>();
+            }else {
+                geoFenceList.clear();
+            }
+            if (ShortTermManager.getInstance().getGeoFenceRequest() == null) {
+                Progress.showLoadingDialog(activity);
+                BusinessManager.postGeoFenceList("-1", new ApiCallResponse() {
+                    @Override
+                    public void onSuccess(int statusCode, Object responseObject) {
+                        Progress.dismissLoadingDialog();
+                        ShortTermManager.getInstance().setGeoFenceRequest(responseObject);
+                        GeoFenceModel[] geoFenceModel = (GeoFenceModel[]) responseObject;
+                        Collections.addAll(geoFenceList, geoFenceModel);
+                        drawCircleOnMap();
+                    }
+
+                    @Override
+                    public void onFailure(int statusCode, String errorResponse) {
+                        Progress.dismissLoadingDialog();
+                    }
+                });
+            } else {
+                GeoFenceModel[] geoFenceModel = (GeoFenceModel[]) ShortTermManager.getInstance().getGeoFenceRequest();
                 Collections.addAll(geoFenceList, geoFenceModel);
                 drawCircleOnMap();
-            }
+                BusinessManager.postGeoFenceList("-1", new ApiCallResponse() {
+                    @Override
+                    public void onSuccess(int statusCode, Object responseObject) {
+                        ShortTermManager.getInstance().setGeoFenceRequest(responseObject);
+                    }
 
-            @Override
-            public void onFailure(int statusCode, String errorResponse) {
-                Progress.dismissLoadingDialog();
+                    @Override
+                    public void onFailure(int statusCode, String errorResponse) {
+                    }
+                });
             }
-        });
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     private LatLng getLatLng(String loc) {

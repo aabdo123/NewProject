@@ -3,16 +3,19 @@ package com.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.google.maps.android.clustering.ClusterItem;
 
-public class AllVehiclesInHashModel {
+public class AllVehiclesInHashModel implements ClusterItem {
 
     private int vehicleId;
     private Marker marker;
     private AllVehicleModel allVehicleModel;
+    private boolean faded;
 
     public int getVehicleId() {
         return vehicleId;
@@ -34,8 +37,31 @@ public class AllVehiclesInHashModel {
         return allVehicleModel;
     }
 
+    public boolean isFaded() {
+        return faded;
+    }
+
+    public void setFaded(boolean faded) {
+        this.faded = faded;
+    }
+
     public void setAllVehicleModel(AllVehicleModel allVehicleModel) {
         this.allVehicleModel = allVehicleModel;
+    }
+
+    @Override
+    public LatLng getPosition() {
+        return new LatLng(allVehicleModel != null && allVehicleModel.getLastLocation() != null ? allVehicleModel.getLastLocation().getLatitude() : 0.0, allVehicleModel != null && allVehicleModel.getLastLocation() != null ? allVehicleModel.getLastLocation().getLongitude():0.0);
+    }
+
+    @Override
+    public String getTitle() {
+        return null;
+    }
+
+    @Override
+    public String getSnippet() {
+        return null;
     }
 
     public static class AllVehicleModel implements Parcelable {
@@ -425,7 +451,6 @@ public class AllVehiclesInHashModel {
             public void setEngineStatus(Boolean engineStatus) {
                 this.engineStatus = engineStatus;
             }
-
 
 
             public Integer getVehicleID() {

@@ -15,6 +15,7 @@ import com.R;
 import com.adapters.LandmarkListAdapter;
 import com.managers.ApiCallResponse;
 import com.managers.BusinessManager;
+import com.managers.ShortTermManager;
 import com.models.LandmarkModel;
 import com.utilities.Utils;
 import com.views.Click;
@@ -94,6 +95,7 @@ public class LandmarkListFragment extends Fragment {
         BusinessManager.postLandMarkList("-1", new ApiCallResponse() {
             @Override
             public void onSuccess(int statusCode, Object responseObject) {
+                ShortTermManager.getInstance().setLandMarkRequest(responseObject);
                 Progress.dismissLoadingDialog();
                 swipeRefreshLayout.setRefreshing(false);
                 LandmarkModel[] model = (LandmarkModel[]) responseObject;

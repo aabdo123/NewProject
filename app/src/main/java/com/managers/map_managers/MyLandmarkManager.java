@@ -15,8 +15,11 @@ import com.R;
 import com.activities.MainActivity;
 import com.fragments.LandmarkFragment;
 import com.fragments.LisOfVehiclesMapFragment;
+import com.google.gson.Gson;
 import com.managers.ApiCallResponse;
 import com.managers.BusinessManager;
+import com.managers.ShortTermManager;
+import com.models.AllVehiclesInHashModel;
 import com.models.LandmarkModel;
 import com.utilities.Utils;
 import com.utilities.constants.AppConstant;
@@ -24,6 +27,7 @@ import com.utilities.map.MapUtils;
 import com.views.Progress;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -81,22 +85,47 @@ public class MyLandmarkManager {
     }
 
     private void getLandmarkListApiCall() {
-        Progress.showLoadingDialog(activity);
-        landmarkList = new ArrayList<>();
-        BusinessManager.postLandMarkList("-1", new ApiCallResponse() {
-            @Override
-            public void onSuccess(int statusCode, Object responseObject) {
-                Progress.dismissLoadingDialog();
-                LandmarkModel[] geoFenceModel = (LandmarkModel[]) responseObject;
+        try {
+            if (landmarkList == null) {
+                landmarkList = new ArrayList<>();
+            }else {
+                landmarkList.clear();
+            }
+            if (ShortTermManager.getInstance().getLandMarkRequest() == null) {
+                Progress.showLoadingDialog(activity);
+                BusinessManager.postLandMarkList("-1", new ApiCallResponse() {
+                    @Override
+                    public void onSuccess(int statusCode, Object responseObject) {
+                        Progress.dismissLoadingDialog();
+                        ShortTermManager.getInstance().setLandMarkRequest(responseObject);
+                        LandmarkModel[] geoFenceModel = (LandmarkModel[]) responseObject;
+                        Collections.addAll(landmarkList, geoFenceModel);
+                        addLandMarkersOnMap();
+                    }
+
+                    @Override
+                    public void onFailure(int statusCode, String errorResponse) {
+                        Progress.dismissLoadingDialog();
+                    }
+                });
+            } else {
+                LandmarkModel[] geoFenceModel = (LandmarkModel[]) ShortTermManager.getInstance().getLandMarkRequest();
                 Collections.addAll(landmarkList, geoFenceModel);
                 addLandMarkersOnMap();
-            }
+                BusinessManager.postLandMarkList("-1", new ApiCallResponse() {
+                    @Override
+                    public void onSuccess(int statusCode, Object responseObject) {
+                        ShortTermManager.getInstance().setLandMarkRequest(responseObject);
+                    }
 
-            @Override
-            public void onFailure(int statusCode, String errorResponse) {
-                Progress.dismissLoadingDialog();
+                    @Override
+                    public void onFailure(int statusCode, String errorResponse) {
+                    }
+                });
             }
-        });
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     private void addLandMarkersOnMap() {

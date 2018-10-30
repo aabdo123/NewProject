@@ -195,7 +195,7 @@ public class LisOfVehiclesMapFragment extends Fragment implements
     private List<Item> list;
     private List<Item> mainArrayOfVehiclesList = new ArrayList<>();
     private LatLngBounds.Builder builder = new LatLngBounds.Builder();
-    private LatLngBounds bounds;
+    //    private LatLngBounds bounds;
     private boolean openFirstTime = true;
     private List<Item> mainChecks;
     private ExpandableAdapter expandableAdapter;
@@ -487,6 +487,9 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                     addVehiclesMarkers(true);
                     if (slideUpFragment != null && PreferencesManager.getInstance().getBooleanValue(SharesPrefConstants.IS_LANDMARK_SHOW_SLIDE_MENU)) {
                         slideUpFragment.showLandMark(true);
+                    }
+                    if (slideUpFragment != null && PreferencesManager.getInstance().getBooleanValue(SharesPrefConstants.IS_GEOFENCE_SHOW_SLIDE_MENU)) {
+                        slideUpFragment.showGeofence(true);
                     }
                     if (listOfVehiclesForGeoFence != null && listOfVehiclesForGeoFence.size() > 0 && listOfVehiclesForGeoFence.get(0) != null) {
                         String request = new Gson().toJson(vehiclesList);
@@ -1281,16 +1284,9 @@ public class LisOfVehiclesMapFragment extends Fragment implements
         }
     }
 
-    private void setLocateManager() { //TODO
+    private void setLocateManager() {
+        googleMap.clear();
         if (myLocateManager == null) {
-//            setVisibilityVehiclesMarkers(false);
-//            setVisibilityAllMarkers(false);
-            if (PreferencesManager.getInstance().getBooleanValue(SharesPrefConstants.IS_CLUSTER_SHOW_SLIDE_MENU)) {
-                if (vehiclesClusterManager != null) {
-                    vehiclesClusterManager.removeVehiclesCluster();
-                    vehiclesClusterManager = null;
-                }
-            }
             myLocateManager = new MyLocateManager(context, rootView, googleMap, vehiclesHashMap, myCurrentLatLng);
             myLocateManager.setViews(mMapView);
             myLocateManager.setAfterOnDismissListeners(new Click() {
@@ -1311,22 +1307,25 @@ public class LisOfVehiclesMapFragment extends Fragment implements
             myLocateManager.setLandMarkListeners(new MyLocateManager.LandMarkCheck() {
                 @Override
                 public void landMark() {
+                    if (!PreferencesManager.getInstance().getBooleanValue(SharesPrefConstants.IS_CLUSTER_SHOW_SLIDE_MENU)) {
+                        addAndHideViews(-1, true);
+                    } else {
+                        addAndHideViewsAfterCluster(-1, true);
+                    }
                     if (slideUpFragment != null && PreferencesManager.getInstance().getBooleanValue(SharesPrefConstants.IS_LANDMARK_SHOW_SLIDE_MENU)) {
                         slideUpFragment.showLandMark(true);
                     }
+                    if (slideUpFragment != null && PreferencesManager.getInstance().getBooleanValue(SharesPrefConstants.IS_GEOFENCE_SHOW_SLIDE_MENU)) {
+                        slideUpFragment.showGeofence(true);
+                    }
+//                    if (slideUpFragment != null && PreferencesManager.getInstance().getBooleanValue(SharesPrefConstants.IS_GEOFENCE_SHOW_SLIDE_MENU)) {
+//                        slideUpFragment.showGeofence(true);
+//                    }
                 }
             });
         } else {
             myLocateManager.removeViewPopup();
             myLocateManager = null;
-//            setVisibilityVehiclesMarkers(false);
-//            setVisibilityAllMarkers(false);
-            if (PreferencesManager.getInstance().getBooleanValue(SharesPrefConstants.IS_CLUSTER_SHOW_SLIDE_MENU)) {
-                if (vehiclesClusterManager != null) {
-                    vehiclesClusterManager.removeVehiclesCluster();
-                    vehiclesClusterManager = null;
-                }
-            }
             myLocateManager = new MyLocateManager(context, rootView, googleMap, vehiclesHashMap, myCurrentLatLng);
             myLocateManager.setViews(mMapView);
             myLocateManager.setAfterOnDismissListeners(new Click() {
@@ -1513,11 +1512,21 @@ public class LisOfVehiclesMapFragment extends Fragment implements
         googleMap.getUiSettings().setMapToolbarEnabled(false);
         googleMap.setTrafficEnabled(false);
         googleMap.setOnMapClickListener(latLng -> {
-            bottomViewVisibility();
-            setClusterManager(markerClusterVisibility, true, 1);
-            if (slideUpFragment != null && PreferencesManager.getInstance().getBooleanValue(SharesPrefConstants.IS_LANDMARK_SHOW_SLIDE_MENU)) {
-                slideUpFragment.showLandMark(true);
+            if (!PreferencesManager.getInstance().getBooleanValue(SharesPrefConstants.IS_CLUSTER_SHOW_SLIDE_MENU)) {
+                addAndHideViews(-1, true);
+            } else {
+                addAndHideViewsAfterCluster(-1, true);
             }
+            bottomViewVisibility();
+
+
+            //setClusterManager(markerClusterVisibility, true, 1);
+//            if (slideUpFragment != null && PreferencesManager.getInstance().getBooleanValue(SharesPrefConstants.IS_LANDMARK_SHOW_SLIDE_MENU)) {
+//                slideUpFragment.showLandMark(true);
+//            }
+//            if (slideUpFragment != null && PreferencesManager.getInstance().getBooleanValue(SharesPrefConstants.IS_GEOFENCE_SHOW_SLIDE_MENU)) {
+//                slideUpFragment.showGeofence(true);
+//            }
         });
         new Handler().postDelayed(() -> {
             startSignalRSerivce();
@@ -1529,15 +1538,12 @@ public class LisOfVehiclesMapFragment extends Fragment implements
     private void bottomViewVisibility() {
         try {
             if (singleCarMoreOptionsLayout.getVisibility() == View.VISIBLE) {
-                addAndHideViews(0, true);
                 viewSelected(false);
             }
         } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
-
-
     private void addVehiclesMarkers(boolean addCarsOnMap) {
         try {
             if (openFirstTime) {
@@ -1561,13 +1567,6 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                 }
                 googleMap.setOnMarkerClickListener(marker -> {
                     try {
-                        if (vehiclesClusterManager != null) { // keep clustered items
-                            if (slideUpFragment != null)
-                                slideUpFragment.notifyAdapterItemOneCluster();
-                        }
-                        if (slideUpFragment != null && PreferencesManager.getInstance().getBooleanValue(SharesPrefConstants.IS_LANDMARK_SHOW_SLIDE_MENU)) {
-                            slideUpFragment.showLandMark(true);
-                        }
                         if (vehiclesHashMap != null && vehiclesHashMap.size() > 0) {
                             AllVehiclesInHashModel markerModel = vehiclesHashMap.get(marker);
                             if (markerModel != null) {
@@ -1584,7 +1583,7 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                                             addHeaderTitle(allVehiclesInHash);
                                             addBodyView(allVehiclesInHash);
                                             viewSelected(true);
-                                            addAndHideViews(allVehiclesInHash.getVehicleId(), false);
+                                            addAndHideViewsAfterCluster(allVehiclesInHash.getVehicleId(), false);
                                         }
                                 }
                             }
@@ -1610,43 +1609,108 @@ public class LisOfVehiclesMapFragment extends Fragment implements
         }
     }
 
-    private void addAndHideViews(int vehicleId, boolean isReactedMap) {
+    private void addAndHideViewsAfterCluster(int vehicleId, boolean returnAllWithoutFade) {
         try {
-        googleMap.clear();
-        Marker addMarker;
-        if (vehiclesHashMap != null && vehiclesHashMap.size() > 0) {
-            vehiclesHashMap.clear();
-            for (AllVehiclesInHashModel.AllVehicleModel allVehicleModel : vehiclesList) {
-                AllVehiclesInHashModel inHashModel = new AllVehiclesInHashModel();
-                inHashModel.setVehicleId(allVehicleModel.getVehicleID());
-                inHashModel.setAllVehicleModel(allVehicleModel);
-                LatLng lng = new LatLng(allVehicleModel.getLastLocation().getLatitude(), allVehicleModel.getLastLocation().getLongitude());
-                if (isReactedMap) {
-                    addMarker = googleMap.addMarker(new MarkerOptions().position(lng)
-                            .icon(AppUtils.getCarIcon(allVehicleModel.getLastLocation().getVehicleStatus()))
-                            .anchor(0.5f, 0.5f)
-                            .rotation((float) allVehicleModel.getLastLocation().getDirection())
-                            .flat(true));
-                } else if (vehicleId == allVehicleModel.getVehicleID()) {
-                    addMarker = googleMap.addMarker(new MarkerOptions().position(lng)
-                            .icon(AppUtils.getCarIcon(allVehicleModel.getLastLocation().getVehicleStatus()))
-                            .anchor(0.5f, 0.5f)
-                            .rotation((float) allVehicleModel.getLastLocation().getDirection())
-                            .flat(true));
-                } else {
-                    addMarker = googleMap.addMarker(new MarkerOptions().position(lng)
-                            .icon(AppUtils.getCarIconAlpha(allVehicleModel.getLastLocation().getVehicleStatus()))
-                            .anchor(0.5f, 0.5f)
-                            .rotation((float) allVehicleModel.getLastLocation().getDirection())
-                            .flat(true));
-                }
-                inHashModel.setMarker(addMarker);
-                vehiclesHashMap.put(addMarker, inHashModel); // adding here
-                builder.include(lng);
+            Marker addMarker;
+            googleMap.clear();
+            if (slideUpFragment != null && PreferencesManager.getInstance().getBooleanValue(SharesPrefConstants.IS_LANDMARK_SHOW_SLIDE_MENU)) {
+                slideUpFragment.showLandMark(true);
             }
-            bounds = builder.build();
+            if (slideUpFragment != null && PreferencesManager.getInstance().getBooleanValue(SharesPrefConstants.IS_GEOFENCE_SHOW_SLIDE_MENU)) {
+                slideUpFragment.showGeofence(true);
+            }
+            if (vehiclesHashMap != null && vehiclesHashMap.size() > 0) {
+                for (Marker key : vehiclesHashMap.keySet()) {
+                    key.remove();
+                }
+                vehiclesHashMap.clear();
+                if (vehiclesClusterManager != null) {
+                    vehiclesClusterManager.removeVehiclesCluster();
+                    vehiclesClusterManager = null;
+                }
+                for (AllVehiclesInHashModel.AllVehicleModel allVehicleModel : vehiclesList) {
+                    AllVehiclesInHashModel inHashModel = new AllVehiclesInHashModel();
+                    inHashModel.setVehicleId(allVehicleModel.getVehicleID());
+                    inHashModel.setAllVehicleModel(allVehicleModel);
+                    LatLng lng = new LatLng(allVehicleModel.getLastLocation().getLatitude(), allVehicleModel.getLastLocation().getLongitude());
+                    if (!returnAllWithoutFade) {
+                        if (vehicleId != allVehicleModel.getVehicleID()) {
+                            addMarker = googleMap.addMarker(new MarkerOptions().position(lng)
+                                    .icon(AppUtils.getCarIconAlpha(allVehicleModel.getLastLocation().getVehicleStatus()))
+                                    .anchor(0.5f, 0.5f)
+                                    .rotation((float) allVehicleModel.getLastLocation().getDirection())
+                                    .flat(true));
+                            inHashModel.setFaded(true);
+                        } else {
+                            addMarker = googleMap.addMarker(new MarkerOptions().position(lng)
+                                    .icon(AppUtils.getCarIcon(allVehicleModel.getLastLocation().getVehicleStatus()))
+                                    .anchor(0.5f, 0.5f)
+                                    .rotation((float) allVehicleModel.getLastLocation().getDirection())
+                                    .flat(true));
+                            inHashModel.setFaded(false);
+                        }
+                    } else {// if map clicked here
+                        addMarker = googleMap.addMarker(new MarkerOptions().position(lng)
+                                .icon(AppUtils.getCarIcon(allVehicleModel.getLastLocation().getVehicleStatus()))
+                                .anchor(0.5f, 0.5f)
+                                .rotation((float) allVehicleModel.getLastLocation().getDirection())
+                                .flat(true));
+                        inHashModel.setFaded(false);
+                    }
+                    inHashModel.setMarker(addMarker);
+                    vehiclesHashMap.put(addMarker, inHashModel); // adding here
+                    builder.include(lng);
+                }
+                // add cluster
+                if (slideUpFragment != null)
+                    slideUpFragment.notifyAdapterItemOneCluster(true);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
-        }catch (Exception ex){
+    }
+
+
+    private void addAndHideViews(int vehicleId, boolean returnAllWithoutFade) {
+        try {
+            Marker addMarker;
+            if (vehiclesHashMap != null && vehiclesHashMap.size() > 0) {
+                for (Marker key : vehiclesHashMap.keySet()) {
+                    key.remove();
+                }
+                vehiclesHashMap.clear();
+                for (AllVehiclesInHashModel.AllVehicleModel allVehicleModel : vehiclesList) {
+                    AllVehiclesInHashModel inHashModel = new AllVehiclesInHashModel();
+                    inHashModel.setVehicleId(allVehicleModel.getVehicleID());
+                    inHashModel.setAllVehicleModel(allVehicleModel);
+                    LatLng lng = new LatLng(allVehicleModel.getLastLocation().getLatitude(), allVehicleModel.getLastLocation().getLongitude());
+                    if (!returnAllWithoutFade) {
+                        if (vehicleId != allVehicleModel.getVehicleID()) {
+                            addMarker = googleMap.addMarker(new MarkerOptions().position(lng)
+                                    .icon(AppUtils.getCarIconAlpha(allVehicleModel.getLastLocation().getVehicleStatus()))
+                                    .anchor(0.5f, 0.5f)
+                                    .rotation((float) allVehicleModel.getLastLocation().getDirection())
+                                    .flat(true));
+                        } else {
+                            addMarker = googleMap.addMarker(new MarkerOptions().position(lng)
+                                    .icon(AppUtils.getCarIcon(allVehicleModel.getLastLocation().getVehicleStatus()))
+                                    .anchor(0.5f, 0.5f)
+                                    .rotation((float) allVehicleModel.getLastLocation().getDirection())
+                                    .flat(true));
+                        }
+                    } else {// if map clicked here
+                        addMarker = googleMap.addMarker(new MarkerOptions().position(lng)
+                                .icon(AppUtils.getCarIcon(allVehicleModel.getLastLocation().getVehicleStatus()))
+                                .anchor(0.5f, 0.5f)
+                                .rotation((float) allVehicleModel.getLastLocation().getDirection())
+                                .flat(true));
+                    }
+                    inHashModel.setMarker(addMarker);
+                    vehiclesHashMap.put(addMarker, inHashModel); // adding here
+                    builder.include(lng);
+                }
+            }
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
@@ -1782,15 +1846,15 @@ public class LisOfVehiclesMapFragment extends Fragment implements
 //        int padding = (int) (width * 0.12); // offset from edges of the map 12% of screen
         int padding = (int) (width * random);
 
-        try {
-            //        CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, Utils.getRandomNumber(115, 105));
-            if (googleMap != null) {
-                CameraUpdate cu = (CameraUpdateFactory.newLatLngBounds(bounds, width, height, padding));
-                googleMap.animateCamera(cu);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        try {
+//            //        CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, Utils.getRandomNumber(115, 105));
+//            if (googleMap != null) {
+//                CameraUpdate cu = (CameraUpdateFactory.newLatLngBounds(bounds, width, height, padding));
+//                googleMap.animateCamera(cu);
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 
     private void animateCameraAfterCluster() {
@@ -1802,12 +1866,12 @@ public class LisOfVehiclesMapFragment extends Fragment implements
             isRandomZoomChanged = true;
         }
 
-        try {
-            CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, randomZoom);
-            googleMap.animateCamera(cu);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        try {
+//            CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, randomZoom);
+//            googleMap.animateCamera(cu);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 
     public void setVisibilityVehiclesMarkers(boolean show) {

@@ -26,14 +26,18 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.R;
 import com.activities.MainActivity;
 import com.adapters.LandmarkAdapter;
+import com.google.gson.Gson;
+import com.managers.ApiCallResponse;
 import com.managers.ApiCallResponseRetrofit;
 import com.managers.ApiCallResponseString;
 import com.managers.BusinessManager;
 import com.managers.BusinessManagers;
 import com.managers.PreferencesManager;
+import com.managers.ShortTermManager;
 import com.managers.map_managers.MyLandmarkManager;
 import com.managers.map_managers.MyMapStyleManager;
 import com.models.LandMarkerTypeModel;
+import com.models.LandmarkModel;
 import com.utilities.ToastHelper;
 import com.utilities.constants.AppConstant;
 import com.utilities.constants.SharesPrefConstants;
@@ -47,6 +51,8 @@ import com.views.Progress;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static com.utilities.constants.AppConstant.KSA_LATLNG;
@@ -219,7 +225,7 @@ public class LandmarkFragment extends Fragment implements MapStyleDialogFragment
     }
 
     private void updateLandmarkIconOnMap() {
-        if (myLandmarkManager != null){
+        if (myLandmarkManager != null) {
             myLandmarkManager.updateLandmarkIconOnMap(landLatLng, landmarkList.get(selectedListItem).getLandmarkId());
         }
     }
@@ -266,33 +272,48 @@ public class LandmarkFragment extends Fragment implements MapStyleDialogFragment
             ToastHelper.toastWarningLong(activity, getString(R.string.landmark_name_is_required));
             return;
         }
-
         geoFenceApiCall();
     }
 
     private void geoFenceApiCall() {
         Progress.showLoadingDialog(activity);
-        BusinessManagers.postAddLandMark(
-                landLatLng.longitude,
-                landLatLng.latitude,
-                getLandMarkerIconName(landmarkList.get(selectedListItem).getLandmarkId()),
-                landmarkName(),
-                new ApiCallResponseString() {
-                    @Override
-                    public void onSuccess(int statusCode, String responseObject) {
-                        Progress.dismissLoadingDialog();
-                        if (responseObject.equals("true"))
-                            onSuccessSaveLandmark();
-                        else
-                            ToastHelper.toastWarningLong(activity, activity.getString(R.string.something_went_worng));
-                    }
+        try {
+            BusinessManagers.postAddLandMark(
+                    landLatLng.longitude,
+                    landLatLng.latitude,
+                    getLandMarkerIconName(landmarkList.get(selectedListItem).getLandmarkId()),
+                    landmarkName(),
+                    new ApiCallResponseString() {
+                        @Override
+                        public void onSuccess(int statusCode, String responseObject) {
+                            BusinessManager.postLandMarkList("-1", new ApiCallResponse() {
+                                @Override
+                                public void onSuccess(int statusCode, Object responseObjectArray) {
+                                    Progress.dismissLoadingDialog();
+                                    if (responseObject.equals("true")) {
+                                        ShortTermManager.getInstance().setLandMarkRequest(responseObjectArray);
+                                        onSuccessSaveLandmark();
+                                    } else {
+                                        ToastHelper.toastWarningLong(activity, activity.getString(R.string.something_went_worng));
+                                    }
+                                }
 
-                    @Override
-                    public void onFailure(int statusCode, String errorResponse) {
-                        Progress.dismissLoadingDialog();
-                        ToastHelper.toastWarningLong(context, activity.getString(R.string.something_went_worng));
-                    }
-                });
+                                @Override
+                                public void onFailure(int statusCode, String errorResponse) {
+                                    Progress.dismissLoadingDialog();
+                                    ToastHelper.toastWarningLong(activity, activity.getString(R.string.something_went_worng));
+                                }
+                            });
+                        }
+                        @Override
+                        public void onFailure(int statusCode, String errorResponse) {
+                            Progress.dismissLoadingDialog();
+                            ToastHelper.toastWarningLong(context, activity.getString(R.string.something_went_worng));
+                        }
+                    });
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     private void setLandmarkAdapter() {
@@ -325,12 +346,12 @@ public class LandmarkFragment extends Fragment implements MapStyleDialogFragment
 
     private String landmarkName() {
         String name = landmarkNameEditText.getText().toString().trim();
-            try {
-                return URLEncoder.encode(name,"UTF-8");
-            } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
-                return name;
-            }
+        try {
+            return URLEncoder.encode(name, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+            return name;
+        }
     }
 
     private void animateCameraToKsa(LatLng locationLatLng, int zoom) {

@@ -131,17 +131,9 @@ public class ExpandableAdapter extends MultiLevelAdapter {
             }
 
             if (position == 0) {
-                if (AppUtils.isArabic()) {
-                    ((ViewGroup.MarginLayoutParams) mViewHolder.mExpandButton.getLayoutParams()).rightMargin = Utils.pxToDp(50);
-                } else {
-                    ((ViewGroup.MarginLayoutParams) mViewHolder.mExpandButton.getLayoutParams()).leftMargin = Utils.pxToDp(50);
-                }
+                ((ViewGroup.MarginLayoutParams) mViewHolder.mExpandButton.getLayoutParams()).leftMargin = Utils.pxToDp(50);
             } else {
-                if (AppUtils.isArabic()) {
-                    ((ViewGroup.MarginLayoutParams) mViewHolder.mExpandButton.getLayoutParams()).rightMargin = Utils.pxToDp(150);
-                } else {
-                    ((ViewGroup.MarginLayoutParams) mViewHolder.mExpandButton.getLayoutParams()).leftMargin = Utils.pxToDp(150);
-                }
+                ((ViewGroup.MarginLayoutParams) mViewHolder.mExpandButton.getLayoutParams()).leftMargin = Utils.pxToDp(150);
             }
 //            Log.e("s","s");
 

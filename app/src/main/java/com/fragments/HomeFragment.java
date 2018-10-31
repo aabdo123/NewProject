@@ -2,8 +2,10 @@ package com.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +30,7 @@ public class HomeFragment extends Fragment {
     private FrameLayout progressCounter;
     private FrameLayout dashboardCounter;
     private FrameLayout vehicleCounter;
+    private SwipeRefreshLayout pullToRefresh;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -58,6 +61,7 @@ public class HomeFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
         initView(rootView);
         initListeners();
+        pullToRefresh();
         return rootView;
     }
 
@@ -65,7 +69,19 @@ public class HomeFragment extends Fragment {
         progressCounter = (FrameLayout) rootView.findViewById(R.id.progressCounter);
         dashboardCounter = (FrameLayout) rootView.findViewById(R.id.dashboardCounter);
         vehicleCounter = (FrameLayout) rootView.findViewById(R.id.vehicleCounter);
+        pullToRefresh = rootView.findViewById(R.id.pullToRefresh);
+
     }
+
+    private void pullToRefresh() {
+        pullToRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                dashboardApiCall();
+            }
+        });
+    }
+
 
     private void initListeners() {
     }
@@ -73,29 +89,32 @@ public class HomeFragment extends Fragment {
     public void addProgressFragment(DashboardModel dashboardModel) {
 //        ProgressFragment progressFragment = new ProgressFragment();
         if (isAdded()) {
-        FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
-        transaction.replace(R.id.progressCounter, ProgressFragment.newInstance(dashboardModel)).commit();
+            FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
+            transaction.replace(R.id.progressCounter, ProgressFragment.newInstance(dashboardModel)).commit();
         }
     }
 
     public void addCarsDashboardFragment(DashboardModel dashboardModel) {
 //        CarsDashboardFragment carsDashboardFragment = new CarsDashboardFragment();
         if (isAdded()) {
-        FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
-        transaction.replace(R.id.dashboardCounter, CarsDashboardFragment.newInstance(dashboardModel)).commit();
+            FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
+            transaction.replace(R.id.dashboardCounter, CarsDashboardFragment.newInstance(dashboardModel)).commit();
         }
     }
 
     public void addLastVehicleFragment(DashboardModel dashboardModel) {
 //        LastVehicleFragment lastVehicleFragment = new LastVehicleFragment();
         if (isAdded()) {
-        FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
-        transaction.replace(R.id.vehicleCounter, LastVehicleFragment.newInstance(dashboardModel)).commit();
+            FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
+            transaction.replace(R.id.vehicleCounter, LastVehicleFragment.newInstance(dashboardModel)).commit();
         }
     }
 
     private void dashboardApiCall() {
-        Progress.showLoadingDialog(getActivity());
+        if (pullToRefresh != null) {
+            pullToRefresh.setRefreshing(true);
+        } else
+            Progress.showLoadingDialog(getActivity());
         BusinessManager.postDashboard(new ApiCallResponse() {
             @Override
             public void onSuccess(int statusCode, Object responseObject) {
@@ -106,6 +125,8 @@ public class HomeFragment extends Fragment {
                     addCarsDashboardFragment(dashboardModel);
                     addLastVehicleFragment(dashboardModel);
                 }
+                if (pullToRefresh != null)
+                    pullToRefresh.setRefreshing(false);
             }
 
             @Override
@@ -114,6 +135,8 @@ public class HomeFragment extends Fragment {
                 if (statusCode == 401) {
                     AppUtils.endSession(getActivity());
                 }
+                if (pullToRefresh != null)
+                    pullToRefresh.setRefreshing(false);
             }
         });
     }

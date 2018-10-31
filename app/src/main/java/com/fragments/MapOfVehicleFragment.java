@@ -59,6 +59,8 @@ import com.views.ClickWithTwoParam;
 import com.views.PopupDialog;
 import com.views.TextViewLight;
 
+import java.util.Locale;
+
 import static android.content.Context.LOCATION_SERVICE;
 
 public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFragment.OnSelectMapStyle, OnMapReadyCallback, View.OnClickListener, LocationSource, LocationListener {
@@ -327,7 +329,8 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
         workingHoursTextView.setText(Utils.doubleToString(AppUtils.secondsToHours(vehicleModel.getLastLocation().getTotalWorkingHours())));
         mileageTextView.setText(Utils.doubleToString(AppUtils.meterToKilometer(vehicleModel.getLastLocation().getTotalMileage())));
         accTextView.setText(getOnline(vehicleModel.getLastLocation().getIsOnline()));
-        directionTextView.setText(AppUtils.getDirectionDegree(context, vehicleModel.getLastLocation().getDirection()));
+        double value = vehicleModel.getLastLocation().getDirection()%360;
+        directionTextView.setText(String.format(Locale.getDefault(), "%s", value));
         vehicleStatusTextView.setText(AppUtils.getCarStatus(activity, vehicleModel.getLastLocation().getVehicleStatus()));
         if (vehicleModel.getLastLocation().getLatitude() != 0.0 || vehicleModel.getLastLocation().getLongitude() != 0.0) {
             locationTimeTextView.setText(Utils.getDateUpUtcToNormalFormat(vehicleModel.getLastLocation().getRecordDateTime()));

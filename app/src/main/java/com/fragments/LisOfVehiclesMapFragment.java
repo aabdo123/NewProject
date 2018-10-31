@@ -23,6 +23,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -195,7 +196,7 @@ public class LisOfVehiclesMapFragment extends Fragment implements
     private List<Item> list;
     private List<Item> mainArrayOfVehiclesList = new ArrayList<>();
     private LatLngBounds.Builder builder = new LatLngBounds.Builder();
-    //    private LatLngBounds bounds;
+    private LatLngBounds bounds;
     private boolean openFirstTime = true;
     private List<Item> mainChecks;
     private ExpandableAdapter expandableAdapter;
@@ -206,6 +207,7 @@ public class LisOfVehiclesMapFragment extends Fragment implements
     private static SlideUpFragment slideUpFragment;
     private MultiLevelRecyclerView multiLevelRecyclerView;
     private boolean markerClusterVisibility;
+    private ArrayList<Item> itemArrayListCallas;
 //    private Marker addMarker;
 
     public LisOfVehiclesMapFragment() {
@@ -319,6 +321,7 @@ public class LisOfVehiclesMapFragment extends Fragment implements
 
         mMapView.getMapAsync(this);
         Progress.dismissLoadingDialog();
+
         return rootView;
     }
 
@@ -329,7 +332,6 @@ public class LisOfVehiclesMapFragment extends Fragment implements
         sliderView = (LinearLayout) rootView.findViewById(R.id.slideView);
         singleSlideView = (LinearLayout) rootView.findViewById(R.id.singleSlideView);
         sliderBgLayout = (FrameLayout) rootView.findViewById(R.id.sliderBgLayout);
-
         allViewSlideLayout = (CoordinatorLayout) rootView.findViewById(R.id.allViewSlideLayout);
 
         moreOptionsLayout = (RelativeLayout) rootView.findViewById(R.id.moreOptionsLayout);
@@ -508,6 +510,8 @@ public class LisOfVehiclesMapFragment extends Fragment implements
     }
 
 
+
+
     private void expandable() {
         if (ShortTermManager.getInstance().getRequestMapsExpendableList() == null) {
             Progress.showLoadingDialog(activity);
@@ -580,13 +584,21 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                         if (!checkedState) {
                             if (position == 0) {
                                 if (itemLists != null) {
-                                    for (int x = 0; x < itemLists.size(); x++) {
-                                        itemLists.get(x).setChecked(false);
-                                        itemLists.get(x).setGroupChecked(false);
-                                    }
-                                    for (int x = 0; x < list.size(); x++) {
-                                        list.get(x).setChecked(false);
-                                        list.get(x).setGroupChecked(false);
+                                    if (item.isExpanded()) {
+                                        for (int x = 0; x < itemLists.size(); x++) {
+                                            itemLists.get(x).setChecked(false);
+                                            itemLists.get(x).setGroupChecked(false);
+                                        }
+                                        for (int x = 0; x < list.size(); x++) {
+                                            list.get(x).setChecked(false);
+                                            list.get(x).setGroupChecked(false);
+                                        }
+                                    } else {
+                                        if (itemLists != null && itemLists.size() > 0 && itemLists.get(0).getChildren() != null && itemLists.get(0).getChildren().size() > 0) {
+                                            itemArrayListCallas = new ArrayList<>();
+                                            getLength(itemLists.get(0).getChildren(), false, false);
+                                            Log.e("s", "s");
+                                        }
                                     }
                                 }
                                 if (mainArrayOfVehiclesList.size() > 0)
@@ -851,10 +863,46 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                         e.printStackTrace();
                     }
                 } else {
-                    Item[] vehicleModel = new Gson().fromJson(responseObject, Item[].class);
-                    List<Item> arrayFromApi = Arrays.asList(vehicleModel);
-                    if (itemLists != null && itemLists.size() > 0 && itemLists.get(0).getChildren() != null && itemLists.get(0).getChildren().size() > 0) {
-                        getLength(itemLists.get(0).getChildren(), arrayFromApi);
+                    try {
+                        Item[] vehicleModel = new Gson().fromJson(responseObject, Item[].class);
+                        List<Item> arrayFromApi = Arrays.asList(vehicleModel);
+                        if (itemLists != null && itemLists.size() > 0 && itemLists.get(0).getChildren() != null && itemLists.get(0).getChildren().size() > 0) {
+                            itemArrayListCallas = new ArrayList<>();
+                            getLength(itemLists.get(0).getChildren(), true, false);
+                            if (mainArrayOfVehiclesList.size() > 0) {
+                                mainArrayOfVehiclesList.clear();
+//                            mainArrayOfVehiclesList.addAll(arrayFromApi);
+                            }
+                            if (arrayFromApi.size() == itemArrayListCallas.size()) {
+                                for (int x = 0; x < arrayFromApi.size(); x++) {
+                                    Item mainItem = itemArrayListCallas.get(x);
+                                    Item mainItemStyle = arrayFromApi.get(x);
+                                    if (mainItem != null && mainItem.getID() != null)
+                                        mainItemStyle.setID(mainItem.getID());
+                                    if (mainItem != null && mainItem.getName() != null)
+                                        mainItemStyle.setName(mainItem.getName());
+                                    if (mainItem != null && mainItem.getParent() != null)
+                                        mainItemStyle.setParent(mainItem.getParent());
+                                    if (mainItem != null)
+                                        mainItemStyle.setLevel(mainItem.getLevel());
+                                    if (mainItem != null)
+                                        mainItemStyle.setPosition(mainItem.getPosition());
+                                    if (mainItem != null)
+                                        mainItemStyle.setExpanded(mainItem.isExpanded());
+                                    if (mainItem != null)
+                                        mainItemStyle.setClicked(mainItem.isClicked());
+                                    if (mainItem != null)
+                                        mainItemStyle.setChecked(mainItem.isChecked());
+                                    arrayFromApi.set(x, mainItemStyle);
+                                    mainArrayOfVehiclesList.add(arrayFromApi.get(x));
+                                }
+                                Log.e("s", "s");
+                            } else {
+                                Toast.makeText(context, "ERROR", Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
                     }
                 }
             }
@@ -871,16 +919,20 @@ public class LisOfVehiclesMapFragment extends Fragment implements
         });
     }
 
-    private void getLength(List<RecyclerViewItem> items, List<Item> arrayFromApi) {
+    private void getLength(List<RecyclerViewItem> items, boolean isChecked, boolean isGroupChecked) {
         try {
             for (int y = 0; y < items.size(); y++) {
                 if (items.get(y).getChildren() != null && items.get(y).getChildren().size() > 0) {
-                    getLength(items.get(y).getChildren(), arrayFromApi);
+                    getLength(items.get(y).getChildren(), isChecked, isGroupChecked);
                 }
                 List<?> newRepositoryArray = items;
                 List<Item> arrayList = (List<Item>) newRepositoryArray;
-                arrayList.get(y).setChecked(true);
-                arrayList.get(y).setGroupChecked(false);
+                arrayList.get(y).setChecked(isChecked);
+                arrayList.get(y).setGroupChecked(isGroupChecked);
+                List<?> newArray = arrayList.get(y).getChildren();
+                if (newArray != null && newArray.size() > 0) {
+                    itemArrayListCallas.addAll((List<Item>) newArray);
+                }
             }
         } catch (Exception ex) {
             ex.getMessage();
@@ -1544,6 +1596,7 @@ public class LisOfVehiclesMapFragment extends Fragment implements
             ex.printStackTrace();
         }
     }
+
     private void addVehiclesMarkers(boolean addCarsOnMap) {
         try {
             if (openFirstTime) {
@@ -1601,7 +1654,7 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                     }
                 }
 //                if (builder != null)
-//                    bounds = builder.build();
+//                bounds = builder.build();
                 openFirstTime = false;
             }
         } catch (Exception ex) {
@@ -1730,11 +1783,12 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                 kmTextView.setText(String.format(Locale.getDefault(), "%s", context.getString(R.string.n_a)));
 
 
-            if (markerModel != null && markerModel.getAllVehicleModel() != null && markerModel.getAllVehicleModel().getLastLocation() != null)
-                timerTextView.setText(String.format(Locale.getDefault(), "%s", markerModel.getAllVehicleModel().getLastLocation().getDirection())); // fraction
-            else
+            if (markerModel != null && markerModel.getAllVehicleModel() != null && markerModel.getAllVehicleModel().getLastLocation() != null) {
+                double value = markerModel.getAllVehicleModel().getLastLocation().getDirection() % 360;
+                timerTextView.setText(String.format(Locale.getDefault(), "%s", value)); // fraction
+            } else {
                 timerTextView.setText(String.format(Locale.getDefault(), "%s", context.getString(R.string.n_a)));
-
+            }
 
             if (markerModel != null && markerModel.getAllVehicleModel() != null && markerModel.getAllVehicleModel().getLastLocation() != null && markerModel.getAllVehicleModel().getLastLocation().getVehicleStatus() != null)
                 infoTextView.setText(String.format(Locale.getDefault(), "%s", AppUtils.getCarStatus(getActivity(), markerModel.getAllVehicleModel().getLastLocation().getVehicleStatus()))); //
@@ -1858,20 +1912,18 @@ public class LisOfVehiclesMapFragment extends Fragment implements
     }
 
     private void animateCameraAfterCluster() {
-        if (isRandomZoomChanged) {
-            randomZoom = (int) (googleMap.getCameraPosition().zoom - 2);
-            isRandomZoomChanged = false;
-        } else {
-            randomZoom = (int) (googleMap.getCameraPosition().zoom + 2);
-            isRandomZoomChanged = true;
+        try {
+            if (isRandomZoomChanged) {
+                randomZoom = (int) (googleMap.getCameraPosition().zoom - 2);
+                isRandomZoomChanged = false;
+            } else {
+                randomZoom = (int) (googleMap.getCameraPosition().zoom + 2);
+                isRandomZoomChanged = true;
+            }
+            googleMap.animateCamera(CameraUpdateFactory.zoomTo(randomZoom));
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-
-//        try {
-//            CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, randomZoom);
-//            googleMap.animateCamera(cu);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
     }
 
     public void setVisibilityVehiclesMarkers(boolean show) {

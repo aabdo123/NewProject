@@ -34,6 +34,7 @@ import com.google.android.gms.maps.LocationSource;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
@@ -327,9 +328,9 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
         groupTextView.setText("N/A");
         displayNameTextView.setText(vehicleModel.getLabel());
         workingHoursTextView.setText(Utils.doubleToString(AppUtils.secondsToHours(vehicleModel.getLastLocation().getTotalWorkingHours())));
-        mileageTextView.setText(Utils.doubleToString(AppUtils.meterToKilometer(vehicleModel.getLastLocation().getTotalMileage())));
+        mileageTextView.setText(String.format(Locale.getDefault(), "%s %s", Utils.doubleToString(AppUtils.meterToKilometer(vehicleModel.getLastLocation().getTotalMileage())), context.getString(R.string.km)));
         accTextView.setText(getOnline(vehicleModel.getLastLocation().getIsOnline()));
-        double value = vehicleModel.getLastLocation().getDirection()%360;
+        double value = vehicleModel.getLastLocation().getDirection() % 360;
         directionTextView.setText(String.format(Locale.getDefault(), "%s", value));
         vehicleStatusTextView.setText(AppUtils.getCarStatus(activity, vehicleModel.getLastLocation().getVehicleStatus()));
         if (vehicleModel.getLastLocation().getLatitude() != 0.0 || vehicleModel.getLastLocation().getLongitude() != 0.0) {
@@ -343,9 +344,10 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
             groupTextView.setText(aModel.getGroupName());
             displayNameTextView.setText(aModel.getVehicleDisplayName());
             workingHoursTextView.setText(Utils.doubleToString(AppUtils.secondsToHours(aModel.getWorkingHours())));
-            mileageTextView.setText(Utils.doubleToString(AppUtils.meterToKilometer(aModel.getMileage())));
+            mileageTextView.setText(String.format(Locale.getDefault(), "%s %s", Utils.doubleToString(aModel.getMileage()), context.getString(R.string.km)));
             accTextView.setText(getOnline(aModel.getEngineStatus()));
-            directionTextView.setText(AppUtils.getDirectionDegree(context, aModel.getDirection()));
+            double value = aModel.getDirection() % 360;
+            directionTextView.setText(String.format(Locale.getDefault(), "%s", value));
             locationTimeTextView.setText(Utils.getDateUpUtcToNormalFormat(aModel.getRecordDateTime()));
             vehicleStatusTextView.setText(AppUtils.getCarStatus(activity, String.valueOf(aModel.getVehicleStatus())));
         } catch (IllegalStateException e) {
@@ -453,8 +455,9 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
     }
 
     private void addCarMarker() {
+        BitmapDescriptor bitmapDescriptor = AppUtils.getCarIcon(vehicleModel != null && vehicleModel.getLastLocation() != null && vehicleModel.getLastLocation().getVehicleStatus() != null ? vehicleModel.getLastLocation().getVehicleStatus() : "0");
         marker = new MarkerOptions().position(carLatLng)
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.car_101))
+                .icon(bitmapDescriptor)
                 .anchor(0.5f, 0.5f)
                 .rotation((float) vehicleModel.getLastLocation().getDirection())
                 .flat(true);

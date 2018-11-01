@@ -10,12 +10,45 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.google.maps.android.clustering.ClusterItem;
 
-public class AllVehiclesInHashModel implements ClusterItem {
+public class AllVehiclesInHashModel implements ClusterItem ,Parcelable{
 
     private int vehicleId;
     private Marker marker;
     private AllVehicleModel allVehicleModel;
     private boolean faded;
+
+    public AllVehiclesInHashModel() {
+    }
+
+    protected AllVehiclesInHashModel(Parcel in) {
+        vehicleId = in.readInt();
+        allVehicleModel = in.readParcelable(AllVehicleModel.class.getClassLoader());
+        faded = in.readByte() != 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(vehicleId);
+        dest.writeParcelable(allVehicleModel, flags);
+        dest.writeByte((byte) (faded ? 1 : 0));
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<AllVehiclesInHashModel> CREATOR = new Creator<AllVehiclesInHashModel>() {
+        @Override
+        public AllVehiclesInHashModel createFromParcel(Parcel in) {
+            return new AllVehiclesInHashModel(in);
+        }
+
+        @Override
+        public AllVehiclesInHashModel[] newArray(int size) {
+            return new AllVehiclesInHashModel[size];
+        }
+    };
 
     public int getVehicleId() {
         return vehicleId;

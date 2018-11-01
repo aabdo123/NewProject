@@ -1,5 +1,8 @@
 package com.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.Expose;
@@ -15,7 +18,7 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Item extends RecyclerViewItem {
+public class Item extends RecyclerViewItem implements Parcelable{
 
     String text = "";
 
@@ -110,6 +113,122 @@ public class Item extends RecyclerViewItem {
     @SerializedName("DoorStatus")
     @Expose
     private String doorStatus;
+
+
+    protected Item(Parcel in) {
+        super(0);
+        text = in.readString();
+        secondText = in.readString();
+        ID = in.readString();
+        Name = in.readString();
+        parent = in.readParcelable(Item.class.getClassLoader());
+        Childs = in.createTypedArrayList(Item.CREATOR);
+        isChecked = in.readByte() != 0;
+        isClicked = in.readByte() != 0;
+        isGroupChecked = in.readByte() != 0;
+        if (in.readByte() == 0) {
+            vehicleID = null;
+        } else {
+            vehicleID = in.readInt();
+        }
+        speed = in.readDouble();
+        totalMileage = in.readDouble();
+        totalWorkingHours = in.readDouble();
+        direction = in.readDouble();
+        latitude = in.readDouble();
+        longitude = in.readDouble();
+        address = in.readString();
+        VehicleDisplayName = in.readString();
+        if (in.readByte() == 0) {
+            streetSpeed = null;
+        } else {
+            streetSpeed = in.readInt();
+        }
+        recordDateTime = in.readString();
+        plateNumber = in.readString();
+        byte tmpIsOnline = in.readByte();
+        isOnline = tmpIsOnline == 0 ? null : tmpIsOnline == 1;
+        fuel = in.readString();
+        simCardNumber = in.readString();
+        VehicleStatus = in.readString();
+        mileage = in.readString();
+        workingHours = in.readString();
+        serial = in.readString();
+        byte tmpEngineStatus = in.readByte();
+        engineStatus = tmpEngineStatus == 0 ? null : tmpEngineStatus == 1;
+        seatBeltStatus = in.readString();
+        temper = in.readString();
+        driverName = in.readString();
+        groupName = in.readString();
+        temperature = in.readString();
+        doorStatus = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(text);
+        dest.writeString(secondText);
+        dest.writeString(ID);
+        dest.writeString(Name);
+        dest.writeParcelable(parent, flags);
+        dest.writeTypedList(Childs);
+        dest.writeByte((byte) (isChecked ? 1 : 0));
+        dest.writeByte((byte) (isClicked ? 1 : 0));
+        dest.writeByte((byte) (isGroupChecked ? 1 : 0));
+        if (vehicleID == null) {
+            dest.writeByte((byte) 0);
+        } else {
+            dest.writeByte((byte) 1);
+            dest.writeInt(vehicleID);
+        }
+        dest.writeDouble(speed);
+        dest.writeDouble(totalMileage);
+        dest.writeDouble(totalWorkingHours);
+        dest.writeDouble(direction);
+        dest.writeDouble(latitude);
+        dest.writeDouble(longitude);
+        dest.writeString(address);
+        dest.writeString(VehicleDisplayName);
+        if (streetSpeed == null) {
+            dest.writeByte((byte) 0);
+        } else {
+            dest.writeByte((byte) 1);
+            dest.writeInt(streetSpeed);
+        }
+        dest.writeString(recordDateTime);
+        dest.writeString(plateNumber);
+        dest.writeByte((byte) (isOnline == null ? 0 : isOnline ? 1 : 2));
+        dest.writeString(fuel);
+        dest.writeString(simCardNumber);
+        dest.writeString(VehicleStatus);
+        dest.writeString(mileage);
+        dest.writeString(workingHours);
+        dest.writeString(serial);
+        dest.writeByte((byte) (engineStatus == null ? 0 : engineStatus ? 1 : 2));
+        dest.writeString(seatBeltStatus);
+        dest.writeString(temper);
+        dest.writeString(driverName);
+        dest.writeString(groupName);
+        dest.writeString(temperature);
+        dest.writeString(doorStatus);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<Item> CREATOR = new Creator<Item>() {
+        @Override
+        public Item createFromParcel(Parcel in) {
+            return new Item(in);
+        }
+
+        @Override
+        public Item[] newArray(int size) {
+            return new Item[size];
+        }
+    };
 
     public boolean isGroupChecked() {
         return isGroupChecked;

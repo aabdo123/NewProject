@@ -128,7 +128,7 @@ public class CarHistoryModel {
     }
 
     public String getVehicleStatus() {
-        return vehicleStatus;
+        return vehicleStatus != null ? vehicleStatus : "0";
     }
 
     public void setVehicleStatus(String vehicleStatus) {

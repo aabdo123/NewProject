@@ -26,6 +26,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
@@ -37,6 +38,7 @@ import com.managers.ApiCallResponse;
 import com.managers.BusinessManager;
 import com.managers.PreferencesManager;
 import com.managers.map_managers.MyMapStyleManager;
+import com.models.AnimationHistoricalRouteModel;
 import com.models.CarHistoryModel;
 import com.models.ListOfVehiclesModel;
 import com.utilities.AppUtils;
@@ -47,11 +49,14 @@ import com.utilities.constants.SharesPrefConstants;
 import com.views.Progress;
 import com.views.TextViewRegular;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by Saferoad-Dev1 on 8/27/2017.
@@ -92,10 +97,10 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
     private int MOVE_ANIMATION_DURATION = 1800;
     private int TURN_ANIMATION_DURATION = 300;
     private int mIndexCurrentPoint = 0;
-    private List<LatLng> mPathPolygonPoints;
+    private List<AnimationHistoricalRouteModel> mPathPolygonPoints;
     private boolean isPause = false;
     private ListOfVehiclesModel.VehicleModel vehicleModel;
-    private LatLng carLatLng;
+    private AnimationHistoricalRouteModel carLatLng;
     private Date dateFrom;
 
     private MyMapStyleManager myMapStyleManager;
@@ -173,8 +178,7 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
         changeMapTypeFab = (FloatingActionButton) rootView.findViewById(R.id.changeMapTypeFab);
 
         mMapView = (MapView) rootView.findViewById(R.id.mapView);
-        mMarkerIcon = BitmapFactory.decodeResource(getResources(), R.drawable.car_101);
-
+        mMarkerIcon = BitmapFactory.decodeResource(getResources(), R.drawable.car_0);
         firstLocationImageView = (ImageView) rootView.findViewById(R.id.firstLocationImageView);
         playImageView = (ImageView) rootView.findViewById(R.id.playImageView);
         pauseImageView = (ImageView) rootView.findViewById(R.id.pauseImageView);
@@ -222,7 +226,7 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
             @Override
             public void run() {
                 if (vehicleModel != null) {
-                    carLatLng = new LatLng(vehicleModel.getLastLocation().getLatitude(), vehicleModel.getLastLocation().getLongitude());
+                    carLatLng = new AnimationHistoricalRouteModel(vehicleModel.getLastLocation().getLatitude(), vehicleModel.getLastLocation().getLongitude());
                     addCarMarker(carLatLng);
                     moveCamera(carLatLng);
                 }
@@ -245,9 +249,9 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
         }
     }
 
-    private void moveCamera(LatLng locationIfNeeded) {
+    private void moveCamera(AnimationHistoricalRouteModel locationIfNeeded) {
         if (locationIfNeeded != null) {
-            CameraPosition cameraPosition = new CameraPosition.Builder().target(locationIfNeeded)
+            CameraPosition cameraPosition = new CameraPosition.Builder().target(locationIfNeeded.getLatLng())
                     .zoom(AppConstant.ZOOM_VALUE_18)    // Sets the zoom
                     .bearing(0)         // Sets the orientation of the camera to east
                     .tilt(30).build();
@@ -255,16 +259,16 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
         }
     }
 
-    private void addCarMarker(LatLng latLng) {
+    private void addCarMarker(AnimationHistoricalRouteModel latLng) {
 //        markerOptions = new MarkerOptions().position(carLatLng)
 //                .icon(BitmapDescriptorFactory.fromResource(R.drawable.car_top32x32))
 //                .anchor(0.5f, 0.5f)
 //                .rotation((float) vehicleModel.getLastLocation().getDirection())
 //                .flat(true);
 //        googleMap.clear();
-        marker = googleMap.addMarker(new MarkerOptions()
-                .position(latLng));
-        marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.car_101));
+        BitmapDescriptor bitmapDescriptor = AppUtils.getCarIcon(latLng != null && latLng.getVehicleStatus() != null ? latLng.getVehicleStatus() : "0");
+        marker = googleMap.addMarker(new MarkerOptions().position(latLng != null && latLng.getLatLng() != null ? latLng.getLatLng() : new LatLng(0.0, 0.0)));
+        marker.setIcon(bitmapDescriptor);
         marker.setFlat(true);
         marker.setAnchor(0.5f, 0.5f);
     }
@@ -476,6 +480,7 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
 
     private ArrayList<CarHistoryModel> getCarHistoryList(CarHistoryModel[] model) {
         carHistoryList = new ArrayList<>();
+        Collections.reverse(Arrays.asList(model));
         Collections.addAll(carHistoryList, model);
         return carHistoryList;
     }
@@ -488,17 +493,27 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
 //        return latLngList;
 //    }
 
-    private ArrayList<LatLng> getLatLngList(CarHistoryModel[] model) {
+    private ArrayList<AnimationHistoricalRouteModel> getLatLngList(CarHistoryModel[] model) {
         // remove the first zero speed
-        ArrayList<LatLng> latLngList = new ArrayList<>();
+        ArrayList<AnimationHistoricalRouteModel> latLngList = new ArrayList<>();
         boolean isLastVehicleZeroSpeed = model[0].getSpeed() == 0;
         for (CarHistoryModel model1 : model) {
             if (isLastVehicleZeroSpeed && model1.getSpeed() == 0.0) {
                 isLastVehicleZeroSpeed = true;
                 continue;
             }
-            latLngList.add(new LatLng(model1.getLatitude(), model1.getLongitude()));
+
+            latLngList.add(new AnimationHistoricalRouteModel(model1.getLatitude(), model1.getLongitude(), model1.getVehicleStatus()));
             isLastVehicleZeroSpeed = model1.getSpeed() == 0;
+        }
+        return latLngList;
+    }
+
+    private List<LatLng> getLatLong(List<AnimationHistoricalRouteModel> animationHistoricalRouteModels) {
+        List<LatLng> latLngList = new ArrayList<>();
+        for (AnimationHistoricalRouteModel animationHistoricalRouteModel : animationHistoricalRouteModels) {
+            LatLng latLng = new LatLng(animationHistoricalRouteModel.getLatitude(), animationHistoricalRouteModel.getLongitude());
+            latLngList.add(latLng);
         }
         return latLngList;
     }
@@ -506,7 +521,7 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
     private void drawHistoricalRouteOnMap() {
         PolylineOptions polylineOptions = new PolylineOptions();
 // Create polyline options with existing LatLng ArrayList
-        polylineOptions.addAll(mPathPolygonPoints);
+        polylineOptions.addAll(getLatLong(mPathPolygonPoints));
         polylineOptions
                 .width(AppConstant.POLY_THICKNESS)
                 .color(ContextCompat.getColor(context, R.color.colorPrimaryDark));
@@ -514,57 +529,76 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
         googleMap.addPolyline(polylineOptions);
     }
 
-    private void animateCarMove(final Marker marker, final LatLng beginLatLng, final LatLng endLatLng, final long duration) {
-        final Handler handler = new Handler();
-        final long startTime = SystemClock.uptimeMillis();
-        final Interpolator interpolator = new LinearInterpolator();
+    private void animateCarMove(final Marker marker, final AnimationHistoricalRouteModel beginLatLng, final AnimationHistoricalRouteModel endLatLng, final long duration) {
+        try {
+            final Handler handler = new Handler();
+            final long startTime = SystemClock.uptimeMillis();
+            final Interpolator interpolator = new LinearInterpolator();
 
-        // set car bearing for current part of path
-        float angleDeg = (float) (180 * getAngle(beginLatLng, endLatLng) / Math.PI);
-        Matrix matrix = new Matrix();
-        matrix.postRotate(angleDeg);
-        marker.setIcon(BitmapDescriptorFactory.fromBitmap(Bitmap.createBitmap(mMarkerIcon, 0, 0, mMarkerIcon.getWidth(), mMarkerIcon.getHeight(), matrix, true)));
+            // set car bearing for current part of path
+            float angleDeg = (float) (180 * getAngle(beginLatLng, endLatLng) / Math.PI);
+            Matrix matrix = new Matrix();
+            matrix.postRotate(angleDeg);
 
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                // calculate phase of animation
-                long elapsed = SystemClock.uptimeMillis() - startTime;
-                float t = interpolator.getInterpolation((float) elapsed / duration);
-                // calculate new position for marker
-                double lat = (endLatLng.latitude - beginLatLng.latitude) * t + beginLatLng.latitude;
-                double lngDelta = endLatLng.longitude - beginLatLng.longitude;
+            Objects.requireNonNull(getActivity()).runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Bitmap bitmapCar = BitmapFactory.decodeResource(getResources(), AppUtils.getCarIconDrawableID(beginLatLng.getVehicleStatus()));
+                    if (bitmapCar != null) {
+                        mMarkerIcon = bitmapCar;
+                        marker.setIcon(BitmapDescriptorFactory.fromBitmap(Bitmap.createBitmap(mMarkerIcon, 0, 0, mMarkerIcon.getWidth(), mMarkerIcon.getHeight(), matrix, true)));
 
-                if (Math.abs(lngDelta) > 180) {
-                    lngDelta -= Math.signum(lngDelta) * 360;
+                    } else {
+                        mMarkerIcon = BitmapFactory.decodeResource(getResources(), R.drawable.car_0);
+                        marker.setIcon(BitmapDescriptorFactory.fromBitmap(Bitmap.createBitmap(mMarkerIcon, 0, 0, mMarkerIcon.getWidth(), mMarkerIcon.getHeight(), matrix, true)));
+                    }
                 }
-                double lng = lngDelta * t + beginLatLng.longitude;
+            });
 
-                LatLng newLatLng = new LatLng(lat, lng);
-                marker.setPosition(newLatLng);
-                updateCamera(newLatLng);
-                // if not end of line segment of path
-                if (isPause) {
-                    handler.removeCallbacks(this);
-                    return;
+
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+                    // calculate phase of animation
+                    long elapsed = SystemClock.uptimeMillis() - startTime;
+                    float t = interpolator.getInterpolation((float) elapsed / duration);
+                    // calculate new position for marker
+                    double lat = (endLatLng.getLatitude() - beginLatLng.getLatitude()) * t + beginLatLng.getLatitude();
+                    double lngDelta = endLatLng.getLongitude() - beginLatLng.getLongitude();
+
+                    if (Math.abs(lngDelta) > 180) {
+                        lngDelta -= Math.signum(lngDelta) * 360;
+                    }
+                    double lng = lngDelta * t + beginLatLng.getLongitude();
+
+                    LatLng newLatLng = new LatLng(lat, lng);
+                    marker.setPosition(newLatLng);
+                    updateCamera(newLatLng);
+                    // if not end of line segment of path
+                    if (isPause) {
+                        handler.removeCallbacks(this);
+                        return;
+                    }
+                    if (t < 1.0) {
+                        // call next marker position
+                        handler.postDelayed(this, 16);
+                    } else {
+                        // call turn animation
+                        nextTurnAnimation();
+                    }
                 }
-                if (t < 1.0) {
-                    // call next marker position
-                    handler.postDelayed(this, 16);
-                } else {
-                    // call turn animation
-                    nextTurnAnimation();
-                }
-            }
-        });
+            });
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     private void nextTurnAnimation() {
         mIndexCurrentPoint++;
         if (mIndexCurrentPoint < mPathPolygonPoints.size() - 1) {
-            LatLng prevLatLng = mPathPolygonPoints.get(mIndexCurrentPoint - 1);
-            LatLng currLatLng = mPathPolygonPoints.get(mIndexCurrentPoint);
-            LatLng nextLatLng = mPathPolygonPoints.get(mIndexCurrentPoint + 1);
+            AnimationHistoricalRouteModel prevLatLng = mPathPolygonPoints.get(mIndexCurrentPoint - 1);
+            AnimationHistoricalRouteModel currLatLng = mPathPolygonPoints.get(mIndexCurrentPoint);
+            AnimationHistoricalRouteModel nextLatLng = mPathPolygonPoints.get(mIndexCurrentPoint + 1);
 
             float beginAngle = (float) (180 * getAngle(prevLatLng, currLatLng) / Math.PI);
             float endAngle = (float) (180 * getAngle(currLatLng, nextLatLng) / Math.PI);
@@ -578,41 +612,52 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
     }
 
     private void animateCarTurn(final Marker marker, final float startAngle, final float endAngle, final long duration) {
-        final Handler handler = new Handler();
-        final long startTime = SystemClock.uptimeMillis();
-        final Interpolator interpolator = new LinearInterpolator();
+        try {
+            final Handler handler = new Handler();
+            final long startTime = SystemClock.uptimeMillis();
+            final Interpolator interpolator = new LinearInterpolator();
 
-        final float dAndgle = endAngle - startAngle;
+            final float dAndgle = endAngle - startAngle;
 
-        Matrix matrix = new Matrix();
-        matrix.postRotate(startAngle);
-        Bitmap rotatedBitmap = Bitmap.createBitmap(mMarkerIcon, 0, 0, mMarkerIcon.getWidth(), mMarkerIcon.getHeight(), matrix, true);
-        marker.setIcon(BitmapDescriptorFactory.fromBitmap(rotatedBitmap));
+            Matrix matrix = new Matrix();
+            matrix.postRotate(startAngle);
 
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
+            if (mMarkerIcon == null)
+                mMarkerIcon = BitmapFactory.decodeResource(getResources(), R.drawable.car_0);
 
-                long elapsed = SystemClock.uptimeMillis() - startTime;
-                float t = interpolator.getInterpolation((float) elapsed / duration);
+            Bitmap rotatedBitmap = Bitmap.createBitmap(mMarkerIcon, 0, 0, mMarkerIcon.getWidth(), mMarkerIcon.getHeight(), matrix, true);
+            marker.setIcon(BitmapDescriptorFactory.fromBitmap(rotatedBitmap));
 
-                Matrix m = new Matrix();
-                m.postRotate(startAngle + dAndgle * t);
-                marker.setIcon(BitmapDescriptorFactory.fromBitmap(Bitmap.createBitmap(mMarkerIcon, 0, 0, mMarkerIcon.getWidth(), mMarkerIcon.getHeight(), m, true)));
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
 
-                if (isPause) {
-                    handler.removeCallbacks(this);
-                    return;
+                    long elapsed = SystemClock.uptimeMillis() - startTime;
+                    float t = interpolator.getInterpolation((float) elapsed / duration);
+
+                    Matrix m = new Matrix();
+                    m.postRotate(startAngle + dAndgle * t);
+                    if (mMarkerIcon == null)
+                        mMarkerIcon = BitmapFactory.decodeResource(getResources(), R.drawable.car_0);
+                    marker.setIcon(BitmapDescriptorFactory.fromBitmap(Bitmap.createBitmap(mMarkerIcon, 0, 0, mMarkerIcon.getWidth(), mMarkerIcon.getHeight(), m, true)));
+
+                    if (isPause) {
+                        handler.removeCallbacks(this);
+                        return;
+                    }
+
+                    if (t < 1.0) {
+                        handler.postDelayed(this, 16);
+                    } else {
+                        nextMoveAnimation();
+                    }
                 }
-
-                if (t < 1.0) {
-                    handler.postDelayed(this, 16);
-                } else {
-                    nextMoveAnimation();
-                }
-            }
-        });
+            });
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
+
 
     private void nextMoveAnimation() {
         if (mIndexCurrentPoint < mPathPolygonPoints.size() - 1) {
@@ -620,10 +665,10 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
         }
     }
 
-    private double getAngle(LatLng beginLatLng, LatLng endLatLng) {
-        double f1 = Math.PI * beginLatLng.latitude / 180;
-        double f2 = Math.PI * endLatLng.latitude / 180;
-        double dl = Math.PI * (endLatLng.longitude - beginLatLng.longitude) / 180;
+    private double getAngle(AnimationHistoricalRouteModel beginLatLng, AnimationHistoricalRouteModel endLatLng) {
+        double f1 = Math.PI * beginLatLng.getLatitude() / 180;
+        double f2 = Math.PI * endLatLng.getLatitude() / 180;
+        double dl = Math.PI * (endLatLng.getLongitude() - beginLatLng.getLongitude()) / 180;
         return Math.atan2(Math.sin(dl) * Math.cos(f2), Math.cos(f1) * Math.sin(f2) - Math.sin(f1) * Math.cos(f2) * Math.cos(dl));
     }
 

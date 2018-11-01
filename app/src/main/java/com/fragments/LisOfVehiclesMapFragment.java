@@ -67,6 +67,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.managers.ApiCallResponseString;
@@ -208,6 +209,7 @@ public class LisOfVehiclesMapFragment extends Fragment implements
     private MultiLevelRecyclerView multiLevelRecyclerView;
     private boolean markerClusterVisibility;
     private ArrayList<Item> itemArrayListCallas;
+    private List<AllVehiclesInHashModel.AllVehicleModel.LastLocation> arrayFromApi = null;
 //    private Marker addMarker;
 
     public LisOfVehiclesMapFragment() {
@@ -461,12 +463,18 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                 } else {
                     mainItemsFull.clear();
                 }
-                List<AllVehiclesInHashModel.AllVehicleModel.LastLocation> arrayFromApi = null;
+
+                for (Item item : mainItemsFull){
+                    if (item.getParent()!=null)
+                     item.setParent(null);
+                }
+
                 if (mainItemsFull.size() > 0) {
                     String request = new Gson().toJson(mainItemsFull);
                     AllVehiclesInHashModel.AllVehicleModel.LastLocation[] vehicleModel = new Gson().fromJson(request, AllVehiclesInHashModel.AllVehicleModel.LastLocation[].class);
                     arrayFromApi = Arrays.asList(vehicleModel);
                 }
+
                 if (vehiclesList != null) {
                     if (vehiclesList.size() > 0) {
                         vehiclesList.clear();
@@ -508,8 +516,6 @@ public class LisOfVehiclesMapFragment extends Fragment implements
             ex.printStackTrace();
         }
     }
-
-
 
 
     private void expandable() {

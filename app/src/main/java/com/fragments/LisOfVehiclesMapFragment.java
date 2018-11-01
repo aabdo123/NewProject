@@ -209,7 +209,6 @@ public class LisOfVehiclesMapFragment extends Fragment implements
     private MultiLevelRecyclerView multiLevelRecyclerView;
     private boolean markerClusterVisibility;
     private ArrayList<Item> itemArrayListCallas;
-    private List<AllVehiclesInHashModel.AllVehicleModel.LastLocation> arrayFromApi = null;
 //    private Marker addMarker;
 
     public LisOfVehiclesMapFragment() {
@@ -464,11 +463,27 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                     mainItemsFull.clear();
                 }
 
-                for (Item item : mainItemsFull){
-                    if (item.getParent()!=null)
-                     item.setParent(null);
-                }
+                try {
+                    if (mainItemsFull.size() > 0) {// for stack over flow
+                        for (Item item : mainItemsFull) {
+//                            item.setChilds(null);
+//                            item.addChildren(null);
+                            if (item.getParent() != null) {
+//                                item.getParent().setParent(null);
+//                                item.getParent().addChildren(null);
+                                for (Item itemChild : item.getParent().getChilds()) {
+                                    itemChild.setParent(null);
+                                    itemChild.addChildren(null);
+                                    itemChild.setChilds(null);
+                                }
 
+                            }
+                        }
+                    }
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+                List<AllVehiclesInHashModel.AllVehicleModel.LastLocation> arrayFromApi = null;
                 if (mainItemsFull.size() > 0) {
                     String request = new Gson().toJson(mainItemsFull);
                     AllVehiclesInHashModel.AllVehicleModel.LastLocation[] vehicleModel = new Gson().fromJson(request, AllVehiclesInHashModel.AllVehicleModel.LastLocation[].class);

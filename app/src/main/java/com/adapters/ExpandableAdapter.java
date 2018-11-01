@@ -99,7 +99,7 @@ public class ExpandableAdapter extends MultiLevelAdapter {
                     mViewHolder.mSubtitle.setText(String.format(Locale.getDefault(), "%s %s", mItem.getChildren().size(), mContext.getResources().getString(R.string.vehicles)));
                 }
             } else {
-                mViewHolder.mExpandButton.setVisibility(View.GONE);
+                mViewHolder.mExpandButton.setVisibility(View.INVISIBLE);
                 mViewHolder.mSubtitle.setVisibility(View.GONE);
             }
             mViewHolder.mTitle.setText(String.format(Locale.getDefault(), "%s", mItem.getName() != null ? mItem.getName() : mItem.getVehicleDisplayName() != null ? mItem.getVehicleDisplayName() : ""));

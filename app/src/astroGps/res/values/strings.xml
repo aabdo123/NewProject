@@ -2,6 +2,7 @@
     <string name="app_name">AstroGPS</string>
     <string name="app_version">App Version V 1.0</string>
     <string name="default_notification_channel_id" translatable="false">astro_fcm_default_channel</string>
+    <string name="google_maps_keys">AIzaSyB8CaFPkBKNnwrke1TZQzJB-CNp5NF8PtI</string>
 
 
     <string name="about_us_title_1">AstroGPS</string>

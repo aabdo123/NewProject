@@ -488,6 +488,10 @@ public class Utils {
         return String.format(Locale.getDefault(), "%.3f", value);
     }
 
+    public static String doubleToStringTwoDigits(double value) {
+        return String.format(Locale.getDefault(), "%.2f", value);
+    }
+
 //    public static String doubleToString(double value){
 //        DecimalFormat REAL_FORMATTER = new DecimalFormat("0.##");
 //        return REAL_FORMATTER.format(value);

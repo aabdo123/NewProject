@@ -618,12 +618,12 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                                         if (itemLists != null && itemLists.size() > 0 && itemLists.get(0).getChildren() != null && itemLists.get(0).getChildren().size() > 0) {
                                             itemArrayListCallas = new ArrayList<>();
                                             getLength(itemLists.get(0).getChildren(), false, false);
-                                            Log.e("s", "s");
                                         }
                                     }
                                 }
-                                if (mainArrayOfVehiclesList.size() > 0)
+                                if (mainArrayOfVehiclesList.size() > 0) {
                                     mainArrayOfVehiclesList.clear();
+                                }
                                 expandableAdapter.notifyDataSetChanged();
                             } else {
                                 unChecked(item, itemLists, clickState);
@@ -826,6 +826,54 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                         }
 
 
+                        for (int y = 0; y < itemLists.size(); y++) {
+                            String grope = itemLists.get(y).getID();
+                            String firstOne = grope.substring(0, 1);
+                            if (firstOne.equalsIgnoreCase("G")) {
+                                if (!itemLists.get(y).isExpanded()) {
+                                    getLength(itemLists.get(y).getChildren(), true, false);
+                                    for (int x = 0; x < arrayFromApi.size(); x++) {
+                                        for (int h = 0; h < itemLists.get(y).getChildren().size(); h++) {
+                                            List<?> array = itemLists.get(y).getChildren();
+                                            List<Item> mainArray = (List<Item>) array;
+                                            String vehicle = mainArray.get(h).getID();
+                                            int vehicleId = arrayFromApi.get(x).getVehicleID();
+                                            String firstOnes = vehicle.substring(0, 1);
+                                            if (firstOnes.equalsIgnoreCase("V")) {
+                                                vehicle = vehicle.substring(2, vehicle.length());
+                                                if (Integer.valueOf(vehicle) == vehicleId) {
+                                                    arrayFromApi.get(x).setLevel(mainArray.get(h).getLevel());
+                                                    arrayFromApi.get(x).setChecked(mainArray.get(h).isChecked());
+                                                    arrayFromApi.get(x).setClicked(mainArray.get(h).isClicked());
+                                                    arrayFromApi.get(x).setID(mainArray.get(h).getID());
+                                                    arrayFromApi.get(x).setName(mainArray.get(h).getName());
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        if (itemArrayListCallas != null && itemArrayListCallas.size() > 0)
+                            for (int x = 0; x < arrayFromApi.size(); x++) {
+                                for (int y = 0; y < itemArrayListCallas.size(); y++) {
+                                    String vehicle = itemArrayListCallas.get(y).getID();
+                                    int vehicleId = arrayFromApi.get(x).getVehicleID();
+                                    String firstOne = vehicle.substring(0, 1);
+                                    if (firstOne.equalsIgnoreCase("V")) {
+                                        vehicle = vehicle.substring(2, vehicle.length());
+                                        if (Integer.valueOf(vehicle) == vehicleId) {
+                                            arrayFromApi.get(x).setLevel(itemArrayListCallas.get(y).getLevel());
+                                            arrayFromApi.get(x).setChecked(itemArrayListCallas.get(y).isChecked());
+                                            arrayFromApi.get(x).setClicked(itemArrayListCallas.get(y).isClicked());
+                                            arrayFromApi.get(x).setID(itemArrayListCallas.get(y).getID());
+                                            arrayFromApi.get(x).setName(itemArrayListCallas.get(y).getName());
+                                        }
+                                    }
+                                }
+                            }
+
                         for (int x = 0; x < arrayFromApi.size(); x++) {
                             for (int y = 0; y < itemLists.size(); y++) {
                                 String vehicle = itemLists.get(y).getID();
@@ -837,7 +885,6 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                                         if (itemLists.get(y).getParent() != null) {
                                             arrayFromApi.get(x).setParent(itemLists.get(y).getParent());
                                         }
-
                                         Item items = arrayFromApi.get(x);
                                         itemLists.set(y, items);
                                     }
@@ -917,7 +964,6 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                                     arrayFromApi.set(x, mainItemStyle);
                                     mainArrayOfVehiclesList.add(arrayFromApi.get(x));
                                 }
-                                Log.e("s", "s");
                             } else {
                                 Toast.makeText(context, "ERROR", Toast.LENGTH_LONG).show();
                             }
@@ -951,7 +997,7 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                 arrayList.get(y).setChecked(isChecked);
                 arrayList.get(y).setGroupChecked(isGroupChecked);
                 List<?> newArray = arrayList.get(y).getChildren();
-                if (newArray != null && newArray.size() > 0) {
+                if (newArray != null && newArray.size() > 0 && itemArrayListCallas != null) {
                     itemArrayListCallas.addAll((List<Item>) newArray);
                 }
             }
@@ -1337,88 +1383,100 @@ public class LisOfVehiclesMapFragment extends Fragment implements
             case 0: // locate
                 setLocateManager();
                 break;
-
             case 1: //clustering
                 markerClusterVisibility = isShowCliched;
                 setClusterManager(isShowCliched, isAddClicked, itemId);
                 break;
-
             case 2: // traffic
                 setMapTraffic(isShowCliched);
                 break;
-
             case 3: // landmark
                 setLandmarkManager(isShowCliched, isAddClicked, itemId);
                 break;
-
             case 4: // geo_fence
                 setGeoFenceManager(isShowCliched, isAddClicked, itemId);
+                break;
+            default:
                 break;
         }
     }
 
     private void setLocateManager() {
-        googleMap.clear();
-        if (myLocateManager == null) {
-            myLocateManager = new MyLocateManager(context, rootView, googleMap, vehiclesHashMap, myCurrentLatLng);
-            myLocateManager.setViews(mMapView);
-            myLocateManager.setAfterOnDismissListeners(new Click() {
-                @Override
-                public void onClick() {
-                    setVisibilityVehiclesMarkers(true);
-                }
+        try {
+            if (vehiclesClusterManager != null) {
+                setMarkersVisibility(false);
+                vehiclesClusterManager.removeVehiclesCluster();
+                vehiclesClusterManager = null;
+                animateCameraAfterCluster();
+            } else {
+                setMarkersVisibility(false);
+                animateCameraAfterCluster();
+            }
+            if (myLocateManager == null) {
+                myLocateManager = new MyLocateManager(context, rootView, googleMap, vehiclesHashMap, myCurrentLatLng);
+                myLocateManager.setViews(mMapView);
+                myLocateManager.setAfterOnDismissListeners(new Click() {
+                    @Override
+                    public void onClick() {
+                        setVisibilityVehiclesMarkers(true);
+                    }
 
-                @Override
-                public void addMaps() {
-                    if (googleMap != null) {
-                        openFirstTime = true;
-                        addVehiclesMarkers(false);
-                        reLocate();
+                    @Override
+                    public void addMaps() {
+                        if (googleMap != null) {
+                            openFirstTime = true;
+                            addVehiclesMarkers(false);
+                            reLocate();
+                            if (slideUpFragment != null && PreferencesManager.getInstance().getBooleanValue(SharesPrefConstants.IS_LANDMARK_SHOW_SLIDE_MENU)) {
+                                slideUpFragment.showLandMark(true);
+                            }
+                        }
                     }
-                }
-            });
-            myLocateManager.setLandMarkListeners(new MyLocateManager.LandMarkCheck() {
-                @Override
-                public void landMark() {
-                    if (!PreferencesManager.getInstance().getBooleanValue(SharesPrefConstants.IS_CLUSTER_SHOW_SLIDE_MENU)) {
-                        addAndHideViews(-1, true);
-                    } else {
-                        addAndHideViewsAfterCluster(-1, true);
+                });
+                myLocateManager.setLandMarkListeners(new MyLocateManager.LandMarkCheck() {
+                    @Override
+                    public void landMark() {
+                        googleMap.clear();
+                        if (slideUpFragment != null && PreferencesManager.getInstance().getBooleanValue(SharesPrefConstants.IS_LANDMARK_SHOW_SLIDE_MENU)) {
+                            slideUpFragment.showLandMark(true);
+                        }
+                        if (slideUpFragment != null && PreferencesManager.getInstance().getBooleanValue(SharesPrefConstants.IS_GEOFENCE_SHOW_SLIDE_MENU)) {
+                            slideUpFragment.showGeofence(true);
+                        }
+                        if (!PreferencesManager.getInstance().getBooleanValue(SharesPrefConstants.IS_CLUSTER_SHOW_SLIDE_MENU)) {
+                            addAndHideViews(-1, true);
+                        } else {
+                            addAndHideViewsAfterCluster(-1, true);
+                        }
                     }
-                    if (slideUpFragment != null && PreferencesManager.getInstance().getBooleanValue(SharesPrefConstants.IS_LANDMARK_SHOW_SLIDE_MENU)) {
-                        slideUpFragment.showLandMark(true);
-                    }
-                    if (slideUpFragment != null && PreferencesManager.getInstance().getBooleanValue(SharesPrefConstants.IS_GEOFENCE_SHOW_SLIDE_MENU)) {
-                        slideUpFragment.showGeofence(true);
-                    }
-//                    if (slideUpFragment != null && PreferencesManager.getInstance().getBooleanValue(SharesPrefConstants.IS_GEOFENCE_SHOW_SLIDE_MENU)) {
-//                        slideUpFragment.showGeofence(true);
-//                    }
-                }
-            });
-        } else {
-            myLocateManager.removeViewPopup();
-            myLocateManager = null;
-            myLocateManager = new MyLocateManager(context, rootView, googleMap, vehiclesHashMap, myCurrentLatLng);
-            myLocateManager.setViews(mMapView);
-            myLocateManager.setAfterOnDismissListeners(new Click() {
-                @Override
-                public void onClick() {
-                    setVisibilityVehiclesMarkers(true);
-                }
+                });
 
-                @Override
-                public void addMaps() {
-                    if (googleMap != null) {
-                        openFirstTime = true;
-                        addVehiclesMarkers(false);
-                        reLocate();
+            } else {
+                myLocateManager.removeViewPopup();
+                myLocateManager = null;
+                myLocateManager = new MyLocateManager(context, rootView, googleMap, vehiclesHashMap, myCurrentLatLng);
+                myLocateManager.setViews(mMapView);
+                myLocateManager.setAfterOnDismissListeners(new Click() {
+                    @Override
+                    public void onClick() {
+                        setVisibilityVehiclesMarkers(true);
                     }
-                }
-            });
+
+                    @Override
+                    public void addMaps() {
+                        if (googleMap != null) {
+                            openFirstTime = true;
+                            addVehiclesMarkers(false);
+                            reLocate();
+                        }
+                    }
+                });
+            }
+            slideUp.hide();
+            slideUpSingleCar.hide();
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
-        slideUp.hide();
-        slideUpSingleCar.hide();
     }
 
     private void reLocate() {
@@ -1585,21 +1643,14 @@ public class LisOfVehiclesMapFragment extends Fragment implements
         googleMap.getUiSettings().setMapToolbarEnabled(false);
         googleMap.setTrafficEnabled(false);
         googleMap.setOnMapClickListener(latLng -> {
+            if (myLocateManager != null)
+                return;
             if (!PreferencesManager.getInstance().getBooleanValue(SharesPrefConstants.IS_CLUSTER_SHOW_SLIDE_MENU)) {
                 addAndHideViews(-1, true);
             } else {
                 addAndHideViewsAfterCluster(-1, true);
             }
             bottomViewVisibility();
-
-
-            //setClusterManager(markerClusterVisibility, true, 1);
-//            if (slideUpFragment != null && PreferencesManager.getInstance().getBooleanValue(SharesPrefConstants.IS_LANDMARK_SHOW_SLIDE_MENU)) {
-//                slideUpFragment.showLandMark(true);
-//            }
-//            if (slideUpFragment != null && PreferencesManager.getInstance().getBooleanValue(SharesPrefConstants.IS_GEOFENCE_SHOW_SLIDE_MENU)) {
-//                slideUpFragment.showGeofence(true);
-//            }
         });
         new Handler().postDelayed(() -> {
             startSignalRSerivce();
@@ -1805,8 +1856,8 @@ public class LisOfVehiclesMapFragment extends Fragment implements
 
 
             if (markerModel != null && markerModel.getAllVehicleModel() != null && markerModel.getAllVehicleModel().getLastLocation() != null) {
-                double value = markerModel.getAllVehicleModel().getLastLocation().getDirection() % 360;
-                timerTextView.setText(String.format(Locale.getDefault(), "%s", value)); // fraction
+                int value = (int)markerModel.getAllVehicleModel().getLastLocation().getDirection() % 360;
+                timerTextView.setText(String.format(Locale.getDefault(), "%s°", value)); // fraction
             } else {
                 timerTextView.setText(String.format(Locale.getDefault(), "%s", context.getString(R.string.n_a)));
             }

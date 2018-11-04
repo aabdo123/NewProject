@@ -140,7 +140,7 @@
 
                 <com.views.TextViewLight
                     android:id="@+id/locationTimeTextView"
-                    style="@style/smallWhiteText"
+                    style="@style/smallWhiteTextMax"
                     android:layout_below="@+id/locationTimeLabelTextView"
                     android:layout_marginStart="@dimen/dp_8"
                     android:layout_toEndOf="@+id/locationTimeImageView"

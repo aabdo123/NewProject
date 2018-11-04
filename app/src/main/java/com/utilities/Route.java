@@ -358,7 +358,10 @@ public class Route {
             //Tranform the string into a json object
             final JSONObject json = new JSONObject(result);
             JSONArray routeArray = json.getJSONArray("routes");
-
+            if (routeArray.length() == 0) {
+                clickWithTwoParam.onClick("error", "error", "error", "error");
+                return;
+            }
             JSONObject routes = routeArray.getJSONObject(0);
             JSONObject overviewPolylines = routes.getJSONObject("overview_polyline");
             String encodedString = overviewPolylines.getString("points");

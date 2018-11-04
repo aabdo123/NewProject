@@ -192,20 +192,8 @@ public class MyLocateManager implements View.OnClickListener {
         try {
             blueMarkerAddress = googleMap.getCameraPosition().target;
             builder.include(blueMarkerAddress);
-            googleMap.addMarker(MapUtils.createMarker(blueMarkerAddress, MapUtils.bitmapDescriptorFromVector(R.drawable.locate_marker_end)));
             drawPathOnMap();
-            LatLogModel latLogModel = new LatLogModel(END_OPENED);
-            latLogModel.setLatLng(blueMarkerAddress);
-            if (selectedLocations != null && selectedLocations.size() == 2) {
-                if (selectedLocations.get(1).getLatLng() == null) {
-                    selectedLocations.set(1, latLogModel);
-                } else {
-                    selectedLocations.add(latLogModel);
-                }
-            } else if (selectedLocations != null) {
-                selectedLocations.add(latLogModel);
-            }
-            notifyAdapterOfLocations();
+
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -221,6 +209,19 @@ public class MyLocateManager implements View.OnClickListener {
                 if (text.equals("error")) {
                     ToastHelper.toastInfo(context, context.getString(R.string.invalid_address));
                 } else {
+                    googleMap.addMarker(MapUtils.createMarker(blueMarkerAddress, MapUtils.bitmapDescriptorFromVector(R.drawable.locate_marker_end)));
+                    LatLogModel latLogModels = new LatLogModel(END_OPENED);
+                    latLogModels.setLatLng(blueMarkerAddress);
+                    if (selectedLocations != null && selectedLocations.size() == 2) {
+                        if (selectedLocations.get(1).getLatLng() == null) {
+                            selectedLocations.set(1, latLogModels);
+                        } else {
+                            selectedLocations.add(latLogModels);
+                        }
+                    } else if (selectedLocations != null) {
+                        selectedLocations.add(latLogModels);
+                    }
+                    notifyAdapterOfLocations();
                     //onRouteSuccess();
                     LocationLocateModel locationLocateModel = new LocationLocateModel();
                     locationLocateModel.setDistance(text);
@@ -236,6 +237,7 @@ public class MyLocateManager implements View.OnClickListener {
                         selectedLocations.set(position, latLogModel);
                         locationsAdapter.notifyItemChanged(position);
                     }
+
                 }
             });
             routeArrayList.add(route);

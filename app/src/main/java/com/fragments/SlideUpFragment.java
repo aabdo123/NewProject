@@ -83,11 +83,6 @@ public class SlideUpFragment extends Fragment {
             mParentListener.onClickShow(isShowCliched, false, model.getId());
         }, position -> {
             SlideUpItemsModel model = list.get(position);
-            if (position == 0) {
-                list.get(1).setShowClicked(false);// cluster
-//                    list.get(3).setShowClicked(false);// landmark
-//                    list.get(4).setShowClicked(false);// geo-fence
-            }
             mParentListener.onClickShow(false, true, model.getId());
         });
         sliderRecyclerView.setAdapter(slideUpAdapter);
@@ -127,7 +122,7 @@ public class SlideUpFragment extends Fragment {
           if (slideUpAdapter!=null){
               PreferencesManager.getInstance().setBooleanValue(state, SharesPrefConstants.IS_CLUSTER_SHOW_SLIDE_MENU);
               SlideUpItemsModel model = list.get(1);
-              mParentListener.onClickShow(state, false, model.getId());
+              mParentListener.onClickShow(true, false, model.getId());
               slideUpAdapter.notifyDataSetChanged();
           }
       }catch (Exception ex){

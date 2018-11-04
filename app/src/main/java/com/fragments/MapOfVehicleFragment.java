@@ -330,11 +330,11 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
         workingHoursTextView.setText(Utils.doubleToString(AppUtils.secondsToHours(vehicleModel.getLastLocation().getTotalWorkingHours())));
         mileageTextView.setText(String.format(Locale.getDefault(), "%s %s", Utils.doubleToStringTwoDigits(AppUtils.meterToKilometer(vehicleModel.getLastLocation().getTotalMileage())), context.getString(R.string.km)));
         accTextView.setText(getOnline(vehicleModel.getLastLocation().getIsOnline()));
-        double value = vehicleModel.getLastLocation().getDirection() % 360;
-        directionTextView.setText(String.format(Locale.getDefault(), "%s", value == 0.0 ? "0°" : value));
+        int value = (int) (vehicleModel.getLastLocation().getDirection() % 360);
+        directionTextView.setText(String.format(Locale.getDefault(), "%s°", value == 0 ? "0" : value));
         vehicleStatusTextView.setText(AppUtils.getCarStatus(activity, vehicleModel.getLastLocation().getVehicleStatus()));
         if (vehicleModel.getLastLocation().getLatitude() != 0.0 || vehicleModel.getLastLocation().getLongitude() != 0.0) {
-            locationTimeTextView.setText(Utils.getDateUpUtcToNormalFormat(vehicleModel.getLastLocation().getRecordDateTime()));
+            locationTimeTextView.setText(Utils.parseTime(vehicleModel.getLastLocation().getRecordDateTime()));
         }
     }
 
@@ -346,9 +346,9 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
             workingHoursTextView.setText(Utils.doubleToString(AppUtils.secondsToHours(aModel.getWorkingHours())));
             mileageTextView.setText(String.format(Locale.getDefault(), "%s %s", Utils.doubleToStringTwoDigits(aModel.getMileage()), context.getString(R.string.km)));
             accTextView.setText(getOnline(aModel.getEngineStatus()));
-            double value = aModel.getDirection() % 360;
-            directionTextView.setText(String.format(Locale.getDefault(), "%s", value == 0.0 ? "0°" : value));
-            locationTimeTextView.setText(Utils.getDateUpUtcToNormalFormat(aModel.getRecordDateTime()));
+            int value = (int) (aModel.getDirection() % 360);
+            directionTextView.setText(String.format(Locale.getDefault(), "%s°", value == 0 ? "0" : value));
+            locationTimeTextView.setText(Utils.parseTime(aModel.getRecordDateTime()));
             vehicleStatusTextView.setText(AppUtils.getCarStatus(activity, String.valueOf(aModel.getVehicleStatus())));
         } catch (IllegalStateException e) {
             setUpCarInfo();

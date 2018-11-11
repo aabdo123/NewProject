@@ -20,12 +20,14 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.github.clans.fab.FloatingActionMenu;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -336,6 +338,7 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
         if (vehicleModel.getLastLocation().getLatitude() != 0.0 || vehicleModel.getLastLocation().getLongitude() != 0.0) {
             locationTimeTextView.setText(Utils.parseTime(vehicleModel.getLastLocation().getRecordDateTime()));
         }
+       // Toast.makeText(context, "id: " +vehicleModel.getVehicleID(), Toast.LENGTH_LONG).show();
     }
 
     private void updateCarInfo(SignalRModel.A aModel) {
@@ -344,12 +347,13 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
             groupTextView.setText(aModel.getGroupName());
             displayNameTextView.setText(aModel.getVehicleDisplayName());
             workingHoursTextView.setText(Utils.doubleToString(AppUtils.secondsToHours(aModel.getWorkingHours())));
-            mileageTextView.setText(String.format(Locale.getDefault(), "%s %s", Utils.doubleToStringTwoDigits(aModel.getMileage()), context.getString(R.string.km)));
+            //mileageTextView.setText(String.format(Locale.getDefault(), "%s %s", Utils.doubleToStringTwoDigits(aModel.getMileage()), context.getString(R.string.km)));
             accTextView.setText(getOnline(aModel.getEngineStatus()));
             int value = (int) (aModel.getDirection() % 360);
             directionTextView.setText(String.format(Locale.getDefault(), "%s°", value == 0 ? "0" : value));
             locationTimeTextView.setText(Utils.parseTime(aModel.getRecordDateTime()));
             vehicleStatusTextView.setText(AppUtils.getCarStatus(activity, String.valueOf(aModel.getVehicleStatus())));
+           // Toast.makeText(context, "Miallege: " + Utils.doubleToStringTwoDigits(aModel.getMileage())+" id: "+aModel.getVehicleID(), Toast.LENGTH_LONG).show();
         } catch (IllegalStateException e) {
             setUpCarInfo();
             e.printStackTrace();
@@ -519,47 +523,55 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
     }
 
     private void markStartingLocationOnMap(final SignalRModel signalRModel) {
-        SignalRModel.A aModel = signalRModel.getA().get(0);
-        LatLng newLocation = new LatLng(aModel.getLatitude(), aModel.getLongitude());
-        carLatLng = newLocation;
-        LogHelper.LOG_D("newLocation >>>> ", "Lat: " + newLocation.latitude + " Long: "
-                + newLocation.longitude
-                + "\nDirection: " + aModel.getDirection()
-                + "\nVehicle ID: " + aModel.getVehicleID());
+        try {
+            SignalRModel.A aModel = signalRModel.getA().get(0);
+            LatLng newLocation = new LatLng(aModel.getLatitude(), aModel.getLongitude());
+            carLatLng = newLocation;
+            LogHelper.LOG_D("newLocation >>>> ", "Lat: " + newLocation.latitude + " Long: "
+                    + newLocation.longitude
+                    + "\nDirection: " + aModel.getDirection()
+                    + "\nVehicle ID: " + aModel.getVehicleID());
 
-        activity.runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                googleMap.clear();
-                googleMap.addMarker(new MarkerOptions().position(newLocation)
-                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.car_101))
-                        .anchor(0.5f, 0.5f)
-                        .rotation(aModel.getDirection().floatValue())
-                        .flat(true));
-                googleMap.moveCamera(CameraUpdateFactory.newLatLng(newLocation));
-                updateCarInfo(aModel);
-            }
-        });
+            activity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    googleMap.clear();
+                    googleMap.addMarker(new MarkerOptions().position(newLocation)
+                            .icon(AppUtils.getCarIcon(String.valueOf(aModel.getVehicleStatus())))
+                            .anchor(0.5f, 0.5f)
+                            .rotation(aModel.getDirection().floatValue())
+                            .flat(true));
+                    googleMap.moveCamera(CameraUpdateFactory.newLatLng(newLocation));
+                    updateCarInfo(aModel);
+                }
+            });
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     public void startLiveTarcking() {
-        if (mBound) {
+        try {
+            if (mBound) {
 //             Call a method from the SignalRService.
 //             However, if this call were something that might hang, then this request should
 //             occur in a separate thread to avoid slowing down the activity performance.
-            mService.invokeService(new SignalR() {
-                @Override
-                public void onMessageReceived(SignalRModel signalRModel) {
-                    if (signalRModel.getA().get(0).getVehicleID() == PreferencesManager.getInstance().getIntegerValue(SharesPrefConstants.LAST_VIEW_VEHICLE_ID)) {
-                        markStartingLocationOnMap(signalRModel);
+                mService.invokeService(new SignalR() {
+                    @Override
+                    public void onMessageReceived(SignalRModel signalRModel) {
+                        if (signalRModel.getA().get(0).getVehicleID() == PreferencesManager.getInstance().getIntegerValue(SharesPrefConstants.LAST_VIEW_VEHICLE_ID)) {
+                            markStartingLocationOnMap(signalRModel);
+                        }
                     }
-                }
 
-                @Override
-                public void onCommandReceived(SignalRCommandModel signalRCommandModel) {
-
-                }
-            });
+                    @Override
+                    public void onCommandReceived(SignalRCommandModel signalRCommandModel) {
+                        Log.e("Tag", "tag");
+                    }
+                });
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
     }
 
@@ -590,16 +602,20 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
 
         @Override
         public void onServiceConnected(ComponentName className, IBinder service) {
-            // We've bound to SignalRService, cast the IBinder and get SignalRService instance
             try {
-                LogHelper.LOG_D("onServiceConnected", "" + service.getInterfaceDescriptor());
-            } catch (RemoteException e) {
-                e.printStackTrace();
-            }
-            SignalRService.LocalBinder binder = (SignalRService.LocalBinder) service;
-            mService = binder.getService();
+                // We've bound to SignalRService, cast the IBinder and get SignalRService instance
+                try {
+                    LogHelper.LOG_D("onServiceConnected", "" + service.getInterfaceDescriptor());
+                } catch (RemoteException e) {
+                    e.printStackTrace();
+                }
+                SignalRService.LocalBinder binder = (SignalRService.LocalBinder) service;
+                mService = binder.getService();
 
-            mBound = true;
+                mBound = true;
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
         }
 
         @Override

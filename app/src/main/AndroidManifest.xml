@@ -46,9 +46,11 @@
             android:enabled="true"
             android:exported="true" />
 
+
         <meta-data
             android:name="io.fabric.ApiKey"
-            android:value="6309228a38eee2225c5d66bbd9800f9ab5a9683b" />
+            android:value="45a1d84be914e680feff237220af7c223ec3b61c"
+            />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

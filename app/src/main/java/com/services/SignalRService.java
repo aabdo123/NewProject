@@ -87,54 +87,62 @@ public class SignalRService extends Service {
      * method for clients (activities)
      */
     public void invokeService(SignalR signalR) {
+        try {
 //        mHubProxy.invoke("Signin", PreferencesManager.getInstance().getStringValue(SharesPrefConstants.USER_ID));
 //        mHubProxy.invoke("Signin", "d0588782-bb49-4c8d-8e99-6073f47fd1f3");
-        mHubConnection.received(new MessageReceivedHandler() {
-            @Override
-            public void onMessageReceived(final JsonElement json) {
-                Log.e("onMessageReceived ", json.toString());
-                mHandler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        signalRModel = new Gson().fromJson(json, SignalRModel.class);
-                        if (Utils.isNotEmptyList(signalRModel.getA()) && signalRModel.getA().get(0).getLatitude() != 0.0) {
+            mHubConnection.received(new MessageReceivedHandler() {
+                @Override
+                public void onMessageReceived(final JsonElement json) {
+                    Log.e("onMessageReceived ", json.toString());
+                    mHandler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            signalRModel = new Gson().fromJson(json, SignalRModel.class);
+                            if (Utils.isNotEmptyList(signalRModel.getA()) && signalRModel.getA().get(0).getLatitude() != 0.0) {
 //                            if (signalRModel.getA().get(0).getVehicleID() == PreferencesManager.getInstance().getIntegerValue(SharesPrefConstants.LAST_VIEW_VEHICLE_ID)) {
-                            signalR.onMessageReceived(signalRModel);
+                                signalR.onMessageReceived(signalRModel);
 //                                Log.v("onMessageReceived", json.toString());
 //                            }
-                        } else {
-                            signalRCommandModel = new Gson().fromJson(json, SignalRCommandModel.class);
-                            signalR.onCommandReceived(signalRCommandModel);
+                            } else {
+                                signalRCommandModel = new Gson().fromJson(json, SignalRCommandModel.class);
+                                signalR.onCommandReceived(signalRCommandModel);
+                            }
                         }
-                    }
-                });
-            }
-        });
+                    });
+                }
+            });
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     private void startSignalR() {
-        Platform.loadPlatformComponent(new AndroidPlatformComponent());
-
-        Credentials credentials = new Credentials() {
-            @Override
-            public void prepareRequest(Request request) {
-                request.addHeader("User-Name", "BNK");
-            }
-        };
-
-        mHubConnection = new HubConnection(ApiConstants.LOCATION_HUB);
-        mHubConnection.setCredentials(credentials);
-
-        String SERVER_HUB_CHAT = "LocationsHub";
-        mHubProxy = mHubConnection.createHubProxy(SERVER_HUB_CHAT);
-        ClientTransport clientTransport = new ServerSentEventsTransport(mHubConnection.getLogger());
-        SignalRFuture<Void> signalRFuture = mHubConnection.start(clientTransport);
         try {
-            signalRFuture.get();
-        } catch (InterruptedException | ExecutionException e) {
-            e.printStackTrace();
-            return;
+            Platform.loadPlatformComponent(new AndroidPlatformComponent());
+
+            Credentials credentials = new Credentials() {
+                @Override
+                public void prepareRequest(Request request) {
+                    request.addHeader("User-Name", "BNK");
+                }
+            };
+
+            mHubConnection = new HubConnection(ApiConstants.LOCATION_HUB);
+            mHubConnection.setCredentials(credentials);
+
+            String SERVER_HUB_CHAT = "LocationsHub";
+            mHubProxy = mHubConnection.createHubProxy(SERVER_HUB_CHAT);
+            ClientTransport clientTransport = new ServerSentEventsTransport(mHubConnection.getLogger());
+            SignalRFuture<Void> signalRFuture = mHubConnection.start(clientTransport);
+            try {
+                signalRFuture.get();
+            } catch (InterruptedException | ExecutionException e) {
+                e.printStackTrace();
+                return;
+            }
+            mHubProxy.invoke("Signin", PreferencesManager.getInstance().getStringValue(SharesPrefConstants.USER_ID));
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
-        mHubProxy.invoke("Signin", PreferencesManager.getInstance().getStringValue(SharesPrefConstants.USER_ID));
     }
 }

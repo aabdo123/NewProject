@@ -659,21 +659,23 @@ public class LisOfVehiclesMapFragment extends Fragment implements
 
     private void unChecked(Item item, List<Item> itemLists, String clickState) {
         try {
-            if (item != null && item.getChildren() != null && clickState.equalsIgnoreCase("grope")) {
-                List<?> arrayFromApiCasting = item.getChildren();
-                List<Item> arrayFrom = (List<Item>) arrayFromApiCasting;
-                for (int x = 0; x < arrayFrom.size(); x++) {
-                    arrayFrom.get(x).setChecked(false);
-                }
-                ArrayList<Item> mainArrayList = new ArrayList<>(arrayFrom);
-                item.setChilds(mainArrayList);
-                List<?> arrays = (List<Item>) mainArrayList;
-                item.addChildren((List<RecyclerViewItem>) arrays);
-                item.setChilds(mainArrayList);
-                for (int x = 0; x < item.getChilds().size(); x++) {
-                    for (int y = 0; y < itemLists.size(); y++) {
-                        if (item.getChilds().get(x).getID().equalsIgnoreCase(itemLists.get(y).getID())) {
-                            itemLists.set(y, item.getChilds().get(x));
+            if (item != null && clickState.equalsIgnoreCase("grope")) {
+                if (item.getChildren() != null) {
+                    List<?> arrayFromApiCasting = item.getChildren();
+                    List<Item> arrayFrom = (List<Item>) arrayFromApiCasting;
+                    for (int x = 0; x < arrayFrom.size(); x++) {
+                        arrayFrom.get(x).setChecked(false);
+                    }
+                    ArrayList<Item> mainArrayList = new ArrayList<>(arrayFrom);
+                    item.setChilds(mainArrayList);
+                    List<?> arrays = (List<Item>) mainArrayList;
+                    item.addChildren((List<RecyclerViewItem>) arrays);
+                    item.setChilds(mainArrayList);
+                    for (int x = 0; x < item.getChilds().size(); x++) {
+                        for (int y = 0; y < itemLists.size(); y++) {
+                            if (item.getChilds().get(x).getID().equalsIgnoreCase(itemLists.get(y).getID())) {
+                                itemLists.set(y, item.getChilds().get(x));
+                            }
                         }
                     }
                 }
@@ -690,22 +692,24 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                     }
                 }
                 int isCheckedState = 0;
-                for (int y = 1; y < itemLists.size(); y++) {
-                    if (itemLists.get(y).isChecked()) {
-                        isCheckedState = isCheckedState + 1;
+                if (itemLists != null) {
+                    for (int y = 1; y < itemLists.size(); y++) {
+                        if (itemLists.get(y).isChecked()) {
+                            isCheckedState = isCheckedState + 1;
+                        }
                     }
+                    if (isCheckedState == itemLists.size()) {
+                        itemLists.get(0).setGroupChecked(false);
+                        itemLists.get(0).setChecked(true);
+                    } else if (isCheckedState > 0) {
+                        itemLists.get(0).setGroupChecked(true);
+                        itemLists.get(0).setChecked(false);
+                    } else {
+                        itemLists.get(0).setGroupChecked(false);
+                        itemLists.get(0).setChecked(false);
+                    }
+                    expandableAdapter.notifyDataSetChanged();
                 }
-                if (isCheckedState == itemLists.size()) {
-                    itemLists.get(0).setGroupChecked(false);
-                    itemLists.get(0).setChecked(true);
-                } else if (isCheckedState > 0) {
-                    itemLists.get(0).setGroupChecked(true);
-                    itemLists.get(0).setChecked(false);
-                } else {
-                    itemLists.get(0).setGroupChecked(false);
-                    itemLists.get(0).setChecked(false);
-                }
-                expandableAdapter.notifyDataSetChanged();
             } else if (clickState.equalsIgnoreCase("vehicle")) {
                 for (int y = 0; y < itemLists.size(); y++) {
                     if (item != null && item.getID().equalsIgnoreCase(itemLists.get(y).getID())) {
@@ -833,23 +837,24 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                                 if (!itemLists.get(y).isExpanded()) {
                                     getLength(itemLists.get(y).getChildren(), true, false);
                                     for (int x = 0; x < arrayFromApi.size(); x++) {
-                                        for (int h = 0; h < itemLists.get(y).getChildren().size(); h++) {
-                                            List<?> array = itemLists.get(y).getChildren();
-                                            List<Item> mainArray = (List<Item>) array;
-                                            String vehicle = mainArray.get(h).getID();
-                                            int vehicleId = arrayFromApi.get(x).getVehicleID();
-                                            String firstOnes = vehicle.substring(0, 1);
-                                            if (firstOnes.equalsIgnoreCase("V")) {
-                                                vehicle = vehicle.substring(2, vehicle.length());
-                                                if (Integer.valueOf(vehicle) == vehicleId) {
-                                                    arrayFromApi.get(x).setLevel(mainArray.get(h).getLevel());
-                                                    arrayFromApi.get(x).setChecked(mainArray.get(h).isChecked());
-                                                    arrayFromApi.get(x).setClicked(mainArray.get(h).isClicked());
-                                                    arrayFromApi.get(x).setID(mainArray.get(h).getID());
-                                                    arrayFromApi.get(x).setName(mainArray.get(h).getName());
+                                        if (itemLists.get(y).getChildren() != null)
+                                            for (int h = 0; h < itemLists.get(y).getChildren().size(); h++) {
+                                                List<?> array = itemLists.get(y).getChildren();
+                                                List<Item> mainArray = (List<Item>) array;
+                                                String vehicle = mainArray.get(h).getID();
+                                                int vehicleId = arrayFromApi.get(x).getVehicleID();
+                                                String firstOnes = vehicle.substring(0, 1);
+                                                if (firstOnes.equalsIgnoreCase("V")) {
+                                                    vehicle = vehicle.substring(2, vehicle.length());
+                                                    if (Integer.valueOf(vehicle) == vehicleId) {
+                                                        arrayFromApi.get(x).setLevel(mainArray.get(h).getLevel());
+                                                        arrayFromApi.get(x).setChecked(mainArray.get(h).isChecked());
+                                                        arrayFromApi.get(x).setClicked(mainArray.get(h).isClicked());
+                                                        arrayFromApi.get(x).setID(mainArray.get(h).getID());
+                                                        arrayFromApi.get(x).setName(mainArray.get(h).getName());
+                                                    }
                                                 }
                                             }
-                                        }
                                     }
                                 }
                             }
@@ -1856,7 +1861,7 @@ public class LisOfVehiclesMapFragment extends Fragment implements
 
 
             if (markerModel != null && markerModel.getAllVehicleModel() != null && markerModel.getAllVehicleModel().getLastLocation() != null) {
-                int value = (int)markerModel.getAllVehicleModel().getLastLocation().getDirection() % 360;
+                int value = (int) markerModel.getAllVehicleModel().getLastLocation().getDirection() % 360;
                 timerTextView.setText(String.format(Locale.getDefault(), "%s°", value)); // fraction
             } else {
                 timerTextView.setText(String.format(Locale.getDefault(), "%s", context.getString(R.string.n_a)));

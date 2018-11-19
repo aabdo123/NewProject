@@ -6,6 +6,7 @@
     <string name="about_us_des_1">شركة saferoad لتقنية المعلومات هي شركة مقرها المملكة العربية السعودية وهي تقدم حلول تقنية المعلومات إلى الشركات المحلية، والسوق الدولية منذ عام 2009، والتي يملكها جزئيا مركز أرامكو للريادة (وعد).</string>
     <string name="about_us_des_2">الهدف الرئيسي من saferoad هو تقليل عدد الحوادث ومساعدة السائقين في المملكة العربية السعودية على تعزيز سلوكهم في القيادة. إن المساهمة الفعالة لتكنولوجيات saferoad في الاقتصاد الإقليمي قد منح الشركة فرصه االحصول على العديد من الجوائز الإقليمية والدولية.</string>
     <string name="saferoad_website">موقع saferoad</string>
-    <string name="google_maps_keys">AIzaSyB8CaFPkBKNnwrke1TZQzJB-CNp5NF8PtI</string>
+    <string name="google_maps_keys">AIzaSyDi-bSYjtEknQ7O7V05Hg7oWRLWPnU0rXU</string>
+    <!--<string name="google_maps_keys">AIzaSyB8CaFPkBKNnwrke1TZQzJB-CNp5NF8PtI</string>-->
 
 </resources>

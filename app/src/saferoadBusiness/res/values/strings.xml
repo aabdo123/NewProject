@@ -11,6 +11,7 @@
     <string name="saferoad_website">saferoad WebSite</string>
     <string name="are_you_sure_do_want_to_exit_saferoad">Are you sure you want to exit saferoad?</string>
     <string name="google_maps_keys">AIzaSyDi-bSYjtEknQ7O7V05Hg7oWRLWPnU0rXU</string>
+    <!--<string name="google_maps_keys">AIzaSyDi-bSYjtEknQ7O7V05Hg7oWRLWPnU0rXU</string>-->
     <!--<string name="google_maps_keys">AIzaSyB8CaFPkBKNnwrke1TZQzJB-CNp5NF8PtI</string>-->
 
 </resources>

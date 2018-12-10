@@ -10,7 +10,7 @@ public interface ApiConstants {
     String TOKEN = "http://api.saferoad.net/token";
     String LOCATION_HUB = "http://saferoad.cloudapp.net:5010";
     String GOOGLE_API_KE = "AIzaSyB8CaFPkBKNnwrke1TZQzJB-CNp5NF8PtI";
-    String GOOGLE_API_KEY = "AIzaSyBf6QMr0rfVlH7cAxdLtkXCYXn57u4_7qM";
+    String GOOGLE_API_KEY = "AIzaSyDi-bSYjtEknQ7O7V05Hg7oWRLWPnU0rXU";
 
     String VEHICLES = "vehicles";
     String DASHBOARD = "dashboard?vehicleid=";

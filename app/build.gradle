@@ -14,8 +14,8 @@ android {
     productFlavors {
         saferoadBusiness {
             applicationIdSuffix  "saferoad.business"
-            versionCode 6
-            versionName "1.5"
+            versionCode 8
+            versionName "1.6"
         }
         astroGps {
             applicationIdSuffix  ".astroGps"

@@ -22,6 +22,6 @@
     android:value="AIzaSyB8CaFPkBKNnwrke1TZQzJB-CNp5NF8PtI"
     -->
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
-        AIzaSyB8CaFPkBKNnwrke1TZQzJB-CNp5NF8PtI
+        AIzaS
     </string>
 </resources>

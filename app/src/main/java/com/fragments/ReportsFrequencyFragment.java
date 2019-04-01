@@ -281,10 +281,12 @@ public class ReportsFrequencyFragment extends Fragment implements View.OnClickLi
                     AddReportsActivity.wizardModel.setTypeSelected(false);
                 } else if (position == 1) {
                     freqHalf = "firstlast,firstday";
+                    AddReportsActivity.wizardModel.getScheduleFrequency().clear();
                     AddReportsActivity.wizardModel.addScheduleFrequency(freqHalf);
                     AddReportsActivity.wizardModel.setTypeSelected(true);
                 } else {
                     freqHalf = "firstlast,lastday";
+                    AddReportsActivity.wizardModel.getScheduleFrequency().clear();
                     AddReportsActivity.wizardModel.addScheduleFrequency(freqHalf);
                     AddReportsActivity.wizardModel.setTypeSelected(true);
                 }
@@ -313,10 +315,12 @@ public class ReportsFrequencyFragment extends Fragment implements View.OnClickLi
                     AddReportsActivity.wizardModel.setTypeSelected(false);
                 } else if (position == 1) {
                     freqHalf = "firstlast,firstday";
+                    AddReportsActivity.wizardModel.getScheduleFrequency().clear();
                     AddReportsActivity.wizardModel.addScheduleFrequency(freqHalf);
                     AddReportsActivity.wizardModel.setTypeSelected(true);
                 } else {
                     freqHalf = "firstlast,lastday";
+                    AddReportsActivity.wizardModel.getScheduleFrequency().clear();
                     AddReportsActivity.wizardModel.addScheduleFrequency(freqHalf);
                     AddReportsActivity.wizardModel.setTypeSelected(true);
                 }

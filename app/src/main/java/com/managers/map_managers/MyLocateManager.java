@@ -448,7 +448,7 @@ public class MyLocateManager implements View.OnClickListener {
         afterOnDismiss.onClick();
         afterOnDismiss.addMaps();
         showMapStylingFab();
-        landMarkCheck.landMark();
+        //landMarkCheck.landMark();
     }
 
 

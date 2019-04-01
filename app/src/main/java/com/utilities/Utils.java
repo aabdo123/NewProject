@@ -57,6 +57,8 @@ import java.util.Random;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 
+import cz.msebera.android.httpclient.impl.cookie.DateUtils;
+
 import static android.content.Context.INPUT_METHOD_SERVICE;
 
 public class Utils {
@@ -107,6 +109,23 @@ public class Utils {
             TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
             String simSerial = tm.getSimSerialNumber();
             return simSerial;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
+    public static String parseTimeWithPlusThree(String dateFrom) {
+        try {
+            SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
+            SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
+            Date date = inputFormat.parse(dateFrom);
+            Calendar cal = Calendar.getInstance(); // creates calendar
+            cal.setTime(date); // sets calendar time/date
+            cal.add(Calendar.HOUR_OF_DAY, 3); // adds one hour
+            String formattedDate = outputFormat.format(cal.getTime());
+            System.out.println(formattedDate);
+            return formattedDate;
         } catch (Exception e) {
             e.printStackTrace();
         }

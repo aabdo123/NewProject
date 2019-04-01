@@ -18,6 +18,7 @@ import com.views.ButtonBold;
 import com.views.TextViewRegular;
 
 import java.util.Calendar;
+import java.util.TimeZone;
 
 public class MonthYearPickerDialog extends DialogFragment {
 
@@ -92,7 +93,7 @@ public class MonthYearPickerDialog extends DialogFragment {
 
         int year = cal.get(Calendar.DAY_OF_MONTH);
         daysPicker.setMinValue(1);
-        daysPicker.setMaxValue(getMonthCountDays(cal.get(Calendar.MONTH)));
+        daysPicker.setMaxValue(getMonthCountDays(cal.get(Calendar.MONTH)+ 1));
         daysPicker.setValue(year);
         daysPicker.setDescendantFocusability(ViewGroup.FOCUS_BLOCK_DESCENDANTS);
 

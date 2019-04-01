@@ -113,9 +113,17 @@ public class AllVehiclesInHashModel implements ClusterItem ,Parcelable{
         @SerializedName("LastLocation")
         @Expose
         private LastLocation lastLocation;
+        @SerializedName("FBToken")
+        @Expose
+        private String fbToken;
 
 
-        public AllVehicleModel(Parcel in) {
+
+        public AllVehicleModel() {
+
+        }
+
+        protected AllVehicleModel(Parcel in) {
             if (in.readByte() == 0) {
                 vehicleID = null;
             } else {
@@ -124,9 +132,31 @@ public class AllVehiclesInHashModel implements ClusterItem ,Parcelable{
             label = in.readString();
             plateNumber = in.readString();
             serialNumber = in.readString();
+            lastLocation = in.readParcelable(LastLocation.class.getClassLoader());
+            fbToken = in.readString();
         }
 
-        public final Creator<AllVehicleModel> CREATOR = new Creator<AllVehicleModel>() {
+        @Override
+        public void writeToParcel(Parcel dest, int flags) {
+            if (vehicleID == null) {
+                dest.writeByte((byte) 0);
+            } else {
+                dest.writeByte((byte) 1);
+                dest.writeInt(vehicleID);
+            }
+            dest.writeString(label);
+            dest.writeString(plateNumber);
+            dest.writeString(serialNumber);
+            dest.writeParcelable(lastLocation, flags);
+            dest.writeString(fbToken);
+        }
+
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        public static final Creator<AllVehicleModel> CREATOR = new Creator<AllVehicleModel>() {
             @Override
             public AllVehicleModel createFromParcel(Parcel in) {
                 return new AllVehicleModel(in);
@@ -138,8 +168,12 @@ public class AllVehiclesInHashModel implements ClusterItem ,Parcelable{
             }
         };
 
-        public AllVehicleModel() {
+        public String getFbToken() {
+            return fbToken;
+        }
 
+        public void setFbToken(String fbToken) {
+            this.fbToken = fbToken;
         }
 
         public Integer getVehicleID() {
@@ -182,23 +216,7 @@ public class AllVehiclesInHashModel implements ClusterItem ,Parcelable{
             this.lastLocation = lastLocation;
         }
 
-        @Override
-        public int describeContents() {
-            return 0;
-        }
 
-        @Override
-        public void writeToParcel(Parcel dest, int flags) {
-            if (vehicleID == null) {
-                dest.writeByte((byte) 0);
-            } else {
-                dest.writeByte((byte) 1);
-                dest.writeInt(vehicleID);
-            }
-            dest.writeString(label);
-            dest.writeString(plateNumber);
-            dest.writeString(serialNumber);
-        }
 
         public class LastLocation implements Parcelable {
 

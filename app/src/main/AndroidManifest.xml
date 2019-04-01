@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -16,12 +17,15 @@
 
     <application
         android:name=".application.MyApplication"
-        android:allowBackup="true"
         android:icon="@mipmap/ic_logo_2"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_logo_2"
         android:supportsRtl="true"
+        android:allowBackup="false"
+        android:fullBackupOnly="false"
+        android:fullBackupContent="false"
+        tools:replace="android:label,android:icon,android:name,android:allowBackup,android:fullBackupOnly,android:fullBackupContent"
         android:theme="@style/AppTheme">
         <activity android:name=".activities.BaseActivity" />
         <activity
@@ -44,6 +48,7 @@
         <service
             android:name=".services.SignalRService"
             android:enabled="true"
+            android:stopWithTask="false"
             android:exported="true" />
 
 
@@ -51,6 +56,19 @@
             android:name="io.fabric.ApiKey"
             android:value="45a1d84be914e680feff237220af7c223ec3b61c"
             />
+
+
+        <meta-data
+            android:name="com.here.android.maps.appid"
+            android:value="ImmOd1YLv3HqpWh7k5eB" />
+        <meta-data
+            android:name="com.here.android.maps.apptoken"
+            android:value="u5Ks3qRgOTVWNhHOTP0ChA" />
+        <meta-data
+            android:name="com.here.android.maps.license.key"
+            android:value="anEBMjPNgfbmhyMaUtOF3spHDRSgpqCWW1KVN7uXceR/w5OEuCSxvsuX7wPDidFo3w5o/lPJyy/yx0fC8MKKyRVvLcViWMDnAL5zit7XrQb84rBuRTLEF082LuiO267OetoWDKWL3ya2csr9eTLq1W2D3mei2sTCslZrYvsk9pkCp+//in8BsfWWH/K2jbOThB9aaNrh5TX102SACF/5xTPAHT42KdE9kyW9Fu64UoJ0AvfMcHk6P3O7zkxWt5KZOxeSzYUOZc2IcNl99b5u/erp65i7td9A2NRBqhdhQEzhrp8qfvJzFpOdMxq9CnBEZ1X0zPlx1eK6v7BlBXL+NIaLZwYBDNKSCF6mfAl/daGgIhCImZ3rj/4agJzljRcvxrhEe0if7n29e4AiW8ei/VG5XW122i0cgOQTE+ywMkNeuJpFQAGbx+MsxZoFoORGr0ZDVaHv8UU7J71o3OFzLMu/T8D3vi5ocP3GQru9UUGxDtcj2SQUHAdE7egua/vFKvdSXaMj+xvv/N+V44rGwqxxHr8lyWkf8ISuSw1shqmdOUYZETbjgm9fgB9tam2HlZWsgBKrj3MfTQRZ7hR5bXJyYzx3KMuOrshZbtYsudXQ+297Q8W7RW+FRmhv3t844RA2nPSwSbgjARJIKpjZA+ZF1i4YeY9Hs4abmi7b7CU="/>
+
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

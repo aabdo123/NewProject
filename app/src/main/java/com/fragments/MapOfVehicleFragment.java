@@ -42,6 +42,8 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.gson.Gson;
 import com.managers.PreferencesManager;
 import com.managers.map_managers.MyMapStyleManager;
 import com.models.ListOfVehiclesModel;
@@ -189,7 +191,7 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
         context = getContext();
         activity = getActivity();
         fragmentActivity = getActivity();
-//        startSignalRService();
+        startSignalRService();
         Bundle mBundle = this.getArguments();
         if (mBundle != null) {
             LogHelper.LOG_D("MAP", "getArgs");
@@ -522,16 +524,10 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
         }
     }
 
-    private void markStartingLocationOnMap(final SignalRModel signalRModel) {
+    private void markStartingLocationOnMap(final SignalRModel.A aModel) {
         try {
-            SignalRModel.A aModel = signalRModel.getA().get(0);
             LatLng newLocation = new LatLng(aModel.getLatitude(), aModel.getLongitude());
             carLatLng = newLocation;
-            LogHelper.LOG_D("newLocation >>>> ", "Lat: " + newLocation.latitude + " Long: "
-                    + newLocation.longitude
-                    + "\nDirection: " + aModel.getDirection()
-                    + "\nVehicle ID: " + aModel.getVehicleID());
-
             activity.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
@@ -553,20 +549,13 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
     public void startLiveTarcking() {
         try {
             if (mBound) {
-//             Call a method from the SignalRService.
-//             However, if this call were something that might hang, then this request should
-//             occur in a separate thread to avoid slowing down the activity performance.
-                mService.invokeService(new SignalR() {
+                mService.invokeService(new SignalRService.FireBaseListener() {
                     @Override
-                    public void onMessageReceived(SignalRModel signalRModel) {
-                        if (signalRModel.getA().get(0).getVehicleID() == PreferencesManager.getInstance().getIntegerValue(SharesPrefConstants.LAST_VIEW_VEHICLE_ID)) {
-                            markStartingLocationOnMap(signalRModel);
+                    public void dataSnapShot(String dataSnapshot) {
+                        SignalRModel.A aModel = new Gson().fromJson(dataSnapshot,SignalRModel.A.class);
+                        if (aModel.getVehicleID() == PreferencesManager.getInstance().getIntegerValue(SharesPrefConstants.LAST_VIEW_VEHICLE_ID)) {
+                            markStartingLocationOnMap(aModel);
                         }
-                    }
-
-                    @Override
-                    public void onCommandReceived(SignalRCommandModel signalRCommandModel) {
-                        Log.e("Tag", "tag");
                     }
                 });
             }

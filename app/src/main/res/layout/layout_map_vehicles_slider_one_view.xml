@@ -19,7 +19,7 @@
         android:id="@+id/singleSlideView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/dp_72"
+        android:layout_marginTop="@dimen/dp_250"
         android:background="@drawable/background_shape_white_top_corners"
         android:orientation="vertical"
         tools:ignore="UselessParent">
@@ -170,7 +170,7 @@
 
                     <com.views.TextViewRegular
                         android:id="@+id/kmTextView"
-                        android:layout_width="0dp"
+                        android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|start"
                         android:layout_marginEnd="@dimen/_5_dp"
@@ -201,6 +201,36 @@
 
                     <com.views.TextViewRegular
                         android:id="@+id/timerTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|start"
+                        android:layout_marginEnd="@dimen/_5_dp"
+                        android:layout_marginStart="@dimen/_5_dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center|start"
+                        android:maxLines="1"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="11sp"
+                        tools:ignore="RelativeOverlap" />
+
+                    <View
+                        android:layout_width="@dimen/_2_dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/_15_dp"
+                        android:layout_marginStart="@dimen/_15_dp"
+                        android:background="@color/colorPrimary" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_20"
+                        android:layout_height="@dimen/_15_dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/more_options"
+                        android:gravity="center"
+                        android:src="@drawable/ic_engine" />
+
+                    <com.views.TextViewRegular
+                        android:id="@+id/offTextView"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|start"
@@ -269,10 +299,10 @@
                         android:layout_gravity="center"
                         android:contentDescription="@string/more_options"
                         android:gravity="center"
-                        android:src="@drawable/ic_engine" />
+                        android:src="@drawable/ic_mil" />
 
                     <com.views.TextViewRegular
-                        android:id="@+id/offTextView"
+                        android:id="@+id/mileageTextView"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|start"
@@ -394,6 +424,7 @@
                     android:orientation="horizontal"
                     android:paddingBottom="@dimen/dp_10"
                     android:paddingEnd="@dimen/dp_20"
+                    android:visibility="gone"
                     android:paddingStart="@dimen/dp_20"
                     android:paddingTop="@dimen/dp_10">
 
@@ -460,6 +491,7 @@
                     android:background="@drawable/bottom_shapes_blue"
                     android:orientation="horizontal"
                     android:paddingBottom="@dimen/dp_10"
+                    android:visibility="gone"
                     android:paddingEnd="@dimen/dp_20"
                     android:paddingStart="@dimen/dp_20"
                     android:paddingTop="@dimen/dp_10">
@@ -628,33 +660,11 @@
                     android:background="@drawable/bottom_shapes_blue"
                     android:orientation="horizontal"
                     android:paddingBottom="@dimen/dp_10"
+                    android:visibility="gone"
                     android:paddingEnd="@dimen/dp_10"
                     android:paddingStart="@dimen/dp_10"
                     android:paddingTop="@dimen/dp_10">
 
-
-                    <com.views.TextViewRegular
-                        android:id="@+id/mileageTextView"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center|start"
-                        android:layout_marginEnd="@dimen/_5_dp"
-                        android:layout_marginStart="@dimen/_5_dp"
-                        android:layout_weight="1"
-                        android:ellipsize="end"
-                        android:gravity="center|start"
-                        android:maxLines="4"
-                        android:text=""
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="11sp"
-                        tools:ignore="RelativeOverlap" />
-
-                    <View
-                        android:layout_width="@dimen/_2_dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginStart="5dp"
-                        android:background="@color/colorPrimary" />
 
                     <com.views.TextViewRegular
                         android:id="@+id/workingTextView"

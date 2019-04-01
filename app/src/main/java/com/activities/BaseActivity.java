@@ -25,6 +25,7 @@ public class BaseActivity extends AppCompatActivity {
     public static Context mContext = MyApplication.getAppContext();
 
     AppCompatActivity BASE_ACTIVITY;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,9 +33,17 @@ public class BaseActivity extends AppCompatActivity {
         Fabric.with(BASE_ACTIVITY, new Crashlytics());
         PreferencesManager.initializeInstance(BASE_ACTIVITY);
         setLocale();
+        MyApplication.setContext(this);
     }
 
-    public Gson gHelper(){
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MyApplication.setContext(this);
+    }
+
+    public Gson gHelper() {
         return new Gson();
     }
 
@@ -56,14 +65,6 @@ public class BaseActivity extends AppCompatActivity {
         }
     }
 }
-
-
-
-
-
-
-
-
 
 
 //keytool -list -v -keystore C:\Users\Saferoad-Dev1\.android\debug.keystore -alias androiddebugkey -storepass android -keypass android

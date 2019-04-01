@@ -313,7 +313,7 @@ public class PopupDialog {
             holder.pictureImageView.setImageDrawable(item.drawable);
             holder.itemView.setOnClickListener(v -> {
                 if (item.id == R.string.geo_fence) {
-                    ((MainActivity) context).callReplacer(GeoFenceFragment.newInstance(vehicleId, null, latitude, longitude), context.getString(R.string.geo_fence));
+                    ((MainActivity) context).call(GeoFenceFragment.newInstance(vehicleId, null, latitude, longitude), context.getString(R.string.geo_fence));
                 } else {
                     ((MainActivity) context).displayView(item.id, item.name, vehicleId);
                 }

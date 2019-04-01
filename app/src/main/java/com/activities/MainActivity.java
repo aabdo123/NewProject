@@ -1,5 +1,6 @@
 package com.activities;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.R;
+import com.application.MyApplication;
 import com.fragments.AboutUsFragment;
 import com.fragments.AlarmNotificationsFragment;
 import com.fragments.DataAnalysisFragment;
@@ -27,18 +29,26 @@ import com.fragments.LandmarkListFragment;
 import com.fragments.LisOfVehiclesMapFragment;
 import com.fragments.ListOfVehiclesFragment;
 import com.fragments.ScheduledReportsFragment;
+import com.google.gson.Gson;
+import com.managers.ApiCallResponseString;
+import com.managers.BusinessManager;
 import com.managers.ShortTermManager;
 import com.managers.map_managers.MyLocateManager;
 import com.managers.PreferencesManager;
 import com.managers.map_managers.MyStartMapViewManager;
+import com.models.ListOfVehiclesModel;
 import com.utilities.AppUtils;
 import com.utilities.Utils;
 import com.utilities.constants.AppConstant;
 import com.utilities.constants.SharesPrefConstants;
 import com.views.AlertDialogView;
 import com.views.Click;
+import com.views.Progress;
 import com.views.TextViewRegular;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Stack;
 
 public class MainActivity extends BaseActivity implements FragmentDrawer.FragmentDrawerListener {
@@ -59,9 +69,37 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
         super.onCreate(savedInstanceState);
         MAIN_ACTIVITY = MainActivity.this;
         setContentView(R.layout.activity_main);
+        startSignalR();
         initViews();
         initListeners();
         displayView(R.string.nav_home, getString(R.string.nav_home));
+    }
+
+
+    private void startSignalR() {
+        try {
+            BusinessManager.postVehicles(new ApiCallResponseString() {
+                @Override
+                public void onSuccess(int statusCode, String responseObject) {
+                    ListOfVehiclesModel.VehicleModel[] vehicleModel = new Gson().fromJson(responseObject, ListOfVehiclesModel.VehicleModel[].class);
+                    List<ListOfVehiclesModel.VehicleModel> arrayListMain = Arrays.asList(vehicleModel);
+                    ArrayList<ListOfVehiclesModel.VehicleModel> main = new ArrayList<>(arrayListMain);
+                    ArrayList<String> mainTokenValues = new ArrayList<>();
+                    for (ListOfVehiclesModel.VehicleModel allVehicleModel : main) {
+                        if (allVehicleModel.getFbToken() != null) {
+                            mainTokenValues.add(allVehicleModel.getFbToken());
+                        }
+                    }
+                    ShortTermManager.getInstance().setFireBaseArray(mainTokenValues);
+                }
+
+                @Override
+                public void onFailure(int statusCode, String errorResponse) {
+                }
+            });
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     private void initViews() {
@@ -102,54 +140,57 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
     }
 
 
-
     @Override
     public void onBackPressed() {
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawers();
-        } else if (fragmentManager.getBackStackEntryCount() == 1) {
-            backDialog();
-        } else {
-            if (LisOfVehiclesMapFragment.slideUp != null && LisOfVehiclesMapFragment.slideUp.isVisible()) {
-                LisOfVehiclesMapFragment.slideUp.hide();
-                return;
-            }
-            if (MyLocateManager.popupView != null && MyLocateManager.popupView.getVisibility() == View.VISIBLE) {
-                if (MyLocateManager.popupView.getParent() != null) {
-                    ((ViewGroup) MyLocateManager.popupView.getParent()).removeView(MyLocateManager.popupView);
+        try {
+            if (drawer.isDrawerOpen(GravityCompat.START)) {
+                drawer.closeDrawers();
+            } else if (fragmentManager.getBackStackEntryCount() == 1) {
+                backDialog();
+            } else {
+                if (LisOfVehiclesMapFragment.slideUp != null && LisOfVehiclesMapFragment.slideUp.isVisible()) {
+                    LisOfVehiclesMapFragment.slideUp.hide();
                     return;
                 }
-            }
-            // TODO to be removed
-            if (isReplacer) {
+                if (MyLocateManager.popupView != null && MyLocateManager.popupView.getVisibility() == View.VISIBLE) {
+                    if (MyLocateManager.popupView.getParent() != null) {
+                        ((ViewGroup) MyLocateManager.popupView.getParent()).removeView(MyLocateManager.popupView);
+                        return;
+                    }
+                }
+                // TODO to be removed
+                if (isReplacer) {
+                    pageTitleList.pop();
+                    isReplacer = false;
+                }
+
                 pageTitleList.pop();
-                isReplacer = false;
-            }
+                toolbarTitleTextView.setText(pageTitleList.get(pageTitleList.size() - 1));
+                //            ConnectionManager.cancelAllRequests();
+                super.onBackPressed();
+                if (toolbarTitleTextView.getText().equals(getString(R.string.nav_map))) {
+                    showExpandableImageToolbar();
+                } else {
+                    hideExpandableImageToolbar();
+                }
 
-            pageTitleList.pop();
-            toolbarTitleTextView.setText(pageTitleList.get(pageTitleList.size() - 1));
-            //            ConnectionManager.cancelAllRequests();
-            super.onBackPressed();
-            if (toolbarTitleTextView.getText().equals(getString(R.string.nav_map))) {
-                showExpandableImageToolbar();
-            } else {
-                hideExpandableImageToolbar();
-            }
+                if (toolbarTitleTextView.getText().equals(getString(R.string.nav_scheduled_reports))) {
+                    showImageToolbar();
+                } else {
+                    hideImageToolbar();
+                }
 
-            if (toolbarTitleTextView.getText().equals(getString(R.string.nav_scheduled_reports))) {
-                showImageToolbar();
-            } else {
-                hideImageToolbar();
-            }
-
-            if (PreferencesManager.getInstance().getBooleanValue(SharesPrefConstants.IS_MAP_STYLE_CHANGED)) {
+                if (PreferencesManager.getInstance().getBooleanValue(SharesPrefConstants.IS_MAP_STYLE_CHANGED)) {
 //                LisOfVehiclesMapFragment lisOfVehiclesMapFragment = (LisOfVehiclesMapFragment) getSupportFragmentManager().findFragmentById(R.id.container_body);
-                Fragment fragment = getSupportFragmentManager().findFragmentByTag(MAIN_ACTIVITY.getString(R.string.nav_map));
-                if (fragment instanceof LisOfVehiclesMapFragment) {
-                    LisOfVehiclesMapFragment lisOfVehiclesMapFragment = (LisOfVehiclesMapFragment) fragment;
-                    lisOfVehiclesMapFragment.updateMapStyleOnBackPressed();
+                    Fragment fragment = getSupportFragmentManager().findFragmentByTag(MAIN_ACTIVITY.getString(R.string.nav_map));
+                    if (fragment instanceof LisOfVehiclesMapFragment) {
+                        LisOfVehiclesMapFragment lisOfVehiclesMapFragment = (LisOfVehiclesMapFragment) fragment;
+                        lisOfVehiclesMapFragment.updateMapStyleOnBackPressed();
+                    }
                 }
             }
+        } catch (Exception ex) {
+            ex.getMessage();
         }
     }
 

@@ -94,6 +94,9 @@ public class ListOfVehiclesModel implements Parent<ListOfVehiclesModel.VehicleMo
         private LastLocation lastLocation;
 
         private boolean selected = false;
+        @SerializedName("FBToken")
+        @Expose
+        private String fbToken;
 
         protected VehicleModel(Parcel in) {
             if (in.readByte() == 0) {
@@ -105,6 +108,27 @@ public class ListOfVehiclesModel implements Parent<ListOfVehiclesModel.VehicleMo
             plateNumber = in.readString();
             serialNumber = in.readString();
             selected = in.readByte() != 0;
+            fbToken = in.readString();
+        }
+
+        @Override
+        public void writeToParcel(Parcel dest, int flags) {
+            if (vehicleID == null) {
+                dest.writeByte((byte) 0);
+            } else {
+                dest.writeByte((byte) 1);
+                dest.writeInt(vehicleID);
+            }
+            dest.writeString(label);
+            dest.writeString(plateNumber);
+            dest.writeString(serialNumber);
+            dest.writeByte((byte) (selected ? 1 : 0));
+            dest.writeString(fbToken);
+        }
+
+        @Override
+        public int describeContents() {
+            return 0;
         }
 
         public static final Creator<VehicleModel> CREATOR = new Creator<VehicleModel>() {
@@ -118,6 +142,14 @@ public class ListOfVehiclesModel implements Parent<ListOfVehiclesModel.VehicleMo
                 return new VehicleModel[size];
             }
         };
+
+        public String getFbToken() {
+            return fbToken;
+        }
+
+        public void setFbToken(String fbToken) {
+            this.fbToken = fbToken;
+        }
 
         public Integer getVehicleID() {
             return vehicleID;
@@ -167,24 +199,6 @@ public class ListOfVehiclesModel implements Parent<ListOfVehiclesModel.VehicleMo
             this.lastLocation = lastLocation;
         }
 
-        @Override
-        public int describeContents() {
-            return 0;
-        }
-
-        @Override
-        public void writeToParcel(Parcel dest, int flags) {
-            if (vehicleID == null) {
-                dest.writeByte((byte) 0);
-            } else {
-                dest.writeByte((byte) 1);
-                dest.writeInt(vehicleID);
-            }
-            dest.writeString(label);
-            dest.writeString(plateNumber);
-            dest.writeString(serialNumber);
-            dest.writeByte((byte) (selected ? 1 : 0));
-        }
 
         public class LastLocation {
 

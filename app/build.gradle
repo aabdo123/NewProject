@@ -14,8 +14,8 @@ android {
     productFlavors {
         saferoadBusiness {
             applicationIdSuffix  "saferoad.business"
-            versionCode 8
-            versionName "1.6"
+            versionCode 15
+            versionName "2.2"
         }
         astroGps {
             applicationIdSuffix  ".astroGps"
@@ -83,5 +83,7 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
     implementation 'com.muditsen.multilevelrecyclerview:multilevelview:1.0.0'
+    implementation 'com.google.firebase:firebase-database:16.0.3'
+
 }
 apply plugin: 'com.google.gms.google-services'

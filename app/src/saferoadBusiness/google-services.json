@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "966048255091",
-    "firebase_url": "https://saferoad-all.firebaseio.com",
-    "project_id": "saferoad-all",
-    "storage_bucket": "saferoad-all.appspot.com"
+    "project_number": "918209348983",
+    "firebase_url": "https://saferoad-1542612714486.firebaseio.com",
+    "project_id": "saferoad-1542612714486",
+    "storage_bucket": "saferoad-1542612714486.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:966048255091:android:27414a5ade86b169",
+        "mobilesdk_app_id": "1:918209348983:android:a460cacb43cd9dba",
         "android_client_info": {
-          "package_name": "com.astroGps"
+          "package_name": "com.saferoad.business"
         }
       },
       "oauth_client": [
         {
-          "client_id": "966048255091-t0fjpi9uihloqqdghq61kdicebkr2sm3.apps.googleusercontent.com",
+          "client_id": "918209348983-7iibq1eks8if1sokndfasj4j6ucetol2.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC4A0Aagq0Rwt1kbLiDrtaWGOlqRn1Canc"
+          "current_key": "AIzaSyB7WwwyO8vkF48Cj2o-QcLQ25VCvWzKiFY"
         }
       ],
       "services": {
@@ -39,20 +39,20 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:966048255091:android:a460cacb43cd9dba",
+        "mobilesdk_app_id": "1:918209348983:android:b13da6c9b1d2210f",
         "android_client_info": {
-          "package_name": "com.saferoad.business"
+          "package_name": "com.saferoad.individuals"
         }
       },
       "oauth_client": [
         {
-          "client_id": "966048255091-t0fjpi9uihloqqdghq61kdicebkr2sm3.apps.googleusercontent.com",
+          "client_id": "918209348983-7iibq1eks8if1sokndfasj4j6ucetol2.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC4A0Aagq0Rwt1kbLiDrtaWGOlqRn1Canc"
+          "current_key": "AIzaSyB7WwwyO8vkF48Cj2o-QcLQ25VCvWzKiFY"
         }
       ],
       "services": {

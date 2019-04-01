@@ -22,6 +22,8 @@ import com.utilities.constants.AppConstant;
 import com.utilities.constants.SharesPrefConstants;
 
 import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
 
@@ -132,6 +134,7 @@ public class BusinessManager {
     }
 
     public static void getMainVehiclesListWithQuery(String id, final ApiCallResponseString callResponse) {
+        List<String> value = new ArrayList<>();
         final String url = ApiConstants.ROOT_API + ApiConstants.VEHICLE_TREE + "?query=" + id;
         RequestParams params = new RequestParams();
         ConnectionManager.doRequestText(AppConstant.GET, url, params, new TextHttpResponseHandler() {

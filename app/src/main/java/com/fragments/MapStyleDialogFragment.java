@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import com.R;
 import com.adapters.MapStyleAdapter;
 import com.managers.PreferencesManager;
+import com.managers.ShortTermManager;
 import com.models.MapStyleModel;
 import com.utilities.constants.SharesPrefConstants;
 import com.views.ButtonBold;
@@ -32,7 +33,7 @@ public class MapStyleDialogFragment extends DialogFragment {
     private OnSelectMapStyle onSelectMapStyle;
 
     private List<MapStyleModel> styleList;
-    private int selectedListItem = 0;
+    private int selectedListItem = PreferencesManager.getInstance().getIntegerValue(SharesPrefConstants.MAP_STYLE_INDEX);
     private MapStyleAdapter mapStyleAdapter;
 
     public interface OnSelectMapStyle {
@@ -94,6 +95,7 @@ public class MapStyleDialogFragment extends DialogFragment {
         selectButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                ShortTermManager.getInstance().setMapsStyle(selectedListItem);
                 PreferencesManager.getInstance().setIntegerValue(selectedListItem, SharesPrefConstants.MAP_STYLE_INDEX);
                 onSelectMapStyle.onSelectMapStyle(styleList.get(selectedListItem).getId());
                 dismiss();
@@ -104,6 +106,7 @@ public class MapStyleDialogFragment extends DialogFragment {
             @Override
             public void onClick(View v) {
                 dismiss();
+                //ShortTermManager.getInstance().setMapsStyle(0);
             }
         });
     }

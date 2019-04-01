@@ -54,6 +54,7 @@
     <dimen name="dp_160">160dp</dimen>
     <dimen name="dp_200">200dp</dimen>
     <dimen name="dp_250">250dp</dimen>
+    <dimen name="dp_225">225dp</dimen>
 
     <dimen name="sp_8">8sp</dimen>
     <dimen name="sp_9">9sp</dimen>

@@ -1,5 +1,7 @@
 package com.managers;
 
+import java.util.ArrayList;
+
 public class ShortTermManager {
     static ShortTermManager mInstance;
     private static String authToken = "";
@@ -8,6 +10,8 @@ public class ShortTermManager {
     private String requestMapsExpendableList;
     private Object landMarkRequest;
     private Object geoFenceRequest;
+    private ArrayList<String> fireBaseArray;
+    private int mapsStyle;
 
 
 
@@ -24,6 +28,22 @@ public class ShortTermManager {
 
     public void setRequestMapsExpendableList(String requestMapsExpendableList) {
         this.requestMapsExpendableList = requestMapsExpendableList;
+    }
+
+    public int getMapsStyle() {
+        return mapsStyle;
+    }
+
+    public void setMapsStyle(int mapsStyle) {
+        this.mapsStyle = mapsStyle;
+    }
+
+    public ArrayList<String> getFireBaseArray() {
+        return fireBaseArray;
+    }
+
+    public void setFireBaseArray(ArrayList<String> fireBaseArray) {
+        this.fireBaseArray = fireBaseArray;
     }
 
     public void setIsFirstShare(boolean isFirstShare) {
@@ -70,6 +90,7 @@ public class ShortTermManager {
         this.requestMapsExpendableList = null;
         this.landMarkRequest = null;
         this.geoFenceRequest = null;
+        this.fireBaseArray = null;
     }
 
 }

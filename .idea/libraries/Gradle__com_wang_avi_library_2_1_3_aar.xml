@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.wang.avi:library:2.1.3@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/Desktop/desctop files/B2B and AstroGPS on Store-20191204T151004Z-001/B2B and AstroGPS on Store/SafeRoad All/caches/transforms-2/files-2.1/2c13b07b0f178b28467cc077aad01a84/jetified-library-2.1.3/res" />
+      <root url="file://$USER_HOME$/Desktop/desctop files/B2B and AstroGPS on Store-20191204T151004Z-001/B2B and AstroGPS on Store/SafeRoad All/caches/transforms-2/files-2.1/2c13b07b0f178b28467cc077aad01a84/jetified-library-2.1.3/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/Desktop/desctop files/B2B and AstroGPS on Store-20191204T151004Z-001/B2B and AstroGPS on Store/SafeRoad All/caches/transforms-2/files-2.1/2c13b07b0f178b28467cc077aad01a84/jetified-library-2.1.3/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/Desktop/desctop files/B2B and AstroGPS on Store-20191204T151004Z-001/B2B and AstroGPS on Store/SafeRoad All/caches/modules-2/files-2.1/com.wang.avi/library/2.1.3/f3ea0c1e56a7eb8b5c0f8ced5f0adde51d4b609e/library-2.1.3-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Desktop/desctop files/B2B and AstroGPS on Store-20191204T151004Z-001/B2B and AstroGPS on Store/SafeRoad All/caches/modules-2/files-2.1/com.wang.avi/library/2.1.3/b24ad2ac7fd480af6dc1d0302f5328b46c586200/library-2.1.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

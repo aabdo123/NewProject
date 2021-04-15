@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.firebase:firebase-datatransport:17.0.10@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2c5769c3073b5bc844edac45827790ef/jetified-firebase-datatransport-17.0.10/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/216e90e819522d91de0fcafc1983758b/jetified-firebase-datatransport-17.0.10/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b138989803d88552f78cb64240dac801/jetified-firebase-datatransport-17.0.10/res" />
+      <root url="file://$USER_HOME$/Desktop/desctop files/B2B and AstroGPS on Store-20191204T151004Z-001/B2B and AstroGPS on Store/SafeRoad All/caches/transforms-2/files-2.1/b138989803d88552f78cb64240dac801/jetified-firebase-datatransport-17.0.10/res" />
+      <root url="jar://$USER_HOME$/Desktop/desctop files/B2B and AstroGPS on Store-20191204T151004Z-001/B2B and AstroGPS on Store/SafeRoad All/caches/transforms-2/files-2.1/b138989803d88552f78cb64240dac801/jetified-firebase-datatransport-17.0.10/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/Desktop/desctop files/B2B and AstroGPS on Store-20191204T151004Z-001/B2B and AstroGPS on Store/SafeRoad All/caches/transforms-2/files-2.1/b138989803d88552f78cb64240dac801/jetified-firebase-datatransport-17.0.10/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/Desktop/desctop files/B2B and AstroGPS on Store-20191204T151004Z-001/B2B and AstroGPS on Store/SafeRoad All/caches/modules-2/files-2.1/com.google.firebase/firebase-datatransport/17.0.10/de83e2d6f9c9315c359babdcf03dec170fd6980b/firebase-datatransport-17.0.10-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Desktop/desctop files/B2B and AstroGPS on Store-20191204T151004Z-001/B2B and AstroGPS on Store/SafeRoad All/caches/modules-2/files-2.1/com.google.firebase/firebase-datatransport/17.0.10/fd4eac635921dc6f0555efd23564313a20b97120/firebase-datatransport-17.0.10-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

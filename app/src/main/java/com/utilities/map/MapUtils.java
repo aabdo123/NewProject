@@ -10,12 +10,9 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.net.Uri;
-import android.os.Handler;
-import android.os.SystemClock;
-import android.support.annotation.DrawableRes;
-import android.support.v4.content.ContextCompat;
-import android.view.animation.Interpolator;
-import android.view.animation.LinearInterpolator;
+
+import androidx.annotation.DrawableRes;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.maps.Projection;
 import com.google.android.gms.maps.model.BitmapDescriptor;

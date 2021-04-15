@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="200dp"
+    android:layout_height="100dp"
+    android:orientation="vertical"
+    android:background="@drawable/text_info_history"
+    android:padding="@dimen/dp_10"
+    android:id="@+id/custom_info"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/dp_50">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_8">
+        <LinearLayout
+            android:layout_width="190dp"
+            android:layout_height="@dimen/dp_20"
+            android:orientation="horizontal"
+            >
+
+          <ImageView
+              android:layout_width="@dimen/_15_dp"
+              android:layout_height="@dimen/_15_dp"
+              android:src="@drawable/message_information"/>
+
+            <com.views.TextViewLight
+                android:layout_width="70dp"
+                android:layout_height="@dimen/dp_20"
+                android:layout_marginHorizontal="@dimen/_5_dp"
+                android:text="@string/display_name_hh"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dp_10" />
+
+            <com.views.TextViewLight
+                android:layout_width="@dimen/dp_90"
+                android:layout_height="@dimen/dp_20"
+                android:textColor="@color/black"
+                android:id="@+id/plate_name"
+                android:textSize="10dp"
+                ></com.views.TextViewLight>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="190dp"
+            android:layout_height="@dimen/dp_20"
+            android:orientation="horizontal"
+
+            >
+
+            <ImageView
+                android:layout_width="@dimen/_15_dp"
+                android:layout_height="@dimen/_15_dp"
+                android:src="@drawable/clock_history" />
+
+            <com.views.TextViewLight
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="@dimen/dp_20"
+                android:text="@string/speed_hh"
+                android:layout_marginHorizontal="@dimen/_5_dp"
+                android:textSize="@dimen/dp_10"
+                android:textColor="@color/black"/>
+
+            <com.views.TextViewLight
+                android:layout_width="@dimen/dp_100"
+                android:layout_height="@dimen/_15_dp"
+                android:textColor="@color/black"
+                android:id="@+id/speedHH2"
+                android:textSize="10dp"
+                android:maxLines="1"
+                ></com.views.TextViewLight>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+           >
+            <ImageView
+                android:layout_width="@dimen/_15_dp"
+                android:layout_height="@dimen/_15_dp"
+                android:src="@drawable/speed_meter"/>
+
+            <com.views.TextViewLight
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="@dimen/dp_20"
+                android:text="@string/time_hh"
+                android:layout_marginHorizontal="@dimen/_5_dp"
+                android:textSize="@dimen/dp_10"
+                android:textColor="@color/black"/>
+
+            <com.views.TextViewLight
+                android:layout_width="@dimen/dp_100"
+                android:layout_height="@dimen/_15_dp"
+                android:textColor="@color/black"
+                android:id="@+id/timeDateH2"
+                android:textSize="8sp"
+                android:maxLines="1"
+                ></com.views.TextViewLight>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -9,16 +9,22 @@ import android.graphics.Matrix;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 
 import com.github.clans.fab.FloatingActionButton;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -47,6 +53,7 @@ import com.utilities.Utils;
 import com.utilities.constants.AppConstant;
 import com.utilities.constants.SharesPrefConstants;
 import com.views.Progress;
+import com.views.TextViewLight;
 import com.views.TextViewRegular;
 
 import java.lang.reflect.Array;
@@ -69,6 +76,7 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
     private String vehicleId;
     private Context context;
     private FragmentActivity activity;
+    private RelativeLayout custom_det;
 
     private FloatingActionButton mapStylingFab;
     private FloatingActionButton changeMapTypeFab;
@@ -84,6 +92,7 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
 
     private LinearLayout dateFromLayout;
     private LinearLayout dateToLayout;
+    private LinearLayout customInfoWindow;
 
     private String fromDate;
     private String toDate;
@@ -102,6 +111,9 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
     private ListOfVehiclesModel.VehicleModel vehicleModel;
     private AnimationHistoricalRouteModel carLatLng;
     private Date dateFrom;
+
+    private TextView speed,time,plate_name;
+
 
     private MyMapStyleManager myMapStyleManager;
 
@@ -190,12 +202,27 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
         dateFromTextView = (TextViewRegular) rootView.findViewById(R.id.dateFromTextView);
         dateToTextView = (TextViewRegular) rootView.findViewById(R.id.dateToTextView);
         goTextView = (TextViewRegular) rootView.findViewById(R.id.goTextView);
+        custom_det = (RelativeLayout) rootView.findViewById(R.id.custom_det);
+        speed = (TextView) rootView.findViewById(R.id.speed_his);
+        plate_name = (TextView) rootView.findViewById(R.id.display_name_his);
+        time = (TextView) rootView.findViewById(R.id.date_time_his);
+//        customInfoWindow = (LinearLayout) rootView.findViewById(R.id.custom_window);
+//        speed = rootView.findViewById(R.id.speedHH2);
+//        time = rootView.findViewById(R.id.timeDateH2);
+//        plate_name = rootView.findViewById(R.id.plate_name);
+
+
+
+
+
+
 
         if (AppUtils.isArabic()) {
             firstLocationImageView.setRotation(180);
             lastLocationImageView.setRotation(180);
         }
     }
+
 
     private void initListeners() {
         mapStylingFab.setOnClickListener(this);
@@ -209,6 +236,8 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
         dateFromLayout.setOnClickListener(this);
         dateToLayout.setOnClickListener(this);
         goTextView.setOnClickListener(this);
+//        customInfoWindow.setOnClickListener(this);
+
     }
 
     @Override
@@ -226,7 +255,7 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
             @Override
             public void run() {
                 if (vehicleModel != null) {
-                    carLatLng = new AnimationHistoricalRouteModel(vehicleModel.getLastLocation().getLatitude(), vehicleModel.getLastLocation().getLongitude());
+                    carLatLng = new AnimationHistoricalRouteModel(vehicleModel.getLastLocation().getLatitude(), vehicleModel.getLastLocation().getLatitude(),vehicleModel.getLastLocation().getVehicleStatus(),vehicleModel.getLastLocation().getSpeed(),Utils.parseTime(vehicleModel.getLastLocation().getRecordDateTime()));
                     addCarMarker(carLatLng);
                     moveCamera(carLatLng);
                 }
@@ -256,6 +285,10 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
                     .bearing(0)         // Sets the orientation of the camera to east
                     .tilt(30).build();
             googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+
+
+
+
         }
     }
 
@@ -271,6 +304,28 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
         marker.setIcon(bitmapDescriptor);
         marker.setFlat(true);
         marker.setAnchor(0.5f, 0.5f);
+
+//        googleMap.setOnMarkerClickListener(marker1 -> {
+//            try {
+//                if(customInfoWindow.getVisibility()==View.INVISIBLE){
+//                    plate_name.setText(vehicleModel.getLabel());
+////                    speed.setText(vehicleModel.getLastLocation().getSpeed().toString());
+////                    time.setText(Utils.parseTime(vehicleModel.getLastLocation().getRecordDateTime()));
+//                    customInfoWindow.setVisibility(View.VISIBLE);
+//                }
+//                else
+//                    customInfoWindow.setVisibility(View.INVISIBLE);
+//            }
+//            catch (Exception ex) {
+//                ex.printStackTrace();
+//            }
+//            return false;
+//
+//        });
+
+
+
+//        googleMap.setInfoWindowAdapter();
     }
 
     private void removeMarker() {
@@ -280,6 +335,7 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
 
     @Override
     public void onClick(View v) {
+
         switch (v.getId()) {
             case R.id.dateFromLayout:
                 isPause = true;
@@ -333,11 +389,13 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
                 setChangeMapType();
                 break;
 
+
             case R.id.mapStylingFab:
                 openMapStyleDialog();
                 break;
         }
     }
+
 
     private void setPlayPauseButton() {
         if (mPathPolygonPoints == null || mPathPolygonPoints.size() <= 1) {
@@ -455,10 +513,14 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
             @Override
             public void onSuccess(int statusCode, Object responseObject) {
                 Progress.dismissLoadingDialog();
+                Log.d("RESSPONSEEEE",responseObject.toString());
                 CarHistoryModel[] carHistoryModels = (CarHistoryModel[]) responseObject;
                 carHistoryList = getCarHistoryList(carHistoryModels);
                 if (carHistoryList.size() > 0) {
                     mPathPolygonPoints = getLatLngList(carHistoryModels);
+                    plate_name.setText(vehicleModel.getLabel());
+                    time.setText(Utils.parseTimeWithPlusOne(vehicleModel.getLastLocation().getRecordDateTime()));
+
                 } else {
                     mPathPolygonPoints = new ArrayList<>();
                     ToastHelper.toastWarningLong(activity, getString(R.string.no_available_data));
@@ -468,6 +530,16 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
                     moveCamera(mPathPolygonPoints.get(0));
                     drawHistoricalRouteOnMap();
                     addCarMarker(mPathPolygonPoints.get(0));
+                    Log.d("LLLLLLL",mPathPolygonPoints.toString());
+
+//                    speed.setText(carLatLng.getSpeed()+"");
+//                    time.setText(Utils.parseTime(carLatLng.getDateTime()));
+
+
+
+
+//                    speed.setText(vehicleModel.getLastLocation().getSpeed().toString());
+//                    time.setText(Utils.parseTime(vehicleModel.getLastLocation().getRecordDateTime()));
                 }
             }
 
@@ -488,7 +560,7 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
 //    private ArrayList<LatLng> getLatLngList(CarHistoryModel[] model) {
 //        ArrayList<LatLng> latLngList = new ArrayList<>();
 //        for (CarHistoryModel model1 : model) {
-//            latLngList.add(new LatLng(model1.getLatitude(), model1.getLongitude()));
+//            latLngList.add(new LatLng(model1.getLatitude(), model1.getLatitude()));
 //        }
 //        return latLngList;
 //    }
@@ -503,8 +575,10 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
                 continue;
             }
 
-            latLngList.add(new AnimationHistoricalRouteModel(model1.getLatitude(), model1.getLongitude(), model1.getVehicleStatus()));
+            latLngList.add(new AnimationHistoricalRouteModel(model1.getLatitude(), model1.getLongitude(), model1.getVehicleStatus(), model1.getSpeed(), model1.getRecordDateTime()));
             isLastVehicleZeroSpeed = model1.getSpeed() == 0;
+//            speed.setText(model1.getSpeed().toString());
+//            time.setText(Utils.parseTime(model1.getRecordDateTime()));
         }
         return latLngList;
     }
@@ -512,7 +586,7 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
     private List<LatLng> getLatLong(List<AnimationHistoricalRouteModel> animationHistoricalRouteModels) {
         List<LatLng> latLngList = new ArrayList<>();
         for (AnimationHistoricalRouteModel animationHistoricalRouteModel : animationHistoricalRouteModels) {
-            LatLng latLng = new LatLng(animationHistoricalRouteModel.getLatitude(), animationHistoricalRouteModel.getLongitude());
+            LatLng latLng = new LatLng(animationHistoricalRouteModel.getLatitude(), animationHistoricalRouteModel.getLatitude());
             latLngList.add(latLng);
         }
         return latLngList;
@@ -527,6 +601,11 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
                 .color(ContextCompat.getColor(context, R.color.colorPrimaryDark));
 // Adding multiple points in map using polyline and arraylist
         googleMap.addPolyline(polylineOptions);
+//        customInfoWindow.setVisibility(View.VISIBLE);
+
+
+
+
     }
 
     private void animateCarMove(final Marker marker, final AnimationHistoricalRouteModel beginLatLng, final AnimationHistoricalRouteModel endLatLng, final long duration) {
@@ -546,6 +625,11 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
                     Bitmap bitmapCar = BitmapFactory.decodeResource(getResources(), AppUtils.getCarIconDrawableID(beginLatLng.getVehicleStatus()));
                     if (bitmapCar != null) {
                         mMarkerIcon = bitmapCar;
+
+
+
+
+//                        customInfoWindow.setVisibility(View.VISIBLE);
                         marker.setIcon(BitmapDescriptorFactory.fromBitmap(Bitmap.createBitmap(mMarkerIcon, 0, 0, mMarkerIcon.getWidth(), mMarkerIcon.getHeight(), matrix, true)));
 
                     } else {
@@ -564,16 +648,20 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
                     float t = interpolator.getInterpolation((float) elapsed / duration);
                     // calculate new position for marker
                     double lat = (endLatLng.getLatitude() - beginLatLng.getLatitude()) * t + beginLatLng.getLatitude();
-                    double lngDelta = endLatLng.getLongitude() - beginLatLng.getLongitude();
+                    double lngDelta = endLatLng.getLatitude() - beginLatLng.getLatitude();
+
 
                     if (Math.abs(lngDelta) > 180) {
                         lngDelta -= Math.signum(lngDelta) * 360;
                     }
-                    double lng = lngDelta * t + beginLatLng.getLongitude();
+                    double lng = lngDelta * t + beginLatLng.getLatitude();
 
                     LatLng newLatLng = new LatLng(lat, lng);
                     marker.setPosition(newLatLng);
                     updateCamera(newLatLng);
+
+//                    speed.setText(Integer.parseInt(vehicleModel.getLastLocation().getSpeed().toString()));
+//                    time.setText(Utils.parseTime(vehicleModel.getLastLocation().getRecordDateTime()));
                     // if not end of line segment of path
                     if (isPause) {
                         handler.removeCallbacks(this);
@@ -586,6 +674,7 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
                         // call turn animation
                         nextTurnAnimation();
                     }
+
                 }
             });
         } catch (Exception ex) {
@@ -604,6 +693,7 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
             float endAngle = (float) (180 * getAngle(currLatLng, nextLatLng) / Math.PI);
 
             animateCarTurn(marker, beginAngle, endAngle, TURN_ANIMATION_DURATION);
+
         } else {
             isPause = true;
             mIndexCurrentPoint = 0;
@@ -668,7 +758,7 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
     private double getAngle(AnimationHistoricalRouteModel beginLatLng, AnimationHistoricalRouteModel endLatLng) {
         double f1 = Math.PI * beginLatLng.getLatitude() / 180;
         double f2 = Math.PI * endLatLng.getLatitude() / 180;
-        double dl = Math.PI * (endLatLng.getLongitude() - beginLatLng.getLongitude()) / 180;
+        double dl = Math.PI * (endLatLng.getLatitude() - beginLatLng.getLatitude()) / 180;
         return Math.atan2(Math.sin(dl) * Math.cos(f2), Math.cos(f1) * Math.sin(f2) - Math.sin(f1) * Math.cos(f2) * Math.cos(dl));
     }
 
@@ -704,5 +794,6 @@ public class HistoricalRouteFragment extends Fragment implements MapStyleDialogF
             PreferencesManager.getInstance().setBooleanValue(true, SharesPrefConstants.IS_MAP_STYLE_CHANGED);
         }
     }
+
 
 }

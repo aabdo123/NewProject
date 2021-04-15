@@ -15,19 +15,21 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.RemoteException;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.content.ContextCompat;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 
 import com.github.clans.fab.FloatingActionMenu;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -42,6 +44,7 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.gson.Gson;
 import com.managers.PreferencesManager;
@@ -65,6 +68,7 @@ import com.views.PopupDialog;
 import com.views.TextViewLight;
 
 import java.util.Locale;
+import java.util.Objects;
 
 import static android.content.Context.LOCATION_SERVICE;
 
@@ -86,7 +90,7 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
 
     private com.github.clans.fab.FloatingActionButton mapStylingFab;
 
-    private CheckBox arrowCheckBox;
+    private ImageView arrowCheckBox;
     private TextViewLight streetTextView;
     private RelativeLayout addressLayout;
     private LinearLayout sliderLayout;
@@ -99,6 +103,8 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
     private TextViewLight directionTextView;
     private TextViewLight locationTimeTextView;
     private TextViewLight vehicleStatusTextView;
+    private TextViewLight speed_add;
+    private TextViewLight plateNumberLabelTextView;
 
     private FloatingActionMenu fabMenu;
     private FloatingActionButton plusFab;
@@ -117,6 +123,8 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
     private FragmentActivity fragmentActivity;
     private ListOfVehiclesModel.VehicleModel vehicleModel;
     private int cameraTilt = 30;
+    private Handler handler = new Handler();
+    private Runnable refresh;
 
     private MyMapStyleManager myMapStyleManager;
 
@@ -147,6 +155,7 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
 
     @Override
     public void onResume() {
+        Utils.hidKeyBoard(Objects.requireNonNull(getActivity()));
         startSignalRService();
         super.onResume();
         mMapView.onResume();
@@ -184,6 +193,9 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
         super.onLowMemory();
         mMapView.onLowMemory();
     }
+
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -230,7 +242,7 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
 
         mMapView = (MapView) rootView.findViewById(R.id.mapView);
         addressLayout = (RelativeLayout) rootView.findViewById(R.id.addressLayout);
-        arrowCheckBox = (CheckBox) rootView.findViewById(R.id.arrowCheckBox);
+        arrowCheckBox = (ImageView) rootView.findViewById(R.id.arrowCheckBox);
         sliderLayout = (LinearLayout) rootView.findViewById(R.id.sliderLayout);
         sliderLayout.setVisibility(View.GONE);
 
@@ -243,6 +255,9 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
         directionTextView = (TextViewLight) rootView.findViewById(R.id.directionTextView);
         locationTimeTextView = (TextViewLight) rootView.findViewById(R.id.locationTimeTextView);
         vehicleStatusTextView = (TextViewLight) rootView.findViewById(R.id.vehicleStatusTextView);
+        speed_add = (TextViewLight) rootView.findViewById(R.id.speedTextView);
+        plateNumberLabelTextView= (TextViewLight) rootView.findViewById(R.id.plateNumberLabelTextView);
+
 
         plusFab = (FloatingActionButton) rootView.findViewById(R.id.plusFab);
         drawPathFab = (com.github.clans.fab.FloatingActionButton) rootView.findViewById(R.id.drawPathFab);
@@ -252,8 +267,9 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
 
         fabMenu = (FloatingActionMenu) rootView.findViewById(R.id.fabMenu);
         fabMenu.setIconAnimated(false);
-//        fabMenu.hideMenuButton(false);
+
     }
+
 
     private void initListeners() {
         mapStylingFab.setOnClickListener(this);
@@ -331,30 +347,44 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
         streetTextView.setText(vehicleModel.getLastLocation().getAddress());
         groupTextView.setText("N/A");
         displayNameTextView.setText(vehicleModel.getLabel());
-        workingHoursTextView.setText(Utils.doubleToString(AppUtils.secondsToHours(vehicleModel.getLastLocation().getTotalWorkingHours())));
+        workingHoursTextView.setText(vehicleModel.getPlateNumber());
         mileageTextView.setText(String.format(Locale.getDefault(), "%s %s", Utils.doubleToStringTwoDigits(AppUtils.meterToKilometer(vehicleModel.getLastLocation().getTotalMileage())), context.getString(R.string.km)));
-        accTextView.setText(getOnline(vehicleModel.getLastLocation().getIsOnline()));
+        accTextView.setText(getOnline(vehicleModel.getLastLocation().getEngineStatus()));
         int value = (int) (vehicleModel.getLastLocation().getDirection() % 360);
         directionTextView.setText(String.format(Locale.getDefault(), "%s°", value == 0 ? "0" : value));
+        int value1 = (int) (vehicleModel.getLastLocation().getSpeed() % 360);
+        speed_add.setText(String.format(Locale.getDefault(), "%s°", value1 == 0 ? "0" : value1));
         vehicleStatusTextView.setText(AppUtils.getCarStatus(activity, vehicleModel.getLastLocation().getVehicleStatus()));
+
         if (vehicleModel.getLastLocation().getLatitude() != 0.0 || vehicleModel.getLastLocation().getLongitude() != 0.0) {
-            locationTimeTextView.setText(Utils.parseTime(vehicleModel.getLastLocation().getRecordDateTime()));
+            locationTimeTextView.setText(Utils.parseTimeWithPlusThree(vehicleModel.getLastLocation().getRecordDateTime()));
         }
+        refresh = new Runnable() {
+            public void run() {
+                // Do something
+                handler.postDelayed(refresh, 1000);
+            }
+        };
+        handler.post(refresh);
+
        // Toast.makeText(context, "id: " +vehicleModel.getVehicleID(), Toast.LENGTH_LONG).show();
     }
 
     private void updateCarInfo(SignalRModel.A aModel) {
         try {
             streetTextView.setText(aModel.getAddress());
-            groupTextView.setText(aModel.getGroupName());
-            displayNameTextView.setText(aModel.getVehicleDisplayName());
-            workingHoursTextView.setText(Utils.doubleToString(AppUtils.secondsToHours(aModel.getWorkingHours())));
+
+
+//            displayNameTextView.setText(aModel.getVehicleDisplayName());
             //mileageTextView.setText(String.format(Locale.getDefault(), "%s %s", Utils.doubleToStringTwoDigits(aModel.getMileage()), context.getString(R.string.km)));
             accTextView.setText(getOnline(aModel.getEngineStatus()));
             int value = (int) (aModel.getDirection() % 360);
             directionTextView.setText(String.format(Locale.getDefault(), "%s°", value == 0 ? "0" : value));
+            speed_add.setText(Integer.parseInt(aModel.getSpeed().toString()));
             locationTimeTextView.setText(Utils.parseTime(aModel.getRecordDateTime()));
-            vehicleStatusTextView.setText(AppUtils.getCarStatus(activity, String.valueOf(aModel.getVehicleStatus())));
+            vehicleStatusTextView.setText(AppUtils.getCarStatus(activity, aModel.getVehicleStatus().toString()));
+
+
            // Toast.makeText(context, "Miallege: " + Utils.doubleToStringTwoDigits(aModel.getMileage())+" id: "+aModel.getVehicleID(), Toast.LENGTH_LONG).show();
         } catch (IllegalStateException e) {
             setUpCarInfo();
@@ -363,6 +393,7 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
             e.printStackTrace();
         }
     }
+
 
     private String getOnline(Boolean isOnline) {
         if (isOnline) {
@@ -401,14 +432,15 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
             AnimationUtils.expand(sliderLayout);
             plusFab.hide();
             fabMenu.hideMenuButton(true);
-            arrowCheckBox.setChecked(true);
+            arrowCheckBox.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_arrow_down));
             mapStylingFab.hide(true);
         } else {
             AnimationUtils.collapse(sliderLayout);
             plusFab.show();
             fabMenu.showMenuButton(true);
-            arrowCheckBox.setChecked(false);
             mapStylingFab.show(true);
+            arrowCheckBox.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_arrow_up));
+
         }
     }
 
@@ -533,12 +565,13 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
                 public void run() {
                     googleMap.clear();
                     googleMap.addMarker(new MarkerOptions().position(newLocation)
-                            .icon(AppUtils.getCarIcon(String.valueOf(aModel.getVehicleStatus())))
+                            .icon(AppUtils.getCarIcon(aModel.getVehicleStatus().toString()))
                             .anchor(0.5f, 0.5f)
                             .rotation(aModel.getDirection().floatValue())
                             .flat(true));
                     googleMap.moveCamera(CameraUpdateFactory.newLatLng(newLocation));
                     updateCarInfo(aModel);
+
                 }
             });
         } catch (Exception ex) {
@@ -547,21 +580,20 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
     }
 
     public void startLiveTarcking() {
-        try {
-            if (mBound) {
-                mService.invokeService(new SignalRService.FireBaseListener() {
-                    @Override
-                    public void dataSnapShot(String dataSnapshot) {
-                        SignalRModel.A aModel = new Gson().fromJson(dataSnapshot,SignalRModel.A.class);
-                        if (aModel.getVehicleID() == PreferencesManager.getInstance().getIntegerValue(SharesPrefConstants.LAST_VIEW_VEHICLE_ID)) {
-                            markStartingLocationOnMap(aModel);
-                        }
-                    }
-                });
+
+            mService.invokeService(new SignalRService.FireBaseListener() {
+                @Override
+                public void dataSnapShot(String dataSnapshot) {
+                    SignalRModel.A aModel = new Gson().fromJson(dataSnapshot,SignalRModel.A.class);
+                    if ((aModel.getSerialNumber())== PreferencesManager.getInstance().getStringValue(SharesPrefConstants.LAST_VIEW_VEHICLE_SERIAL)) {
+                        markStartingLocationOnMap(aModel);
+                        Log.e("TRY SUCCESS log",dataSnapshot);
+                }
             }
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
+            });
+
+        Log.e("STRATLIVETR","SUCCESS");
+
     }
 
     private void startSignalRService() {

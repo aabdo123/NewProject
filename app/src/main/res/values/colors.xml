@@ -4,8 +4,12 @@
     <color name="app_background">#F8F8F8</color>
 
     <color name="white">#FFFFFF</color>
+    <color name="transparent_white">#97FFFFFF</color>
     <color name="black">#000000</color>
+    <color name="blue">#2186F3</color>
     <color name="hint_gray">#cccccc</color>
+    <color name="hint_grasy">#E7E6E6</color>
+    <color name="hint_grays">#e6e6e6</color>
     <color name="hint_gray_light">#EEEEEE</color>
     <color name="trans_gray">#4bcccccc</color>
     <color name="trans_black">#60000000</color>
@@ -20,5 +24,7 @@
     <color name="car_green">#3FAD7A</color>
     <color name="car_red">#F05A28</color>
     <color name="m_black">#1d1d1d</color>
+    <color name="transparentwhite">#A6FFFFFF</color>
+
 
 </resources>

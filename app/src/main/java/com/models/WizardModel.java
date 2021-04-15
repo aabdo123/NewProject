@@ -19,6 +19,38 @@ public class WizardModel {
     private List<String> phones = new ArrayList<>();
     private List<String> scheduleFrequency = new ArrayList<>();
     private String description;
+    private String fromDate;
+    private String toDate;
+    private List<Item> itemList = new ArrayList<>();
+    private String fromTime;
+    private String toTime;
+    private String duration;
+    private String minimumSpeed;
+    private String selectedType;
+
+    public String getMinimumSpeed() {
+        return minimumSpeed;
+    }
+
+    public String getSelectedType() {
+        return selectedType;
+    }
+
+    public void setSelectedType(String selectedType) {
+        this.selectedType = selectedType;
+    }
+
+    public void setMinimumSpeed(String minimumSpeed) {
+        this.minimumSpeed = minimumSpeed;
+    }
+
+    public String getDuration() {
+        return duration;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
 
     public void addReportsType(ReportsTypeModel reportsModel) {
         reportsType.add(reportsModel);
@@ -32,12 +64,44 @@ public class WizardModel {
         return reportsType;
     }
 
+    public String getFromDate() {
+        return fromDate;
+    }
+
+    public void setFromDate(String fromDate) {
+        this.fromDate = fromDate;
+    }
+
+    public String getToDate() {
+        return toDate;
+    }
+
+    public void setToDate(String toDate) {
+        this.toDate = toDate;
+    }
+
     public String getReportsFrequencyID() {
         return reportsFrequencyID;
     }
 
     public void setReportsFrequencyID(String reportsFrequencyID) {
         this.reportsFrequencyID = reportsFrequencyID;
+    }
+
+    public String getFromTime() {
+        return fromTime;
+    }
+
+    public void setFromTime(String fromTime) {
+        this.fromTime = fromTime;
+    }
+
+    public String getToTime() {
+        return toTime;
+    }
+
+    public void setToTime(String toTime) {
+        this.toTime = toTime;
     }
 
     public List<String> getReportsFrequency() {
@@ -140,6 +204,13 @@ public class WizardModel {
         scheduleFrequency.remove(frequency);
     }
 
+    public List<Item> getItemList() {
+        return itemList;
+    }
+
+    public void setItemList(List<Item> itemList) {
+        this.itemList = itemList;
+    }
 
     public String getDescription() {
         return description;

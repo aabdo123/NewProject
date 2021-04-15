@@ -6,14 +6,18 @@ package com.utilities.constants;
 
 public interface ApiConstants {
 
-    String ROOT_API = "http://api.saferoad.net/api/";
-    String TOKEN = "http://api.saferoad.net/token";
+    String ROOT_API = "http://api.saferoad.net:8081/api/";
+    String TOKEN = "http://api.saferoad.net:8081/token";
     String LOCATION_HUB = "http://saferoad.cloudapp.net:5010";
     String GOOGLE_API_KE = "AIzaSyB8CaFPkBKNnwrke1TZQzJB-CNp5NF8PtI";
     String GOOGLE_API_KEY = "AIzaSyDi-bSYjtEknQ7O7V05Hg7oWRLWPnU0rXU";
 
     String VEHICLES = "vehicles";
-    String DASHBOARD = "dashboard?vehicleid=";
+    String VehiclesV2 = "vehicles";
+
+    String vehicleid = "?vehicleid=";
+
+    String DASHBOARD = "dashboard?VehicleID=0";
     String VEHICLE_TREE = "VehicleTree";
 
     String DATA_ANALYSIS = "Reports?VehicleID=";

@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.android.gms:play-services-measurement-api:18.0.2@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6bd37e9079381b7728740b0abf7a15d6/jetified-play-services-measurement-api-18.0.2/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c92246b82c2950ff7147dceb5491f073/jetified-play-services-measurement-api-18.0.2/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d70396ad95995f95b61507508c837231/jetified-play-services-measurement-api-18.0.2/res" />
+      <root url="jar://$USER_HOME$/Desktop/desctop files/B2B and AstroGPS on Store-20191204T151004Z-001/B2B and AstroGPS on Store/SafeRoad All/caches/transforms-2/files-2.1/d70396ad95995f95b61507508c837231/jetified-play-services-measurement-api-18.0.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/Desktop/desctop files/B2B and AstroGPS on Store-20191204T151004Z-001/B2B and AstroGPS on Store/SafeRoad All/caches/transforms-2/files-2.1/d70396ad95995f95b61507508c837231/jetified-play-services-measurement-api-18.0.2/res" />
+      <root url="file://$USER_HOME$/Desktop/desctop files/B2B and AstroGPS on Store-20191204T151004Z-001/B2B and AstroGPS on Store/SafeRoad All/caches/transforms-2/files-2.1/d70396ad95995f95b61507508c837231/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/Desktop/desctop files/B2B and AstroGPS on Store-20191204T151004Z-001/B2B and AstroGPS on Store/SafeRoad All/caches/modules-2/files-2.1/com.google.android.gms/play-services-measurement-api/18.0.2/ce5402a41baf6b500c336a0a8fa66c0f6f8db979/play-services-measurement-api-18.0.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>

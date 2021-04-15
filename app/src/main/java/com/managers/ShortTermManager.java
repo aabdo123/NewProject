@@ -14,12 +14,15 @@ public class ShortTermManager {
     private int mapsStyle;
 
 
-
     public static synchronized ShortTermManager getInstance() {
         if (mInstance == null) {
             mInstance = new ShortTermManager();
         }
         return mInstance;
+    }
+
+    public String clearRequestMapsExpendableList() {
+        return requestMapsExpendableList = null;
     }
 
     public String getRequestMapsExpendableList() {
@@ -86,7 +89,7 @@ public class ShortTermManager {
         this.geoFenceRequest = geoFenceRequest;
     }
 
-    public void clear(){
+    public void clear() {
         this.requestMapsExpendableList = null;
         this.landMarkRequest = null;
         this.geoFenceRequest = null;

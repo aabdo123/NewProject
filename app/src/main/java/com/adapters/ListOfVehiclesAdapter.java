@@ -3,15 +3,17 @@ package com.adapters;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.UiThread;
-import android.support.v4.content.ContextCompat;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.UiThread;
+import androidx.core.content.ContextCompat;
 
 import com.bignerdranch.expandablerecyclerview.ChildViewHolder;
 import com.bignerdranch.expandablerecyclerview.ExpandableRecyclerAdapter;
@@ -42,12 +44,25 @@ public class ListOfVehiclesAdapter extends ExpandableRecyclerAdapter<ListOfVehic
     private LayoutInflater mInflater;
     private Activity activity;
     private Context context;
+    private onClickSearched clickSearched;
 
-    public ListOfVehiclesAdapter(Activity activity, ArrayList<ListOfVehiclesModel> recipeList) {
+    public ListOfVehiclesAdapter(Activity activity, ArrayList<ListOfVehiclesModel> recipeList, onClickSearched clickSearched) {
         super(recipeList);
-        this.activity = activity;
-        this.context = activity;
-        mInflater = LayoutInflater.from(context);
+        try {
+            this.activity = activity;
+            this.context = activity;
+            this.clickSearched = clickSearched;
+            mInflater = LayoutInflater.from(context);
+        } catch (Exception ex) {
+            ex.getMessage();
+        }
+    }
+
+
+    public interface onClickSearched {
+
+        void clicked();
+
     }
 
     @UiThread
@@ -73,37 +88,46 @@ public class ListOfVehiclesAdapter extends ExpandableRecyclerAdapter<ListOfVehic
     @UiThread
     @Override
     public void onBindChildViewHolder(@NonNull ViewHolderChild holder, int parentPosition, int childPosition, final ListOfVehiclesModel.VehicleModel model) {
-
-        if (model.getLastLocation().getLatitude() != 0.0 || model.getLastLocation().getLongitude() != 0.0) {
-            String[] recordDateTime = Utils.getDateUtcToSameFormat(model.getLastLocation().getRecordDateTime()).split("T");
+        if (model.getLastLocation() != null) {
+            if (model.getLastLocation().getLatitude() != 0.0 || model.getLastLocation().getLongitude() != 0.0) {
+                String[] recordDateTime = Utils.getDateUtcToSameFormat(model.getLastLocation().getRecordDateTime()).split("T");
 //        String[] recordDateTime = model.getLastLocation().getRecordDateTime().split("T");
-            String date = recordDateTime[0].trim();
-            String time = recordDateTime[1].trim();
+                String date = recordDateTime[0].trim();
+                String time = recordDateTime[1].trim();
 
-            holder.timeTextView.setVisibility(View.VISIBLE);
-            holder.dateTextView.setVisibility(View.VISIBLE);
+                holder.timeTextView.setVisibility(View.VISIBLE);
+                holder.dateTextView.setVisibility(View.VISIBLE);
 
-            holder.timeTextView.setText(time);
-            holder.dateTextView.setText(date);
-        }else {
-            holder.timeTextView.setVisibility(View.INVISIBLE);
-            holder.dateTextView.setVisibility(View.INVISIBLE);
-        }
-
-        holder.plateNumberTextView.setText(model.getLabel());
-        if (model.getLastLocation().getIsOnline()) {
-            holder.rowLinearLayout.setBackgroundColor(ContextCompat.getColor(context, R.color.white));
-            holder.statusCircleImageView.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_circle_green));
+                holder.timeTextView.setText(time);
+                holder.dateTextView.setText(date);
+            } else {
+                holder.timeTextView.setVisibility(View.INVISIBLE);
+                holder.dateTextView.setVisibility(View.INVISIBLE);
+            }
         } else {
-            holder.rowLinearLayout.setBackgroundColor(ContextCompat.getColor(context, R.color.app_background));
-            holder.statusCircleImageView.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_circle_gray));
+            holder.divView.setVisibility(View.INVISIBLE);
         }
 
+        holder.plateNumberTextView.setText(model.getLabel() != null ? model.getLabel() : "");
+
+        if (model.getLastLocation() != null) {
+            if (model.getLastLocation().getIsOnline() == true ) {
+                holder.rowLinearLayout.setBackgroundColor(ContextCompat.getColor(context, R.color.white));
+                holder.statusCircleImageView.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_circle_green));
+            } else {
+                holder.rowLinearLayout.setBackgroundColor(ContextCompat.getColor(context, R.color.app_background));
+                holder.statusCircleImageView.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_circle_gray));
+            }
+        } else {
+            holder.rowLinearLayout.setVisibility(View.INVISIBLE);
+            holder.statusCircleImageView.setVisibility(View.INVISIBLE);
+        }
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (AppUtils.checkLocationPermissions(activity))
                     if (model.getLastLocation() != null) {
+                        clickSearched.clicked();
                         ((MainActivity) activity).call(MapOfVehicleFragment.newInstance(model), context.getString(R.string.real_time_tracking));
                         PreferencesManager.getInstance().setIntegerValue(model.getVehicleID(), SharesPrefConstants.LAST_VIEW_VEHICLE_ID);
                         LogHelper.LOG_D("VehicleID", "VehicleID   <><><><><><><><> " + model.getVehicleID());
@@ -122,6 +146,7 @@ public class ListOfVehiclesAdapter extends ExpandableRecyclerAdapter<ListOfVehic
         TextViewRegular plateNumberTextView;
         TextViewLight timeTextView;
         TextViewLight dateTextView;
+        View divView;
 
         private ViewHolderChild(@NonNull View itemView) {
             super(itemView);
@@ -130,6 +155,7 @@ public class ListOfVehiclesAdapter extends ExpandableRecyclerAdapter<ListOfVehic
             plateNumberTextView = (TextViewRegular) itemView.findViewById(R.id.plateNumberTextView);
             timeTextView = (TextViewLight) itemView.findViewById(R.id.timeTextView);
             dateTextView = (TextViewLight) itemView.findViewById(R.id.dateTextView);
+            divView = itemView.findViewById(R.id.divView);
         }
     }
 

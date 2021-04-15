@@ -39,7 +39,7 @@ public class Item extends RecyclerViewItem implements Parcelable{
     private double speed;
     @SerializedName("TotalMileage")
     @Expose
-    private double totalMileage;
+    private int totalMileage;
     @SerializedName("TotalWorkingHours")
     @Expose
     private double totalWorkingHours;
@@ -132,7 +132,7 @@ public class Item extends RecyclerViewItem implements Parcelable{
             vehicleID = in.readInt();
         }
         speed = in.readDouble();
-        totalMileage = in.readDouble();
+        totalMileage = in.readInt();
         totalWorkingHours = in.readDouble();
         direction = in.readDouble();
         latitude = in.readDouble();
@@ -182,7 +182,7 @@ public class Item extends RecyclerViewItem implements Parcelable{
             dest.writeInt(vehicleID);
         }
         dest.writeDouble(speed);
-        dest.writeDouble(totalMileage);
+        dest.writeInt(totalMileage);
         dest.writeDouble(totalWorkingHours);
         dest.writeDouble(direction);
         dest.writeDouble(latitude);
@@ -382,11 +382,11 @@ public class Item extends RecyclerViewItem implements Parcelable{
         this.speed = speed;
     }
 
-    public double getTotalMileage() {
+    public int getTotalMileage() {
         return totalMileage;
     }
 
-    public void setTotalMileage(double totalMileage) {
+    public void setTotalMileage(int totalMileage) {
         this.totalMileage = totalMileage;
     }
 

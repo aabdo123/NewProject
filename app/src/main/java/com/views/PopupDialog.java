@@ -14,10 +14,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.LayerDrawable;
 import android.graphics.drawable.RotateDrawable;
 import android.os.Build;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -28,6 +25,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.R;
 import com.activities.MainActivity;
@@ -614,6 +615,7 @@ public class PopupDialog {
 
     private List<Item> getMenuType() {
         List<Item> items = new ArrayList<>();
+        items.add(new Item(R.string.direction_menu, context.getString(R.string.direction_menu), ContextCompat.getDrawable(context, R.drawable.direction2)));
         items.add(new Item(R.string.geo_fence, context.getString(R.string.geo_fence), ContextCompat.getDrawable(context, R.drawable.geo_fence)));
         items.add(new Item(R.string.historical_route_playback, context.getString(R.string.historical_route_playback), ContextCompat.getDrawable(context, R.drawable.historical)));
         items.add(new Item(R.string.alarm_notification, context.getString(R.string.alarm_notification), ContextCompat.getDrawable(context, R.drawable.ic_alarm_primary)));

@@ -2,15 +2,19 @@ package com.fragments;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
+import android.widget.SearchView;
+
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.R;
 import com.activities.MainActivity;
@@ -19,6 +23,7 @@ import com.managers.ApiCallResponseString;
 import com.managers.BusinessManager;
 import com.models.AllVehiclesInHashModel;
 import com.models.AllVehiclesInHashModel.AllVehicleModel;
+import com.models.DashboardModel;
 import com.models.ListOfVehiclesModel;
 import com.utilities.AnimationUtils;
 import com.utilities.Utils;
@@ -29,6 +34,8 @@ import com.views.TextViewRegular;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by Saferoad-Dev1 on 8/27/2017.
@@ -39,6 +46,7 @@ public class ListOfVehiclesFragment extends Fragment implements View.OnClickList
     public static ListOfVehiclesFragment fragment;
     private Activity activity;
     private final static String VIEW_TYPE_ARGS = "view_type_args";
+    private final static String EXTRA_VEHICLE_MODEL = "extra_vehicle_model";
     private ListOfVehiclesAdapter adapter;
     private SwipeRefreshLayout swipeRefreshLayout;
     private RecyclerView listOfVehiclesRecyclerView;
@@ -51,7 +59,12 @@ public class ListOfVehiclesFragment extends Fragment implements View.OnClickList
     private ArrayList<ListOfVehiclesModel> listOfVehiclesModels;
     private ArrayList<AllVehiclesInHashModel.AllVehicleModel> mapList;
     private String responseObj = null;
+//    private String viewType = AppConstant.ALL_CARS;
     private String viewType;
+
+    private SearchView simpleSearchView;
+    private ListOfVehiclesModel.VehicleModel vehicleModel;
+
 
     public ListOfVehiclesFragment() {
         // Required empty public constructor
@@ -67,6 +80,18 @@ public class ListOfVehiclesFragment extends Fragment implements View.OnClickList
         return fragment;
     }
 
+
+    public static ListOfVehiclesFragment newInstance(String viewType,ListOfVehiclesModel.VehicleModel vehicleModel) {
+//        if (fragment == null) {
+        fragment = new ListOfVehiclesFragment();
+        Bundle args = new Bundle();
+        args.putString(VIEW_TYPE_ARGS, viewType);
+        args.putParcelable(EXTRA_VEHICLE_MODEL, vehicleModel);
+        fragment.setArguments(args);
+//        }
+        return fragment;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,6 +100,14 @@ public class ListOfVehiclesFragment extends Fragment implements View.OnClickList
         if (mBundle != null) {
             Log.d("tag", "getArgs");
             viewType = mBundle.getString(VIEW_TYPE_ARGS);
+            vehicleModel = mBundle.getParcelable(EXTRA_VEHICLE_MODEL);
+            if (TextUtils.isEmpty(viewType)) {
+                viewType = AppConstant.ALL_CARS;
+            }
+            if (vehicleModel!=null){
+                Progress.dismissLoadingDialog();
+                ((MainActivity) activity).call(MapOfVehicleFragment.newInstance(vehicleModel), activity.getString(R.string.real_time_tracking));
+            }
         }
     }
 
@@ -84,6 +117,7 @@ public class ListOfVehiclesFragment extends Fragment implements View.OnClickList
         initView(rootView);
         initListeners();
         getVehicles();
+        searchTextChange();
         return rootView;
     }
 
@@ -103,6 +137,7 @@ public class ListOfVehiclesFragment extends Fragment implements View.OnClickList
         allCarsTextView = (TextViewRegular) rootView.findViewById(R.id.allCarsTextView);
         carsOnlineTextView = (TextViewRegular) rootView.findViewById(R.id.carsOnlineTextView);
         carsOfflineTextView = (TextViewRegular) rootView.findViewById(R.id.carsOfflineTextView);
+        simpleSearchView = (SearchView) rootView.findViewById(R.id.simpleSearchView);
     }
 
     public void getVehicles() {
@@ -114,13 +149,54 @@ public class ListOfVehiclesFragment extends Fragment implements View.OnClickList
         }
     }
 
+
+    private void searchTextChange() {
+        simpleSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String newText) {
+                if (viewType.equalsIgnoreCase(AppConstant.ALL_CARS)) {
+                    initAdapter(filterSearchCarsList(newText, listOfVehiclesModels));
+                } else if (viewType.equalsIgnoreCase(AppConstant.ONLINE_CARS)) {
+                    initAdapter(filterSearchCarsList(newText, filterOnlineCarsList(listOfVehiclesModels)));
+                } else if (viewType.equalsIgnoreCase(AppConstant.OFFLINE_CARS)) {
+                    initAdapter(filterSearchCarsList(newText, filterOfflineCarsList(listOfVehiclesModels)));
+                }
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                if (viewType.equalsIgnoreCase(AppConstant.ALL_CARS)) {
+                    initAdapter(filterSearchCarsList(newText, listOfVehiclesModels));
+                } else if (viewType.equalsIgnoreCase(AppConstant.ONLINE_CARS)) {
+                    initAdapter(filterSearchCarsList(newText, filterOnlineCarsList(listOfVehiclesModels)));
+                } else if (viewType.equalsIgnoreCase(AppConstant.OFFLINE_CARS)) {
+                    initAdapter(filterSearchCarsList(newText, filterOfflineCarsList(listOfVehiclesModels)));
+                }
+                return false;
+            }
+        });
+
+        simpleSearchView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                simpleSearchView.onActionViewExpanded();
+            }
+        });
+
+
+    }
+
+
     private void getVehiclesApiCall() {
         BusinessManager.postVehicles(new ApiCallResponseString() {
             @Override
             public void onSuccess(int statusCode, String responseObject) {
+                Progress.dismissLoadingDialog();
                 responseObj = responseObject;
                 initListFromApi(responseObj);
             }
+
 
             @Override
             public void onFailure(int statusCode, String errorResponse) {
@@ -176,17 +252,44 @@ public class ListOfVehiclesFragment extends Fragment implements View.OnClickList
     }
 
     private void initAdapter(ArrayList<ListOfVehiclesModel> arrayList) {
-        if (arrayList != null && arrayList.size() > 0) {
-            if (arrayList.get(0) != null && arrayList.get(0).getVehicleModel().size() > 0) {
-                adapter = new ListOfVehiclesAdapter(activity, arrayList);
-                listOfVehiclesRecyclerView.setLayoutManager(new LinearLayoutManager(activity));
-                listOfVehiclesRecyclerView.setAdapter(adapter);
-                adapter.expandParent(arrayList.get(0));
-                AnimationUtils.loadListAnimation(listOfVehiclesRecyclerView);
+        try {
+            if (arrayList != null && arrayList.size() > 0) {
+                if (arrayList.get(0) != null && arrayList.get(0).getVehicleModel().size() > 0) {
+                    adapter = new ListOfVehiclesAdapter(activity, arrayList, new ListOfVehiclesAdapter.onClickSearched() {
+                        @Override
+                        public void clicked() {
+                            clearAndRefresh();
+                        }
+                    });
+                    listOfVehiclesRecyclerView.setLayoutManager(new LinearLayoutManager(activity));
+                    listOfVehiclesRecyclerView.setAdapter(adapter);
+                    adapter.expandParent(arrayList.get(0));
+                    AnimationUtils.loadListAnimation(listOfVehiclesRecyclerView);
+                } else {
+                    //arrayList.get(0).getVehicleModel().clear();
+                    ListOfVehiclesModel listOfVehiclesModel = new ListOfVehiclesModel();
+                    listOfVehiclesModel.setHeader("Vehicles list");
+                    List<ListOfVehiclesModel.VehicleModel> vehicleModels = new ArrayList<>();
+                    vehicleModels.add(new ListOfVehiclesModel.VehicleModel());
+                    listOfVehiclesModel.setVehicleModel(vehicleModels);
+                    arrayList.set(0,listOfVehiclesModel);
+                    adapter = new ListOfVehiclesAdapter(activity, arrayList, new ListOfVehiclesAdapter.onClickSearched() {
+                        @Override
+                        public void clicked() {
+                            clearAndRefresh();
+                        }
+                    });
+                    listOfVehiclesRecyclerView.setLayoutManager(new LinearLayoutManager(activity));
+                    listOfVehiclesRecyclerView.setAdapter(adapter);
+                   // adapter.expandParent(arrayList.get(0));
+                   /// AnimationUtils.loadListAnimation(listOfVehiclesRecyclerView);
+                }
             }
+            Progress.dismissLoadingDialog();
+            swipeRefreshLayout.setRefreshing(false);
+        } catch (Exception ex) {
+            ex.getMessage();
         }
-        Progress.dismissLoadingDialog();
-        swipeRefreshLayout.setRefreshing(false);
     }
 
     private void setUpCarCountersLayout() {
@@ -267,6 +370,34 @@ public class ListOfVehiclesFragment extends Fragment implements View.OnClickList
         return parentList;
     }
 
+
+    private ArrayList<ListOfVehiclesModel> filterSearchCarsList(String value, ArrayList<ListOfVehiclesModel> allList) {
+        ArrayList<ListOfVehiclesModel> parentList = new ArrayList<>();
+        try {
+            ArrayList<ListOfVehiclesModel.VehicleModel> childList = new ArrayList<>();
+            ListOfVehiclesModel model = null;
+            int i, x;
+            for (i = 0; i < allList.size(); i++) {
+                for (x = i; x < allList.get(i).getVehicleModel().size(); x++) {
+                    if (allList.get(i).getVehicleModel().get(x).getLabel().toLowerCase().contains(value.toLowerCase())) {
+                        model = new ListOfVehiclesModel();
+                        childList.add(allList.get(i).getVehicleModel().get(x));
+                        model.setHeader(allList.get(i).getHeader());
+                        model.setVehicleModel(childList);
+                    } else {
+                        Log.e("s", "s");
+                    }
+                }
+                parentList.add(model);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return parentList;
+    }
+
+
+
     private ArrayList<ListOfVehiclesModel> filterOfflineCarsList(ArrayList<ListOfVehiclesModel> allList) {
         ArrayList<ListOfVehiclesModel> parentList = new ArrayList<>();
         try {
@@ -284,11 +415,6 @@ public class ListOfVehiclesFragment extends Fragment implements View.OnClickList
                 }
                 parentList.add(model);
             }
-//        while (parentList.remove("")) ;
-//        Set<ListOfVehiclesModel> hashSet = new HashSet<>();
-//        hashSet.addAll(parentList);
-//        parentList.clear();
-//        parentList.addAll(hashSet);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -299,19 +425,39 @@ public class ListOfVehiclesFragment extends Fragment implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.allCarsLayout:
+                clearAndRefresh();
                 viewType = AppConstant.ALL_CARS;
                 initAdapter(listOfVehiclesModels);
                 break;
 
             case R.id.carsOnlineLayout:
+                clearAndRefresh();
                 viewType = AppConstant.ONLINE_CARS;
                 initAdapter(filterOnlineCarsList(listOfVehiclesModels));
                 break;
 
             case R.id.carsOfflineLayout:
+                clearAndRefresh();
                 viewType = AppConstant.OFFLINE_CARS;
                 initAdapter(filterOfflineCarsList(listOfVehiclesModels));
                 break;
+        }
+    }
+
+
+    private void clearAndRefresh() {
+        try {
+            Objects.requireNonNull(getActivity()).runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Utils.hidKeyBoard(Objects.requireNonNull(getActivity()));
+                    simpleSearchView.clearFocus();
+                    simpleSearchView.setIconified(true);
+                    simpleSearchView.onActionViewCollapsed();
+                }
+            });
+        } catch (Exception ex) {
+            ex.getMessage();
         }
     }
 

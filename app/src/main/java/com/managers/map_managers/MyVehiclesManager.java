@@ -32,7 +32,7 @@
 //                AllVehiclesInHashModel inHashModel = new AllVehiclesInHashModel();
 //                inHashModel.setVehicleId(allVehicleModel.getVehicleID());
 //                inHashModel.setAllVehicleModel(allVehicleModel);
-//                LatLng lng = new LatLng(allVehicleModel.getLastLocation().getLatitude(), allVehicleModel.getLastLocation().getLongitude());
+//                LatLng lng = new LatLng(allVehicleModel.getLastLocation().getLatitude(), allVehicleModel.getLastLocation().getLatitude());
 //                Marker addMarker = googleMap.addMarker(new MarkerOptions().position(lng)
 //                        .icon(AppUtils.getCarIcon(allVehicleModel.getLastLocation().getVehicleStatus()))
 //                        .anchor(0.5f, 0.5f)

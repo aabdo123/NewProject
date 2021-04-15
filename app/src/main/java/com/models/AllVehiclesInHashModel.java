@@ -218,7 +218,7 @@ public class AllVehiclesInHashModel implements ClusterItem ,Parcelable{
 
 
 
-        public class LastLocation implements Parcelable {
+        public static class LastLocation implements Parcelable {
 
             @SerializedName("VehicleID")
             @Expose
@@ -228,7 +228,7 @@ public class AllVehiclesInHashModel implements ClusterItem ,Parcelable{
             private double speed;
             @SerializedName("TotalMileage")
             @Expose
-            private double totalMileage;
+            private int totalMileage;
             @SerializedName("TotalWorkingHours")
             @Expose
             private double totalWorkingHours;
@@ -300,6 +300,8 @@ public class AllVehiclesInHashModel implements ClusterItem ,Parcelable{
             @Expose
             private String doorStatus;
 
+            public LastLocation() {
+            }
 
             protected LastLocation(Parcel in) {
                 if (in.readByte() == 0) {
@@ -308,7 +310,7 @@ public class AllVehiclesInHashModel implements ClusterItem ,Parcelable{
                     vehicleID = in.readInt();
                 }
                 speed = in.readDouble();
-                totalMileage = in.readDouble();
+                totalMileage = in.readInt();
                 totalWorkingHours = in.readDouble();
                 direction = in.readDouble();
                 latitude = in.readDouble();
@@ -349,7 +351,7 @@ public class AllVehiclesInHashModel implements ClusterItem ,Parcelable{
                     dest.writeInt(vehicleID);
                 }
                 dest.writeDouble(speed);
-                dest.writeDouble(totalMileage);
+                dest.writeInt(totalMileage);
                 dest.writeDouble(totalWorkingHours);
                 dest.writeDouble(direction);
                 dest.writeDouble(latitude);
@@ -520,11 +522,11 @@ public class AllVehiclesInHashModel implements ClusterItem ,Parcelable{
                 this.speed = speed;
             }
 
-            public double getTotalMileage() {
+            public int getTotalMileage() {
                 return totalMileage;
             }
 
-            public void setTotalMileage(double totalMileage) {
+            public void setTotalMileage(int totalMileage) {
                 this.totalMileage = totalMileage;
             }
 

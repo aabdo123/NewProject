@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_140"
+    android:id="@+id/history_details"
+    android:background="@color/transparent_white"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_10"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="@dimen/dp_30"
+                android:layout_height="@dimen/dp_30"
+                android:src="@drawable/display_name1"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/smallWhiteText"
+                android:textColor="@color/black"
+                android:text="@string/display_name"
+                android:paddingTop="@dimen/dp_8"
+                android:padding="@dimen/_5_dp"
+                android:id="@+id/display_name_his"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/dp_10">
+            <ImageView
+                android:layout_width="@dimen/dp_30"
+                android:layout_height="@dimen/dp_30"
+                android:src="@drawable/clock_history_date"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/smallWhiteText"
+                android:textColor="@color/black"
+                android:text="@string/date"
+                android:paddingTop="@dimen/dp_8"
+                android:padding="@dimen/_5_dp"
+                android:id="@+id/date_time_his"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/dp_10">
+            <ImageView
+                android:layout_width="@dimen/dp_30"
+                android:layout_height="@dimen/dp_30"
+                android:src="@drawable/speedometer"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/smallWhiteText"
+                android:textColor="@color/black"
+                android:text="@string/speed"
+                android:paddingTop="@dimen/dp_8"
+                android:padding="@dimen/_5_dp"
+                android:id="@+id/speed_his"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.android.gms:play-services-ads-lite:9.8.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/Desktop/desctop files/B2B and AstroGPS on Store-20191204T151004Z-001/B2B and AstroGPS on Store/SafeRoad All/caches/transforms-2/files-2.1/4db3145f27f95334d72f44c08bfe74ce/jetified-play-services-ads-lite-9.8.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/Desktop/desctop files/B2B and AstroGPS on Store-20191204T151004Z-001/B2B and AstroGPS on Store/SafeRoad All/caches/transforms-2/files-2.1/4db3145f27f95334d72f44c08bfe74ce/jetified-play-services-ads-lite-9.8.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/Desktop/desctop files/B2B and AstroGPS on Store-20191204T151004Z-001/B2B and AstroGPS on Store/SafeRoad All/caches/transforms-2/files-2.1/4db3145f27f95334d72f44c08bfe74ce/jetified-play-services-ads-lite-9.8.0/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

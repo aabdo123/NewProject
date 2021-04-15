@@ -3,7 +3,8 @@ package com.utilities;
 /**
  * Created by Ultimate on 20/10/2015.
  */
-import android.support.v4.view.ViewPager;
+
+import androidx.viewpager.widget.ViewPager;
 
 /**
  * A PageIndicator is responsible to show an visual indicator on the total views

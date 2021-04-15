@@ -2,13 +2,15 @@ package com.fragments;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
 
 import com.mikhaellopez.circularprogressbar.CircularProgressBar;
 import com.R;
@@ -87,8 +89,13 @@ public class ProgressFragment extends Fragment {
     }
 
     private void setUpData() {
-        circularProgressbar.setProgressWithAnimation(getPercentage(dashboardModel.getTotalVehiclesOnlinePercentage()), animationDuration);
-        percentageTextView.setText("" + getPercentage(dashboardModel.getTotalVehiclesOnlinePercentage()));
+        try {
+            circularProgressbar.setProgressWithAnimation(getPercentage(dashboardModel.getTotalVehiclesOnlinePercentage()), animationDuration);
+            percentageTextView.setText("" + getPercentage(dashboardModel.getTotalVehiclesOnlinePercentage()));
+        } catch (Exception e) {
+            circularProgressbar.setProgressWithAnimation(0, animationDuration);
+            Toast.makeText(getContext(), getString(R.string.something_went_worng), Toast.LENGTH_SHORT).show();
+        }
     }
 
     private int getPercentage(double per) {

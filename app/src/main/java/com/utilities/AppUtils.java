@@ -13,7 +13,8 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
-import android.support.v4.app.ActivityCompat;
+
+import androidx.core.app.ActivityCompat;
 
 import com.application.MyApplication;
 import com.google.android.gms.maps.model.BitmapDescriptor;
@@ -25,6 +26,7 @@ import com.managers.PreferencesManager;
 import com.utilities.constants.AppConstant;
 import com.utilities.constants.SharesPrefConstants;
 
+import java.util.ArrayList;
 import java.util.Locale;
 
 /**
@@ -168,11 +170,17 @@ public class AppUtils {
     }
 
     public static BitmapDescriptor getCarIcon(String carStatus) {
+
         switch (carStatus) {
-            case "600":
+            case "201":
                 return BitmapDescriptorFactory.fromResource(R.drawable.car_0);
             case "5":
                 return BitmapDescriptorFactory.fromResource(R.drawable.car_0);
+            case "203":
+                return BitmapDescriptorFactory.fromResource(R.drawable.car_0);
+
+            case "300":
+                return BitmapDescriptorFactory.fromResource(R.drawable.car_202);
             case "1":
                 return BitmapDescriptorFactory.fromResource(R.drawable.car_2);
             case "0":
@@ -180,32 +188,31 @@ public class AppUtils {
             case "2":
                 return BitmapDescriptorFactory.fromResource(R.drawable.car_1);
             case "101":
-                return BitmapDescriptorFactory.fromResource(R.drawable.car_101);
-            case "100":
                 return BitmapDescriptorFactory.fromResource(R.drawable.car_100);
             default:
                 return BitmapDescriptorFactory.fromResource(R.drawable.car_0);
         }
+
     }
 
     public static BitmapDescriptor getCarIconAlpha(String carStatus) {
         switch (carStatus) {
-            case "600":
-                return BitmapDescriptorFactory.fromBitmap(drawAlpha(BitmapFactory.decodeResource(MyApplication.getAppContext().getResources(),R.drawable.car_0)));
+            case "201":
+                return BitmapDescriptorFactory.fromBitmap(drawAlpha(BitmapFactory.decodeResource(MyApplication.getAppContext().getResources(), R.drawable.car_0)));
             case "5":
-                return BitmapDescriptorFactory.fromBitmap(drawAlpha(BitmapFactory.decodeResource(MyApplication.getAppContext().getResources(),R.drawable.car_0)));
+                return BitmapDescriptorFactory.fromBitmap(drawAlpha(BitmapFactory.decodeResource(MyApplication.getAppContext().getResources(), R.drawable.car_0)));
             case "1":
-                return BitmapDescriptorFactory.fromBitmap(drawAlpha(BitmapFactory.decodeResource(MyApplication.getAppContext().getResources(),R.drawable.car_2)));
+                return BitmapDescriptorFactory.fromBitmap(drawAlpha(BitmapFactory.decodeResource(MyApplication.getAppContext().getResources(), R.drawable.car_2)));
             case "0":
-                return BitmapDescriptorFactory.fromBitmap(drawAlpha(BitmapFactory.decodeResource(MyApplication.getAppContext().getResources(),R.drawable.car_600)));
+                return BitmapDescriptorFactory.fromBitmap(drawAlpha(BitmapFactory.decodeResource(MyApplication.getAppContext().getResources(), R.drawable.car_600)));
             case "2":
-                return BitmapDescriptorFactory.fromBitmap(drawAlpha(BitmapFactory.decodeResource(MyApplication.getAppContext().getResources(),R.drawable.car_1)));
+                return BitmapDescriptorFactory.fromBitmap(drawAlpha(BitmapFactory.decodeResource(MyApplication.getAppContext().getResources(), R.drawable.car_1)));
             case "101":
-                return BitmapDescriptorFactory.fromBitmap(drawAlpha(BitmapFactory.decodeResource(MyApplication.getAppContext().getResources(),R.drawable.car_101)));
+                return BitmapDescriptorFactory.fromBitmap(drawAlpha(BitmapFactory.decodeResource(MyApplication.getAppContext().getResources(), R.drawable.car_101)));
             case "100":
-                return BitmapDescriptorFactory.fromBitmap(drawAlpha(BitmapFactory.decodeResource(MyApplication.getAppContext().getResources(),R.drawable.car_100)));
+                return BitmapDescriptorFactory.fromBitmap(drawAlpha(BitmapFactory.decodeResource(MyApplication.getAppContext().getResources(), R.drawable.car_100)));
             default:
-                return BitmapDescriptorFactory.fromBitmap(drawAlpha(BitmapFactory.decodeResource(MyApplication.getAppContext().getResources(),R.drawable.car_0)));
+                return BitmapDescriptorFactory.fromBitmap(drawAlpha(BitmapFactory.decodeResource(MyApplication.getAppContext().getResources(), R.drawable.car_0)));
         }
     }
 
@@ -224,7 +231,7 @@ public class AppUtils {
 
     public static Drawable getCarIconDrawable(Context context, String carStatus) {
         switch (carStatus) {
-            case "600":
+            case "201":
                 return context.getResources().getDrawable(R.drawable.car_0);
             case "5":
                 return context.getResources().getDrawable(R.drawable.car_0);
@@ -245,10 +252,15 @@ public class AppUtils {
 
     public static int getCarIconDrawableID(String carStatus) {
         switch (carStatus) {
-            case "600":
+            case "201":
                 return R.drawable.car_0;
             case "5":
                 return R.drawable.car_0;
+            case "203":
+                return R.drawable.car_0;
+
+                case "300":
+                return R.drawable.car_202;
             case "1":
                 return R.drawable.car_2;
             case "0":
@@ -256,8 +268,6 @@ public class AppUtils {
             case "2":
                 return R.drawable.car_1;
             case "101":
-                return R.drawable.car_101;
-            case "100":
                 return R.drawable.car_100;
             default:
                 return R.drawable.car_0;
@@ -266,12 +276,15 @@ public class AppUtils {
 
 
     public static String getCarStatus(Activity activity, String carStatus) {
-        String status = carStatus;
+        String status;
         switch (carStatus) {
-            case "600":
+            case "5":
                 status = activity.getString(R.string.offline);
                 break;
-            case "5":
+            case "201":
+                status = activity.getString(R.string.offline);
+                break;
+            case "203":
                 status = activity.getString(R.string.offline);
                 break;
             case "1":
@@ -295,6 +308,20 @@ public class AppUtils {
         }
         return status;
     }
+
+
+    public static ArrayList<String> getCarStatesString(Activity activity) {
+        ArrayList<String> names = new ArrayList<>();
+        names.add(activity.getString(R.string.all));
+        names.add(activity.getString(R.string.offline));
+        names.add(activity.getString(R.string.running));
+        names.add(activity.getString(R.string.stopped));
+        names.add(activity.getString(R.string.idle));
+        names.add(activity.getString(R.string.over_speed));
+        names.add(activity.getString(R.string.over_street_speed));
+        return names;
+    }
+
 
     public static boolean checkLocationPermissions(Activity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

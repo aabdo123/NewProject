@@ -75,7 +75,7 @@ public class ListOfVehiclesModel implements Parent<ListOfVehiclesModel.VehicleMo
         dest.writeTypedList(vehicleModel);
     }
 
-    public static class VehicleModel implements Parcelable {
+    public static class VehicleModel implements Parcelable{
 
         @SerializedName("VehicleID")
         @Expose
@@ -93,10 +93,16 @@ public class ListOfVehiclesModel implements Parent<ListOfVehiclesModel.VehicleMo
         @Expose
         private LastLocation lastLocation;
 
-        private boolean selected = false;
+        private Boolean selected = false;
         @SerializedName("FBToken")
         @Expose
         private String fbToken;
+
+
+        public VehicleModel() {
+
+        }
+
 
         protected VehicleModel(Parcel in) {
             if (in.readByte() == 0) {
@@ -107,6 +113,7 @@ public class ListOfVehiclesModel implements Parent<ListOfVehiclesModel.VehicleMo
             label = in.readString();
             plateNumber = in.readString();
             serialNumber = in.readString();
+            lastLocation = in.readParcelable(LastLocation.class.getClassLoader());
             selected = in.readByte() != 0;
             fbToken = in.readString();
         }
@@ -122,6 +129,7 @@ public class ListOfVehiclesModel implements Parent<ListOfVehiclesModel.VehicleMo
             dest.writeString(label);
             dest.writeString(plateNumber);
             dest.writeString(serialNumber);
+            dest.writeParcelable(lastLocation, flags);
             dest.writeByte((byte) (selected ? 1 : 0));
             dest.writeString(fbToken);
         }
@@ -200,29 +208,29 @@ public class ListOfVehiclesModel implements Parent<ListOfVehiclesModel.VehicleMo
         }
 
 
-        public class LastLocation {
+        public static class LastLocation implements Parcelable{
 
             @SerializedName("VehicleID")
             @Expose
             private Integer vehicleID;
             @SerializedName("Speed")
             @Expose
-            private double speed;
+            private Double speed;
             @SerializedName("TotalMileage")
             @Expose
-            private double totalMileage;
+            private Integer totalMileage;
             @SerializedName("TotalWorkingHours")
             @Expose
-            private double totalWorkingHours;
+            private Double totalWorkingHours;
             @SerializedName("Direction")
             @Expose
             private double direction;
             @SerializedName("Latitude")
             @Expose
-            private double latitude;
+            private Double latitude;
             @SerializedName("Longitude")
             @Expose
-            private double longitude;
+            private Double longitude;
             @SerializedName("Address")
             @Expose
             private String address;
@@ -238,6 +246,78 @@ public class ListOfVehiclesModel implements Parent<ListOfVehiclesModel.VehicleMo
             @SerializedName("IsOnline")
             @Expose
             private Boolean isOnline;
+            @SerializedName("EngineStatus")
+            @Expose
+            private Boolean engineStatus;
+            public LastLocation() {
+            }
+
+            protected LastLocation(Parcel in) {
+                if (in.readByte() == 0) {
+                    vehicleID = null;
+                } else {
+                    vehicleID = in.readInt();
+                }
+                speed = in.readDouble();
+                totalMileage = in.readInt();
+                totalWorkingHours = in.readDouble();
+                direction = in.readDouble();
+                latitude = in.readDouble();
+                longitude = in.readDouble();
+                address = in.readString();
+                if (in.readByte() == 0) {
+                    streetSpeed = null;
+                } else {
+                    streetSpeed = in.readInt();
+                }
+                vehicleStatus = in.readString();
+                recordDateTime = in.readString();
+                byte tmpIsOnline = in.readByte();
+                isOnline = tmpIsOnline == 0 ? null : tmpIsOnline == 1;
+            }
+
+            @Override
+            public void writeToParcel(Parcel dest, int flags) {
+                if (vehicleID == null) {
+                    dest.writeByte((byte) 0);
+                } else {
+                    dest.writeByte((byte) 1);
+                    dest.writeInt(vehicleID);
+                }
+                dest.writeDouble(speed);
+                dest.writeInt(totalMileage);
+                dest.writeDouble(totalWorkingHours);
+                dest.writeDouble(direction);
+                dest.writeDouble(latitude);
+                dest.writeDouble(longitude);
+                dest.writeString(address);
+                if (streetSpeed == null) {
+                    dest.writeByte((byte) 0);
+                } else {
+                    dest.writeByte((byte) 1);
+                    dest.writeInt(streetSpeed);
+                }
+                dest.writeString(vehicleStatus);
+                dest.writeString(recordDateTime);
+                dest.writeByte((byte) (isOnline == null ? 0 : isOnline ? 1 : 2));
+            }
+
+            @Override
+            public int describeContents() {
+                return 0;
+            }
+
+            public static final Creator<LastLocation> CREATOR = new Creator<LastLocation>() {
+                @Override
+                public LastLocation createFromParcel(Parcel in) {
+                    return new LastLocation(in);
+                }
+
+                @Override
+                public LastLocation[] newArray(int size) {
+                    return new LastLocation[size];
+                }
+            };
 
             public Integer getVehicleID() {
                 return vehicleID;
@@ -247,27 +327,27 @@ public class ListOfVehiclesModel implements Parent<ListOfVehiclesModel.VehicleMo
                 this.vehicleID = vehicleID;
             }
 
-            public double getSpeed() {
+            public Double getSpeed() {
                 return speed;
             }
 
-            public void setSpeed(double speed) {
+            public void setSpeed(Double speed) {
                 this.speed = speed;
             }
 
-            public double getTotalMileage() {
+            public Integer getTotalMileage() {
                 return totalMileage;
             }
 
-            public void setTotalMileage(double totalMileage) {
+            public void setTotalMileage(Integer totalMileage) {
                 this.totalMileage = totalMileage;
             }
 
-            public double getTotalWorkingHours() {
+            public Double getTotalWorkingHours() {
                 return totalWorkingHours;
             }
 
-            public void setTotalWorkingHours(double totalWorkingHours) {
+            public void setTotalWorkingHours(Double totalWorkingHours) {
                 this.totalWorkingHours = totalWorkingHours;
             }
 
@@ -279,19 +359,19 @@ public class ListOfVehiclesModel implements Parent<ListOfVehiclesModel.VehicleMo
                 this.direction = direction;
             }
 
-            public double getLatitude() {
+            public Double getLatitude() {
                 return latitude;
             }
 
-            public void setLatitude(double latitude) {
+            public void setLatitude(Double latitude) {
                 this.latitude = latitude;
             }
 
-            public double getLongitude() {
+            public Double getLongitude() {
                 return longitude;
             }
 
-            public void setLongitude(double longitude) {
+            public void setLongitude(Double longitude) {
                 this.longitude = longitude;
             }
 
@@ -301,6 +381,13 @@ public class ListOfVehiclesModel implements Parent<ListOfVehiclesModel.VehicleMo
 
             public void setAddress(String address) {
                 this.address = address;
+            }
+            public Boolean getEngineStatus() {
+                return engineStatus;
+            }
+
+            public void setEngineStatus(Boolean engineStatus) {
+                this.engineStatus = engineStatus;
             }
 
             public Integer getStreetSpeed() {

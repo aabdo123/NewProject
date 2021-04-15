@@ -1,11 +1,12 @@
 package com.adapters;
 
-import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.CheckedTextView;
+
+import androidx.fragment.app.FragmentActivity;
 
 import com.R;
 import com.views.TextViewRegular;

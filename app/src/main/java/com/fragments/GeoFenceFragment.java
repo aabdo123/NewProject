@@ -3,9 +3,7 @@ package com.fragments;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -15,6 +13,10 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.Switch;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -149,7 +151,7 @@ public class GeoFenceFragment extends Fragment implements MapStyleDialogFragment
                 geoLatLog = new LatLng(0.0, 0.0);
             }
 //            else {
-//                geoLatLog = new LatLng(listOfVehiclesForGeoFence.get(0).getVehicleModel().get(0).getLastLocation().getLatitude(), listOfVehiclesForGeoFence.get(0).getVehicleModel().get(0).getLastLocation().getLongitude());
+//                geoLatLog = new LatLng(listOfVehiclesForGeoFence.get(0).getVehicleModel().get(0).getLastLocation().getLatitude(), listOfVehiclesForGeoFence.get(0).getVehicleModel().get(0).getLastLocation().getLatitude());
 //            }
         }
     }

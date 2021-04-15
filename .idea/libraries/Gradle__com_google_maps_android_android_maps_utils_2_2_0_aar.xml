@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.maps.android:android-maps-utils:2.2.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/Desktop/desctop files/B2B and AstroGPS on Store-20191204T151004Z-001/B2B and AstroGPS on Store/SafeRoad All/caches/transforms-2/files-2.1/a28184a776381c11e5ce0d465c6586e5/jetified-android-maps-utils-2.2.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/Desktop/desctop files/B2B and AstroGPS on Store-20191204T151004Z-001/B2B and AstroGPS on Store/SafeRoad All/caches/transforms-2/files-2.1/a28184a776381c11e5ce0d465c6586e5/jetified-android-maps-utils-2.2.0/res" />
+      <root url="jar://$USER_HOME$/Desktop/desctop files/B2B and AstroGPS on Store-20191204T151004Z-001/B2B and AstroGPS on Store/SafeRoad All/caches/transforms-2/files-2.1/a28184a776381c11e5ce0d465c6586e5/jetified-android-maps-utils-2.2.0/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/Desktop/desctop files/B2B and AstroGPS on Store-20191204T151004Z-001/B2B and AstroGPS on Store/SafeRoad All/caches/modules-2/files-2.1/com.google.maps.android/android-maps-utils/2.2.0/7dd901ddb87feb17fa852680c7080e7b805195ed/android-maps-utils-2.2.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Desktop/desctop files/B2B and AstroGPS on Store-20191204T151004Z-001/B2B and AstroGPS on Store/SafeRoad All/caches/modules-2/files-2.1/com.google.maps.android/android-maps-utils/2.2.0/80a4e07683d7c4ac367efa0e6cd1ce1106afc08d/android-maps-utils-2.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -22,14 +22,16 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.Settings;
-import android.support.v4.graphics.drawable.DrawableCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.telephony.TelephonyManager;
 import android.util.Base64;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.drawable.DrawableCompat;
 
 import com.R;
 import com.application.MyApplication;
@@ -81,7 +83,20 @@ public class Utils {
             });
         }
     }
+    public static float convertDpToPixel(float dp, Context context){
+        return dp * ((float) context.getResources().getDisplayMetrics().densityDpi / DisplayMetrics.DENSITY_DEFAULT);
+    }
 
+    /**
+     * This method converts device specific pixels to density independent pixels.
+     *
+     * @param px A value in px (pixels) unit. Which we need to convert into db
+     * @param context Context to get resources and device specific display metrics
+     * @return A float value to represent dp equivalent to px value
+     */
+    public static float convertPixelsToDp(float px, Context context){
+        return px / ((float) context.getResources().getDisplayMetrics().densityDpi / DisplayMetrics.DENSITY_DEFAULT);
+    }
     public static boolean isConnectingToInternet(Context _context) {
         ConnectivityManager connectivity = (ConnectivityManager) _context.getSystemService(Context.CONNECTIVITY_SERVICE);
         if (connectivity != null) {
@@ -118,11 +133,43 @@ public class Utils {
     public static String parseTimeWithPlusThree(String dateFrom) {
         try {
             SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
-            SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
+            SimpleDateFormat outputFormat = new SimpleDateFormat("dd MMMM yyyy, hh:mm:ss a");
             Date date = inputFormat.parse(dateFrom);
             Calendar cal = Calendar.getInstance(); // creates calendar
             cal.setTime(date); // sets calendar time/date
             cal.add(Calendar.HOUR_OF_DAY, 3); // adds one hour
+            String formattedDate = outputFormat.format(cal.getTime());
+            System.out.println(formattedDate);
+            return formattedDate;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+    public static String parseTimeWithPlusOne(String dateFrom) {
+        try {
+            SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
+            SimpleDateFormat outputFormat = new SimpleDateFormat("dd MMMM yyyy, hh:mm:ss a");
+            Date date = inputFormat.parse(dateFrom);
+            Calendar cal = Calendar.getInstance(); // creates calendar
+            cal.setTime(date); // sets calendar time/date
+            cal.add(Calendar.HOUR_OF_DAY, 1); // adds one hour
+            String formattedDate = outputFormat.format(cal.getTime());
+            System.out.println(formattedDate);
+            return formattedDate;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+    public static String parseTimeWithPlusZero(String dateFrom) {
+        try {
+            SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
+            SimpleDateFormat outputFormat = new SimpleDateFormat("dd MMMM yyyy, hh:mm:ss a");
+            Date date = inputFormat.parse(dateFrom);
+            Calendar cal = Calendar.getInstance(); // creates calendar
+            cal.setTime(date); // sets calendar time/date
+            cal.add(Calendar.HOUR_OF_DAY, 0); // adds one hour
             String formattedDate = outputFormat.format(cal.getTime());
             System.out.println(formattedDate);
             return formattedDate;
@@ -136,6 +183,7 @@ public class Utils {
         try {
             SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
             SimpleDateFormat outputFormat = new SimpleDateFormat("dd MMMM yyyy, hh:mm:ss a");
+            inputFormat.setTimeZone(TimeZone.getTimeZone("Asia/riyadh"));
             Date date = inputFormat.parse(dateFrom);
             String formattedDate = outputFormat.format(date);
             System.out.println(formattedDate);
@@ -176,12 +224,23 @@ public class Utils {
             Log.e("HIDE_KEY", "hideKeyboardOnSubmit: ");
         }
     }
-
+    public static void hideKeyboardByView(Context context,View view) {
+        InputMethodManager imm = (InputMethodManager) context.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+    }
     public static void hidKeyBoard(Activity activity) {
         View view = activity.getCurrentFocus();
         if (view != null) {
             InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
+    }
+
+    public static void showKeyBoard(Activity activity) {
+        View view = activity.getCurrentFocus();
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.toggleSoftInput(InputMethodManager.SHOW_FORCED,0);
         }
     }
 

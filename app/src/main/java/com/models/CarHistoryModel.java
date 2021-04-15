@@ -14,7 +14,7 @@ public class CarHistoryModel {
     private Integer vehicleID;
     @SerializedName("Speed")
     @Expose
-    private float speed;
+    private Double speed;
     @SerializedName("TotalMileage")
     @Expose
     private Double totalMileage;
@@ -63,11 +63,11 @@ public class CarHistoryModel {
         this.vehicleID = vehicleID;
     }
 
-    public float getSpeed() {
+    public Double getSpeed() {
         return speed;
     }
 
-    public void setSpeed(float speed) {
+    public void setSpeed(Double speed) {
         this.speed = speed;
     }
 
@@ -128,7 +128,7 @@ public class CarHistoryModel {
     }
 
     public String getVehicleStatus() {
-        return vehicleStatus != null ? vehicleStatus : "0";
+        return vehicleStatus;
     }
 
     public void setVehicleStatus(String vehicleStatus) {

@@ -109,6 +109,16 @@
     <string name="help">Help</string>
     <string name="yes">Yes</string> 
     <string name="no">No</string>
+    <string name="speed_hh">  Speed :</string>
+    <string name="display_name_hh">  Display name :</string>
+    <string name="direction_menu">Direction</string>
+
+
+    <string name="time_hh">  Time :</string>
+    <string name="speed_address">Speed</string>
+    <string name="plate_number">Plate Number</string>
+
+
 
     <string name="invalid_email">Invalid Email format</string>
     <string name="error_phone_number_is_too_short">Phone Number Is Too Short.</string>
@@ -149,7 +159,8 @@
         <item>@string/nav_geo_fence_list</item>
         <item>@string/nav_landmark_list</item>
         <item>@string/nav_alarm_notification</item>
-        <item>@string/nav_scheduled_reports</item>
+<!--        <item>@string/titleReports</item>-->
+<!--        <item>@string/nav_scheduled_reports</item>-->
         <item>@string/nav_help</item>
         <item>@string/nav_about</item>
         <item>@string/nav_logout</item>
@@ -192,7 +203,7 @@
     <string name="working_hours">Working Hours</string>
     <string name="mileage">Mileage</string>
     <string name="plate_name">Plate Name</string>
-    <string name="acc">ACC</string>
+    <string name="acc">Engine</string>
     <string name="car_status">Car Status</string>
     <string name="on">ON</string>
     <string name="off">OFF</string>
@@ -211,8 +222,10 @@
     <string name="display_name">Display Name</string>
     <string name="select_time_to">Select Time To</string>
     <string name="select_time_from">Select Time From</string>
-    <string name="select_date_to">Select Date To</string>
+    <string name="select_date_to">To: </string>
+    <string name="select_to">Select To</string>
     <string name="select_date_from">Select Date From</string>
+    <string name="select_from">From:</string>
     <string name="real_time_tracking">Real-time tracking</string>
     <string name="address">Address</string>
     <string name="status">Status</string>
@@ -228,6 +241,7 @@
     <string name="geofence_is_added">Geofence Is Added</string>
     <string name="nav_scheduled_reports">Scheduled Reports</string>
     <string name="title_activity_add_reports">AddReportsActivity</string>
+    <string name="titleReports">Reports"</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="submit">Submit</string>
     <string name="select_scheduled_frequency">Select Scheduled Frequency</string>
@@ -259,6 +273,7 @@
     <string name="second_half">Second Half</string>
 
     <string name="first_quarter">First Quarter</string>
+    <string name="report_duration">Report Duration</string>
     <string name="second_quarter">Second Quarter</string>
     <string name="third_quarter">Third Quarter</string>
     <string name="forth_quarter">Forth Quarter</string>
@@ -339,7 +354,17 @@
     <string name="_0_00_km">0 KM</string>
     <string name="_0_00_min">0 min</string>
     <string name="n_a">N/A</string>
-    <string name="km_h">km/h</string>
+    <string name="ungouped">Ungrouped</string>
+    <string name="address_not_found">Address not found</string>
 
+    <string name="no_driver">No driver</string>
+    <string name="km_h">km/h</string>
+    <string name="search">Search</string>
+    <string name="select_date">Select Date</string>
+    <string name="start_time">Start Time</string>
+    <string name="end_time">End Time</string>
+    <string name="mins">Minimum Speed (KM/H)</string>
+    <string name="duration_seconds">Duration (Seconds)</string>
+    <string name="filter_by">Filter By</string>
 
 </resources>

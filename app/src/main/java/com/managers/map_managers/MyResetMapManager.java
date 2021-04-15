@@ -34,7 +34,7 @@
 //        for (LinkedHashMap.Entry<Marker, AllVehiclesInHashModel> mapEntry : vehiclesHashMap.entrySet()) {
 //            AllVehiclesInHashModel vehiclesInHashModel = mapEntry.getValue();
 //            AllVehiclesInHashModel.AllVehicleModel.LastLocation lastLocation = vehiclesInHashModel.getAllVehicleModel().getLastLocation();
-//            LatLng lng = new LatLng(lastLocation.getLatitude(), lastLocation.getLongitude());
+//            LatLng lng = new LatLng(lastLocation.getLatitude(), lastLocation.getLatitude());
 //            marker = googleMap.addMarker(new MarkerOptions().position(lng)
 //                    .icon(AppUtils.getCarIcon(lastLocation.getVehicleStatus()))
 //                    .anchor(0.5f, 0.5f)
@@ -48,7 +48,7 @@
 //        for (LinkedHashMap.Entry<Marker, AllVehiclesInHashModel> mapEntry : vehiclesHashMap.entrySet()) {
 //            AllVehiclesInHashModel vehiclesInHashModel = mapEntry.getValue();
 //            AllVehiclesInHashModel.AllVehicleModel.LastLocation lastLocation = vehiclesInHashModel.getAllVehicleModel().getLastLocation();
-//            LatLng lng = new LatLng(lastLocation.getLatitude(), lastLocation.getLongitude());
+//            LatLng lng = new LatLng(lastLocation.getLatitude(), lastLocation.getLatitude());
 //        }
 //
 //        LatLngBounds bounds = builder.build();

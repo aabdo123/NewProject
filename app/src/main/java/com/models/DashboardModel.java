@@ -132,7 +132,7 @@ public class DashboardModel implements Parcelable {
         private Integer vehicleID;
         @SerializedName("Speed")
         @Expose
-        private Integer speed;
+        private String speed;
         @SerializedName("TotalMileage")
         @Expose
         private Double totalMileage;
@@ -173,11 +173,12 @@ public class DashboardModel implements Parcelable {
         }
 
         public Integer getSpeed() {
-            return speed;
+            double d = Double.valueOf(speed);
+            return (int) d;
         }
 
         public void setSpeed(Integer speed) {
-            this.speed = speed;
+            this.speed = String.valueOf(speed);
         }
 
         public Double getTotalMileage() {

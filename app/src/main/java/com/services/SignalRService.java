@@ -99,7 +99,7 @@ public class SignalRService extends Service {
     @Override
     public IBinder onBind(Intent intent) {
         // Return the communication channel to the service.
-        //startSignalR();
+        startSignalR();
         return mBinder;
     }
 
@@ -159,7 +159,7 @@ public class SignalRService extends Service {
                                 Toast.makeText(MyApplication.getContext(), "error: " + error.getMessage(), Toast.LENGTH_LONG).show();
                             }
                         };
-                        mDatabase.child(val).addValueEventListener(valueEventListener);
+                        mDatabase.child(val).addListenerForSingleValueEvent(valueEventListener);
                     }
                 }
             } catch (Exception ex) {
@@ -176,14 +176,15 @@ public class SignalRService extends Service {
             BusinessManager.postVehicles(new ApiCallResponseString() {
                 @Override
                 public void onSuccess(int statusCode, String responseObject) {
+                    Log.i("SUCESS",responseObject);
                     Progress.dismissLoadingDialog();
                     ListOfVehiclesModel.VehicleModel[] vehicleModel = new Gson().fromJson(responseObject, ListOfVehiclesModel.VehicleModel[].class);
                     List<ListOfVehiclesModel.VehicleModel> arrayListMain = Arrays.asList(vehicleModel);
                     ArrayList<ListOfVehiclesModel.VehicleModel> main = new ArrayList<>(arrayListMain);
                     mainTokenValues = new ArrayList<>();
                     for (ListOfVehiclesModel.VehicleModel allVehicleModel : main) {
-                        if (allVehicleModel.getFbToken() != null) {
-                            mainTokenValues.add(allVehicleModel.getFbToken());
+                        if (allVehicleModel.getSerialNumber() != null) {
+                            mainTokenValues.add(allVehicleModel.getSerialNumber());
                         }
                     }
 
@@ -191,12 +192,12 @@ public class SignalRService extends Service {
 
                 @Override
                 public void onFailure(int statusCode, String errorResponse) {
-                    Progress.dismissLoadingDialog();
+                    Log.e("ONFAILURE", errorResponse);
 
                 }
             });
         } catch (Exception ex) {
-            ex.printStackTrace();
+           Log.d("CATCH", ex.getMessage());
         }
     }
 }

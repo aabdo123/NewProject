@@ -19,6 +19,8 @@ public interface SharesPrefConstants {
     String USER_ID = "user_id";
 
     String LAST_VIEW_VEHICLE_ID = "last_view_vehicle_id";
+    String LAST_VIEW_VEHICLE_SERIAL = "last_view_vehicle_serial";
+
 
     String IS_CLUSTER_SHOW_SLIDE_MENU = "is_cluster_show_slide_menu";
     String IS_GEOFENCE_SHOW_SLIDE_MENU = "is_geofence_show_slide_menu";

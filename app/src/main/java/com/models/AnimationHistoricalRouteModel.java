@@ -9,6 +9,8 @@ public class AnimationHistoricalRouteModel {
     private Double longitude;
     private String vehicleStatus;
     private LatLng latLng;
+    private Double speed;
+    private String dateTime;
 
     public Double getLatitude() {
         return latitude;
@@ -19,10 +21,28 @@ public class AnimationHistoricalRouteModel {
         this.longitude = longitude;
     }
 
-    public AnimationHistoricalRouteModel(Double latitude, Double longitude, String vehicleStatus) {
+    public AnimationHistoricalRouteModel(Double latitude, Double longitude, String vehicleStatus,Double speed, String dateTime) {
         this.latitude = latitude;
         this.longitude = longitude;
-        this.vehicleStatus = vehicleStatus != null ? vehicleStatus : "0";
+        this.vehicleStatus = vehicleStatus;
+        this.speed = speed;
+        this.dateTime = dateTime;
+    }
+
+    public void setSpeed(Double speed) {
+        this.speed = speed;
+    }
+
+    public void setDateTime(String dateTime) {
+        this.dateTime = dateTime;
+    }
+
+    public Double getSpeed() {
+        return speed;
+    }
+
+    public String getDateTime() {
+        return dateTime;
     }
 
     public void setLatitude(Double latitude) {
@@ -46,7 +66,7 @@ public class AnimationHistoricalRouteModel {
     }
 
     public String getVehicleStatus() {
-        return vehicleStatus != null ? vehicleStatus : "0";
+        return vehicleStatus;
     }
 
     public void setVehicleStatus(String vehicleStatus) {

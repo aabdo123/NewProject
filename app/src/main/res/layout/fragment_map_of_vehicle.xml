@@ -65,16 +65,14 @@
                 android:text="@string/address"
                 android:textColor="@color/black" />
 
-            <CheckBox
+            <ImageView
                 android:id="@+id/arrowCheckBox"
                 android:layout_width="@dimen/dp_24"
                 android:layout_height="@dimen/dp_24"
-                android:layout_alignParentEnd="true"
                 android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
                 android:layout_centerHorizontal="true"
-                android:background="@color/transparent"
-                android:button="@drawable/checkbox_arrow_down_x"
-                android:clickable="false"
+                android:src="@drawable/checkbox_arrow_down_x"
                 android:contentDescription="@string/first_location" />
         </RelativeLayout>
 
@@ -135,7 +133,7 @@
 
     </com.github.clans.fab.FloatingActionMenu>
 
-    <android.support.design.widget.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/plusFab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -144,5 +142,5 @@
         android:src="@drawable/ic_plus_white"
         app:backgroundTint="@color/colorPrimary">
 
-    </android.support.design.widget.FloatingActionButton>
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
 </FrameLayout>

@@ -205,7 +205,7 @@
 //            this.latitude = latitude;
 //        }
 //
-//        public double getLongitude() {
+//        public double getLatitude() {
 //            return longitude;
 //        }
 //

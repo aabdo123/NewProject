@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-
     <com.google.android.gms.maps.MapView
         android:id="@+id/mapView"
         android:layout_width="match_parent"
@@ -13,6 +12,55 @@
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom" />
 
+    <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/searchFab"
+        style="@style/MenuButtonsSmall"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:elevation="@dimen/dp_10"
+        android:src="@drawable/ic_search_map" />
+
+    <RelativeLayout
+        android:id="@+id/shadowRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+
+        <RelativeLayout
+            android:id="@+id/searchFieldRelativeLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:background="@drawable/search_view_maps_grey">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/searchMapEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_40"
+                    android:background="@drawable/search_view_maps"
+                    android:hint="@string/search"
+                    android:inputType="text"
+                    android:paddingStart="@dimen/dp_45"
+                    android:paddingEnd="@dimen/dp_45" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listOfSearchedCars"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/white" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -86,7 +134,7 @@
         <!--android:visibility="gone" />-->
     </LinearLayout>
 
-    <android.support.design.widget.CoordinatorLayout
+    <com.google.android.material.circularreveal.coordinatorlayout.CircularRevealCoordinatorLayout
         android:id="@+id/allViewSlideLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -97,8 +145,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:layout_marginEnd="@dimen/dp_16"
             android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_16"
             android:background="@drawable/background_shape_white_top_corners"
             android:padding="@dimen/dp_8">
 
@@ -128,9 +176,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:layout_marginEnd="@dimen/dp_16"
             android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_16"
             android:background="@drawable/background_shape_with_top_corners_blue"
+            android:orientation="horizontal"
             android:padding="@dimen/dp_8"
             android:visibility="gone">
 
@@ -197,13 +246,20 @@
             </LinearLayout>
 
             <ImageView
+                android:id="@+id/shareLocationImageView"
+                android:layout_width="@dimen/dp_32"
+                android:layout_height="@dimen/dp_32"
+                android:layout_marginEnd="@dimen/dp_20"
+                android:contentDescription="@string/more_options"
+                android:src="@drawable/ic_share_white_24dp" />
+
+            <ImageView
                 android:id="@+id/singleCarSliderArrowImageView"
                 android:layout_width="@dimen/dp_32"
                 android:layout_height="@dimen/dp_32"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
                 android:contentDescription="@string/more_options"
                 android:src="@drawable/ic_arrow_up_white" />
+
         </LinearLayout>
 
         <include
@@ -214,5 +270,20 @@
             layout="@layout/layout_map_vehicles_slider_one_view"
             tools:visibility="gone" />
 
-    </android.support.design.widget.CoordinatorLayout>
+    </com.google.android.material.circularreveal.coordinatorlayout.CircularRevealCoordinatorLayout>
+
+    <RelativeLayout
+        android:id="@+id/progressRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/button_shape_blacks"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            android:layout_centerInParent="true" />
+
+
+    </RelativeLayout>
 </RelativeLayout>

@@ -3,7 +3,8 @@ package com.managers.map_managers;
 import android.app.Activity;
 import android.graphics.Color;
 import android.location.Location;
-import android.support.v4.app.Fragment;
+
+import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;

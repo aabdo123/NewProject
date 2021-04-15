@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/sliderLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -29,7 +30,7 @@
                     android:layout_width="@dimen/dp_34"
                     android:layout_height="@dimen/dp_30"
                     android:contentDescription="@string/plate_name"
-                    android:src="@drawable/ic_license_plate" />
+                    android:src="@drawable/display_name1" />
 
                 <com.views.TextViewLight
                     android:id="@+id/displayNameLabelTextView"
@@ -41,7 +42,7 @@
 
                 <com.views.TextViewLight
                     android:id="@+id/displayNameTextView"
-                    style="@style/smallWhiteText"
+                    style="@style/smallWhiteTextMax"
                     android:layout_below="@+id/displayNameLabelTextView"
                     android:layout_marginStart="@dimen/dp_8"
                     android:layout_toEndOf="@+id/displayNameImageView"
@@ -59,13 +60,13 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="50"
-                android:padding="@dimen/dp_8">
+                android:padding="@dimen/dp_10">
 
 
                 <com.views.TextViewLight
                     android:id="@+id/accLabelTextView"
                     style="@style/smallWhiteText"
-                    android:layout_marginEnd="@dimen/dp_4"
+                    android:layout_marginEnd="@dimen/_15_dp"
                     android:text="@string/acc"
                     android:textColor="@color/colorPrimary" />
 
@@ -73,7 +74,7 @@
                     android:id="@+id/accTextView"
                     style="@style/smallWhiteText"
                     android:layout_below="@+id/accLabelTextView"
-                    android:layout_marginEnd="@dimen/dp_4"
+                    android:layout_marginEnd="@dimen/_15_dp"
                     android:text="@string/acc"
                     android:textColor="@color/m_black" />
 
@@ -81,14 +82,14 @@
                     android:id="@+id/accDivider"
                     android:layout_width="@dimen/dp_05"
                     android:layout_height="@dimen/dp_40"
-                    android:layout_marginStart="@dimen/dp_8"
+                    android:layout_marginStart="@dimen/dp_12"
                     android:layout_toEndOf="@+id/accTextView"
                     android:background="@color/hint_gray" />
 
                 <com.views.TextViewLight
                     android:id="@+id/groupLabelTextView"
                     style="@style/smallWhiteText"
-                    android:layout_marginStart="@dimen/dp_8"
+                    android:layout_marginStart="@dimen/dp_12"
                     android:layout_toEndOf="@+id/accDivider"
                     android:text="@string/group"
                     android:textColor="@color/colorPrimary" />
@@ -97,7 +98,7 @@
                     android:id="@+id/groupTextView"
                     style="@style/smallWhiteText"
                     android:layout_below="@+id/groupLabelTextView"
-                    android:layout_marginStart="@dimen/dp_8"
+                    android:layout_marginStart="@dimen/dp_12"
                     android:layout_toEndOf="@+id/accDivider"
                     android:text="@string/group"
                     android:textColor="@color/m_black" />
@@ -144,8 +145,8 @@
                     android:layout_below="@+id/locationTimeLabelTextView"
                     android:layout_marginStart="@dimen/dp_8"
                     android:layout_toEndOf="@+id/locationTimeImageView"
-                    android:textColor="@color/m_black" />
-                <!--android:text="@string/location_time"-->
+                    android:textColor="@color/m_black"
+                    android:text="@string/location_time"/>
             </RelativeLayout>
 
             <View
@@ -206,28 +207,28 @@
                 android:padding="@dimen/dp_8">
 
                 <ImageView
-                    android:id="@+id/workingHoursImageView"
+                    android:id="@+id/plateNumberImageView"
                     android:layout_width="@dimen/dp_30"
                     android:layout_height="@dimen/dp_30"
-                    android:contentDescription="@string/working_hours"
-                    android:src="@drawable/ic_location_time" />
+                    android:contentDescription="@string/plate_number"
+                    android:src="@drawable/ic_license_plate" />
 
                 <com.views.TextViewLight
-                    android:id="@+id/workingHoursLabelTextView"
+                    android:id="@+id/plateNumberLabelTextView"
                     style="@style/smallWhiteText"
                     android:layout_marginStart="@dimen/dp_8"
-                    android:layout_toEndOf="@+id/workingHoursImageView"
-                    android:text="@string/working_hours"
+                    android:layout_toEndOf="@+id/plateNumberImageView"
+                    android:text="@string/plate_number"
                     android:textColor="@color/colorPrimary" />
 
                 <com.views.TextViewLight
                     android:id="@+id/workingHoursTextView"
                     style="@style/smallWhiteText"
                     android:layout_width="match_parent"
-                    android:layout_below="@+id/workingHoursLabelTextView"
+                    android:layout_below="@+id/plateNumberLabelTextView"
                     android:layout_marginStart="@dimen/dp_8"
-                    android:layout_toEndOf="@+id/workingHoursImageView"
-                    android:text="@string/working_hours"
+                    android:layout_toEndOf="@+id/plateNumberImageView"
+                    android:text="@string/plate_number"
                     android:textColor="@color/m_black" />
             </RelativeLayout>
 
@@ -276,35 +277,95 @@
             android:layout_height="@dimen/dp_05"
             android:background="@color/hint_gray" />
 
-        <RelativeLayout
-            android:id="@+id/vehicleStatusLayout"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/dp_8">
+            android:orientation="horizontal"
+            android:weightSum="100">
 
-            <ImageView
-                android:id="@+id/vehicleStatusImageView"
-                android:layout_width="@dimen/dp_30"
-                android:layout_height="@dimen/dp_30"
-                android:contentDescription="@string/car_status"
-                android:src="@drawable/all" />
+            <RelativeLayout
+                android:id="@+id/vehicleStatusLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:padding="@dimen/dp_8">
 
-            <com.views.TextViewLight
-                android:id="@+id/vehicleStatusLabelTextView"
-                style="@style/smallWhiteText"
-                android:layout_marginStart="@dimen/dp_8"
-                android:layout_toEndOf="@+id/vehicleStatusImageView"
-                android:text="@string/vehicles_status"
-                android:textColor="@color/colorPrimary" />
+                <ImageView
+                    android:id="@+id/vehicleStatusImageView"
+                    android:layout_width="@dimen/dp_30"
+                    android:layout_height="@dimen/dp_30"
+                    android:contentDescription="@string/car_status"
+                    android:src="@drawable/all" />
 
-            <com.views.TextViewLight
-                android:id="@+id/vehicleStatusTextView"
-                style="@style/smallWhiteText"
-                android:layout_below="@+id/vehicleStatusLabelTextView"
-                android:layout_marginStart="@dimen/dp_8"
-                android:layout_toEndOf="@+id/vehicleStatusImageView"
-                android:text="@string/vehicles_status"
-                android:textColor="@color/m_black" />
-        </RelativeLayout>
+                <com.views.TextViewLight
+                    android:id="@+id/vehicleStatusLabelTextView"
+                    style="@style/smallWhiteText"
+                    android:layout_marginStart="@dimen/dp_8"
+                    android:layout_toEndOf="@+id/vehicleStatusImageView"
+                    android:text="@string/vehicles_status"
+                    android:textColor="@color/colorPrimary" />
+
+                <com.views.TextViewLight
+                    android:id="@+id/vehicleStatusTextView"
+                    style="@style/smallWhiteText"
+                    android:layout_below="@+id/vehicleStatusLabelTextView"
+                    android:layout_marginStart="@dimen/dp_8"
+                    android:layout_toEndOf="@+id/vehicleStatusImageView"
+                    android:text="@string/vehicles_status"
+                    android:textColor="@color/m_black" />
+            </RelativeLayout>
+            <View
+                android:layout_width="@dimen/dp_05"
+                android:layout_height="match_parent"
+                android:background="@color/hint_gray" />
+            <RelativeLayout
+                android:id="@+id/speedStatusLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:padding="@dimen/dp_8">
+
+                <ImageView
+                    android:id="@+id/speedAddress"
+                    android:layout_width="@dimen/dp_30"
+                    android:layout_height="@dimen/dp_30"
+                    android:alpha="0.6"
+                    android:contentDescription="@string/mileage"
+                    android:src="@drawable/ic_speed_address" />
+
+                <com.views.TextViewLight
+                    android:id="@+id/speedTxt"
+                    style="@style/smallWhiteText"
+                    android:layout_marginStart="@dimen/dp_8"
+                    android:layout_toEndOf="@+id/speedAddress"
+                    android:text="@string/speed_address"
+                    android:textColor="@color/colorPrimary" />
+
+                <com.views.TextViewLight
+                    android:id="@+id/speedTextView"
+                    style="@style/smallWhiteText"
+                    android:layout_below="@+id/speedTxt"
+                    android:layout_marginStart="@dimen/dp_8"
+                    android:layout_toEndOf="@+id/speedAddress"
+                    android:text="@string/speed_address"
+                    android:textColor="@color/m_black" />
+                <com.views.TextViewLight
+                    android:id="@+id/kmTextView"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|start"
+                    android:layout_marginEnd="@dimen/_5_dp"
+                    android:layout_marginStart="@dimen/_5_dp"
+                    android:layout_toEndOf="@+id/speedTextView"
+                    android:layout_below="@+id/speedTxt"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center|start"
+                    android:maxLines="1"
+                    android:textColor="@color/m_black"
+                    android:textSize="11sp"
+                    tools:ignore="RelativeOverlap" />
+            </RelativeLayout>
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

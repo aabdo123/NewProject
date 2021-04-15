@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/cityNameSearchView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginStart="@dimen/_15_dp"
+        android:layout_marginTop="@dimen/_15_dp"
+        android:layout_marginEnd="@dimen/_15_dp"
+        android:layout_marginBottom="@dimen/_15_dp"
+        android:background="@drawable/shape_white_now" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/vehiclesRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:layoutAnimation="@anim/layout_animation_fall_down" />
+
+    <com.multilevelview.MultiLevelRecyclerView
+        android:id="@+id/rv_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white" />
+</LinearLayout>

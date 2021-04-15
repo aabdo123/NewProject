@@ -1,11 +1,10 @@
+
 package com.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.AppCompatCheckBox;
-import android.support.v7.widget.AppCompatEditText;
+
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -17,6 +16,10 @@ import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatCheckBox;
+import androidx.appcompat.widget.AppCompatEditText;
 
 import com.R;
 import com.managers.ApiCallResponse;
@@ -147,7 +150,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
             case R.id.loginButton:
                 validation();
                 break;
-
             case R.id.forgetPasswordTextView:
                 break;
         }

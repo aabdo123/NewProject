@@ -1,21 +1,29 @@
 package com.activities;
 
-import android.app.Activity;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.media.RingtoneManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+
 import android.view.View;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.NotificationCompat;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import com.R;
-import com.application.MyApplication;
 import com.fragments.AboutUsFragment;
 import com.fragments.AlarmNotificationsFragment;
 import com.fragments.DataAnalysisFragment;
@@ -32,24 +40,33 @@ import com.fragments.ScheduledReportsFragment;
 import com.google.gson.Gson;
 import com.managers.ApiCallResponseString;
 import com.managers.BusinessManager;
+import com.managers.PreferencesManager;
 import com.managers.ShortTermManager;
 import com.managers.map_managers.MyLocateManager;
-import com.managers.PreferencesManager;
 import com.managers.map_managers.MyStartMapViewManager;
 import com.models.ListOfVehiclesModel;
 import com.utilities.AppUtils;
+import com.utilities.NavigationManager;
 import com.utilities.Utils;
 import com.utilities.constants.AppConstant;
 import com.utilities.constants.SharesPrefConstants;
 import com.views.AlertDialogView;
 import com.views.Click;
-import com.views.Progress;
 import com.views.TextViewRegular;
+import com.models._VehiclesModel;
+
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
+
+import static com.utilities.NavigationManager.EXTRA_VEHICLE_MODEL;
+import static com.utilities.NavigationManager.MOVE_TO_ONLINE_FRAGMENT;
+import static com.utilities.NavigationManager.MOVE_TO_ONLINE_FRAGMENT_NUMBER;
 
 public class MainActivity extends BaseActivity implements FragmentDrawer.FragmentDrawerListener {
 
@@ -63,6 +80,8 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
     private ImageView expandableListButton;
     private Stack<String> pageTitleList = new Stack<>();
     private boolean isReplacer = false;
+    private  _VehiclesModel vehicleIdModel;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,8 +92,50 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
         initViews();
         initListeners();
         displayView(R.string.nav_home, getString(R.string.nav_home));
+        // startVehiclesObject();
+        // getIntents();
     }
 
+
+    private void startVehiclesObject() {
+        ListOfVehiclesModel.VehicleModel vehicleModel = gHelper().fromJson("{\"VehicleID\":1840,\"Label\":\"123\",\"PlateNumber\":\"4678 vda\",\"SerialNumber\":\"6109798508\",\"FBToken\":\"-LbOPG6I7llGB4UACAop\",\"LastLocation\":{\"VehicleID\":1840,\"Speed\":0.0,\"TotalMileage\":22019750.400000744,\"TotalWorkingHours\":0.0,\"Direction\":50.0,\"Latitude\":21.3370400,\"Longitude\":39.6287400,\"Address\":\"298 22889, Saudi Arabia\",\"StreetSpeed\":0,\"VehicleStatus\":\"0\",\"RecordDateTime\":\"2019-04-15T07:57:06\",\"IsOnline\":true,\"EngineStatus\":false,\"RecordTime\":null,\"Status\":null}}", ListOfVehiclesModel.VehicleModel.class);
+        sendNotification("Title", "Body", vehicleModel);
+    }
+
+    private void getIntents() {
+        try {
+            Intent intent = getIntent();
+            if (intent.getIntExtra(MOVE_TO_ONLINE_FRAGMENT, 0) == MOVE_TO_ONLINE_FRAGMENT_NUMBER) {
+                ListOfVehiclesModel.VehicleModel vehicleModel = intent.getParcelableExtra(EXTRA_VEHICLE_MODEL);
+                if (vehicleModel != null && vehicleModel.getLastLocation() != null) {
+                    call(ListOfVehiclesFragment.newInstance(AppConstant.ONLINE_CARS, vehicleModel), this.getResources().getString(R.string.nav_list_of_vehicles));
+                }
+            }
+        } catch (Exception ex) {
+            ex.getMessage();
+        }
+    }
+
+    private void sendNotification(String title, String messageBody, ListOfVehiclesModel.VehicleModel vehicleModel) {
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, NavigationManager.getInstance().navigateToSingleVehicle(this, vehicleModel), PendingIntent.FLAG_ONE_SHOT);
+        String channelId = getString(R.string.default_notification_channel_id);
+        Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        NotificationCompat.Builder notificationBuilder =
+                new NotificationCompat.Builder(this, channelId)
+                        .setSmallIcon(R.drawable.logo)
+                        .setContentTitle(title)
+                        .setContentText(messageBody)
+                        .setAutoCancel(true)
+                        .setSound(defaultSoundUri)
+                        .setContentIntent(pendingIntent);
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        // Since android Oreo notification channel is needed.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel(channelId, "Channel human readable title", NotificationManager.IMPORTANCE_DEFAULT);
+            notificationManager.createNotificationChannel(channel);
+        }
+        notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
+    }
 
     private void startSignalR() {
         try {
@@ -86,8 +147,8 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
                     ArrayList<ListOfVehiclesModel.VehicleModel> main = new ArrayList<>(arrayListMain);
                     ArrayList<String> mainTokenValues = new ArrayList<>();
                     for (ListOfVehiclesModel.VehicleModel allVehicleModel : main) {
-                        if (allVehicleModel.getFbToken() != null) {
-                            mainTokenValues.add(allVehicleModel.getFbToken());
+                        if (allVehicleModel.getVehicleID() != null) {
+                            mainTokenValues.add(String.valueOf(allVehicleModel.getVehicleID()));
                         }
                     }
                     ShortTermManager.getInstance().setFireBaseArray(mainTokenValues);
@@ -139,7 +200,6 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
         });
     }
 
-
     @Override
     public void onBackPressed() {
         try {
@@ -158,14 +218,21 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
                         return;
                     }
                 }
+                Fragment mapFragment = getSupportFragmentManager().findFragmentByTag(MAIN_ACTIVITY.getString(R.string.nav_map));
+                if (mapFragment instanceof LisOfVehiclesMapFragment) {
+                    LisOfVehiclesMapFragment lisOfVehiclesMapFragment = (LisOfVehiclesMapFragment) mapFragment;
+                    if (lisOfVehiclesMapFragment.hideSearchView()) {
+                        return;
+                    }
+                }
                 // TODO to be removed
                 if (isReplacer) {
                     pageTitleList.pop();
                     isReplacer = false;
                 }
-
                 pageTitleList.pop();
                 toolbarTitleTextView.setText(pageTitleList.get(pageTitleList.size() - 1));
+
                 //            ConnectionManager.cancelAllRequests();
                 super.onBackPressed();
                 if (toolbarTitleTextView.getText().equals(getString(R.string.nav_map))) {
@@ -174,11 +241,11 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
                     hideExpandableImageToolbar();
                 }
 
-                if (toolbarTitleTextView.getText().equals(getString(R.string.nav_scheduled_reports))) {
-                    showImageToolbar();
-                } else {
-                    hideImageToolbar();
-                }
+//                if (toolbarTitleTextView.getText().equals(getString(R.string.nav_scheduled_reports))) {
+//                    showImageToolbar();
+//                } else {
+//                    hideImageToolbar();
+//                }
 
                 if (PreferencesManager.getInstance().getBooleanValue(SharesPrefConstants.IS_MAP_STYLE_CHANGED)) {
 //                LisOfVehiclesMapFragment lisOfVehiclesMapFragment = (LisOfVehiclesMapFragment) getSupportFragmentManager().findFragmentById(R.id.container_body);
@@ -225,9 +292,13 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
                 call(AlarmNotificationsFragment.newInstance(""), title);
                 break;
 
-            case R.string.nav_scheduled_reports:
-                call(ScheduledReportsFragment.newInstance(), title);
-                break;
+//            case R.string.nav_scheduled_reports:
+//                call(ScheduledReportsFragment.newInstance(), title);
+//                break;
+//
+//            case R.string.titleReports:
+//                Utils.openActivity(MAIN_ACTIVITY, AddReportsSingleActivity.class);
+//                break;
 
             case R.string.nav_about:
                 call(AboutUsFragment.newInstance(), title);
@@ -247,6 +318,8 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
         }
     }
 
+    // displayView(,R.string.nav_list_of_vehicles,);
+
     public void displayView(int titleId, String title, String stringValue) {
         switch (titleId) {
             case R.string.nav_map:
@@ -264,6 +337,62 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
             case R.string.historical_route_playback:
                 callReplacer(HistoricalRouteFragment.newInstance(stringValue), title);
                 break;
+            case R.string.direction_menu: {
+                BusinessManager.postVehiclesWithId(stringValue, new ApiCallResponseString() {
+                    @Override
+                    public void onSuccess(int statusCode, String responseObject) {
+                        vehicleIdModel = new Gson().fromJson(responseObject,_VehiclesModel.class);
+                        try {
+                            JSONObject reader = new JSONObject(responseObject);
+                            JSONObject lastLocation = reader.getJSONObject("LastLocation");
+                            String longitudeloc = lastLocation.getString("Longitude");
+                            String latitudeloc = lastLocation.getString("Latitude");
+                            Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
+                                    Uri.parse("http://maps.google.com/maps?saddr=&daddr="+latitudeloc+","+longitudeloc));
+                            startActivity(intent);
+//                            Toast.makeText(MainActivity.this,latitudeloc+","+longitudeloc, Toast.LENGTH_SHORT).show();
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+
+//                        try {
+//
+//                            JSONArray arr = new JSONArray(responseObject);
+//                            JSONObject jObj = arr.getJSONObject(1);
+//
+//                            latitude = arr.getString("Latitude");
+//                             longitude =arr.getString("Longitude");
+//
+//
+//
+//                        }
+//                         catch (JSONException e) {
+//                            e.printStackTrace();
+//                        }
+
+
+//                        Toast.makeText(MainActivity.this,latitude+","+longitude, Toast.LENGTH_SHORT).show();
+
+                    }
+
+                    @Override
+                    public void onFailure(int statusCode, String errorResponse) {
+                    }
+                });
+            }
+//                Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
+//                        Uri.parse("http://maps.google.com/maps?saddr=&daddr="+vehicleModel[1].getLastLocation().getLatitude().toString()+","+vehicleModel[1].getLastLocation().getLatitude().toString()));
+//                startActivity(intent);
+//                for (ListOfVehiclesModel.VehicleModel a: addd
+//                     ) {
+//                    Toast.makeText(this,a.getVehicleID().toString(),Toast.LENGTH_SHORT).show();
+//                    break;
+//
+//                }
+
+            break;
 
             case R.string.alarm_notification:
                 call(AlarmNotificationsFragment.newInstance(stringValue), title);
@@ -290,11 +419,11 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
                 ft.commit();
                 pageTitleList.push(title);
                 toolbarTitleTextView.setText(title);
-                if (title.equals(getString(R.string.nav_scheduled_reports))) {
-                    showImageToolbar();
-                } else {
-                    hideImageToolbar();
-                }
+//                if (title.equals(getString(R.string.nav_scheduled_reports))) {
+//                    showImageToolbar();
+//                } else {
+//                    hideImageToolbar();
+//                }
                 if (title.equals(getString(R.string.nav_map))) {
                     showExpandableImageToolbar();
                 } else {
@@ -317,11 +446,11 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
                 ft.commit();
                 pageTitleList.push(title);
                 toolbarTitleTextView.setText(title);
-                if (title.equals(getString(R.string.nav_scheduled_reports))) {
-                    showImageToolbar();
-                } else {
-                    hideImageToolbar();
-                }
+//                if (title.equals(getString(R.string.nav_scheduled_reports))) {
+//                    showImageToolbar();
+//                } else {
+//                    hideImageToolbar();
+//                }
                 if (title.equals(getString(R.string.nav_map))) {
                     showExpandableImageToolbar();
                 } else {
@@ -375,13 +504,13 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
         }
     }
 
-    public void hideImageToolbar() {
-        addReportButton.setVisibility(View.GONE);
-    }
-
-    public void showImageToolbar() {
-        addReportButton.setVisibility(View.VISIBLE);
-    }
+//    public void hideImageToolbar() {
+//        addReportButton.setVisibility(View.GONE);
+//    }
+//
+//    public void showImageToolbar() {
+//        addReportButton.setVisibility(View.VISIBLE);
+//    }
 
     public void hideExpandableImageToolbar() {
         expandableListButton.setVisibility(View.GONE);
@@ -437,7 +566,6 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
 //        AlertDialogView.yesNoButtonDialog();
     }
 
-
     public void showChangeLanguageDialog() {
         String title;
         String message;
@@ -481,4 +609,5 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
         finish();
         startActivity(i);
     }
+
 }

@@ -3,18 +3,21 @@ package com.activities;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
-import com.crashlytics.android.Crashlytics;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.gson.Gson;
 import com.application.MyApplication;
 import com.managers.PreferencesManager;
 import com.utilities.constants.AppConstant;
 import com.utilities.constants.SharesPrefConstants;
-
+//import com.crashlytics.android.Crashlytics;
+//import io.fabric.sdk.android.Fabric;
 import java.util.Locale;
 
-import io.fabric.sdk.android.Fabric;
+
+
+
 
 /**
  * Created by malikabuqaoud on 12/6/16.
@@ -30,7 +33,8 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         BASE_ACTIVITY = BaseActivity.this;
-        Fabric.with(BASE_ACTIVITY, new Crashlytics());
+
+//        Fabric.with(BASE_ACTIVITY, new Crashlytics());
         PreferencesManager.initializeInstance(BASE_ACTIVITY);
         setLocale();
         MyApplication.setContext(this);

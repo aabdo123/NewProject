@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: ./app/libs/signalr-client-sdk.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/signalr-client-sdk.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

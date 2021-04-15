@@ -1,0 +1,36 @@
+{
+    "logs": [
+        {
+            "outputFile": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\incremental\\mergeSaferoadBusinessDebugResources\\merged.dir\\values-ldrtl-v17\\values-ldrtl-v17.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Saferoad-Dev1\\Desktop\\desctop files\\B2B and AstroGPS on Store-20191204T151004Z-001\\B2B and AstroGPS on Store\\SafeRoad All\\caches\\transforms-2\\files-2.1\\5dae69867dfbbf0cab571007d06483bf\\jetified-SlideUp-Android-2.2.8\\res\\values-ldrtl-v17\\values-ldrtl-v17.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "45",
+                        "endOffsets": "96"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Saferoad-Dev1\\Desktop\\desctop files\\B2B and AstroGPS on Store-20191204T151004Z-001\\B2B and AstroGPS on Store\\SafeRoad All\\caches\\transforms-2\\files-2.1\\bd645d10e31b05350eea6cd6291ec25c\\material-1.3.0\\res\\values-ldrtl-v17\\values-ldrtl-v17.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,191",
+                        "endColumns": "135,140",
+                        "endOffsets": "186,327"
+                    },
+                    "to": {
+                        "startLines": "3,4",
+                        "startColumns": "4,4",
+                        "startOffsets": "101,237",
+                        "endColumns": "135,140",
+                        "endOffsets": "232,373"
+                    }
+                }
+            ]
+        }
+    ]
+}

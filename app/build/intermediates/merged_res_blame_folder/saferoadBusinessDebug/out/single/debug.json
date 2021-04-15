@@ -1,0 +1,2238 @@
+[
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_sidebar_exit.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\sidebar_exit.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_university.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_university.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_sidebar_landmark.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-hdpi\\sidebar_landmark.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\mipmap-xxxhdpi_ic_logo_2.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\mipmap-xxxhdpi\\ic_logo_2.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_tow_button_dailog_layout.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\tow_button_dailog_layout.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_geo_fence.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxxhdpi\\geo_fence.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_drag_32px.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_drag_32px.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_pencil.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_pencil.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_cancel_gray.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_cancel_gray.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_sidebar_vehicle.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\sidebar_vehicle.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_ic_globe_location.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xhdpi\\ic_globe_location.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_timeline_off.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xhdpi\\timeline_off.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_back.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_back.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\anim_fade_out.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\anim\\fade_out.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-mdpi_ic_clustering.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-mdpi\\ic_clustering.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_car_2.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\car_2.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_building.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_building.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_ic_checked_green.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xxhdpi\\ic_checked_green.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-ldpi_ic_checked_green.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-ldpi\\ic_checked_green.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_ic_captain.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\ic_captain.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_marker_university.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\marker_university.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_upload_rate.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_upload_rate.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-mdpi_ic_landmark.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-mdpi\\ic_landmark.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\font_trasandina_light_italic.otf.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\debug\\res\\font\\trasandina_light_italic.otf"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_license_mode.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_license_mode.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_sidebar_reports.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\sidebar_reports.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_vector_ic_vehicleopen.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\drawable\\vector_ic_vehicleopen.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_map_styling_dialog.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_map_styling_dialog.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_activity_maps.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\activity_maps.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_sidebar_vehicle.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xhdpi\\sidebar_vehicle.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_seperator.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\seperator.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_history_playback_det.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\history_playback_det.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\anim_togather_animation.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\anim\\togather_animation.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_car_green.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\car_green.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_list_of_vehicles_child.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_list_of_vehicles_child.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_semi_hecked.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_semi_hecked.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_activity_splash.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_car_1.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxxhdpi\\car_1.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_clear_gray.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_clear_gray.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-mdpi_ic_globe_location.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-mdpi\\ic_globe_location.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_background_shape_with_top_corners_blue.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\drawable\\background_shape_with_top_corners_blue.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-mdpi_period.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-mdpi\\period.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_clock_yellow.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_clock_yellow.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_period.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxxhdpi\\period.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_ic_seat_belt.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\ic_seat_belt.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_reports_included.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_reports_included.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_ic_instrument_needl.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\ic_instrument_needl.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_car_5.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xhdpi\\car_5.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_clock_history.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\clock_history.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_nav_bg0.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\nav_bg0.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-mdpi_ic_locate.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-mdpi\\ic_locate.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_button_shape_white_border.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\button_shape_white_border.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_popup_locate_layout.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\popup_locate_layout.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_start_hidden.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_start_hidden.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-mdpi_car_yellow.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-mdpi\\car_yellow.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_arrow_up_white.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\drawable\\ic_arrow_up_white.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_button_shape_primary.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\button_shape_primary.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_sidebar_avator.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\sidebar_avator.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_popup_dialog_fab_button.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\popup_dialog_fab_button.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_nav_bg0.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxxhdpi\\nav_bg0.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-mdpi_timeline_off.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-mdpi\\timeline_off.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-anydpi-v24_sidebar_map_of_vehicles.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-anydpi-v24\\sidebar_map_of_vehicles.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_search_map.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\drawable\\ic_search_map.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_ic_globe_location.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xxhdpi\\ic_globe_location.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_ic_drag.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xxhdpi\\ic_drag.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_marker_office.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\marker_office.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_display_name1.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\display_name1.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\font_fontafamily_app.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\debug\\res\\font\\fontafamily_app.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-ldpi_ic_globe_location.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-ldpi\\ic_globe_location.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_phones_view.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_phones_view.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_sidebar_map_of_vehicles.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xxxhdpi\\sidebar_map_of_vehicles.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_rubbish_bin.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_rubbish_bin.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_close_button.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_close_button.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\raw_mapstyle_sliver.json.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\raw\\mapstyle_sliver.json"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_car_green.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xhdpi\\car_green.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_layout_cars_row.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\layout_cars_row.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_background_shape_red_corners.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\background_shape_red_corners.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_home.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_user.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_user.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_car_201.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\car_201.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_all.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\all.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_ic_barcode.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\ic_barcode.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_ic_checked_green.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xxxhdpi\\ic_checked_green.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_custom_info_window.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\custom_info_window.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\anim_slide_out_up.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\anim\\slide_out_up.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_tick.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_tick.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_list_of_vehicle_map.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_list_of_vehicle_map.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_used_count.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_used_count.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-anydpi-v24_ic_clustering.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-anydpi-v24\\ic_clustering.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_map_coordinate_primary.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_map_coordinate_primary.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_reports_vehicles.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_reports_vehicles.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_sidebar_services.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxxhdpi\\sidebar_services.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_button_shape_blue.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\button_shape_blue.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_progress.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_progress.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_background_shape_white_top_corners.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\background_shape_white_top_corners.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-mdpi_historical.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-mdpi\\historical.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_locker_password.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\locker_password.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_sidebar_alarm.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\sidebar_alarm.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_sidebar_map_of_vehicles.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xhdpi\\sidebar_map_of_vehicles.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_side_nav_bar.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\side_nav_bar.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_checked.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_checked.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_triangle_top.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\triangle_top.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_speed_meter.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\speed_meter.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_background_shape_login.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\background_shape_login.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-anydpi-v24_ic_locate.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-anydpi-v24\\ic_locate.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_sidebar_help.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\sidebar_help.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\anim_slide_in.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\anim\\slide_in.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_car_101.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xhdpi\\car_101.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_all.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xhdpi\\all.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_emails_view.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_emails_view.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_vehicles_reports_child.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_vehicles_reports_child.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-anydpi-v24_ic_move.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-anydpi-v24\\ic_move.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_marker_home.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\marker_home.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-mdpi_sidebar_landmark.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-mdpi\\sidebar_landmark.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_scheduled_reports.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_scheduled_reports.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_clock.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xhdpi\\clock.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_un_selected_dot.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\un_selected_dot.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-anydpi-v24_ic_checked_green.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-anydpi-v24\\ic_checked_green.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_shape_white_now.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\drawable\\shape_white_now.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_search_view_maps_grey.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\drawable\\search_view_maps_grey.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_car_gray.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_car_gray.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_home_landmark.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_home_landmark.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-anydpi-v24_ic_landmark.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-anydpi-v24\\ic_landmark.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_ic_move.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xxxhdpi\\ic_move.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_user_direction.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_user_direction.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\raw_mapstyle_dark.json.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\raw\\mapstyle_dark.json"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_historical.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\historical.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_ic_marker_primary.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xxxhdpi\\ic_marker_primary.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_cluster_circle.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_cluster_circle.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_ic_landmark.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xhdpi\\ic_landmark.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_online.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\online.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_help_minus.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\help_minus.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_triangle_right.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\triangle_right.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_user_direction.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxxhdpi\\user_direction.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_minus_selected.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\minus_selected.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_shape_for_date.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\drawable\\shape_for_date.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_landmark_list.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_landmark_list.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\anim_appear.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\anim\\appear.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_map_style_standard.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\map_style_standard.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_circle_red.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_circle_red.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\anim_disappear.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\anim\\disappear.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_sidebar_about.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\sidebar_about.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_sidebar_about.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\sidebar_about.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-mdpi_sidebar_exit.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-mdpi\\sidebar_exit.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_reports_contact.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_reports_contact.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_timeline_online.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxxhdpi\\timeline_online.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\mipmap-mdpi_ic_logo_2.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\mipmap-mdpi\\ic_logo_2.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-ldpi_ic_marker_red.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-ldpi\\ic_marker_red.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_user_direction.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\user_direction.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_additional_emails_view.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_additional_emails_view.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_user_direction.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xhdpi\\user_direction.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_search_view_maps.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\drawable\\search_view_maps.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_activity_tutorial.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\activity_tutorial.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_reports_included_text.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_reports_included_text.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_all.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxxhdpi\\all.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_help_minus.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\help_minus.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_sidebar_help.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxxhdpi\\sidebar_help.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_ic_move.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-hdpi\\ic_move.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_mail.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_mail.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_to_circle.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xhdpi\\to_circle.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_add_phone.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_add_phone.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_arrow_up.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_arrow_up.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_background_shape_primary.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\background_shape_primary.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_end_hidden.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_end_hidden.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_login_button_shape.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\login_button_shape.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_ic_card.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\ic_card.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_school.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_school.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_background_shape_red.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\background_shape_red.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_online.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\online.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_unchecked.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_unchecked.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_vehicles_geofence_child.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_vehicles_geofence_child.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_ic_drag.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xhdpi\\ic_drag.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_check_box_state.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\check_box_state.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_button_shape.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\button_shape.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_n_level_childe.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_n_level_childe.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_ic_drag_2.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xxxhdpi\\ic_drag_2.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_car_600.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xhdpi\\car_600.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\anim_fade_in.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\anim\\fade_in.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_battery_status.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\battery_status.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_help_plus.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xhdpi\\help_plus.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_ic_locate.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xxhdpi\\ic_locate.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_vector_ic_engine.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\drawable\\vector_ic_engine.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_activity_main.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_ic_drag.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xxxhdpi\\ic_drag.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_background_shape_white_corners_shadow.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\background_shape_white_corners_shadow.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_spinner_row.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\spinner_row.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_car_green.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\car_green.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_layout_map_vehicles_slider_one_view.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\layout_map_vehicles_slider_one_view.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_minus.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_minus.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-mdpi_sidebar_user.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-mdpi\\sidebar_user.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_car_100.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xhdpi\\car_100.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_sidebar_landmark.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xhdpi\\sidebar_landmark.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_bottom_shapes_blue.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\drawable\\bottom_shapes_blue.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-mdpi_sidebar_map_of_vehicles.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-mdpi\\sidebar_map_of_vehicles.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-anydpi-v24_ic_marker_primary.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-anydpi-v24\\ic_marker_primary.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_to_circle.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\to_circle.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_car_600.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxxhdpi\\car_600.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\anim_zoomin.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\anim\\zoomin.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_user_direction.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\user_direction.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_splash_bg.jpg.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\splash_bg.jpg"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-mdpi_ic_marker_red.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-mdpi\\ic_marker_red.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_car_101.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\car_101.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_ic_marker_primary.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xxhdpi\\ic_marker_primary.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_online.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\online.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-mdpi_login__newbg.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-mdpi\\login__newbg.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_circle_gray.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_circle_gray.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_car_202.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xhdpi\\car_202.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_navigation_drawer.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_navigation_drawer.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_mile.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\drawable\\ic_mile.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_historical_route.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_historical_route.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_ic_checked_green.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-hdpi\\ic_checked_green.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\anim_item_animation_fall_down.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\anim\\item_animation_fall_down.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_direction2.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\direction2.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_clock_primary.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_clock_primary.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_geo_fence.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_geo_fence.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_activity_add_reports.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\activity_add_reports.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_background_shape_blue.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\background_shape_blue.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_ic_globe_location.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-hdpi\\ic_globe_location.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_help.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_help.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_sidebar_services.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\sidebar_services.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_battery_status.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xhdpi\\battery_status.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-mdpi_sidebar_alarm.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-mdpi\\sidebar_alarm.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_last_vehicle.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_last_vehicle.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-ldpi_sidebar_landmark.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-ldpi\\sidebar_landmark.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_button_shape_black_tanrs.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\button_shape_black_tanrs.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_login__newbg.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxxhdpi\\login__newbg.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_ic_landmark.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xxxhdpi\\ic_landmark.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_ic_marker_white.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xxxhdpi\\ic_marker_white.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_geo_fence.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_geo_fence.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-mdpi_nav_bg0.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-mdpi\\nav_bg0.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_notification.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\notification.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\anim_slide_in_up.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\anim\\slide_in_up.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_layout_tip_content.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\layout_tip_content.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_car_201.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xhdpi\\car_201.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_drag_50px.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_drag_50px.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_marker_school.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\marker_school.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_cancel.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_cancel.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_sidebar_user.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxxhdpi\\sidebar_user.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_sidebar_avator.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\sidebar_avator.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_seperator.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\seperator.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_location_time.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_location_time.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_car_0.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\car_0.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_placeholder_data_analysis.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_placeholder_data_analysis.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_ic_fuel_station.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\ic_fuel_station.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_ic_marker.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\ic_marker.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_expirng_users.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\expirng_users.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-anydpi-v24_ic_traffic_light.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-anydpi-v24\\ic_traffic_light.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_report_contact.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_report_contact.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_view_expandable_dialog.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\view_expandable_dialog.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_period.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\period.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_ic_engine.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\ic_engine.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_locker_password.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xhdpi\\locker_password.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_ic_locate.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xxxhdpi\\ic_locate.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_light_primary.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_light_primary.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_skip_previous.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_skip_previous.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_keyboard_arrow_down_black.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\drawable\\ic_keyboard_arrow_down_black.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_help_minus.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\help_minus.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_ic_drag_2.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xxhdpi\\ic_drag_2.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_direction_pin.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_direction_pin.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_vector_ic_instrument_barometer.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\drawable\\vector_ic_instrument_barometer.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_list_of_users.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_list_of_users.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_timeline_off.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\timeline_off.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_instrument_barometer_timer.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\instrument_barometer_timer.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_to_circle.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxxhdpi\\to_circle.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_reports_included_item.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_reports_included_item.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_slide_up.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_slide_up.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_instrument_barometer.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\instrument_barometer.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_route.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_route.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_ic_move.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xhdpi\\ic_move.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_ic_traffic_light.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xhdpi\\ic_traffic_light.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_clock.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\clock.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_historical.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\historical.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_button_shape_blacks.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\button_shape_blacks.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\anim_slid_down.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\anim\\slid_down.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_sidebar_home.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxxhdpi\\sidebar_home.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_ic_locate.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-hdpi\\ic_locate.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-mdpi_sidebar_help.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-mdpi\\sidebar_help.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_play_arrow.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_play_arrow.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_triangle_bottom.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\triangle_bottom.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_ic_people.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\ic_people.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_help_plus.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\help_plus.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_expirng_users.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxxhdpi\\expirng_users.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_map_coordinate.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_map_coordinate.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_navigation_primary.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_navigation_primary.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-mdpi_ic_drag.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-mdpi\\ic_drag.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_list_of_vehicles.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_list_of_vehicles.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_background_shape_primary_trans.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\background_shape_primary_trans.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_view_list_dialog.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\view_list_dialog.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_ic_traffic_light.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xxxhdpi\\ic_traffic_light.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_dailog_picker.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_dailog_picker.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\anim_hyperspace_in.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\anim\\hyperspace_in.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_group_collapse.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\group_collapse.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_text_info_history.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\text_info_history.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_geo_fence.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\geo_fence.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_ic_clustering.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xxxhdpi\\ic_clustering.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_expirng_users.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\expirng_users.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_slide_up.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_slide_up.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_compass_primary.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_compass_primary.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_shadow.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\shadow.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_landmark.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_landmark.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_start_opened.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_start_opened.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_nav_drawer_row.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\nav_drawer_row.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-anydpi-v24_sidebar_landmark.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-anydpi-v24\\sidebar_landmark.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_help_plus.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\help_plus.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_sidebar_about.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxxhdpi\\sidebar_about.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_progress_item.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_progress_item.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_ic_traffic_light.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xxhdpi\\ic_traffic_light.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_background_shape_white_praimary_corners.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\background_shape_white_praimary_corners.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_sidebar_help.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xhdpi\\sidebar_help.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\mipmap-xxhdpi_ic_logo_2.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\mipmap-xxhdpi\\ic_logo_2.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_calendar_green.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_calendar_green.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-mdpi_to_circle.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-mdpi\\to_circle.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_activity_login.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_ic_clustering.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xxhdpi\\ic_clustering.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_car_100.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\car_100.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_help_parent.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_help_parent.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_ic_clustering.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xhdpi\\ic_clustering.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_delete.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_delete.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_triangle_empty.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\triangle_empty.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-mdpi_ic_traffic_light.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-mdpi\\ic_traffic_light.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_landmark.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_landmark.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_ic_landmark.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xxhdpi\\ic_landmark.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_checkbox_arrow_up_x.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\checkbox_arrow_up_x.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_ic_marker_primary.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xhdpi\\ic_marker_primary.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_car_600.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\car_600.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_timeline_online.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xhdpi\\timeline_online.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_reports_contact_old.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_reports_contact_old.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_marker_bank.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\marker_bank.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_office.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_office.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_locate_marker_end.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\locate_marker_end.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_sidebar_user.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\sidebar_user.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_license_plate.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_license_plate.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_seperator.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxxhdpi\\seperator.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_car_1.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\car_1.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_app_bar_main.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\app_bar_main.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_nav_bg0.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\nav_bg0.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-ldpi_sidebar_map_of_vehicles.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-ldpi\\sidebar_map_of_vehicles.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_placeholder.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_placeholder.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_add_email.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_add_email.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_timeline_off.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxxhdpi\\timeline_off.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_clock.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\clock.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\font_trasandina_regular.otf.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\debug\\res\\font\\trasandina_regular.otf"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_ic_drag.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-hdpi\\ic_drag.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_sidebar_services.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\sidebar_services.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_ic_door_open.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\ic_door_open.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_mil.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_mil.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_map_style.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_map_style.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_sidebar_vehicle.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxxhdpi\\sidebar_vehicle.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_help_child.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_help_child.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\anim_slide_out.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\anim\\slide_out.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_arrow_doun.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\drawable\\ic_arrow_doun.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_plus_minus.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\plus_minus.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-ldpi_ic_landmark.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-ldpi\\ic_landmark.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_selected_dot.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\selected_dot.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_ic_locate.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xhdpi\\ic_locate.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_sidebar_avator.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxxhdpi\\sidebar_avator.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_vehicle_dialog.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_vehicle_dialog.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_scheduled_reports.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_scheduled_reports.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_ic_drag_2.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xhdpi\\ic_drag_2.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_ic_sim_card.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\ic_sim_card.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_date_picker_dialog.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_date_picker_dialog.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-mdpi_ic_drag_2.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-mdpi\\ic_drag_2.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_battery_status.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_battery_status.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_reports_single_vehicles.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_reports_single_vehicles.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_timeline_off.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\timeline_off.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_sidebar_alarm.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxxhdpi\\sidebar_alarm.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_sidebar_landmark.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xxhdpi\\sidebar_landmark.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_spinner_item.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\spinner_item.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-ldpi_ic_marker_white.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-ldpi\\ic_marker_white.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\anim_jump_from_down.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\anim\\jump_from_down.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_layout_two_button_dailog.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\layout_two_button_dailog.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_list_of_users.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_list_of_users.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_car_202.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\car_202.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_cars_dashboard.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_cars_dashboard.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_group_expand.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\group_expand.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_ic_marker_red.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xxhdpi\\ic_marker_red.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_sidebar_about.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\sidebar_about.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_geo_fence_list.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_geo_fence_list.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_popup_item.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_popup_item.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-ldpi_ic_locate.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-ldpi\\ic_locate.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_period.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xhdpi\\period.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_calendar_yellow.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_calendar_yellow.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_sidebar_user.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\sidebar_user.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_sidebar_alarm.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\sidebar_alarm.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_plus.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_plus.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_shadow_small.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\shadow_small.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_text_info_history.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\drawable\\text_info_history.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_add_reports.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_add_reports.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_timeline_online.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\timeline_online.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_round_corner_bg.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\round_corner_bg.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_geo_fence.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\geo_fence.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_background_shape_border_white_corners.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\background_shape_border_white_corners.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_fab_label_background.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\fab_label_background.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_map_style_dark.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\map_style_dark.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_ic_marker_white.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xxhdpi\\ic_marker_white.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-ldpi_ic_traffic_light.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-ldpi\\ic_traffic_light.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_sidebar_map_of_vehicles.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xxhdpi\\sidebar_map_of_vehicles.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_alarm_primary.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_alarm_primary.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_ic_checked_green.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xhdpi\\ic_checked_green.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\raw_mapstyle_grayscale.json.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\raw\\mapstyle_grayscale.json"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_sidebar_services.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xhdpi\\sidebar_services.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\anim_layout_animation_fall_down.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\anim\\layout_animation_fall_down.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_vector_ic_instrument_barometer_timer.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\drawable\\vector_ic_instrument_barometer_timer.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_ic_marker_red.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-hdpi\\ic_marker_red.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_car_201.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxxhdpi\\car_201.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_keyboard_arrow_up_black.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\drawable\\ic_keyboard_arrow_up_black.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_reports_frequency.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_reports_frequency.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\anim_jump_to_down.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\anim\\jump_to_down.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_car_0.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxxhdpi\\car_0.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_locker_white.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_locker_white.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_layout_wheel_view.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\layout_wheel_view.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_string_realty.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_string_realty.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_login__newbg.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\login__newbg.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_ic_move.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xxhdpi\\ic_move.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_duration.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_duration.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_background_shape_white_corners.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\background_shape_white_corners.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-mdpi_ic_marker_white.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-mdpi\\ic_marker_white.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_ic_marker_red.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xxxhdpi\\ic_marker_red.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_offline.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xhdpi\\offline.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_nav_header_main.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\nav_header_main.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_car_0.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xhdpi\\car_0.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_nav_bg0.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xhdpi\\nav_bg0.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_sidebar_landmark.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xxxhdpi\\sidebar_landmark.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_vehicles_reporsts_parent.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_vehicles_reporsts_parent.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_triangle_left.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\triangle_left.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_navigation_white.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_navigation_white.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_clock.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_clock.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_list_of_vehicles_parent.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_list_of_vehicles_parent.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_ic_globe_location.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xxxhdpi\\ic_globe_location.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\raw_mapstyle_aubergine.json.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\raw\\mapstyle_aubergine.json"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_calendar_primary.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_calendar_primary.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_ic_marker_white.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xhdpi\\ic_marker_white.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_help_plus.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\help_plus.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_map_style_night.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\map_style_night.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_cancel_primary.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_cancel_primary.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\raw_mapstyle_retro.json.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\raw\\mapstyle_retro.json"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_sidebar_help.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\sidebar_help.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\raw_mapstyle_night.json.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\raw\\mapstyle_night.json"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_cars_main.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_cars_main.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-anydpi-v24_ic_globe_location.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-anydpi-v24\\ic_globe_location.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_background_shape_border_gray_corners.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\background_shape_border_gray_corners.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_alarm_notification.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_alarm_notification.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_data_analysis.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_data_analysis.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_message_information.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\message_information.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_locate_marker_start.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\locate_marker_start.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_ic_clustering.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-hdpi\\ic_clustering.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_speedometer.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\speedometer.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_marker_building.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\marker_building.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_pager.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_pager.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_historical.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xhdpi\\historical.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_circle_green.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_circle_green.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_n_level_parent.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_n_level_parent.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_end_opened.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_end_opened.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_car_yellow.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\car_yellow.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_login__newbg.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xhdpi\\login__newbg.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_car_202.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxxhdpi\\car_202.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_car_5.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxxhdpi\\car_5.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_minus_not_selected.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\minus_not_selected.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_share_white_24dp.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\drawable\\ic_share_white_24dp.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_ic_speed_address.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\ic_speed_address.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_arrow_down.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_arrow_down.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_list_of_users_dialog.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_list_of_users_dialog.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_sidebar_vehicle.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\sidebar_vehicle.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_ic_drag_2.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-hdpi\\ic_drag_2.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-anydpi-v24_ic_marker_red.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-anydpi-v24\\ic_marker_red.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_cars_grid.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_cars_grid.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-ldpi_ic_move.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-ldpi\\ic_move.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-anydpi-v24_ic_drag.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-anydpi-v24\\ic_drag.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_landmark_list.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_landmark_list.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_ic_maps.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\ic_maps.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-mdpi_all.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-mdpi\\all.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_language.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_language.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-mdpi_ic_checked_green.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-mdpi\\ic_checked_green.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-mdpi_battery_status.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-mdpi\\battery_status.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_expirng_users.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\expirng_users.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\mipmap-hdpi_ic_logo_2.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\mipmap-hdpi\\ic_logo_2.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_map_style_silver.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\map_style_silver.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\mipmap-xhdpi_ic_logo_2.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\mipmap-xhdpi\\ic_logo_2.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-mdpi_sidebar_vehicle.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-mdpi\\sidebar_vehicle.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_about_us.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_about_us.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_expandable.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_expandable.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-mdpi_online.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-mdpi\\online.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_checkbox_arrow_down_x.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\checkbox_arrow_down_x.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-mdpi_sidebar_services.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-mdpi\\sidebar_services.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_help_minus.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxxhdpi\\help_minus.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_ic_traffic_light.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-hdpi\\ic_traffic_light.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_background_shape_orange_corners.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\background_shape_orange_corners.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_layout_map_vehicles_slider.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\layout_map_vehicles_slider.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_background_shape_border_with_corners.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\background_shape_border_with_corners.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-ldpi_ic_clustering.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-ldpi\\ic_clustering.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_clock_green.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_clock_green.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_map_layers.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_map_layers.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_sidebar_home.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xhdpi\\sidebar_home.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\anim_slide_out_down.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\anim\\slide_out_down.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_ic_car_filled.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\ic_car_filled.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_plus_white.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_plus_white.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_ic_marker_white.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-hdpi\\ic_marker_white.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-mdpi_ic_move.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-mdpi\\ic_move.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_ic_landmark.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-hdpi\\ic_landmark.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_sidebar_car_list.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\sidebar_car_list.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_map_style_retro.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\map_style_retro.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_next.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_next.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_user_direction.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\user_direction.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_clock_history_date.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\drawable\\clock_history_date.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-mdpi_help_minus.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-mdpi\\help_minus.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_car_100.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxxhdpi\\car_100.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_offline.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\offline.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_car_5.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\car_5.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_content_main.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\content_main.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_ic_marker_red.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-xhdpi\\ic_marker_red.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-mdpi_ic_marker_primary.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-mdpi\\ic_marker_primary.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_pause.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_pause.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\anim_slide_in_down.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\anim\\slide_in_down.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_nav_bg.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\nav_bg.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-mdpi_sidebar_avator.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-mdpi\\sidebar_avator.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_fragment_map_of_vehicle.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\fragment_map_of_vehicle.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_activity_add.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\activity_add.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_login__newbg.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\login__newbg.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\anim_zoomout.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\anim\\zoomout.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-anydpi-v24_ic_drag_2.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-anydpi-v24\\ic_drag_2.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_splash_b.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\splash_b.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\anim_slid_up.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\anim\\slid_up.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_car_2.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxxhdpi\\car_2.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_logo.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\logo.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_sidebar_user.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\sidebar_user.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_car_2.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xhdpi\\car_2.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_clock.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxxhdpi\\clock.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_sidebar_map_of_vehicles.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-hdpi\\sidebar_map_of_vehicles.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_car_yellow.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxxhdpi\\car_yellow.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_historical.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxxhdpi\\historical.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_adapter_data_analysis.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\adapter_data_analysis.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_ic_mile.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\ic_mile.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_skip_next.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_skip_next.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-ldpi_ic_drag_2.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-ldpi\\ic_drag_2.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_vector_ic_creditcardfilled.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\drawable\\vector_ic_creditcardfilled.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-anydpi-v24_ic_marker_white.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-anydpi-v24\\ic_marker_white.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_sidebar_alarm.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xhdpi\\sidebar_alarm.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_bank.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_bank.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_sidebar_exit.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\sidebar_exit.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_sidebar_help.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-hdpi\\sidebar_help.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxxhdpi_car_101.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxxhdpi\\car_101.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_background_shape_primary_shadow.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\background_shape_primary_shadow.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-hdpi_ic_marker_primary.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-hdpi\\ic_marker_primary.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xhdpi_car_1.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xhdpi\\car_1.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_map_style_aubergine.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\map_style_aubergine.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_sidebar_home.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\sidebar_home.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_sidebar_avator.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\sidebar_avator.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-ldpi_ic_marker_primary.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-ldpi\\ic_marker_primary.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_layout_slider_address.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\layout_slider_address.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\layout_layout_loading_dialog.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\layout\\layout_loading_dialog.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_notification.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\notification.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_ic_user_primary.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\ic_user_primary.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-xxhdpi_geo_fence.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable-xxhdpi\\geo_fence.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable-ldpi_ic_drag.png.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\generated\\res\\pngs\\saferoadBusiness\\debug\\drawable-ldpi\\ic_drag.png"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_vector_ic_barcode.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\drawable\\vector_ic_barcode.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\anim_hyperspace_out.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\main\\res\\anim\\hyperspace_out.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_bg_button.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\bg_button.xml"
+    },
+    {
+        "merged": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\res\\merged\\saferoadBusiness\\debug\\drawable_button_shape_gray_tanrs.xml.flat",
+        "source": "D:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\src\\saferoadBusiness\\res\\drawable\\button_shape_gray_tanrs.xml"
+    }
+]

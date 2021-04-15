@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="46c795eb-462c-4221-ab16-5cfdc1ad1d93" name="Default" comment="alaanewproject" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[emuuuu]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="layoutResourceFile" />
+        <option value="resourceFile" />
+        <option value="layoutResourceFile_vertical" />
+      </list>
+    </option>
+  </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="KEY_STORE_PATH" value="D:\Malik\SafeRoad\SafeRoad Android App\B2B and AstroGPS on Store\SafeRoad All\saferoadKeyB2b.jks" />
+    <option name="KEY_ALIAS" value="saferoad" />
+    <option name="REMEMBER_PASSWORDS" value="true" />
+    <option name="BUILD_TARGET_KEY" value="apk" />
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIEW_PUSH_PROTECTED_ONLY" value="true" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="here_maps" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+    <option name="WARN_ABOUT_DETACHED_HEAD" value="false" />
+  </component>
+  <component name="ProjectId" id="1nYvfindObkOR2DYVceQ6ergzLj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ApkExportedModule" value="SafeRoad_All.app" />
+    <property name="DEBUGGABLE_DEVICE" value="huawei-fla_lx1-75U7N18815000606" />
+    <property name="DEBUGGABLE_PROCESS" value="com.saferoad.business" />
+    <property name="DEBUGGER_ID" value="Auto" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="emuuuu" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-04-14T19:47:19.726Z" />
+    <property name="ExportApk.ApkPath" value="C:\Users\Saferoad-Dev1\Desktop" />
+    <property name="ExportApk.BuildType" value="release" />
+    <property name="ExportApk.BuildVariants" value="saferoadBusinessDebug&#10;saferoadBusinessRelease" />
+    <property name="ExportApk.Flavors" value="saferoadBusiness" />
+    <property name="ExportApk.SignV1" value="true" />
+    <property name="ExportApk.SignV2" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHOW_ALL_PROCESSES" value="false" />
+    <property name="android-custom-viewC:/Users/Saferoad-Dev1/.gradle/caches/modules-2/files-2.1/androidx.appcompat/appcompat/1.2.0/13e8ff89631c2e101eb6bddd12c2fb4bbd74b15d/appcompat-1.2.0-sources.jar!/androidx/appcompat/widget/AppCompatEditText.java_SELECTED" value="AppCompatEditText" />
+    <property name="android-custom-viewC:/Users/Saferoad-Dev1/.gradle/caches/modules-2/files-2.1/androidx.drawerlayout/drawerlayout/1.0.0/9ecd4ecb7da215ba4c5c3e00bf8d290dad6f2bc5/drawerlayout-1.0.0-sources.jar!/androidx/drawerlayout/widget/DrawerLayout.java_SELECTED" value="DrawerLayout" />
+    <property name="android-custom-viewC:/Users/Saferoad-Dev1/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_SELECTED" value="RecyclerView" />
+    <property name="android-custom-viewC:/Users/Saferoad-Dev1/AppData/Local/Android/sdk/sources/android-29/android/view/View.java_SELECTED" value="View" />
+    <property name="android.profiler.active" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="device.picker.selection" value="Nexus_5_API_25" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="multi-representation-previewC:/Users/Saferoad-Dev1/.gradle/caches/modules-2/files-2.1/androidx.appcompat/appcompat/1.2.0/13e8ff89631c2e101eb6bddd12c2fb4bbd74b15d/appcompat-1.2.0-sources.jar!/androidx/appcompat/widget/AppCompatEditText.java_selected" value="Custom views" />
+    <property name="multi-representation-previewC:/Users/Saferoad-Dev1/.gradle/caches/modules-2/files-2.1/androidx.drawerlayout/drawerlayout/1.0.0/9ecd4ecb7da215ba4c5c3e00bf8d290dad6f2bc5/drawerlayout-1.0.0-sources.jar!/androidx/drawerlayout/widget/DrawerLayout.java_selected" value="Custom views" />
+    <property name="multi-representation-previewC:/Users/Saferoad-Dev1/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_selected" value="Custom views" />
+    <property name="multi-representation-previewC:/Users/Saferoad-Dev1/AppData/Local/Android/sdk/sources/android-29/android/view/View.java_selected" value="Custom views" />
+    <property name="project.structure.last.edited" value="SDK Location" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+    <property name="sync.plugin.last.upgrade.timestamp" value="1566373026060" />
+  </component>
+  <component name="PsdUISettings">
+    <option name="MODULE_TAB" value="Default Config" />
+    <option name="LAST_EDITED_BUILD_TYPE" value="release" />
+  </component>
+  <component name="RecentsManager">
+    <key name="android.template.packageName">
+      <recent name="com.activities" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Saferoad-Dev1\Desktop\desctop files\B2B and AstroGPS on Store-20191204T151004Z-001\B2B and AstroGPS on Store\SafeRoad All\app\src\astroGps" />
+      <recent name="C:\Users\Saferoad-Dev1\Desktop\desctop files\B2B and AstroGPS on Store-20191204T151004Z-001\B2B and AstroGPS on Store\SafeRoad All\app\src\saferoadBusiness\saferoadBusiness" />
+      <recent name="C:\Users\Saferoad-Dev1\Desktop\desctop files\B2B and AstroGPS on Store-20191204T151004Z-001\B2B and AstroGPS on Store\SafeRoad All\app\src\main\res\drawable" />
+      <recent name="C:\Users\Saferoad-Dev1\Desktop\desctop files\B2B and AstroGPS on Store-20191204T151004Z-001\B2B and AstroGPS on Store\SafeRoad All\app\src\main\res\layout" />
+      <recent name="C:\Users\Saferoad-Dev1\Desktop\desctop files\B2B and AstroGPS on Store-20191204T151004Z-001\B2B and AstroGPS on Store\SafeRoad All\app\src\debug\res" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="gradle app:crashlyticsUploadDistributionSaferoadBusinessRelease" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Android App.app">
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+    </configuration>
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="SafeRoad_All.app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SafeRoad All [app:crashlyticsUploadDistributionSaferoadBusinessRelease]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="app:crashlyticsUploadDistributionSaferoadBusinessRelease" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.SafeRoad All [app:crashlyticsUploadDistributionSaferoadBusinessRelease]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\Saferoad-Dev1\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="46c795eb-462c-4221-ab16-5cfdc1ad1d93" name="Default" comment="" />
+      <created>1543390776934</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1543390776934</updated>
+    </task>
+    <task id="LOCAL-00001" summary="here map">
+      <created>1544438374547</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1544438374547</updated>
+    </task>
+    <task id="LOCAL-00002" summary="here map">
+      <created>1554101609061</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1554101609061</updated>
+    </task>
+    <task id="LOCAL-00003" summary="alaanewproject">
+      <created>1618487162719</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1618487162719</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="here map" />
+    <MESSAGE value="saferoadall" />
+    <MESSAGE value="alaanewproject" />
+    <option name="LAST_COMMIT_MESSAGE" value="alaanewproject" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="685" y="293" key="#Notifications" timestamp="1618313039635">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="685" y="293" key="#Notifications/0.0.1600.860@0.0.1600.860" timestamp="1618313039635" />
+    <state x="317" y="176" key="#PSD" timestamp="1617541240098">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="317" y="176" key="#PSD/0.0.1600.860@0.0.1600.860" timestamp="1617541240098" />
+    <state x="509" y="16" key="#app" timestamp="1614861515838">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="509" y="16" key="#app/0.0.1600.860@0.0.1600.860" timestamp="1614861515838" />
+    <state x="1005" y="102" width="390" height="758" key="#com.intellij.ide.util.MemberChooser" timestamp="1617877779562">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="1005" y="102" width="390" height="758" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1617877779562" />
+    <state x="191" y="354" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1613219263673">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="191" y="354" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1600.860@0.0.1600.860" timestamp="1613219263673" />
+    <state x="100" y="100" width="1400" height="660" key="AVDManager" timestamp="1615189727147">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="100" y="100" width="1400" height="660" key="AVDManager/0.0.1600.860@0.0.1600.860" timestamp="1615189727147" />
+    <state x="598" y="176" key="AndroidProcessChooserDialog" timestamp="1618312175490">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="598" y="176" key="AndroidProcessChooserDialog/0.0.1600.860@0.0.1600.860" timestamp="1618312175490" />
+    <state x="173" y="0" key="CommitChangelistDialog2" timestamp="1618487142527">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="173" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1618487142527" />
+    <state x="100" y="100" width="1400" height="660" key="DiffContextDialog" timestamp="1618317559566">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="100" y="100" width="1400" height="660" key="DiffContextDialog/0.0.1600.860@0.0.1600.860" timestamp="1618317559566" />
+    <state x="580" y="172" key="FileChooserDialogImpl" timestamp="1618319536011">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="580" y="172" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1618319536011" />
+    <state x="673" y="328" key="Github.ShareDialog" timestamp="1618321478676">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="673" y="328" key="Github.ShareDialog/0.0.1600.860@0.0.1600.860" timestamp="1618321478676" />
+    <state width="1540" height="217" key="GridCell.Tab.0.bottom" timestamp="1618432421281">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1540" height="217" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1618432421281" />
+    <state width="1540" height="217" key="GridCell.Tab.0.center" timestamp="1618432421281">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1540" height="217" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1618432421281" />
+    <state width="1540" height="217" key="GridCell.Tab.0.left" timestamp="1618432421281">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1540" height="217" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1618432421281" />
+    <state width="1540" height="217" key="GridCell.Tab.0.right" timestamp="1618432421281">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1540" height="217" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1618432421281" />
+    <state x="380" y="173" key="IDE.errors.dialog" timestamp="1618432220417">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="380" y="173" key="IDE.errors.dialog/0.0.1600.860@0.0.1600.860" timestamp="1618432220417" />
+    <state x="301" y="75" key="SettingsEditor" timestamp="1618428220977">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="301" y="75" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1618428220977" />
+    <state x="392" y="163" key="Vcs.Push.Dialog.v2" timestamp="1618487274548">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="392" y="163" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1618487274548" />
+    <state x="475" y="66" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1617188190335">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="475" y="66" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1600.860@0.0.1600.860" timestamp="1617188190335" />
+    <state x="609" y="344" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1618486948304">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="609" y="344" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1600.860@0.0.1600.860" timestamp="1618486948304" />
+    <state x="528" y="143" width="820" height="592" key="find.popup" timestamp="1618302998666">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="528" y="143" width="820" height="592" key="find.popup/0.0.1600.860@0.0.1600.860" timestamp="1618302998666" />
+    <state x="333" y="218" key="git4idea.merge.GitPullDialog" timestamp="1618319224416">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="333" y="218" key="git4idea.merge.GitPullDialog/0.0.1600.860@0.0.1600.860" timestamp="1618319224416" />
+    <state x="519" y="321" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1618486999378">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="519" y="321" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1600.860@0.0.1600.860" timestamp="1618486999378" />
+    <state width="300" height="36" key="javadoc.popup.new" timestamp="1618304101714">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="300" height="36" key="javadoc.popup.new/0.0.1600.860@0.0.1600.860" timestamp="1618304101714" />
+    <state x="456" y="197" width="672" height="677" key="run.anything.popup" timestamp="1618312689831">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="456" y="197" width="672" height="677" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1618312689831" />
+    <state x="463" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1613163773205">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="463" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1613163773205" />
+    <state x="630" y="221" key="svn.repositoryBrowser" timestamp="1618301359354">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="630" y="221" key="svn.repositoryBrowser/0.0.1600.860@0.0.1600.860" timestamp="1618301359354" />
+    <state x="625" y="204" key="svn4idea.import.options" timestamp="1618301357628">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="625" y="204" key="svn4idea.import.options/0.0.1600.860@0.0.1600.860" timestamp="1618301357628" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/fragments/LisOfVehiclesMapFragment.java</url>
+          <line>1672</line>
+          <option name="timeStamp" value="206" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-method">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/activities/LoginActivity.java</url>
+          <line>130</line>
+          <option name="timeStamp" value="209" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-method">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/fragments/MapOfVehicleFragment.java</url>
+          <line>582</line>
+          <properties class="com.fragments.MapOfVehicleFragment" />
+          <option name="timeStamp" value="227" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-method">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/fragments/MapOfVehicleFragment.java</url>
+          <line>602</line>
+          <properties class="com.fragments.MapOfVehicleFragment" />
+          <option name="timeStamp" value="229" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>getHeaders().get(key)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>responseObj</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>wizardModel.getReportsType()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>intent.getParcelableExtra(EXTRA_VEHICLE_MODEL)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>ex.getMessage();</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>ex</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>o</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>vehiclesHashMap.entrySet().stream().filter(e -&gt; Objects.equals(e.getValue().getVehicleId(), model.getVehicleID()))</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>searchFieldRelativeLayout.getWidth();</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

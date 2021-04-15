@@ -1,0 +1,10 @@
+#Wed Apr 14 23:22:54 EEST 2021
+path.2=classes2.dex
+path.1=classes.dex
+path.0=classes.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+base.2=D\:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\dex\\saferoadBusinessDebug\\mergeExtDexSaferoadBusinessDebug\\classes2.dex
+base.1=D\:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\dex\\saferoadBusinessDebug\\mergeProjectDexSaferoadBusinessDebug\\classes.dex
+base.0=D\:\\SafeRoad All-20210414T190422Z-001\\SafeRoad All\\app\\build\\intermediates\\dex\\saferoadBusinessDebug\\mergeExtDexSaferoadBusinessDebug\\classes.dex

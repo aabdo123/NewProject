@@ -1,0 +1,87 @@
+[
+ {
+   "id": 1,
+   "report_key": "CompleteReport",
+   "report_name": "Complete Report"
+ },
+ {
+   "id": 2,
+   "report_key": "WorkingHours",
+   "report_name": "Working Hours"
+ },
+ {
+   "id": 3,
+   "report_key": "MileageReport",
+   "report_name": "Mileage Report"
+ },
+ {
+   "id": 4,
+   "report_key": "SpeedOverDurationReport",
+   "report_name": "Speed Over Duration Report"
+ },
+ {
+   "id": 5,
+   "report_key": "OfflineVehicleReport",
+   "report_name": "Offline Vehicle Report"
+ },
+ {
+   "id": 6,
+   "report_key": "AlarmReport",
+   "report_name": "Alarm Report"
+ },
+ {
+   "id": 7,
+   "report_key": "OverSpeedReport",
+   "report_name": "Over Speed Report"
+ },
+ {
+   "id": 8,
+   "report_key": "OverView",
+   "report_name": "OverView"
+ },
+ {
+   "id": 9,
+   "report_key": "UserVehicles",
+   "report_name": "User Vehicles"
+ },
+ {
+   "id": 10,
+   "report_key": "OverStreetSpeedReport",
+   "report_name": "Over Street Speed Report"
+ },
+ {
+   "id": 11,
+   "report_key": "FuelConsuptionReport",
+   "report_name": "Fuel Consuption Report"
+ },
+ {
+   "id": 12,
+   "report_key": "IdlingReport",
+   "report_name": "Idling Report"
+ },
+ {
+   "id": 13,
+   "report_key": "Parking",
+   "report_name": "Parking"
+ },
+ {
+   "id": 14,
+   "report_key": "FatiqueDriving",
+   "report_name": "Fatique Driving"
+ },
+ {
+   "id": 15,
+   "report_key": "DailyRunningTime",
+   "report_name": "Daily Running Time"
+ },
+ {
+   "id": 16,
+   "report_key": "CustomRunningTime",
+   "report_name": "Custom Running Time"
+ },
+ {
+   "id": 17,
+   "report_key": "DriverLogging",
+   "report_name": "Driver Logging"
+ }
+]

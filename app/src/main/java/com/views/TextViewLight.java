@@ -32,7 +32,7 @@ public class TextViewLight extends AppCompatTextView {
     private void init() {
         try {
             Typeface tf = Typeface.createFromAsset(context.getAssets(),
-                    "fonts/UniversNextArabic-Light.ttf");
+                    "fonts/universnextarabic_light.ttf");
 //                    "fonts/TrasandinaRegular-Italic.otf");
             setTypeface(tf, this.defStyle);
         } catch (Exception e) {

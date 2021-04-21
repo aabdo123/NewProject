@@ -2398,7 +2398,7 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                     }
                 });
             } else if (markerModel != null && markerModel.getAllVehicleModel() != null && markerModel.getAllVehicleModel().getLastLocation() != null) {
-                int value = markerModel.getAllVehicleModel().getLastLocation().getTotalMileage() / 1000;
+                Double value = markerModel.getAllVehicleModel().getLastLocation().getTotalMileage() / 1000;
                 mileageTextView.setText(String.format(Locale.CANADA, "%s %s", value, context.getString(R.string.km)));
             } else
                 mileageTextView.setText(String.format(Locale.CANADA, "%s %s", "0.00", context.getString(R.string.km)));

@@ -81,6 +81,8 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
     private Stack<String> pageTitleList = new Stack<>();
     private boolean isReplacer = false;
     private  _VehiclesModel vehicleIdModel;
+    private ListOfVehiclesModel.VehicleModel[] vehicleModel;
+
 
 
     @Override
@@ -89,6 +91,7 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
         MAIN_ACTIVITY = MainActivity.this;
         setContentView(R.layout.activity_main);
         startSignalR();
+//        startVehiclesObject();
         initViews();
         initListeners();
         displayView(R.string.nav_home, getString(R.string.nav_home));
@@ -142,13 +145,13 @@ public class MainActivity extends BaseActivity implements FragmentDrawer.Fragmen
             BusinessManager.postVehicles(new ApiCallResponseString() {
                 @Override
                 public void onSuccess(int statusCode, String responseObject) {
-                    ListOfVehiclesModel.VehicleModel[] vehicleModel = new Gson().fromJson(responseObject, ListOfVehiclesModel.VehicleModel[].class);
+                    vehicleModel = new Gson().fromJson(responseObject, ListOfVehiclesModel.VehicleModel[].class);
                     List<ListOfVehiclesModel.VehicleModel> arrayListMain = Arrays.asList(vehicleModel);
                     ArrayList<ListOfVehiclesModel.VehicleModel> main = new ArrayList<>(arrayListMain);
                     ArrayList<String> mainTokenValues = new ArrayList<>();
                     for (ListOfVehiclesModel.VehicleModel allVehicleModel : main) {
-                        if (allVehicleModel.getVehicleID() != null) {
-                            mainTokenValues.add(String.valueOf(allVehicleModel.getVehicleID()));
+                        if (allVehicleModel.getSerialNumber() != null) {
+                            mainTokenValues.add(allVehicleModel.getSerialNumber());
                         }
                     }
                     ShortTermManager.getInstance().setFireBaseArray(mainTokenValues);

@@ -228,7 +228,7 @@ public class AllVehiclesInHashModel implements ClusterItem ,Parcelable{
             private double speed;
             @SerializedName("TotalMileage")
             @Expose
-            private int totalMileage;
+            private double totalMileage;
             @SerializedName("TotalWorkingHours")
             @Expose
             private double totalWorkingHours;
@@ -310,7 +310,7 @@ public class AllVehiclesInHashModel implements ClusterItem ,Parcelable{
                     vehicleID = in.readInt();
                 }
                 speed = in.readDouble();
-                totalMileage = in.readInt();
+                totalMileage = in.readDouble();
                 totalWorkingHours = in.readDouble();
                 direction = in.readDouble();
                 latitude = in.readDouble();
@@ -351,7 +351,7 @@ public class AllVehiclesInHashModel implements ClusterItem ,Parcelable{
                     dest.writeInt(vehicleID);
                 }
                 dest.writeDouble(speed);
-                dest.writeInt(totalMileage);
+                dest.writeDouble(totalMileage);
                 dest.writeDouble(totalWorkingHours);
                 dest.writeDouble(direction);
                 dest.writeDouble(latitude);
@@ -522,11 +522,11 @@ public class AllVehiclesInHashModel implements ClusterItem ,Parcelable{
                 this.speed = speed;
             }
 
-            public int getTotalMileage() {
+            public double getTotalMileage() {
                 return totalMileage;
             }
 
-            public void setTotalMileage(int totalMileage) {
+            public void setTotalMileage(double totalMileage) {
                 this.totalMileage = totalMileage;
             }
 

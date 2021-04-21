@@ -344,16 +344,17 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
     }
 
     private void setUpCarInfo() {
+        groupTextView.setText(getString(R.string.ungouped));
         streetTextView.setText(vehicleModel.getLastLocation().getAddress());
-        groupTextView.setText("N/A");
         displayNameTextView.setText(vehicleModel.getLabel());
         workingHoursTextView.setText(vehicleModel.getPlateNumber());
-        mileageTextView.setText(String.format(Locale.getDefault(), "%s %s", Utils.doubleToStringTwoDigits(AppUtils.meterToKilometer(vehicleModel.getLastLocation().getTotalMileage())), context.getString(R.string.km)));
+        Double valuem = Double.valueOf(vehicleModel.getLastLocation().getTotalMileage()) / 1000;
+        mileageTextView.setText(String.format(Locale.getDefault(), "%s %s", Utils.doubleToStringTwoDigits(AppUtils.meterToKilometer(valuem)), context.getString(R.string.km)));
         accTextView.setText(getOnline(vehicleModel.getLastLocation().getEngineStatus()));
         int value = (int) (vehicleModel.getLastLocation().getDirection() % 360);
         directionTextView.setText(String.format(Locale.getDefault(), "%s°", value == 0 ? "0" : value));
         int value1 = (int) (vehicleModel.getLastLocation().getSpeed() % 360);
-        speed_add.setText(String.format(Locale.getDefault(), "%s°", value1 == 0 ? "0" : value1));
+        speed_add.setText(String.format(value1 == 0 ? "0" : value1+ context.getString(R.string.km_h)));
         vehicleStatusTextView.setText(AppUtils.getCarStatus(activity, vehicleModel.getLastLocation().getVehicleStatus()));
 
         if (vehicleModel.getLastLocation().getLatitude() != 0.0 || vehicleModel.getLastLocation().getLongitude() != 0.0) {
@@ -373,10 +374,10 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
     private void updateCarInfo(SignalRModel.A aModel) {
         try {
             streetTextView.setText(aModel.getAddress());
-
-
-//            displayNameTextView.setText(aModel.getVehicleDisplayName());
-            //mileageTextView.setText(String.format(Locale.getDefault(), "%s %s", Utils.doubleToStringTwoDigits(aModel.getMileage()), context.getString(R.string.km)));
+            groupTextView.setText(aModel.getGroupName());
+            displayNameTextView.setText(aModel.getVehicleDisplayName());
+            Double valuem = Double.valueOf(vehicleModel.getLastLocation().getTotalMileage()) / 1000;
+            mileageTextView.setText(String.format(Locale.getDefault(), "%s %s", Utils.doubleToStringTwoDigits(aModel.getMileage()), context.getString(R.string.km)));
             accTextView.setText(getOnline(aModel.getEngineStatus()));
             int value = (int) (aModel.getDirection() % 360);
             directionTextView.setText(String.format(Locale.getDefault(), "%s°", value == 0 ? "0" : value));
@@ -585,7 +586,7 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
                 @Override
                 public void dataSnapShot(String dataSnapshot) {
                     SignalRModel.A aModel = new Gson().fromJson(dataSnapshot,SignalRModel.A.class);
-                    if ((aModel.getSerialNumber())== PreferencesManager.getInstance().getStringValue(SharesPrefConstants.LAST_VIEW_VEHICLE_SERIAL)) {
+                    if ((aModel.getVehicleID())== PreferencesManager.getInstance().getIntegerValue(SharesPrefConstants.LAST_VIEW_VEHICLE_ID)) {
                         markStartingLocationOnMap(aModel);
                         Log.e("TRY SUCCESS log",dataSnapshot);
                 }

@@ -19,7 +19,7 @@ android {
     productFlavors {
         saferoadBusiness {
             applicationIdSuffix ".saferoad.business"
-            versionCode 50
+            versionCode 52
             versionName "2.7.1"
         }
 //        astroGps {

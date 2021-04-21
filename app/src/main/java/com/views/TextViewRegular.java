@@ -32,8 +32,7 @@ public class TextViewRegular extends AppCompatTextView {
     private void init() {
         try {
             Typeface tf = Typeface.createFromAsset(context.getAssets(),
-                    "fonts/UniversNextArabic-Regular.ttf");
-//                    "fonts/TrasandinaBold-Italic.otf");
+                    "fonts/universnextarabic_regular.ttf");
             setTypeface(tf, Typeface.BOLD);
 
         } catch (Exception e) {

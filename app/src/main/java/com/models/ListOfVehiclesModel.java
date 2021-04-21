@@ -218,7 +218,7 @@ public class ListOfVehiclesModel implements Parent<ListOfVehiclesModel.VehicleMo
             private Double speed;
             @SerializedName("TotalMileage")
             @Expose
-            private Integer totalMileage;
+            private Double totalMileage;
             @SerializedName("TotalWorkingHours")
             @Expose
             private Double totalWorkingHours;
@@ -259,7 +259,7 @@ public class ListOfVehiclesModel implements Parent<ListOfVehiclesModel.VehicleMo
                     vehicleID = in.readInt();
                 }
                 speed = in.readDouble();
-                totalMileage = in.readInt();
+                totalMileage = in.readDouble();
                 totalWorkingHours = in.readDouble();
                 direction = in.readDouble();
                 latitude = in.readDouble();
@@ -285,7 +285,7 @@ public class ListOfVehiclesModel implements Parent<ListOfVehiclesModel.VehicleMo
                     dest.writeInt(vehicleID);
                 }
                 dest.writeDouble(speed);
-                dest.writeInt(totalMileage);
+                dest.writeDouble(totalMileage);
                 dest.writeDouble(totalWorkingHours);
                 dest.writeDouble(direction);
                 dest.writeDouble(latitude);
@@ -335,11 +335,11 @@ public class ListOfVehiclesModel implements Parent<ListOfVehiclesModel.VehicleMo
                 this.speed = speed;
             }
 
-            public Integer getTotalMileage() {
+            public Double getTotalMileage() {
                 return totalMileage;
             }
 
-            public void setTotalMileage(Integer totalMileage) {
+            public void setTotalMileage(Double totalMileage) {
                 this.totalMileage = totalMileage;
             }
 

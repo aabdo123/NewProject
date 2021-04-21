@@ -22,6 +22,7 @@ import com.utilities.AppUtils;
 import com.utilities.ToastHelper;
 import com.utilities.constants.AppConstant;
 import com.views.Progress;
+import com.views.TextViewLight;
 
 import java.util.ArrayList;
 
@@ -43,6 +44,7 @@ public class AlarmNotificationsFragment extends Fragment {
     private Handler handler;
     private boolean isLoadMore = false;
     private LinearLayoutManager layoutManager;
+    private TextViewLight alarm_noti;
 
 
     public AlarmNotificationsFragment() {
@@ -80,6 +82,7 @@ public class AlarmNotificationsFragment extends Fragment {
 
     private void initView(View rootView) {
         dataRecyclerView = (RecyclerView) rootView.findViewById(R.id.dataRecyclerView);
+        alarm_noti = (TextViewLight) rootView.findViewById(R.id.alarm_noti);
         layoutManager = new LinearLayoutManager(activity);
         dataRecyclerView.setLayoutManager(layoutManager);
         handler = new Handler();
@@ -89,9 +92,13 @@ public class AlarmNotificationsFragment extends Fragment {
         BusinessManager.postAlarmNotification(vehicleId, String.valueOf(page), new ApiCallResponse() {
             @Override
             public void onSuccess(int statusCode, Object responseObject) {
+                if (responseObject != null){
                 alarmNotificationModels = (AlarmNotificationModel[]) responseObject;
                 initAdapter(alarmNotificationModels);
-                page = 1;
+                page = 1;}
+                else {
+                   alarm_noti.setText("No data available");
+                }
             }
 
             @Override
@@ -108,17 +115,24 @@ public class AlarmNotificationsFragment extends Fragment {
         BusinessManager.postAlarmNotification(vehicleId, String.valueOf(page), new ApiCallResponse() {
             @Override
             public void onSuccess(int statusCode, Object responseObject) {
-                page = page + 1;
-                Log.e("Page >>> ", " = " + page);
-                AlarmNotificationModel[] alarmModels = (AlarmNotificationModel[]) responseObject;
+                if (responseObject != null) {
+                    page = page + 1;
+                    Log.e("Page >>> ", " = " + page);
+                    AlarmNotificationModel[] alarmModels = (AlarmNotificationModel[]) responseObject;
 //                Collections.addAll(arrayList, dataAnalysisModel);
-                arrayList.addAll(arrayList.size(), getArrayList(alarmModels));
-                alarmNotificationsAdapter.setLoaded();
-                alarmNotificationsAdapter.notifyDataSetChanged();
-                if (alarmModels.length == 0) {
-                    isLoadMore = true;
+                    arrayList.addAll(arrayList.size(), getArrayList(alarmModels));
+                    alarmNotificationsAdapter.setLoaded();
+                    alarmNotificationsAdapter.notifyDataSetChanged();
+                    if (alarmModels.length == 0) {
+                        isLoadMore = true;
+                    }
                 }
-            }
+                else {
+                    alarm_noti.setText("No data available");
+
+                }
+                }
+
 
             @Override
             public void onFailure(int statusCode, String errorResponse) {
@@ -166,7 +180,7 @@ public class AlarmNotificationsFragment extends Fragment {
     }
 
     public void getPageOne() {
-        Progress.showLoadingDialog(activity);
+//        Progress.showLoadingDialog(activity);
         if (alarmNotificationModels != null && alarmNotificationModels.length > 0) {
             initAdapter(alarmNotificationModels);
         } else {

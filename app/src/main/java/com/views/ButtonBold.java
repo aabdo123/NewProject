@@ -37,7 +37,7 @@ public class ButtonBold extends Button {
     private void init() {
         try {
             Typeface tf = Typeface.createFromAsset(context.getAssets(),
-                    "fonts/UniversNextArabic-Regular.ttf");
+                    "fonts/universnextarabic_regular.ttf");
             setTypeface(tf, Typeface.BOLD);
 
         } catch (Exception e) {

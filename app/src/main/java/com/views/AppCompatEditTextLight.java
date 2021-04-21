@@ -32,8 +32,7 @@ public class AppCompatEditTextLight extends AppCompatEditText {
     private void init() {
         try {
             Typeface tf = Typeface.createFromAsset(context.getAssets(),
-                    "fonts/UniversNextArabic-Light.ttf");
-//                    "fonts/TrasandinaBold-Italic.otf");
+                    "fonts/universnextarabic_light.ttf");
             setTypeface(tf, this.defStyle);
 
         } catch (Exception e) {

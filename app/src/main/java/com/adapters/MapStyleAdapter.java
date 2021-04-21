@@ -14,6 +14,7 @@ import com.managers.PreferencesManager;
 import com.models.MapStyleModel;
 import com.utilities.constants.SharesPrefConstants;
 import com.views.ClickOnList;
+import com.views.TextViewLight;
 import com.views.TextViewRegular;
 
 import java.util.List;
@@ -89,13 +90,13 @@ public class MapStyleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
         private ImageView styleImageView;
         private ImageView checkedImageView;
-        private TextViewRegular styleNameTextView;
+        private TextViewLight styleNameTextView;
 
         public ItemViewHolder(View itemView) {
             super(itemView);
             styleImageView = (ImageView) itemView.findViewById(R.id.styleImageView);
             checkedImageView = (ImageView) itemView.findViewById(R.id.checkedImageView);
-            styleNameTextView = (TextViewRegular) itemView.findViewById(R.id.styleNameTextView);
+            styleNameTextView = (TextViewLight) itemView.findViewById(R.id.styleNameTextView);
         }
     }
 }

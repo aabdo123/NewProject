@@ -46,499 +46,138 @@ public class SignalRModel {
     }
 
     public class A {
-        @SerializedName("AccelPedalPosition")
+        @SerializedName("VehicleDisplayName")
         @Expose
-        private Double accelPedalPosition;
-        @SerializedName("ActualWeight")
+        private String vehicleDisplayName;
+        @SerializedName("PlateNumber")
         @Expose
-        private Double actualWeight;
-        @SerializedName("Address")
+        private String plateNumber;
+        @SerializedName("GroupName")
         @Expose
-        private String address;
-        @SerializedName("Battery1")
+        private String groupName;
+        @SerializedName("DriverName")
         @Expose
-        private Double battery1;
-        @SerializedName("Battery2")
+        private String driverName;
+        @SerializedName("SimCardNumber")
         @Expose
-        private Double battery2;
-        @SerializedName("Battery3")
+        private String simCardNumber;
+        @SerializedName("Temperature")
         @Expose
-        private Double battery3;
-        @SerializedName("Battery4")
+        private String temperature;
+        @SerializedName("LocationID")
         @Expose
-        private Double battery4;
-        @SerializedName("BatteryVoltage")
+        private Integer locationID;
+        @SerializedName("VehicleID")
         @Expose
-        private Double batteryVoltage;
-        @SerializedName("CargoWeight")
-        @Expose
-        private Double cargoWeight;
-        @SerializedName("CoolantTemp")
-        @Expose
-        private Integer coolantTemp;
-        @SerializedName("DeviceTypeID")
-        @Expose
-        private Integer deviceTypeID;
-        @SerializedName("Direction")
-        @Expose
-        private Double direction;
-        @SerializedName("DoorStatus")
-        @Expose
-        private Boolean doorStatus;
-        @SerializedName("EngineStatus")
-        @Expose
-        private Boolean engineStatus;
-        @SerializedName("EngineTotalRunTime")
-        @Expose
-        private Integer engineTotalRunTime;
-        @SerializedName("EventType")
-        @Expose
-        private Integer eventType;
-        @SerializedName("FuelLevelPer")
-        @Expose
-        private Double fuelLevelPer;
-        @SerializedName("HarshAcceleration")
-        @Expose
-        private Integer harshAcceleration;
-        @SerializedName("HarshBreaking")
-        @Expose
-        private Integer harshBreaking;
-        @SerializedName("Hum1")
-        @Expose
-        private Double hum1;
-        @SerializedName("Hum2")
-        @Expose
-        private Double hum2;
-        @SerializedName("Hum3")
-        @Expose
-        private Double hum3;
-        @SerializedName("Hum4")
-        @Expose
-        private Double hum4;
-        @SerializedName("IdleTime")
-        @Expose
-        private Integer idleTime;
-        @SerializedName("IngestionDate")
-        @Expose
-        private String ingestionDate;
-        @SerializedName("InstantFuelConsum")
-        @Expose
-        private Double instantFuelConsum;
-        @SerializedName("IsFuelCutOff")
-        @Expose
-        private Boolean isFuelCutOff;
-        @SerializedName("IsLowPower")
-        @Expose
-        private Boolean isLowPower;
-        @SerializedName("IsOverSpeed")
-        @Expose
-        private Boolean isOverSpeed;
-        @SerializedName("IsPowerCutOff")
-        @Expose
-        private Boolean isPowerCutOff;
-        @SerializedName("IsPowerFromBettary")
-        @Expose
-        private Boolean isPowerFromBettary;
-        @SerializedName("IsSOSHighJack")
-        @Expose
-        private Boolean isSOSHighJack;
-        @SerializedName("IsSOSHighjack")
-        @Expose
-        private Boolean isSOSHighjack;
-        @SerializedName("IsValidRecord")
-        @Expose
-        private Boolean isValidRecord;
-        @SerializedName("Latitude")
-        @Expose
-        private Double latitude;
-        @SerializedName("Longitude")
-        @Expose
-        private Double longitude;
-        @SerializedName("Mileage")
-        @Expose
-        private Double mileage;
-        @SerializedName("MileageMeter")
-        @Expose
-        private Integer mileageMeter;
-        @SerializedName("ParsingDate")
-        @Expose
-        private String parsingDate;
-        @SerializedName("RPM")
-        @Expose
-        private Integer rpm;
+        private Integer vehicleID;
         @SerializedName("RecordDateTime")
         @Expose
         private String recordDateTime;
-        @SerializedName("SeatBelt")
+        @SerializedName("Longitude")
         @Expose
-        private Boolean seatBelt;
-        @SerializedName("SeatBeltStatus")
+        private Double longitude;
+        @SerializedName("Latitude")
         @Expose
-        private Boolean seatBeltStatus;
-        @SerializedName("SerialNumber")
-        @Expose
-        private String serialNumber;
-        @SerializedName("SleepStatus")
-        @Expose
-        private Boolean sleepStatus;
+        private Double latitude;
         @SerializedName("Speed")
         @Expose
         private Double speed;
-        @SerializedName("StoppedTime")
+        @SerializedName("Direction")
         @Expose
-        private Integer stoppedTime;
+        private Double direction;
+        @SerializedName("Serial")
+        @Expose
+        private String serial;
+        @SerializedName("IsValidRecord")
+        @Expose
+        private Boolean isValidRecord;
+        @SerializedName("Mileage")
+        @Expose
+        private Double mileage;
+        @SerializedName("Address")
+        @Expose
+        private String address;
         @SerializedName("StreetSpeed")
         @Expose
         private Integer streetSpeed;
-        @SerializedName("Temp1")
-        @Expose
-        private Double temp1;
-        @SerializedName("Temp2")
-        @Expose
-        private Double temp2;
-        @SerializedName("Temp3")
-        @Expose
-        private Double temp3;
-        @SerializedName("Temp4")
-        @Expose
-        private Double temp4;
-        @SerializedName("TotalFuelConsum")
-        @Expose
-        private Integer totalFuelConsum;
-        @SerializedName("TotalMileage")
-        @Expose
-        private Integer totalMileage;
         @SerializedName("VehicleStatus")
         @Expose
         private Integer vehicleStatus;
-        @SerializedName("WeightSensorReading")
+        @SerializedName("VehicleStatusText")
         @Expose
-        private Integer weightSensorReading;
-        @SerializedName("WeightVolt")
-        @Expose
-        private Double weightVolt;
+        private String vehicleStatusText;
         @SerializedName("WorkingHours")
         @Expose
         private Double workingHours;
+        @SerializedName("Fuel")
+        @Expose
+        private String fuel;
+        @SerializedName("EngineStatus")
+        @Expose
+        private Boolean engineStatus;
 
-        public Double getAccelPedalPosition() {
-            return accelPedalPosition;
+        public String getVehicleDisplayName() {
+            return vehicleDisplayName;
         }
 
-        public void setAccelPedalPosition(Double accelPedalPosition) {
-            this.accelPedalPosition = accelPedalPosition;
+        public void setVehicleDisplayName(String vehicleDisplayName) {
+            this.vehicleDisplayName = vehicleDisplayName;
         }
 
-        public Double getActualWeight() {
-            return actualWeight;
+        public String getPlateNumber() {
+            return plateNumber;
         }
 
-        public void setActualWeight(Double actualWeight) {
-            this.actualWeight = actualWeight;
+        public void setPlateNumber(String plateNumber) {
+            this.plateNumber = plateNumber;
         }
 
-        public String getAddress() {
-            return address;
+        public String getGroupName() {
+            return groupName;
         }
 
-        public void setAddress(String address) {
-            this.address = address;
+        public void setGroupName(String groupName) {
+            this.groupName = groupName;
         }
 
-        public Double getBattery1() {
-            return battery1;
+        public String getDriverName() {
+            return driverName;
         }
 
-        public void setBattery1(Double battery1) {
-            this.battery1 = battery1;
+        public void setDriverName(String driverName) {
+            this.driverName = driverName;
         }
 
-        public Double getBattery2() {
-            return battery2;
+        public String getSimCardNumber() {
+            return simCardNumber;
         }
 
-        public void setBattery2(Double battery2) {
-            this.battery2 = battery2;
+        public void setSimCardNumber(String simCardNumber) {
+            this.simCardNumber = simCardNumber;
         }
 
-        public Double getBattery3() {
-            return battery3;
+        public String getTemperature() {
+            return temperature;
         }
 
-        public void setBattery3(Double battery3) {
-            this.battery3 = battery3;
+        public void setTemperature(String temperature) {
+            this.temperature = temperature;
         }
 
-        public Double getBattery4() {
-            return battery4;
+        public Integer getLocationID() {
+            return locationID;
         }
 
-        public void setBattery4(Double battery4) {
-            this.battery4 = battery4;
+        public void setLocationID(Integer locationID) {
+            this.locationID = locationID;
         }
 
-        public Double getBatteryVoltage() {
-            return batteryVoltage;
+        public Integer getVehicleID() {
+            return vehicleID;
         }
 
-        public void setBatteryVoltage(Double batteryVoltage) {
-            this.batteryVoltage = batteryVoltage;
-        }
-
-        public Double getCargoWeight() {
-            return cargoWeight;
-        }
-
-        public void setCargoWeight(Double cargoWeight) {
-            this.cargoWeight = cargoWeight;
-        }
-
-        public Integer getCoolantTemp() {
-            return coolantTemp;
-        }
-
-        public void setCoolantTemp(Integer coolantTemp) {
-            this.coolantTemp = coolantTemp;
-        }
-
-        public Integer getDeviceTypeID() {
-            return deviceTypeID;
-        }
-
-        public void setDeviceTypeID(Integer deviceTypeID) {
-            this.deviceTypeID = deviceTypeID;
-        }
-
-        public Double getDirection() {
-            return direction;
-        }
-
-        public void setDirection(Double direction) {
-            this.direction = direction;
-        }
-
-        public Boolean getDoorStatus() {
-            return doorStatus;
-        }
-
-        public void setDoorStatus(Boolean doorStatus) {
-            this.doorStatus = doorStatus;
-        }
-
-        public Boolean getEngineStatus() {
-            return engineStatus;
-        }
-
-        public void setEngineStatus(Boolean engineStatus) {
-            this.engineStatus = engineStatus;
-        }
-
-        public Integer getEngineTotalRunTime() {
-            return engineTotalRunTime;
-        }
-
-        public void setEngineTotalRunTime(Integer engineTotalRunTime) {
-            this.engineTotalRunTime = engineTotalRunTime;
-        }
-
-        public Integer getEventType() {
-            return eventType;
-        }
-
-        public void setEventType(Integer eventType) {
-            this.eventType = eventType;
-        }
-
-        public Double getFuelLevelPer() {
-            return fuelLevelPer;
-        }
-
-        public void setFuelLevelPer(Double fuelLevelPer) {
-            this.fuelLevelPer = fuelLevelPer;
-        }
-
-        public Integer getHarshAcceleration() {
-            return harshAcceleration;
-        }
-
-        public void setHarshAcceleration(Integer harshAcceleration) {
-            this.harshAcceleration = harshAcceleration;
-        }
-
-        public Integer getHarshBreaking() {
-            return harshBreaking;
-        }
-
-        public void setHarshBreaking(Integer harshBreaking) {
-            this.harshBreaking = harshBreaking;
-        }
-
-        public Double getHum1() {
-            return hum1;
-        }
-
-        public void setHum1(Double hum1) {
-            this.hum1 = hum1;
-        }
-
-        public Double getHum2() {
-            return hum2;
-        }
-
-        public void setHum2(Double hum2) {
-            this.hum2 = hum2;
-        }
-
-        public Double getHum3() {
-            return hum3;
-        }
-
-        public void setHum3(Double hum3) {
-            this.hum3 = hum3;
-        }
-
-        public Double getHum4() {
-            return hum4;
-        }
-
-        public void setHum4(Double hum4) {
-            this.hum4 = hum4;
-        }
-
-        public Integer getIdleTime() {
-            return idleTime;
-        }
-
-        public void setIdleTime(Integer idleTime) {
-            this.idleTime = idleTime;
-        }
-
-        public String getIngestionDate() {
-            return ingestionDate;
-        }
-
-        public void setIngestionDate(String ingestionDate) {
-            this.ingestionDate = ingestionDate;
-        }
-
-        public Double getInstantFuelConsum() {
-            return instantFuelConsum;
-        }
-
-        public void setInstantFuelConsum(Double instantFuelConsum) {
-            this.instantFuelConsum = instantFuelConsum;
-        }
-
-        public Boolean getIsFuelCutOff() {
-            return isFuelCutOff;
-        }
-
-        public void setIsFuelCutOff(Boolean isFuelCutOff) {
-            this.isFuelCutOff = isFuelCutOff;
-        }
-
-        public Boolean getIsLowPower() {
-            return isLowPower;
-        }
-
-        public void setIsLowPower(Boolean isLowPower) {
-            this.isLowPower = isLowPower;
-        }
-
-        public Boolean getIsOverSpeed() {
-            return isOverSpeed;
-        }
-
-        public void setIsOverSpeed(Boolean isOverSpeed) {
-            this.isOverSpeed = isOverSpeed;
-        }
-
-        public Boolean getIsPowerCutOff() {
-            return isPowerCutOff;
-        }
-
-        public void setIsPowerCutOff(Boolean isPowerCutOff) {
-            this.isPowerCutOff = isPowerCutOff;
-        }
-
-        public Boolean getIsPowerFromBettary() {
-            return isPowerFromBettary;
-        }
-
-        public void setIsPowerFromBettary(Boolean isPowerFromBettary) {
-            this.isPowerFromBettary = isPowerFromBettary;
-        }
-
-        public Boolean getIsSOSHighJack() {
-            return isSOSHighJack;
-        }
-
-        public void setIsSOSHighJack(Boolean isSOSHighJack) {
-            this.isSOSHighJack = isSOSHighJack;
-        }
-
-        public Boolean getIsSOSHighjack() {
-            return isSOSHighjack;
-        }
-
-        public void setIsSOSHighjack(Boolean isSOSHighjack) {
-            this.isSOSHighjack = isSOSHighjack;
-        }
-
-        public Boolean getIsValidRecord() {
-            return isValidRecord;
-        }
-
-        public void setIsValidRecord(Boolean isValidRecord) {
-            this.isValidRecord = isValidRecord;
-        }
-
-        public Double getLatitude() {
-            return latitude;
-        }
-
-        public void setLatitude(Double latitude) {
-            this.latitude = latitude;
-        }
-
-        public Double getLongitude() {
-            return longitude;
-        }
-
-        public void setLongitude(Double longitude) {
-            this.longitude = longitude;
-        }
-
-        public Double getMileage() {
-            return mileage;
-        }
-
-        public void setMileage(Double mileage) {
-            this.mileage = mileage;
-        }
-
-        public Integer getMileageMeter() {
-            return mileageMeter;
-        }
-
-        public void setMileageMeter(Integer mileageMeter) {
-            this.mileageMeter = mileageMeter;
-        }
-
-        public String getParsingDate() {
-            return parsingDate;
-        }
-
-        public void setParsingDate(String parsingDate) {
-            this.parsingDate = parsingDate;
-        }
-
-        public Integer getRpm() {
-            return rpm;
-        }
-
-        public void setRpm(Integer rpm) {
-            this.rpm = rpm;
+        public void setVehicleID(Integer vehicleID) {
+            this.vehicleID = vehicleID;
         }
 
         public String getRecordDateTime() {
@@ -549,36 +188,20 @@ public class SignalRModel {
             this.recordDateTime = recordDateTime;
         }
 
-        public Boolean getSeatBelt() {
-            return seatBelt;
+        public Double getLongitude() {
+            return longitude;
         }
 
-        public void setSeatBelt(Boolean seatBelt) {
-            this.seatBelt = seatBelt;
+        public void setLongitude(Double longitude) {
+            this.longitude = longitude;
         }
 
-        public Boolean getSeatBeltStatus() {
-            return seatBeltStatus;
+        public Double getLatitude() {
+            return latitude;
         }
 
-        public void setSeatBeltStatus(Boolean seatBeltStatus) {
-            this.seatBeltStatus = seatBeltStatus;
-        }
-
-        public String getSerialNumber() {
-            return serialNumber;
-        }
-
-        public void setSerialNumber(String serialNumber) {
-            this.serialNumber = serialNumber;
-        }
-
-        public Boolean getSleepStatus() {
-            return sleepStatus;
-        }
-
-        public void setSleepStatus(Boolean sleepStatus) {
-            this.sleepStatus = sleepStatus;
+        public void setLatitude(Double latitude) {
+            this.latitude = latitude;
         }
 
         public Double getSpeed() {
@@ -589,12 +212,44 @@ public class SignalRModel {
             this.speed = speed;
         }
 
-        public Integer getStoppedTime() {
-            return stoppedTime;
+        public Double getDirection() {
+            return direction;
         }
 
-        public void setStoppedTime(Integer stoppedTime) {
-            this.stoppedTime = stoppedTime;
+        public void setDirection(Double direction) {
+            this.direction = direction;
+        }
+
+        public String getSerial() {
+            return serial;
+        }
+
+        public void setSerial(String serial) {
+            this.serial = serial;
+        }
+
+        public Boolean getIsValidRecord() {
+            return isValidRecord;
+        }
+
+        public void setIsValidRecord(Boolean isValidRecord) {
+            this.isValidRecord = isValidRecord;
+        }
+
+        public Double getMileage() {
+            return mileage;
+        }
+
+        public void setMileage(Double mileage) {
+            this.mileage = mileage;
+        }
+
+        public String getAddress() {
+            return address;
+        }
+
+        public void setAddress(String address) {
+            this.address = address;
         }
 
         public Integer getStreetSpeed() {
@@ -605,54 +260,6 @@ public class SignalRModel {
             this.streetSpeed = streetSpeed;
         }
 
-        public Double getTemp1() {
-            return temp1;
-        }
-
-        public void setTemp1(Double temp1) {
-            this.temp1 = temp1;
-        }
-
-        public Double getTemp2() {
-            return temp2;
-        }
-
-        public void setTemp2(Double temp2) {
-            this.temp2 = temp2;
-        }
-
-        public Double getTemp3() {
-            return temp3;
-        }
-
-        public void setTemp3(Double temp3) {
-            this.temp3 = temp3;
-        }
-
-        public Double getTemp4() {
-            return temp4;
-        }
-
-        public void setTemp4(Double temp4) {
-            this.temp4 = temp4;
-        }
-
-        public Integer getTotalFuelConsum() {
-            return totalFuelConsum;
-        }
-
-        public void setTotalFuelConsum(Integer totalFuelConsum) {
-            this.totalFuelConsum = totalFuelConsum;
-        }
-
-        public Integer getTotalMileage() {
-            return totalMileage;
-        }
-
-        public void setTotalMileage(Integer totalMileage) {
-            this.totalMileage = totalMileage;
-        }
-
         public Integer getVehicleStatus() {
             return vehicleStatus;
         }
@@ -661,20 +268,12 @@ public class SignalRModel {
             this.vehicleStatus = vehicleStatus;
         }
 
-        public Integer getWeightSensorReading() {
-            return weightSensorReading;
+        public String getVehicleStatusText() {
+            return vehicleStatusText;
         }
 
-        public void setWeightSensorReading(Integer weightSensorReading) {
-            this.weightSensorReading = weightSensorReading;
-        }
-
-        public Double getWeightVolt() {
-            return weightVolt;
-        }
-
-        public void setWeightVolt(Double weightVolt) {
-            this.weightVolt = weightVolt;
+        public void setVehicleStatusText(String vehicleStatusText) {
+            this.vehicleStatusText = vehicleStatusText;
         }
 
         public Double getWorkingHours() {
@@ -683,6 +282,22 @@ public class SignalRModel {
 
         public void setWorkingHours(Double workingHours) {
             this.workingHours = workingHours;
+        }
+
+        public String getFuel() {
+            return fuel;
+        }
+
+        public void setFuel(String fuel) {
+            this.fuel = fuel;
+        }
+
+        public Boolean getEngineStatus() {
+            return engineStatus;
+        }
+
+        public void setEngineStatus(Boolean engineStatus) {
+            this.engineStatus = engineStatus;
         }
     }
 }

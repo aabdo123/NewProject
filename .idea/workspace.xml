@@ -12,14 +12,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46c795eb-462c-4221-ab16-5cfdc1ad1d93" name="Default" comment="alaanewproject">
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -339,7 +331,28 @@
       <option name="project" value="LOCAL" />
       <updated>1622448331066</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="alaanewproject">
+      <created>1622462224537</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1622462224569</updated>
+    </task>
+    <task id="LOCAL-00008" summary="- Change to Dashboard Api while starting Home page">
+      <created>1622467316705</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1622467316789</updated>
+    </task>
+    <task id="LOCAL-00009" summary="alaanewproject">
+      <created>1622467519534</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1622467519534</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView">
@@ -365,6 +378,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="here map" />
     <MESSAGE value="saferoadall" />
+    <MESSAGE value="- Change to Dashboard Api while starting Home page" />
     <MESSAGE value="alaanewproject" />
     <option name="LAST_COMMIT_MESSAGE" value="alaanewproject" />
   </component>
@@ -397,10 +411,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="598" y="176" key="AndroidProcessChooserDialog/0.0.1600.860@0.0.1600.860" timestamp="1619721660296" />
-    <state x="173" y="0" key="CommitChangelistDialog2" timestamp="1622448306263">
+    <state x="173" y="0" key="CommitChangelistDialog2" timestamp="1622467511310">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="173" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1622448306263" />
+    <state x="173" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1622467511310" />
     <state width="487" height="466" key="DebuggerActiveHint" timestamp="1619721947773">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -441,10 +455,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="301" y="75" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1618428220977" />
-    <state x="392" y="163" key="Vcs.Push.Dialog.v2" timestamp="1622460405531">
+    <state x="392" y="163" key="Vcs.Push.Dialog.v2" timestamp="1622462303280">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="392" y="163" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1622460405531" />
+    <state x="392" y="163" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1622462303280" />
     <state x="475" y="66" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1617188190335">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

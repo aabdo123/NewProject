@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <plurals name="mtrl_badge_content_description">
+    <item quantity="zero">%d إشعار جديد</item>
+    <item quantity="one">إشعار جديد واحد (%d)</item>
+    <item quantity="two">إشعاران جديدان (%d)</item>
+    <item quantity="few">%d إشعارات جديدة</item>
+    <item quantity="many">%d إشعارًا جديدًا</item>
+    <item quantity="other">%d إشعار جديد</item>
+  </plurals>
+    <string name="_0_00_km">0 كم</string>
+    <string name="_0_00_min">0 دقيقة</string>
+    <string msgid="5976598919945601918" name="abc_action_bar_home_description">"التوجه إلى المنزل"</string>
+    <string msgid="8388173803310557296" name="abc_action_bar_up_description">"التنقل إلى أعلى"</string>
+    <string msgid="3937310113216875497" name="abc_action_menu_overflow_description">"خيارات أكثر"</string>
+    <string msgid="4692188335987374352" name="abc_action_mode_done">"تم"</string>
+    <string msgid="1189761859438369441" name="abc_activity_chooser_view_see_all">"عرض الكل"</string>
+    <string msgid="2165779757652331008" name="abc_activitychooserview_choose_application">"اختيار تطبيق"</string>
+    <string msgid="4215997306490295099" name="abc_capital_off">"إيقاف"</string>
+    <string msgid="884982626291842264" name="abc_capital_on">"تفعيل"</string>
+    <string msgid="8833365367933412986" name="abc_menu_alt_shortcut_label">"Alt+"</string>
+    <string msgid="2223301931652355242" name="abc_menu_ctrl_shortcut_label">"Ctrl+"</string>
+    <string msgid="838001238306846836" name="abc_menu_delete_shortcut_label">"حذف"</string>
+    <string msgid="7986526966204849475" name="abc_menu_enter_shortcut_label">"enter"</string>
+    <string msgid="375214403600139847" name="abc_menu_function_shortcut_label">"Function+"</string>
+    <string msgid="4192209724446364286" name="abc_menu_meta_shortcut_label">"Meta+"</string>
+    <string msgid="4741552369836443843" name="abc_menu_shift_shortcut_label">"Shift+"</string>
+    <string msgid="5473865519181928982" name="abc_menu_space_shortcut_label">"فضاء"</string>
+    <string msgid="6180552449598693998" name="abc_menu_sym_shortcut_label">"Sym+"</string>
+    <string msgid="5520303668377388990" name="abc_prepend_shortcut_label">"القائمة+"</string>
+    <string msgid="7208076849092622260" name="abc_search_hint">"بحث…"</string>
+    <string msgid="3741173234950517107" name="abc_searchview_description_clear">"محو طلب البحث"</string>
+    <string msgid="693312494995508443" name="abc_searchview_description_query">"طلب بحث"</string>
+    <string msgid="3417662926640357176" name="abc_searchview_description_search">"البحث"</string>
+    <string msgid="1486535517437947103" name="abc_searchview_description_submit">"إرسال طلب البحث"</string>
+    <string msgid="2293578557972875415" name="abc_searchview_description_voice">"بحث صوتي"</string>
+    <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"مشاركة مع"</string>
+    <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"مشاركة مع <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
+    <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"تصغير"</string>
+    <string name="about">حول</string>
+    <string name="about_us_des_1">شركة saferoad لتقنية المعلومات هي شركة مقرها المملكة العربية السعودية وهي تقدم حلول تقنية المعلومات إلى الشركات المحلية، والسوق الدولية منذ عام 2009، والتي يملكها جزئيا مركز أرامكو للريادة (وعد).</string>
+    <string name="about_us_des_2">الهدف الرئيسي من saferoad هو تقليل عدد الحوادث ومساعدة السائقين في المملكة العربية السعودية على تعزيز سلوكهم في القيادة. إن المساهمة الفعالة لتكنولوجيات saferoad في الاقتصاد الإقليمي قد منح الشركة فرصه االحصول على العديد من الجوائز الإقليمية والدولية.</string>
+    <string name="about_us_title_1">saferoad ومات تعني الطريق الآمن</string>
+    <string name="acc">حالة المحرك</string>
+    <string msgid="5835639618285370804" name="accept">"قبول"</string>
+    <string name="action_settings">إعدادات</string>
+    <string name="add">إضافه</string>
+    <string name="added_successfully">تمت الاضافة بنجاح</string>
+    <string name="additional_email">عناوين البريد الإضافية</string>
+    <string name="address">العنوان</string>
+    <string name="address_">عنوان:</string>
+    <string name="address_not_found">Address not found</string>
+    <string name="alarm">تنبيه</string>
+    <string name="alarm_notification">إشعار إنذار</string>
+    <string name="all">الكل</string>
+    <string name="app_name">Saferoad Business</string>
+    <string name="app_version">اصدار التطبيق النسخة 1.4</string>
+    <string name="april">نيسان</string>
+    <string name="are_you_sure_do_want_to_exit">هل تريد بالتأكيد الخروج؟</string>
+    <string name="are_you_sure_do_want_to_logout">هل تريد بالتأكيد تسجيل الخروج؟</string>
+    <string name="are_you_sure_you_want_to_delete">هل تريد الحذف ؟</string>
+    <string name="aubergine">باذنجان</string>
+    <string name="august">آب</string>
+    <string name="bank">بنك</string>
+    <string name="battery_status">حالة البطارية</string>
+    <string name="bottomsheet_action_expand_halfway">توسيع البطاقة السفلية</string>
+    <string name="building">مبنى</string>
+    <string name="cancel">الغاء</string>
+    <string name="car_status">حالة السيارة</string>
+    <string name="character_counter_content_description">تمّ إدخال %1$d حرف من إجمالي %2$d.</string>
+    <string name="character_counter_overflowed_content_description">تجاوز عدد الأحرف المسموح به %1$d من %2$d.</string>
+    <string name="clear_text_end_icon_content_description">محو النص</string>
+    <string name="clustering">تجميع السيارات</string>
+    <string msgid="8585111718777012708" name="common_google_play_services_enable_button">"تفعيل"</string>
+    <string msgid="7045129128108380659" name="common_google_play_services_enable_text">"‏لن يعمل <ns1:g id="APP_NAME">%1$s</ns1:g> ما لم يتم تفعيل خدمات Google Play."</string>
+    <string msgid="3147157405986503375" name="common_google_play_services_enable_title">"‏تفعيل خدمات Google Play"</string>
+    <string msgid="9115728400623041681" name="common_google_play_services_install_button">"تثبيت"</string>
+    <string msgid="8179894293032530091" name="common_google_play_services_install_text">"‏لن يتم تشغيل <ns1:g id="APP_NAME">%1$s</ns1:g> بدون خدمات Google Play، والتي لا تتوفر على جهازك."</string>
+    <string msgid="7442193194585196676" name="common_google_play_services_install_title">"‏الحصول على خدمات Google Play"</string>
+    <string msgid="4293541511340436975" name="common_google_play_services_notification_channel_name">"‏مدى توفّر خدمات Google Play"</string>
+    <string msgid="180394615667698242" name="common_google_play_services_notification_ticker">"‏خطأ في خدمات Google Play"</string>
+    <string msgid="2518680582564677258" name="common_google_play_services_unknown_issue">"‏لدى <ns1:g id="APP_NAME">%1$s</ns1:g> مشكلة في خدمات Google Play. يُرجى إعادة المحاولة."</string>
+    <string msgid="5501187292256987189" name="common_google_play_services_unsupported_text">"‏لن يتم تشغيل <ns1:g id="APP_NAME">%1$s</ns1:g> بدون خدمات Google Play التي لا يوفرها جهازك."</string>
+    <string msgid="8172070149091615356" name="common_google_play_services_update_button">"تحديث"</string>
+    <string msgid="7773943415006962566" name="common_google_play_services_update_text">"‏لن يتم تشغيل <ns1:g id="APP_NAME">%1$s</ns1:g> ما لم يتم تحديث خدمات Google Play."</string>
+    <string msgid="8706675115216073244" name="common_google_play_services_update_title">"‏تحديث خدمات Google Play"</string>
+    <string msgid="7894275749778928941" name="common_google_play_services_updating_text">"‏لن يتم تشغيل <ns1:g id="APP_NAME">%1$s</ns1:g> بدون خدمات Google Play، والتي يتم تحديثها حاليًا."</string>
+    <string msgid="2804989272736383918" name="common_google_play_services_wear_update_text">"‏يجب توفر إصدار جديد من خدمات Google Play. سيتم تحديثها تلقائيًا قريبًا."</string>
+    <string msgid="5201977337835724196" name="common_open_on_phone">"فتح على الهاتف"</string>
+    <string msgid="3441753203274453993" name="common_signin_button_text">"تسجل الدخول"</string>
+    <string msgid="669893613918351210" name="common_signin_button_text_long">"‏تسجيل الدخول عبر Google"</string>
+    <string name="connection_error">خطأ بالاتصال</string>
+    <string msgid="6155048007205742679" name="create_calendar_message">"هل تريد السماح للإعلان بإنشاء حدث تقويم؟"</string>
+    <string msgid="7967007864778154790" name="create_calendar_title">"إنشاء حدث تقويم"</string>
+    <string name="daily">يومي</string>
+    <string name="dark">مظلم</string>
+    <string name="data_analysis">تحليل البيانات</string>
+    <string name="date">تاريخ</string>
+    <string name="day">اليوم</string>
+    <string msgid="4722375419392727435" name="debug_menu_ad_information">"معلومات عن الإعلان"</string>
+    <string msgid="1605938743055376690" name="debug_menu_creative_preview">"معاينة تصميمات الإعلانات"</string>
+    <string msgid="2039274714455389140" name="debug_menu_title">"تحديد وضع تصحيح الأخطاء"</string>
+    <string msgid="1173358804935285568" name="debug_menu_troubleshooting">"تحرّي الخلل وإصلاحه"</string>
+    <string name="december">كانون الأول</string>
+    <string msgid="6099173376375995052" name="decline">"رفض"</string>
+    <string name="delete">حذف</string>
+    <string name="description">الوصف</string>
+    <string name="direction">الإتجاه</string>
+    <string name="direction_menu">الوجهة</string>
+    <string name="dismiss">اخفاء</string>
+    <string name="dispaly_the_number_of_aggregated_vehicles">إظهار عدد المركبات المجمعة</string>
+    <string name="display_name">الاسم الظاهر</string>
+    <string name="display_name_hh">  اسم المركبة :</string>
+    <string name="done">تم</string>
+    <string name="duration_seconds">المدة الزمنيه (بالثواني)</string>
+    <string name="east">الشرق</string>
+    <string name="email">البريد الالكتروني</string>
+    <string name="enable_gps">تمكين الموقع</string>
+    <string name="end_point_address">عنوان نقطة النهاية</string>
+    <string name="end_time">وقت الانتهاء</string>
+    <string name="error_icon_content_description">خطأ</string>
+    <string name="error_phone_number_is_too_short">رقم الهاتف قصير للغاية.</string>
+    <string name="expiring_users">المستخدمون المنتهية صلاحيتهم</string>
+    <string name="exposed_dropdown_menu_content_description">عرض القائمة المنسدلة</string>
+    <string msgid="4133737464567140336" name="fcm_fallback_notification_channel_label">"متنوعة"</string>
+    <string name="february">شباط</string>
+    <string name="fetching_route_please_wait">رسم الطريق ، يرجى الانتظار ...</string>
+    <string name="filed_is_required">الحقل مطلوب</string>
+    <string name="filter_by">فلتر بـ</string>
+    <string name="filter_list">قائمة المركبات</string>
+    <string name="finish">إنهاء</string>
+    <string name="first_day">اليوم الاول</string>
+    <string name="first_half">النصف الاول</string>
+    <string name="first_location">الموقع الأول</string>
+    <string name="first_quarter">الربع الاول</string>
+    <string name="forget_password">هل نسيت كلمة المرور؟</string>
+    <string name="forth_quarter">الربع الرابع</string>
+    <string name="friday">جمعة</string>
+    <string name="geo_fence">الحاجز الجغرافي</string>
+    <string name="geo_fence_des">تعيين حدود افتراضية على الخريطة</string>
+    <string name="geo_fence_in">الحاجز الجغرافي بالداخل</string>
+    <string name="geo_fence_name">اسم الحاجز الجغرافي</string>
+    <string name="geo_fence_out">الحاجز الجغرافي بالخارج</string>
+    <string name="geofence_is_added">تم إضافة الحاجز الجغرافي</string>
+    <string name="go">إذهب</string>
+    <string name="google_maps_keys">AIzaSyDi-bSYjtEknQ7O7V05Hg7oWRLWPnU0rXU</string>
+    <string name="gps_disabled">تعطيل الموقع</string>
+    <string name="group">مجموعة</string>
+    <string name="half_year">نصف السنة</string>
+    <string name="half_yearly">نصف سنوي</string>
+    <string name="help">مساعدة</string>
+    <string name="hide">إخفاء</string>
+    <string name="historical_route_playback">تشغيل المسار التاريخي</string>
+    <string name="home">الصفحة الرئيسية</string>
+    <string name="hour">الساعة</string>
+    <string name="icon_content_description">رمز مربع الحوار</string>
+    <string name="idle">خامله</string>
+    <string name="invalid_address">موقع خاطئ</string>
+    <string name="invalid_email">تنسيق بريد الكتروني غير صالح</string>
+    <string name="item_view_role_description">علامة تبويب</string>
+    <string name="january">كانون الثاني</string>
+    <string name="july">تموز</string>
+    <string name="june">حزيران</string>
+    <string name="keep_me_logged_in">أبق تسجيل دخول</string>
+    <string name="km">كم</string>
+    <string name="km_h">كم/س</string>
+    <string name="landmark">المعالم الرئيسية</string>
+    <string name="landmark_home">المنزل</string>
+    <string name="landmark_name">اسم المعلم</string>
+    <string name="landmark_name_is_required">اسم المعلم فارغ</string>
+    <string name="last_day">اليوم الاخير</string>
+    <string name="last_location">الموقع الأخير</string>
+    <string name="last_view_vehicle">المشاهدة الأخيرة للمركبة</string>
+    <string name="license_plate_number">رقم لوحة المركبة</string>
+    <string name="list_of_users">قائمة المستخدمين</string>
+    <string name="list_of_vehicles">قائمة المركبات</string>
+    <string name="locate">تعيين موضع‎</string>
+    <string name="locate_des">رسم مسار بين نقطة البداية ونقطة النهاية, قياس المسافة بينهما وتحديد الوقت التقديري للانتقال في المسار</string>
+    <string name="location_mode">وضع الموقع</string>
+    <string name="location_status">حالة الموقع</string>
+    <string name="location_time">وقت الموقع</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="logout">تسجيل الخروج</string>
+    <string name="long_time_offline">غير متصل لفترة طويلة</string>
+    <string name="mapCoordinate">تنسيق الخريطة</string>
+    <string name="march">آذار</string>
+    <string name="material_clock_toggle_content_description">يُرجى اختيار صباحًا أو مساءً.</string>
+    <string name="material_hour_selection">تحديد الساعة</string>
+    <string name="material_hour_suffix">الساعة %1$s</string>
+    <string name="material_minute_selection">تحديد الدقائق</string>
+    <string name="material_minute_suffix">%1$s دقيقة</string>
+    <string name="material_timepicker_am">صباحًا</string>
+    <string name="material_timepicker_clock_mode_description">يُرجى التبديل إلى وضع الساعة لإدخال الوقت.</string>
+    <string name="material_timepicker_hour">الساعة</string>
+    <string name="material_timepicker_minute">دقيقة</string>
+    <string name="material_timepicker_pm">مساءً</string>
+    <string name="material_timepicker_select_time">اختيار الوقت</string>
+    <string name="material_timepicker_text_input_mode_description">يُرجى التبديل إلى وضع إدخال النص لإدخال الوقت.</string>
+    <string name="may">أيار</string>
+    <string name="meter">م</string>
+    <string name="mileage">عدد الأميال</string>
+    <string name="min">دقيقة</string>
+    <string name="mins">اقل سرعه (كم\س)</string>
+    <string name="monday">اثنين</string>
+    <string name="month">الشهر</string>
+    <string name="monthly">شهري</string>
+    <string name="more_options">المزيد من الخيارات</string>
+    <string name="mtrl_badge_numberless_content_description">إشعار جديد</string>
+    <string name="mtrl_chip_close_icon_content_description">إزالة %1$s</string>
+    <string name="mtrl_exceed_max_badge_number_content_description">يبلغ عدد الإشعارات الجديدة أكثر من %1$d.</string>
+    <string name="mtrl_picker_a11y_next_month">التغيير إلى الشهر التالي</string>
+    <string name="mtrl_picker_a11y_prev_month">التغيير إلى الشهر السابق</string>
+    <string name="mtrl_picker_announce_current_selection">الاختيار الحالي: %1$s</string>
+    <string name="mtrl_picker_confirm">@android:string/ok</string>
+    <string name="mtrl_picker_date_header_selected">%1$s</string>
+    <string name="mtrl_picker_date_header_title">يُرجى اختيار تاريخ.</string>
+    <string name="mtrl_picker_date_header_unselected">التاريخ المحدَّد</string>
+    <string name="mtrl_picker_day_of_week_column_header">عمود الأيام: %1$s</string>
+    <string name="mtrl_picker_invalid_format">التنسيق غير صالح</string>
+    <string name="mtrl_picker_invalid_format_example">مثال: %1$s</string>
+    <string name="mtrl_picker_invalid_format_use">استخدام: %1$s</string>
+    <string name="mtrl_picker_invalid_range">النطاق غير صالح</string>
+    <string name="mtrl_picker_navigate_to_year_description">التنقل إلى العام %1$s</string>
+    <string name="mtrl_picker_out_of_range">خارج النطاق: %1$s</string>
+    <string name="mtrl_picker_range_header_only_end_selected">تاريخ البدء – %1$s</string>
+    <string name="mtrl_picker_range_header_only_start_selected">%1$s – تاريخ الانتهاء</string>
+    <string name="mtrl_picker_range_header_selected">%1$s – %2$s</string>
+    <string name="mtrl_picker_range_header_title">يُرجى اختيار نطاق زمني.</string>
+    <string name="mtrl_picker_range_header_unselected">تاريخ البدء - تاريخ الانتهاء</string>
+    <string name="mtrl_picker_save">حفظ</string>
+    <string name="mtrl_picker_text_input_date_hint">التاريخ</string>
+    <string name="mtrl_picker_text_input_date_range_end_hint">تاريخ الانتهاء</string>
+    <string name="mtrl_picker_text_input_date_range_start_hint">تاريخ البدء</string>
+    <string name="mtrl_picker_text_input_day_abbr">ي</string>
+    <string name="mtrl_picker_text_input_month_abbr">ش</string>
+    <string name="mtrl_picker_text_input_year_abbr">س</string>
+    <string name="mtrl_picker_toggle_to_calendar_input_mode">التبديل إلى وضع \"الإدخال في التقويم\"</string>
+    <string name="mtrl_picker_toggle_to_day_selection">انقر للتبديل إلى اختيار يوم</string>
+    <string name="mtrl_picker_toggle_to_text_input_mode">التبديل إلى وضع \"إدخال النص\"</string>
+    <string name="mtrl_picker_toggle_to_year_selection">انقر للتبديل إلى اختيار عام</string>
+    <string name="my_services_provider">مقدم خدماتي</string>
+    <string name="n_a"> لا يوجد مجموعه</string>
+    <string name="nav_about">من نحن</string>
+    <string name="nav_alarm_notification">إشعار إنذار</string>
+    <string name="nav_geo_fence_list">قائمة الحاجز الجغرافي</string>
+    <string name="nav_help">مساعدة</string>
+    <string name="nav_home">الصفحة الرئيسية</string>
+    <string name="nav_landmark_list">قائمة المعالم الرئيسية</string>
+    <string name="nav_language">English</string>
+    <string name="nav_list_of_vehicles">قائمة المركبات</string>
+    <string name="nav_logout">تسجيل الخروج</string>
+    <string name="nav_map">الخريطة</string>
+    <string name="nav_my_services_provider">مقدم خدماتي</string>
+    <string name="nav_scheduled_reports">التقارير المجدولة</string>
+    <string name="nav_user_management">إدارة المستخدم</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="next">التالي</string>
+    <string name="night">ليلي</string>
+    <string name="no">لا</string>
+    <string name="no_available_data">لا توجد بيانات متاحه</string>
+    <string name="no_driver">No driver</string>
+    <string name="north">شمال</string>
+    <string name="northeast">شمالي شرقي</string>
+    <string name="northwest">الشمال الغربي</string>
+    <string name="notify_by_sms">التنبيه عن طريق رسالة</string>
+    <string name="november">تشرين الثاني</string>
+    <string name="october">تشرين الأول</string>
+    <string name="off">متوقف</string>
+    <string name="office">مكتب</string>
+    <string name="offline">غير متصل</string>
+    <string name="on">مشتعل</string>
+    <string name="online">متصل</string>
+    <string name="over_speed">متعدية السرعة</string>
+    <string name="over_street_speed">أكثر من سرعة الشارع</string>
+    <string name="password">كلمة المرور</string>
+    <string name="password_toggle_content_description">عرض كلمة المرور</string>
+    <string name="pause">إيقاف</string>
+    <string name="percentage">النسبة المئوية</string>
+    <string name="phone_number">رقم الهاتف</string>
+    <string name="plate_name">اسم اللوحة</string>
+    <string name="plate_number">رقم المركبة  </string>
+    <string name="play">تشغيل</string>
+    <string name="please_check_your_internet_connection">الرجاء التأكد من اتصالك بشبكة الانترنت.</string>
+    <string name="please_fill_all_frequency_components">الرجاء اختيار موعد تكرار التقرير.</string>
+    <string name="please_select_atleast_one_username">الرجاء اختيار مستخدم واحد على الاقل .</string>
+    <string name="please_select_atleast_one_vehicle">الرجاء اختيار مركبة واحدة على الاقل.</string>
+    <string name="please_select_report_first">الرجاء اختيار انواع التقارير أولاً.</string>
+    <string name="please_wait_until_map_show">يرجى الانتظار حتى تظهر الخريطة</string>
+    <string name="pre"><![CDATA[<<pre]]></string>
+    <string name="press_add_to_new_report">اضغط + لإضافة تقرير جديد.</string>
+    <string name="previous">السابق</string>
+    <string name="quarter_year">الربع السنوي</string>
+    <string name="quarterly">ربع سنوي</string>
+    <string name="radius">نصف القطر</string>
+    <string name="real_time_tracking">تتبع الوقت الحقيقي</string>
+    <string name="recognizable_objects_for_places_on_the_map">مواضع لمناطق يمكن تمييزها على الخريطة</string>
+    <string name="refresh_again">تحديث مرة أخرى</string>
+    <string name="remember_me">تذكرني</string>
+    <string name="report_duration">مدة التقرير</string>
+    <string name="reports_type">انواع التقارير</string>
+    <string name="retro">قديمة</string>
+    <string name="running">تعمل</string>
+    <string name="saferoad_website">موقع saferoad</string>
+    <string name="saturday">سبت</string>
+    <string name="save_password">حفظ كلمة المرور</string>
+    <string name="scheduled_frequency">تكرار التقارير</string>
+    <string name="school">مدرسة</string>
+    <string name="search">بحث</string>
+    <string msgid="6264217191555673260" name="search_menu_title">"البحث"</string>
+    <string name="second_half">النصف الثاني</string>
+    <string name="second_quarter">الربع الثاني</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="select">اختيار</string>
+    <string name="select_date">اختيار التاريخ</string>
+    <string name="select_date_from">تحديدالتاريخ من</string>
+    <string name="select_date_to">الى :</string>
+    <string name="select_day">اختر اليوم</string>
+    <string name="select_day_of_month">اختر يوم من الشهر</string>
+    <string name="select_day_of_week">اختر يوم من الأسبوع</string>
+    <string name="select_from">من:</string>
+    <string name="select_half_year">اختر اليوم لكل نصف سنوي</string>
+    <string name="select_hour">اختر الساعة</string>
+    <string name="select_map_style">حدد نمط الخريطة</string>
+    <string name="select_month">اختر يوم/شهر</string>
+    <string name="select_quarter_year">اختر اليوم لكل ربع سنوي</string>
+    <string name="select_scheduled_frequency">اختر تكرار التقارير</string>
+    <string name="select_time_from">تحديد الوقت من</string>
+    <string name="select_time_to">تحديد الوقت إلى</string>
+    <string name="select_to">الاختيار الى</string>
+    <string name="select_vehicles_for_geo_fence">اختر مركبات الحاجز الجفرافي</string>
+    <string name="send">ارسال</string>
+    <string name="september">أيلول</string>
+    <string name="show">عرض</string>
+    <string name="silver">فضي</string>
+    <string name="skip">تخطي</string>
+    <string name="something_went_worng">حدث خطأ ما, الرجاء المحاولة لاحقاً.</string>
+    <string name="south">الجنوب</string>
+    <string name="southeast">الجنوب الشرقي</string>
+    <string name="southwest">الجنوب الغربي</string>
+    <string name="speed">السرعة</string>
+    <string name="speed_address">السرعة</string>
+    <string name="speed_hh">  السرعة : </string>
+    <string name="standard">افتراضي</string>
+    <string name="start_point_address">عنوان نقطة البداية</string>
+    <string name="start_time">وقت البدء</string>
+    <string name="status">الحالة</string>
+    <string name="status_">الحالة:</string>
+    <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="stopped">متوقفة</string>
+    <string msgid="8020323581538738027" name="store_picture_message">"هل تريد السماح للإعلان بتخزين الصورة في معرض الصور؟"</string>
+    <string msgid="4180630057627064606" name="store_picture_title">"حفظ الصورة"</string>
+    <string name="street">الشارع</string>
+    <string name="submit">إضافة</string>
+    <string name="sunday">احد</string>
+    <string name="third_quarter">الربع الثالث</string>
+    <string name="this_email_has_been_added_before">تمت إضافة هذا البريد لالكتروني من قبل.</string>
+    <string name="this_number_has_been_added_before">تمت إضافة هذا الرقم من قبل.</string>
+    <string name="thursday">خميس</string>
+    <string name="time">وقت</string>
+    <string name="time_hh">  الوقت  :</string>
+    <string name="titleReports">تقارير"</string>
+    <string name="title_activity_add_reports">AddReportsActivity</string>
+    <string name="title_activity_maps">خريطة</string>
+    <string name="to">إلى</string>
+    <string name="traffic">حركة المرور</string>
+    <string name="traffic_des">عرض حركة المرور على الطرق الرئيسية والعامة</string>
+    <string name="tuesday">ثلاثاء</string>
+    <string name="ungouped">Ungrouped</string>
+    <string name="university">جامعة</string>
+    <string name="upload_rate">معدل التحميل</string>
+    <string name="used_count">الرقم المستخدم</string>
+    <string name="user_management">إدارة المستخدم</string>
+    <string name="username">إسم المستخدم</string>
+    <string name="vehicle_disabled">تم تعطيل المركبة</string>
+    <string name="vehicle_enabled">تم تمكين المركبة</string>
+    <string name="vehicle_online">المركبات المتصلة</string>
+    <string name="vehicles">مركبة</string>
+    <string name="vehicles_list">قائمة المركبات</string>
+    <string name="vehicles_status">حالة المركبة</string>
+    <string name="wednesday">اربعاء</string>
+    <string name="weekly">اسبوعي</string>
+    <string name="west">الغرب</string>
+    <string name="working_hours">ساعات العمل</string>
+    <string name="wrong_username_or_password">خطأ بإسم المستخدم او كلمة المرور</string>
+    <string name="yearly">سنوي</string>
+    <string name="yes">نعم</string>
+</resources>

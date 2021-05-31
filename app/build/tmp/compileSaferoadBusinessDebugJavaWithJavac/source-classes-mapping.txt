@@ -36,8 +36,12 @@ com/utilities/RecyclerItemClickListener.java
  com.utilities.RecyclerItemClickListener
  com.utilities.RecyclerItemClickListener$1
  com.utilities.RecyclerItemClickListener$OnItemClickListener
-com/models/TokenModel.java
- com.models.TokenModel
+com/fragments/GeoFenceListFragment.java
+ com.fragments.GeoFenceListFragment
+ com.fragments.GeoFenceListFragment$1
+ com.fragments.GeoFenceListFragment$2
+ com.fragments.GeoFenceListFragment$3
+ com.fragments.GeoFenceListFragment$3$1
 com/adapters/GeoFenceAdapter.java
  com.adapters.GeoFenceAdapter
  com.adapters.GeoFenceAdapter$1
@@ -52,8 +56,9 @@ com/models/SignalRCommandModel.java
  com.models.SignalRCommandModel$A
 com/managers/ApiCallResponse.java
  com.managers.ApiCallResponse
-com/managers/ShortTermManager.java
- com.managers.ShortTermManager
+com/fragments/ReportsIncludedSignalFragment.java
+ com.fragments.ReportsIncludedSignalFragment
+ com.fragments.ReportsIncludedSignalFragment$1
 com/adapters/AlarmNotificationsAdapter.java
  com.adapters.AlarmNotificationsAdapter
  com.adapters.AlarmNotificationsAdapter$1
@@ -113,19 +118,20 @@ com/utilities/map/MapAreaManager.java
 com/views/SpeedyLinearLayoutManager.java
  com.views.SpeedyLinearLayoutManager
  com.views.SpeedyLinearLayoutManager$1
-com/fragments/VehiclesDialogFragment.java
- com.fragments.VehiclesDialogFragment
- com.fragments.VehiclesDialogFragment$1
- com.fragments.VehiclesDialogFragment$2
- com.fragments.VehiclesDialogFragment$OnFinishSelectVehicles
+com/adapters/ReportsIncludedAdapter.java
+ com.adapters.ReportsIncludedAdapter
+ com.adapters.ReportsIncludedAdapter$1
+ com.adapters.ReportsIncludedAdapter$ItemViewHolder
+ com.adapters.ReportsIncludedAdapter$TextViewHolder
 com/application/MyApplication.java
  com.application.MyApplication
 com/views/ClickWithTwoParam.java
  com.views.ClickWithTwoParam
 com/activities/BaseActivity.java
  com.activities.BaseActivity
-com/utilities/map/MapUtils.java
- com.utilities.map.MapUtils
+com/fragments/ListOfUsersFragment.java
+ com.fragments.ListOfUsersFragment
+ com.fragments.ListOfUsersFragment$1
 com/managers/ConnectionManager.java
  com.managers.ConnectionManager
  com.managers.ConnectionManager$1
@@ -138,10 +144,11 @@ com/models/AllVehiclesInHashModel.java
  com.models.AllVehiclesInHashModel$AllVehicleModel$1
  com.models.AllVehiclesInHashModel$AllVehicleModel$LastLocation
  com.models.AllVehiclesInHashModel$AllVehicleModel$LastLocation$1
-com/adapters/MapStyleAdapter.java
- com.adapters.MapStyleAdapter
- com.adapters.MapStyleAdapter$1
- com.adapters.MapStyleAdapter$ItemViewHolder
+com/views/AlertDialogView.java
+ com.views.AlertDialogView
+ com.views.AlertDialogView$1
+ com.views.AlertDialogView$2
+ com.views.AlertDialogView$3
 com/views/ClickWithParam.java
  com.views.ClickWithParam
 com/models/DashboardModel.java
@@ -149,62 +156,64 @@ com/models/DashboardModel.java
  com.models.DashboardModel$1
  com.models.DashboardModel$LastLocation
  com.models.DashboardModel$LastLocation$LastVehicleLocation
-com/models/GeneralMessageModel.java
- com.models.GeneralMessageModel
-com/fragments/DataAnalysisFragment.java
- com.fragments.DataAnalysisFragment
- com.fragments.DataAnalysisFragment$1
- com.fragments.DataAnalysisFragment$2
- com.fragments.DataAnalysisFragment$3
- com.fragments.DataAnalysisFragment$3$1
-com/fragments/ReportsSingleVehiclesFragment.java
- com.fragments.ReportsSingleVehiclesFragment
- com.fragments.ReportsSingleVehiclesFragment$1
- com.fragments.ReportsSingleVehiclesFragment$1$1
- com.fragments.ReportsSingleVehiclesFragment$10
- com.fragments.ReportsSingleVehiclesFragment$10$1
- com.fragments.ReportsSingleVehiclesFragment$2
- com.fragments.ReportsSingleVehiclesFragment$3
- com.fragments.ReportsSingleVehiclesFragment$4
- com.fragments.ReportsSingleVehiclesFragment$5
- com.fragments.ReportsSingleVehiclesFragment$6
- com.fragments.ReportsSingleVehiclesFragment$7
- com.fragments.ReportsSingleVehiclesFragment$8
- com.fragments.ReportsSingleVehiclesFragment$9
+com/fragments/ReportsContactFragment.java
+ com.fragments.ReportsContactFragment
+com/managers/map_managers/MyLocateManager.java
+ com.managers.map_managers.MyLocateManager
+ com.managers.map_managers.MyLocateManager$1
+ com.managers.map_managers.MyLocateManager$1$1
+ com.managers.map_managers.MyLocateManager$2
+ com.managers.map_managers.MyLocateManager$3
+ com.managers.map_managers.MyLocateManager$LandMarkCheck
+ com.managers.map_managers.MyLocateManager$UpdatePopup
+com/adapters/CarsGridAdapter.java
+ com.adapters.CarsGridAdapter
+ com.adapters.CarsGridAdapter$1
+ com.adapters.CarsGridAdapter$2
+ com.adapters.CarsGridAdapter$3
+ com.adapters.CarsGridAdapter$4
+ com.adapters.CarsGridAdapter$ViewHolder
 com/utilities/ToastHelper.java
  com.utilities.ToastHelper
 com/managers/PreferencesManager.java
  com.managers.PreferencesManager
 com/utilities/CustomViewPager.java
  com.utilities.CustomViewPager
-com/views/NLevelListItem.java
- com.views.NLevelListItem
-com/fragments/ReportsContactFragment.java
- com.fragments.ReportsContactFragment
-com/managers/map_managers/VehiclesClusterManager.java
- com.managers.map_managers.VehiclesClusterManager
- com.managers.map_managers.VehiclesClusterManager$MarkerClusterRenderer
-com/models/Item.java
- com.models.Item
- com.models.Item$1
- com.models.Item$2
-com/application/MyContextWrapper.java
- com.application.MyContextWrapper
+com/fragments/AboutUsFragment.java
+ com.fragments.AboutUsFragment
+com/adapters/ScheduledReportsAdapter.java
+ com.adapters.ScheduledReportsAdapter
+ com.adapters.ScheduledReportsAdapter$1
+ com.adapters.ScheduledReportsAdapter$2
+ com.adapters.ScheduledReportsAdapter$3
+ com.adapters.ScheduledReportsAdapter$SimpleViewHolder
+com/adapters/ReportsIncludedSingleAdapter.java
+ com.adapters.ReportsIncludedSingleAdapter
+ com.adapters.ReportsIncludedSingleAdapter$1
+ com.adapters.ReportsIncludedSingleAdapter$ItemViewHolder
+ com.adapters.ReportsIncludedSingleAdapter$TextViewHolder
+com/fragments/ReportsIncludedFragment.java
+ com.fragments.ReportsIncludedFragment
+ com.fragments.ReportsIncludedFragment$1
+com/fragments/LandmarkListFragment.java
+ com.fragments.LandmarkListFragment
+ com.fragments.LandmarkListFragment$1
+ com.fragments.LandmarkListFragment$2
+ com.fragments.LandmarkListFragment$3
 com/views/Progress.java
  com.views.Progress
-com/models/SignalRModel.java
- com.models.SignalRModel
- com.models.SignalRModel$A
-com/fragments/HomeFragment.java
- com.fragments.HomeFragment
- com.fragments.HomeFragment$1
- com.fragments.HomeFragment$2
-com/fragments/MapStyleDialogFragment.java
- com.fragments.MapStyleDialogFragment
- com.fragments.MapStyleDialogFragment$1
- com.fragments.MapStyleDialogFragment$2
- com.fragments.MapStyleDialogFragment$3
- com.fragments.MapStyleDialogFragment$OnSelectMapStyle
+com/adapters/HelpAdapter.java
+ com.adapters.HelpAdapter
+com/fragments/GeoFenceFragment.java
+ com.fragments.GeoFenceFragment
+ com.fragments.GeoFenceFragment$1
+ com.fragments.GeoFenceFragment$2
+ com.fragments.GeoFenceFragment$3
+ com.fragments.GeoFenceFragment$4
+ com.fragments.GeoFenceFragment$4$1
+ com.fragments.GeoFenceFragment$OnAddGeoFence
+com/fragments/LastVehicleFragment.java
+ com.fragments.LastVehicleFragment
 com/fragments/FragmentDrawer.java
  com.fragments.FragmentDrawer
  com.fragments.FragmentDrawer$1
@@ -230,28 +239,67 @@ com/models/LatLogModel.java
  com.models.LatLogModel
 com/utilities/constants/AppConstant.java
  com.utilities.constants.AppConstant
-com/fragments/SlideUpFragment.java
- com.fragments.SlideUpFragment
- com.fragments.SlideUpFragment$OnChildFragmentInteractionListener
+com/fragments/ProgressFragment.java
+ com.fragments.ProgressFragment
+ com.fragments.ProgressFragment$1
 com/adapters/NLevelAdapter.java
  com.adapters.NLevelAdapter
  com.adapters.NLevelAdapter$NLevelFilter
  com.adapters.NLevelAdapter$NLevelFilter$AsyncFilter
 com/views/ButtonBold.java
  com.views.ButtonBold
-com/BuildConfig.java
- com.BuildConfig
+com/fragments/LisOfVehiclesMapFragment.java
+ com.fragments.LisOfVehiclesMapFragment
+ com.fragments.LisOfVehiclesMapFragment$1
+ com.fragments.LisOfVehiclesMapFragment$10
+ com.fragments.LisOfVehiclesMapFragment$11
+ com.fragments.LisOfVehiclesMapFragment$12
+ com.fragments.LisOfVehiclesMapFragment$12$1
+ com.fragments.LisOfVehiclesMapFragment$13
+ com.fragments.LisOfVehiclesMapFragment$14
+ com.fragments.LisOfVehiclesMapFragment$15
+ com.fragments.LisOfVehiclesMapFragment$16
+ com.fragments.LisOfVehiclesMapFragment$17
+ com.fragments.LisOfVehiclesMapFragment$18
+ com.fragments.LisOfVehiclesMapFragment$19
+ com.fragments.LisOfVehiclesMapFragment$2
+ com.fragments.LisOfVehiclesMapFragment$20
+ com.fragments.LisOfVehiclesMapFragment$21
+ com.fragments.LisOfVehiclesMapFragment$22
+ com.fragments.LisOfVehiclesMapFragment$23
+ com.fragments.LisOfVehiclesMapFragment$24
+ com.fragments.LisOfVehiclesMapFragment$25
+ com.fragments.LisOfVehiclesMapFragment$26
+ com.fragments.LisOfVehiclesMapFragment$27
+ com.fragments.LisOfVehiclesMapFragment$28
+ com.fragments.LisOfVehiclesMapFragment$29
+ com.fragments.LisOfVehiclesMapFragment$3
+ com.fragments.LisOfVehiclesMapFragment$30
+ com.fragments.LisOfVehiclesMapFragment$31
+ com.fragments.LisOfVehiclesMapFragment$32
+ com.fragments.LisOfVehiclesMapFragment$4
+ com.fragments.LisOfVehiclesMapFragment$5
+ com.fragments.LisOfVehiclesMapFragment$6
+ com.fragments.LisOfVehiclesMapFragment$7
+ com.fragments.LisOfVehiclesMapFragment$8
+ com.fragments.LisOfVehiclesMapFragment$9
 com/utilities/AppUtils.java
  com.utilities.AppUtils
-com/utilities/SmsReceiver.java
- com.utilities.SmsReceiver
+com/fragments/MonthYearPickerDialog.java
+ com.fragments.MonthYearPickerDialog
+ com.fragments.MonthYearPickerDialog$1
 com/fragments/CarsDashboardFragment.java
  com.fragments.CarsDashboardFragment
+ com.fragments.CarsDashboardFragment$1
+ com.fragments.CarsDashboardFragment$2
+ com.fragments.CarsDashboardFragment$3
 com/models/AnimationHistoricalRouteModel.java
  com.models.AnimationHistoricalRouteModel
-com/fragments/ReportsVehiclesFragment.java
- com.fragments.ReportsVehiclesFragment
- com.fragments.ReportsVehiclesFragment$1
+com/fragments/ScheduledReportsFragment.java
+ com.fragments.ScheduledReportsFragment
+ com.fragments.ScheduledReportsFragment$1
+ com.fragments.ScheduledReportsFragment$2
+ com.fragments.ScheduledReportsFragment$3
 com/managers/map_managers/MyMapStyleManager.java
  com.managers.map_managers.MyMapStyleManager
 com/fragments/AlarmNotificationsFragment.java
@@ -288,12 +336,28 @@ com/views/TextViewLight.java
  com.views.TextViewLight
 com/services/SignalR.java
  com.services.SignalR
-com/utilities/FragmentCaller.java
- com.utilities.FragmentCaller
-com/utilities/map/MapAreasConstants.java
- com.utilities.map.MapAreasConstants
-com/models/LocationLocateModel.java
- com.models.LocationLocateModel
+com/fragments/ReportsFrequencyFragment.java
+ com.fragments.ReportsFrequencyFragment
+ com.fragments.ReportsFrequencyFragment$1
+ com.fragments.ReportsFrequencyFragment$2
+ com.fragments.ReportsFrequencyFragment$3
+ com.fragments.ReportsFrequencyFragment$4
+ com.fragments.ReportsFrequencyFragment$5
+ com.fragments.ReportsFrequencyFragment$6
+ com.fragments.ReportsFrequencyFragment$7
+com/adapters/ReportContactAdapter.java
+ com.adapters.ReportContactAdapter
+ com.adapters.ReportContactAdapter$1
+ com.adapters.ReportContactAdapter$ItemViewHolder
+com/adapters/SlideUpAdapter.java
+ com.adapters.SlideUpAdapter
+ com.adapters.SlideUpAdapter$1
+ com.adapters.SlideUpAdapter$2
+ com.adapters.SlideUpAdapter$ItemViewHolder
+com/models/Item.java
+ com.models.Item
+ com.models.Item$1
+ com.models.Item$2
 com/adapters/SelectedLocationsAdapter.java
  com.adapters.SelectedLocationsAdapter
  com.adapters.SelectedLocationsAdapter$1
@@ -302,8 +366,6 @@ com/adapters/SelectedLocationsAdapter.java
  com.adapters.SelectedLocationsAdapter$SlideViewHolder
  com.adapters.SelectedLocationsAdapter$SmartMatjarHolder
  com.adapters.SelectedLocationsAdapter$ViewHolder
-com/models/GeoFenceModel.java
- com.models.GeoFenceModel
 com/models/WizardModel.java
  com.models.WizardModel
 com/models/ReportsTypeModel.java
@@ -316,14 +378,26 @@ com/adapters/ReportsSingleVehiclesAdapter.java
  com.adapters.ReportsSingleVehiclesAdapter$SelectedItems
 com/models/SlideUpItemsModel.java
  com.models.SlideUpItemsModel
-com/views/ClickStatus.java
- com.views.ClickStatus
+com/activities/MainActivity.java
+ com.activities.MainActivity
+ com.activities.MainActivity$1
+ com.activities.MainActivity$2
+ com.activities.MainActivity$3
+ com.activities.MainActivity$4
+ com.activities.MainActivity$5
+ com.activities.MainActivity$6
+ com.activities.MainActivity$7
 com/utilities/map/MapAreaWrapper.java
  com.utilities.map.MapAreaWrapper
  com.utilities.map.MapAreaWrapper$MarkerMoveResult
  com.utilities.map.MapAreaWrapper$MarkerType
-com/views/ClickOnList.java
- com.views.ClickOnList
+com/fragments/LandmarkFragment.java
+ com.fragments.LandmarkFragment
+ com.fragments.LandmarkFragment$1
+ com.fragments.LandmarkFragment$2
+ com.fragments.LandmarkFragment$2$1
+ com.fragments.LandmarkFragment$3
+ com.fragments.LandmarkFragment$OnAddLandmark
 com/fragments/HelpFragment.java
  com.fragments.HelpFragment
 com/views/MyMapView.java
@@ -343,11 +417,8 @@ com/utilities/CirclePageIndicator.java
  com.utilities.CirclePageIndicator$1
  com.utilities.CirclePageIndicator$SavedState
  com.utilities.CirclePageIndicator$SavedState$1
-com/activities/SplashActivity.java
- com.activities.SplashActivity
- com.activities.SplashActivity$1
- com.activities.SplashActivity$2
- com.activities.SplashActivity$3
+com/views/TextViewRegular.java
+ com.views.TextViewRegular
 com/adapters/LandmarkAdapter.java
  com.adapters.LandmarkAdapter
  com.adapters.LandmarkAdapter$1
@@ -360,8 +431,12 @@ com/utilities/constants/ApiConstants.java
  com.utilities.constants.ApiConstants
 com/models/AlarmNotificationModel.java
  com.models.AlarmNotificationModel
-com/models/DataAnalysisModel.java
- com.models.DataAnalysisModel
+com/adapters/LandmarkListAdapter.java
+ com.adapters.LandmarkListAdapter
+ com.adapters.LandmarkListAdapter$1
+ com.adapters.LandmarkListAdapter$2
+ com.adapters.LandmarkListAdapter$3
+ com.adapters.LandmarkListAdapter$SimpleViewHolder
 com/models/CarHistoryModel.java
  com.models.CarHistoryModel
 com/utilities/constants/SharesPrefConstants.java
@@ -379,8 +454,11 @@ com/managers/map_managers/MyLandmarkManager.java
  com.managers.map_managers.MyLandmarkManager
  com.managers.map_managers.MyLandmarkManager$1
  com.managers.map_managers.MyLandmarkManager$2
-com/services/MyFirebaseMessagingService.java
- com.services.MyFirebaseMessagingService
+com/adapters/ReportsVehiclesAdapter.java
+ com.adapters.ReportsVehiclesAdapter
+ com.adapters.ReportsVehiclesAdapter$1
+ com.adapters.ReportsVehiclesAdapter$ViewHolderChild
+ com.adapters.ReportsVehiclesAdapter$ViewHolderParent
 com/utilities/Route.java
  com.utilities.Route
  com.utilities.Route$1
@@ -388,40 +466,25 @@ com/utilities/Route.java
  com.utilities.Route$Step
 com/models/NLevelItemModel.java
  com.models.NLevelItemModel
-com/models/NavDrawerModel.java
- com.models.NavDrawerModel
+com/adapters/VehiclesGeoFenceAdapter.java
+ com.adapters.VehiclesGeoFenceAdapter
+ com.adapters.VehiclesGeoFenceAdapter$1
+ com.adapters.VehiclesGeoFenceAdapter$ViewHolderChild
+ com.adapters.VehiclesGeoFenceAdapter$ViewHolderParent
+com/adapters/NavigationDrawerAdapter.java
+ com.adapters.NavigationDrawerAdapter
+ com.adapters.NavigationDrawerAdapter$MyViewHolder
+com/views/NLevelListItem.java
+ com.views.NLevelListItem
+com/models/GeoFenceModel.java
+ com.models.GeoFenceModel
 com/models/LandmarkModel.java
  com.models.LandmarkModel
-com/adapters/ScheduledReportsAdapter.java
- com.adapters.ScheduledReportsAdapter
- com.adapters.ScheduledReportsAdapter$1
- com.adapters.ScheduledReportsAdapter$2
- com.adapters.ScheduledReportsAdapter$3
- com.adapters.ScheduledReportsAdapter$SimpleViewHolder
-com/adapters/ReportsIncludedSingleAdapter.java
- com.adapters.ReportsIncludedSingleAdapter
- com.adapters.ReportsIncludedSingleAdapter$1
- com.adapters.ReportsIncludedSingleAdapter$ItemViewHolder
- com.adapters.ReportsIncludedSingleAdapter$TextViewHolder
-com/fragments/ReportsIncludedFragment.java
- com.fragments.ReportsIncludedFragment
- com.fragments.ReportsIncludedFragment$1
-com/fragments/LandmarkListFragment.java
- com.fragments.LandmarkListFragment
- com.fragments.LandmarkListFragment$1
- com.fragments.LandmarkListFragment$2
- com.fragments.LandmarkListFragment$3
-com/adapters/HelpAdapter.java
- com.adapters.HelpAdapter
-com/activities/MainActivity.java
- com.activities.MainActivity
- com.activities.MainActivity$1
- com.activities.MainActivity$2
- com.activities.MainActivity$3
- com.activities.MainActivity$4
- com.activities.MainActivity$5
- com.activities.MainActivity$6
- com.activities.MainActivity$7
+com/managers/map_managers/VehiclesClusterManager.java
+ com.managers.map_managers.VehiclesClusterManager
+ com.managers.map_managers.VehiclesClusterManager$MarkerClusterRenderer
+com/models/NavDrawerModel.java
+ com.models.NavDrawerModel
 com/activities/TutorialActivity.java
  com.activities.TutorialActivity
  com.activities.TutorialActivity$1
@@ -430,87 +493,55 @@ com/activities/TutorialActivity.java
  com.activities.TutorialActivity$4
  com.activities.TutorialActivity$PlaceholderFragment
  com.activities.TutorialActivity$SectionsPagerAdapter
-com/fragments/GeoFenceFragment.java
- com.fragments.GeoFenceFragment
- com.fragments.GeoFenceFragment$1
- com.fragments.GeoFenceFragment$2
- com.fragments.GeoFenceFragment$3
- com.fragments.GeoFenceFragment$4
- com.fragments.GeoFenceFragment$4$1
- com.fragments.GeoFenceFragment$OnAddGeoFence
-com/fragments/LandmarkFragment.java
- com.fragments.LandmarkFragment
- com.fragments.LandmarkFragment$1
- com.fragments.LandmarkFragment$2
- com.fragments.LandmarkFragment$2$1
- com.fragments.LandmarkFragment$3
- com.fragments.LandmarkFragment$OnAddLandmark
-com/fragments/LastVehicleFragment.java
- com.fragments.LastVehicleFragment
-com/fragments/GeoFenceListFragment.java
- com.fragments.GeoFenceListFragment
- com.fragments.GeoFenceListFragment$1
- com.fragments.GeoFenceListFragment$2
- com.fragments.GeoFenceListFragment$3
- com.fragments.GeoFenceListFragment$3$1
+com/models/LocationLocateModel.java
+ com.models.LocationLocateModel
+com/services/MyFirebaseMessagingService.java
+ com.services.MyFirebaseMessagingService
 com/views/AppCompatEditTextLight.java
  com.views.AppCompatEditTextLight
-com/fragments/ProgressFragment.java
- com.fragments.ProgressFragment
- com.fragments.ProgressFragment$1
-com/views/TextViewRegular.java
- com.views.TextViewRegular
-com/fragments/ReportsIncludedSignalFragment.java
- com.fragments.ReportsIncludedSignalFragment
- com.fragments.ReportsIncludedSignalFragment$1
-com/fragments/LisOfVehiclesMapFragment.java
- com.fragments.LisOfVehiclesMapFragment
- com.fragments.LisOfVehiclesMapFragment$1
- com.fragments.LisOfVehiclesMapFragment$10
- com.fragments.LisOfVehiclesMapFragment$11
- com.fragments.LisOfVehiclesMapFragment$12
- com.fragments.LisOfVehiclesMapFragment$12$1
- com.fragments.LisOfVehiclesMapFragment$13
- com.fragments.LisOfVehiclesMapFragment$14
- com.fragments.LisOfVehiclesMapFragment$15
- com.fragments.LisOfVehiclesMapFragment$16
- com.fragments.LisOfVehiclesMapFragment$17
- com.fragments.LisOfVehiclesMapFragment$18
- com.fragments.LisOfVehiclesMapFragment$19
- com.fragments.LisOfVehiclesMapFragment$2
- com.fragments.LisOfVehiclesMapFragment$20
- com.fragments.LisOfVehiclesMapFragment$21
- com.fragments.LisOfVehiclesMapFragment$22
- com.fragments.LisOfVehiclesMapFragment$23
- com.fragments.LisOfVehiclesMapFragment$24
- com.fragments.LisOfVehiclesMapFragment$25
- com.fragments.LisOfVehiclesMapFragment$26
- com.fragments.LisOfVehiclesMapFragment$27
- com.fragments.LisOfVehiclesMapFragment$28
- com.fragments.LisOfVehiclesMapFragment$29
- com.fragments.LisOfVehiclesMapFragment$3
- com.fragments.LisOfVehiclesMapFragment$30
- com.fragments.LisOfVehiclesMapFragment$31
- com.fragments.LisOfVehiclesMapFragment$32
- com.fragments.LisOfVehiclesMapFragment$4
- com.fragments.LisOfVehiclesMapFragment$5
- com.fragments.LisOfVehiclesMapFragment$6
- com.fragments.LisOfVehiclesMapFragment$7
- com.fragments.LisOfVehiclesMapFragment$8
- com.fragments.LisOfVehiclesMapFragment$9
-com/fragments/MonthYearPickerDialog.java
- com.fragments.MonthYearPickerDialog
- com.fragments.MonthYearPickerDialog$1
-com/adapters/ReportsIncludedAdapter.java
- com.adapters.ReportsIncludedAdapter
- com.adapters.ReportsIncludedAdapter$1
- com.adapters.ReportsIncludedAdapter$ItemViewHolder
- com.adapters.ReportsIncludedAdapter$TextViewHolder
-com/fragments/ScheduledReportsFragment.java
- com.fragments.ScheduledReportsFragment
- com.fragments.ScheduledReportsFragment$1
- com.fragments.ScheduledReportsFragment$2
- com.fragments.ScheduledReportsFragment$3
+com/utilities/map/MapAreasConstants.java
+ com.utilities.map.MapAreasConstants
+com/fragments/ReportsSingleVehiclesFragment.java
+ com.fragments.ReportsSingleVehiclesFragment
+ com.fragments.ReportsSingleVehiclesFragment$1
+ com.fragments.ReportsSingleVehiclesFragment$1$1
+ com.fragments.ReportsSingleVehiclesFragment$10
+ com.fragments.ReportsSingleVehiclesFragment$10$1
+ com.fragments.ReportsSingleVehiclesFragment$2
+ com.fragments.ReportsSingleVehiclesFragment$3
+ com.fragments.ReportsSingleVehiclesFragment$4
+ com.fragments.ReportsSingleVehiclesFragment$5
+ com.fragments.ReportsSingleVehiclesFragment$6
+ com.fragments.ReportsSingleVehiclesFragment$7
+ com.fragments.ReportsSingleVehiclesFragment$8
+ com.fragments.ReportsSingleVehiclesFragment$9
+com/utilities/FragmentCaller.java
+ com.utilities.FragmentCaller
+com/fragments/MapStyleDialogFragment.java
+ com.fragments.MapStyleDialogFragment
+ com.fragments.MapStyleDialogFragment$1
+ com.fragments.MapStyleDialogFragment$2
+ com.fragments.MapStyleDialogFragment$3
+ com.fragments.MapStyleDialogFragment$OnSelectMapStyle
+com/fragments/DataAnalysisFragment.java
+ com.fragments.DataAnalysisFragment
+ com.fragments.DataAnalysisFragment$1
+ com.fragments.DataAnalysisFragment$2
+ com.fragments.DataAnalysisFragment$3
+ com.fragments.DataAnalysisFragment$3$1
+com/models/TokenModel.java
+ com.models.TokenModel
+com/models/GeneralMessageModel.java
+ com.models.GeneralMessageModel
+com/adapters/MapStyleAdapter.java
+ com.adapters.MapStyleAdapter
+ com.adapters.MapStyleAdapter$1
+ com.adapters.MapStyleAdapter$ItemViewHolder
+com/utilities/map/MapUtils.java
+ com.utilities.map.MapUtils
+com/fragments/ReportsVehiclesFragment.java
+ com.fragments.ReportsVehiclesFragment
+ com.fragments.ReportsVehiclesFragment$1
 com/activities/AddReportsActivity.java
  com.activities.AddReportsActivity
  com.activities.AddReportsActivity$1
@@ -526,12 +557,8 @@ com/adapters/ContactPageAdapter.java
  com.adapters.ContactPageAdapter$AdditionalEmailsViewHolder
  com.adapters.ContactPageAdapter$PhonesViewHolder
  com.adapters.ContactPageAdapter$UsersViewHolder
-com/adapters/LandmarkListAdapter.java
- com.adapters.LandmarkListAdapter
- com.adapters.LandmarkListAdapter$1
- com.adapters.LandmarkListAdapter$2
- com.adapters.LandmarkListAdapter$3
- com.adapters.LandmarkListAdapter$SimpleViewHolder
+com/models/DataAnalysisModel.java
+ com.models.DataAnalysisModel
 com/activities/LoginActivity.java
  com.activities.LoginActivity
  com.activities.LoginActivity$1
@@ -543,28 +570,33 @@ com/fragments/HistoricalRouteFragment.java
  com.fragments.HistoricalRouteFragment$3
  com.fragments.HistoricalRouteFragment$4
  com.fragments.HistoricalRouteFragment$5
-com/fragments/ListOfUsersFragment.java
- com.fragments.ListOfUsersFragment
- com.fragments.ListOfUsersFragment$1
-com/views/AlertDialogView.java
- com.views.AlertDialogView
- com.views.AlertDialogView$1
- com.views.AlertDialogView$2
- com.views.AlertDialogView$3
-com/fragments/AboutUsFragment.java
- com.fragments.AboutUsFragment
+com/fragments/VehiclesDialogFragment.java
+ com.fragments.VehiclesDialogFragment
+ com.fragments.VehiclesDialogFragment$1
+ com.fragments.VehiclesDialogFragment$2
+ com.fragments.VehiclesDialogFragment$OnFinishSelectVehicles
+com/utilities/SmsReceiver.java
+ com.utilities.SmsReceiver
+com/BuildConfig.java
+ com.BuildConfig
+com/managers/ShortTermManager.java
+ com.managers.ShortTermManager
+com/activities/SplashActivity.java
+ com.activities.SplashActivity
+ com.activities.SplashActivity$1
+ com.activities.SplashActivity$2
+ com.activities.SplashActivity$3
+com/fragments/SlideUpFragment.java
+ com.fragments.SlideUpFragment
+ com.fragments.SlideUpFragment$OnChildFragmentInteractionListener
+com/fragments/HomeFragment.java
+ com.fragments.HomeFragment
+ com.fragments.HomeFragment$1
+ com.fragments.HomeFragment$2
 com/adapters/ListOfUsersAdapter.java
  com.adapters.ListOfUsersAdapter
  com.adapters.ListOfUsersAdapter$1
  com.adapters.ListOfUsersAdapter$ItemViewHolder
-com/managers/map_managers/MyLocateManager.java
- com.managers.map_managers.MyLocateManager
- com.managers.map_managers.MyLocateManager$1
- com.managers.map_managers.MyLocateManager$1$1
- com.managers.map_managers.MyLocateManager$2
- com.managers.map_managers.MyLocateManager$3
- com.managers.map_managers.MyLocateManager$LandMarkCheck
- com.managers.map_managers.MyLocateManager$UpdatePopup
 com/views/PopupDialog.java
  com.views.PopupDialog
  com.views.PopupDialog$1
@@ -577,54 +609,25 @@ com/views/PopupDialog.java
  com.views.PopupDialog$MyAdapterMain$ViewHolder
  com.views.PopupDialog$OnEasyDialogDismissed
  com.views.PopupDialog$OnEasyDialogShow
-com/fragments/ReportsFrequencyFragment.java
- com.fragments.ReportsFrequencyFragment
- com.fragments.ReportsFrequencyFragment$1
- com.fragments.ReportsFrequencyFragment$2
- com.fragments.ReportsFrequencyFragment$3
- com.fragments.ReportsFrequencyFragment$4
- com.fragments.ReportsFrequencyFragment$5
- com.fragments.ReportsFrequencyFragment$6
- com.fragments.ReportsFrequencyFragment$7
-com/adapters/CarsGridAdapter.java
- com.adapters.CarsGridAdapter
- com.adapters.CarsGridAdapter$1
- com.adapters.CarsGridAdapter$2
- com.adapters.CarsGridAdapter$3
- com.adapters.CarsGridAdapter$4
- com.adapters.CarsGridAdapter$ViewHolder
-com/adapters/ReportContactAdapter.java
- com.adapters.ReportContactAdapter
- com.adapters.ReportContactAdapter$1
- com.adapters.ReportContactAdapter$ItemViewHolder
+com/views/ClickOnList.java
+ com.views.ClickOnList
 com/adapters/MainMapAdapter.java
  com.adapters.MainMapAdapter
  com.adapters.MainMapAdapter$1
  com.adapters.MainMapAdapter$ClickOnListTap
  com.adapters.MainMapAdapter$ItemViewHolder
-com/adapters/ReportsVehiclesAdapter.java
- com.adapters.ReportsVehiclesAdapter
- com.adapters.ReportsVehiclesAdapter$1
- com.adapters.ReportsVehiclesAdapter$ViewHolderChild
- com.adapters.ReportsVehiclesAdapter$ViewHolderParent
 com/activities/AddReportsSingleActivity.java
  com.activities.AddReportsSingleActivity
  com.activities.AddReportsSingleActivity$1
  com.activities.AddReportsSingleActivity$2
  com.activities.AddReportsSingleActivity$SectionsPagerAdapter
-com/adapters/SlideUpAdapter.java
- com.adapters.SlideUpAdapter
- com.adapters.SlideUpAdapter$1
- com.adapters.SlideUpAdapter$2
- com.adapters.SlideUpAdapter$ItemViewHolder
-com/adapters/VehiclesGeoFenceAdapter.java
- com.adapters.VehiclesGeoFenceAdapter
- com.adapters.VehiclesGeoFenceAdapter$1
- com.adapters.VehiclesGeoFenceAdapter$ViewHolderChild
- com.adapters.VehiclesGeoFenceAdapter$ViewHolderParent
-com/adapters/NavigationDrawerAdapter.java
- com.adapters.NavigationDrawerAdapter
- com.adapters.NavigationDrawerAdapter$MyViewHolder
+com/views/ClickStatus.java
+ com.views.ClickStatus
+com/models/SignalRModel.java
+ com.models.SignalRModel
+ com.models.SignalRModel$A
+com/application/MyContextWrapper.java
+ com.application.MyContextWrapper
 com/fragments/ListOfVehiclesFragment.java
  com.fragments.ListOfVehiclesFragment
  com.fragments.ListOfVehiclesFragment$1

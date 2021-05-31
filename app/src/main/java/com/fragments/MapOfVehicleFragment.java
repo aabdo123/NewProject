@@ -67,6 +67,8 @@ import com.views.ClickWithTwoParam;
 import com.views.PopupDialog;
 import com.views.TextViewLight;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Locale;
 import java.util.Objects;
 
@@ -348,7 +350,7 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
         streetTextView.setText(vehicleModel.getLastLocation().getAddress());
         displayNameTextView.setText(vehicleModel.getLabel());
         workingHoursTextView.setText(vehicleModel.getPlateNumber());
-        Double valuem = Double.valueOf(vehicleModel.getLastLocation().getTotalMileage()) / 1000;
+        Double valuem = Double.valueOf(vehicleModel.getLastLocation().getTotalMileage());
         mileageTextView.setText(String.format(Locale.getDefault(), "%s %s", Utils.doubleToStringTwoDigits(AppUtils.meterToKilometer(valuem)), context.getString(R.string.km)));
         accTextView.setText(getOnline(vehicleModel.getLastLocation().getEngineStatus()));
         int value = (int) (vehicleModel.getLastLocation().getDirection() % 360);
@@ -368,31 +370,33 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
         };
         handler.post(refresh);
 
-       // Toast.makeText(context, "id: " +vehicleModel.getVehicleID(), Toast.LENGTH_LONG).show();
+        // Toast.makeText(context, "id: " +vehicleModel.getVehicleID(), Toast.LENGTH_LONG).show();
     }
 
     private void updateCarInfo(SignalRModel.A aModel) {
-        try {
+//        try {
             streetTextView.setText(aModel.getAddress());
-            groupTextView.setText(aModel.getGroupName());
-            displayNameTextView.setText(aModel.getVehicleDisplayName());
-            Double valuem = Double.valueOf(vehicleModel.getLastLocation().getTotalMileage()) / 1000;
-            mileageTextView.setText(String.format(Locale.getDefault(), "%s %s", Utils.doubleToStringTwoDigits(aModel.getMileage()), context.getString(R.string.km)));
-            accTextView.setText(getOnline(aModel.getEngineStatus()));
-            int value = (int) (aModel.getDirection() % 360);
+            groupTextView.setText(getString(R.string.ungouped));
+            displayNameTextView.setText(vehicleModel.getLabel());
+            Double valuem = Double.valueOf(aModel.getMileage());
+            mileageTextView.setText(String.format(Locale.getDefault(), "%s %s", Utils.doubleToStringTwoDigits(AppUtils.meterToKilometer(valuem)), context.getString(R.string.km)));
+            accTextView.setText(getOnline(Boolean.valueOf(aModel.getEngineStatus())));
+            int value = (int) (Float.parseFloat(aModel.getDirection()) % 360);
             directionTextView.setText(String.format(Locale.getDefault(), "%s°", value == 0 ? "0" : value));
-            speed_add.setText(Integer.parseInt(aModel.getSpeed().toString()));
+            speed_add.setText(Double.valueOf(aModel.getSpeed()).toString()+ context.getString(R.string.km_h));
             locationTimeTextView.setText(Utils.parseTime(aModel.getRecordDateTime()));
-            vehicleStatusTextView.setText(AppUtils.getCarStatus(activity, aModel.getVehicleStatus().toString()));
 
 
-           // Toast.makeText(context, "Miallege: " + Utils.doubleToStringTwoDigits(aModel.getMileage())+" id: "+aModel.getVehicleID(), Toast.LENGTH_LONG).show();
-        } catch (IllegalStateException e) {
-            setUpCarInfo();
-            e.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//            vehicleStatusTextView.setText(AppUtils.getCarStatus(activity, aModel.getVehicleStatus().toString()));
+
+
+            // Toast.makeText(context, "Miallege: " + Utils.doubleToStringTwoDigits(aModel.getMileage())+" id: "+aModel.getVehicleID(), Toast.LENGTH_LONG).show();
+//        } catch (IllegalStateException e) {
+//            setUpCarInfo();
+//            e.printStackTrace();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 
 
@@ -559,16 +563,16 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
 
     private void markStartingLocationOnMap(final SignalRModel.A aModel) {
         try {
-            LatLng newLocation = new LatLng(aModel.getLatitude(), aModel.getLongitude());
+            LatLng newLocation = new LatLng(Double.parseDouble(aModel.getLatitude()), Double.parseDouble(aModel.getLongitude()));
             carLatLng = newLocation;
             activity.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                     googleMap.clear();
                     googleMap.addMarker(new MarkerOptions().position(newLocation)
-                            .icon(AppUtils.getCarIcon(aModel.getVehicleStatus().toString()))
+                            .icon(AppUtils.getCarIcon(vehicleModel.getLastLocation().getVehicleStatus()))
                             .anchor(0.5f, 0.5f)
-                            .rotation(aModel.getDirection().floatValue())
+                            .rotation(Float.parseFloat(aModel.getDirection()))
                             .flat(true));
                     googleMap.moveCamera(CameraUpdateFactory.newLatLng(newLocation));
                     updateCarInfo(aModel);
@@ -582,16 +586,16 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
 
     public void startLiveTarcking() {
 
-            mService.invokeService(new SignalRService.FireBaseListener() {
-                @Override
-                public void dataSnapShot(String dataSnapshot) {
-                    SignalRModel.A aModel = new Gson().fromJson(dataSnapshot,SignalRModel.A.class);
-                    if ((aModel.getVehicleID())== PreferencesManager.getInstance().getIntegerValue(SharesPrefConstants.LAST_VIEW_VEHICLE_ID)) {
-                        markStartingLocationOnMap(aModel);
-                        Log.e("TRY SUCCESS log",dataSnapshot);
+        mService.invokeService(new SignalRService.FireBaseListener() {
+            @Override
+            public void dataSnapShot(String dataSnapshot) {
+                SignalRModel.A aModel = new Gson().fromJson(dataSnapshot,SignalRModel.A.class);
+                if ((aModel.getSerialNumber()).equals(PreferencesManager.getInstance().getStringValue(SharesPrefConstants.LAST_VIEW_VEHICLE_ID_STR))) {
+                    markStartingLocationOnMap(aModel);
+                    Log.e("TRY SUCCESS log",dataSnapshot);
                 }
             }
-            });
+        });
 
         Log.e("STRATLIVETR","SUCCESS");
 
@@ -616,6 +620,79 @@ public class MapOfVehicleFragment extends Fragment implements MapStyleDialogFrag
         stopSignalRService();
         super.onStop();
     }
+    public final long MILLIS_PER_30_MINUTES = 30 * 60 * 1000;
+
+    private boolean isRecordDate30MinutesPassed(String recordDateTime) {
+        boolean moreThan30Minutes = false;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            SimpleDateFormat inFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.ENGLISH);
+            if (recordDateTime != null) {
+                try {
+                    Date dtIn = inFormat.parse(recordDateTime);
+                    Date utcDate = new Date(dtIn.getTime() + 3 * HOUR);
+                    if (utcDate != null) {
+                        moreThan30Minutes = Math.abs(utcDate.getTime() - new Date().getTime()) > MILLIS_PER_30_MINUTES;
+                    }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+//2021-05-21T16:40:57
+        }
+        return moreThan30Minutes;
+    }
+
+    public final long MILLIS_PER_4_HOURS = 4 * 60 * 60 * 1000;
+    public static final long HOUR = 3600*1000; // in milli-seconds.
+
+    private boolean isRecordDate4HoursPassed(String recordDateTime) {
+        boolean moreThan4Hours = false;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            SimpleDateFormat inFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.ENGLISH);
+            if (recordDateTime != null) {
+                try {
+                    Date dtIn = inFormat.parse(recordDateTime);
+                    Date utcDate = new Date(dtIn.getTime() + 3 * HOUR);
+
+                    if (utcDate != null) {
+                        moreThan4Hours = Math.abs(utcDate.getTime() - new Date().getTime()) > MILLIS_PER_4_HOURS;
+                    }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+//2021-05-21T16:40:57
+        }
+        return moreThan4Hours;
+    }
+
+    public final long MILLIS_PER_DAY = 24 * 60 * 60 * 1000L;
+
+    private boolean isRecordDateOutdated(String recordDateTime) {
+        boolean moreThanDay = false;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            SimpleDateFormat inFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.ENGLISH);
+            if (recordDateTime != null) {
+                try {
+                    Date dtIn = inFormat.parse(recordDateTime);
+                    Date utcDate = new Date(dtIn.getTime() + 3 * HOUR);
+
+                    if (utcDate != null) {
+                        moreThanDay = Math.abs(utcDate.getTime() - new Date().getTime()) > MILLIS_PER_DAY;
+                    }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+//2021-05-21T16:40:57
+        }
+        return moreThanDay;
+    }
+
+
 
     /**
      * Defines callbacks for service binding, passed to bindService()

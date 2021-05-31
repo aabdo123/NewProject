@@ -32,6 +32,8 @@ public class CarsGridAdapter extends BaseAdapter {
         this.activity = activity;
     }
 
+    public CarsGridAdapter(){}
+
     @Override
     public int getCount() {
         return itemsList.size();
@@ -74,6 +76,10 @@ public class CarsGridAdapter extends BaseAdapter {
             carTypeTextView = (TextViewRegular) itemView.findViewById(R.id.carTypeTextView);
             cardView = (CardView) itemView.findViewById(R.id.cardView);
         }
+    }
+
+    public void notify_(){
+        notifyDataSetChanged();
     }
 
 

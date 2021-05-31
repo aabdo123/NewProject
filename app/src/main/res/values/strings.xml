@@ -358,7 +358,7 @@
     <string name="address_not_found">Address not found</string>
 
     <string name="no_driver">No driver</string>
-    <string name="km_h">km/h</string>
+    <string name="km_h">Km/H</string>
     <string name="search">Search</string>
     <string name="select_date">Select Date</string>
     <string name="start_time">Start Time</string>

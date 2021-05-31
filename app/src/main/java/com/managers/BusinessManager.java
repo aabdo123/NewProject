@@ -549,7 +549,7 @@ public class BusinessManager {
     public static void postLandMarkList(String page, final ApiCallResponse callResponse) {
         final String url = ApiConstants.ROOT_API + ApiConstants.LANDMARK_LIST + page;
         RequestParams params = new RequestParams();
-        ConnectionManager.doRequest(mContext, AppConstant.POST, url, params, new BaseJsonHttpResponseHandler<Object>() {
+        ConnectionManager.doRequest(mContext, AppConstant.GET, url, params, new BaseJsonHttpResponseHandler<Object>() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, String rawJsonResponse, Object response) {
                 Log.e("postLandMarkList", url + "  >>> " + statusCode + "\n>>>>" + rawJsonResponse);

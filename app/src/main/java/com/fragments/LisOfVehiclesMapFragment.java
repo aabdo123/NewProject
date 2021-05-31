@@ -87,6 +87,7 @@ import com.mancj.slideup.SlideUpBuilder;
 import com.models.AllVehiclesInHashModel;
 import com.models.Item;
 import com.models.ListOfVehiclesModel;
+import com.models.SignalRModel;
 import com.multilevelview.MultiLevelRecyclerView;
 import com.multilevelview.models.RecyclerViewItem;
 import com.services.SignalRService;
@@ -1154,7 +1155,7 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                                                         String firstOnes = vehicle.substring(0, 1);
                                                         if (firstOnes.equalsIgnoreCase("V")) {
                                                             vehicle = vehicle.substring(2, vehicle.length());
-                                                            if (Integer.valueOf(vehicle) == vehicleId) {
+                                                            if (Integer.parseInt(vehicle) == vehicleId) {
                                                                 itemsX.setLevel(mainArray.get(h).getLevel());
                                                                 itemsX.setChecked(mainArray.get(h).isChecked());
                                                                 itemsX.setClicked(mainArray.get(h).isClicked());
@@ -1172,11 +1173,11 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                                     for (int x = 0; x < arrayFromApi.size(); x++) {
                                         for (int y = 0; y < itemArrayListCallas.size(); y++) {
                                             String vehicle = itemArrayListCallas.get(y).getID();
-                                            int vehicleId = arrayFromApi.get(x).getVehicleID();
+                                            Integer vehicleId = arrayFromApi.get(x).getVehicleID();
                                             String firstOne = vehicle.substring(0, 1);
                                             if (firstOne.equalsIgnoreCase("V")) {
                                                 vehicle = vehicle.substring(2, vehicle.length());
-                                                if (Integer.valueOf(vehicle) == vehicleId) {
+                                                if (Integer.parseInt(vehicle) == vehicleId) {
                                                     arrayFromApi.get(x).setLevel(itemArrayListCallas.get(y).getLevel());
                                                     arrayFromApi.get(x).setChecked(itemArrayListCallas.get(y).isChecked());
                                                     arrayFromApi.get(x).setClicked(itemArrayListCallas.get(y).isClicked());
@@ -2316,6 +2317,7 @@ public class LisOfVehiclesMapFragment extends Fragment implements
         }
     }
 
+
     private void addBodyView(AllVehiclesInHashModel markerModel) {
         try {
             if (markerModel != null && markerModel.getAllVehicleModel() != null) {
@@ -2417,7 +2419,7 @@ public class LisOfVehiclesMapFragment extends Fragment implements
                 workingTextView.setText(String.format(Locale.CANADA, "%s %s", context.getString(R.string.working_hours), "0.00"));
 
             if (markerModel != null)
-                PreferencesManager.getInstance().setIntegerValue(markerModel.getVehicleId(), SharesPrefConstants.LAST_VIEW_VEHICLE_ID);
+            PreferencesManager.getInstance().setIntegerValue(markerModel.getVehicleId(), SharesPrefConstants.LAST_VIEW_VEHICLE_ID);
 
 
         } catch (Exception ex) {

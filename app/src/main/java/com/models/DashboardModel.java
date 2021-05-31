@@ -40,6 +40,8 @@ public class DashboardModel implements Parcelable {
     protected DashboardModel(Parcel in) {
     }
 
+
+    public  DashboardModel(){}
     public static final Creator<DashboardModel> CREATOR = new Creator<DashboardModel>() {
         @Override
         public DashboardModel createFromParcel(Parcel in) {

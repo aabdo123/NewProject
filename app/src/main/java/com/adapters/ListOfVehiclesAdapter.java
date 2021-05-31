@@ -129,7 +129,7 @@ public class ListOfVehiclesAdapter extends ExpandableRecyclerAdapter<ListOfVehic
                     if (model.getLastLocation() != null) {
                         clickSearched.clicked();
                         ((MainActivity) activity).call(MapOfVehicleFragment.newInstance(model), context.getString(R.string.real_time_tracking));
-                        PreferencesManager.getInstance().setIntegerValue(model.getVehicleID(), SharesPrefConstants.LAST_VIEW_VEHICLE_ID);
+                        PreferencesManager.getInstance().setStringValue(model.getSerialNumber(), SharesPrefConstants.LAST_VIEW_VEHICLE_ID_STR);
                         LogHelper.LOG_D("VehicleID", "VehicleID   <><><><><><><><> " + model.getVehicleID());
                         LogHelper.LOG_D("VehicleID", "PreferencesManager   <><><><><><><><> " + PreferencesManager.getInstance().getIntegerValue(SharesPrefConstants.LAST_VIEW_VEHICLE_ID));
                     } else {

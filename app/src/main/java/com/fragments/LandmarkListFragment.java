@@ -94,7 +94,7 @@ public class LandmarkListFragment extends Fragment {
 
     private void getScheduledReportsApiCall() {
         swipeRefreshLayout.setRefreshing(true);
-        BusinessManager.postLandMarkList("-1", new ApiCallResponse() {
+        BusinessManager.postLandMarkList("1", new ApiCallResponse() {
             @Override
             public void onSuccess(int statusCode, Object responseObject) {
                 ShortTermManager.getInstance().setLandMarkRequest(responseObject);

@@ -287,7 +287,7 @@ public class LandmarkFragment extends Fragment implements MapStyleDialogFragment
                     new ApiCallResponseString() {
                         @Override
                         public void onSuccess(int statusCode, String responseObject) {
-                            BusinessManager.postLandMarkList("-1", new ApiCallResponse() {
+                            BusinessManager.postLandMarkList("1", new ApiCallResponse() {
                                 @Override
                                 public void onSuccess(int statusCode, Object responseObjectArray) {
                                     Progress.dismissLoadingDialog();

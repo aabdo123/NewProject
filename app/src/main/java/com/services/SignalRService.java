@@ -159,7 +159,7 @@ public class SignalRService extends Service {
                                 Toast.makeText(MyApplication.getContext(), "error: " + error.getMessage(), Toast.LENGTH_LONG).show();
                             }
                         };
-                        mDatabase.child(val).addListenerForSingleValueEvent(valueEventListener);
+                        mDatabase.child(val).addValueEventListener(valueEventListener);
                     }
                 }
             } catch (Exception ex) {
@@ -197,7 +197,7 @@ public class SignalRService extends Service {
                 }
             });
         } catch (Exception ex) {
-           Log.d("CATCH", ex.getMessage());
+            Log.d("CATCH", ex.getMessage());
         }
     }
 }

@@ -20,6 +20,7 @@ public interface SharesPrefConstants {
 
     String LAST_VIEW_VEHICLE_ID = "last_view_vehicle_id";
     String LAST_VIEW_VEHICLE_SERIAL = "last_view_vehicle_serial";
+    String LAST_VIEW_VEHICLE_ID_STR = "LAST_VIEW_VEHICLE_ID_STR";
 
 
     String IS_CLUSTER_SHOW_SLIDE_MENU = "is_cluster_show_slide_menu";

@@ -43,6 +43,6 @@ public interface ApiConstants {
 
     String ADD_LANDMARK= "LandMark/0";
     String ADD_LANDMARK_= "LandMark/0?";
-    String LANDMARK_LIST = "LandMark?Page=";
+    String LANDMARK_LIST = "GetPOSList?Page=";
     String LANDMARK_DELETE = "LandMark?DeleteID=";
 }

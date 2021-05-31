@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:2:1-138:12
-INJECTED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:2:1-138:12
-INJECTED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:2:1-138:12
-INJECTED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:2:1-138:12
+ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:2:1-141:12
+INJECTED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:2:1-141:12
+INJECTED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:2:1-141:12
+INJECTED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:2:1-141:12
 MERGED from [com.google.android.material:material:1.3.0] C:\Users\Saferoad-Dev1\Desktop\desctop files\B2B and AstroGPS on Store-20191204T151004Z-001\B2B and AstroGPS on Store\SafeRoad All\caches\transforms-2\files-2.1\bd645d10e31b05350eea6cd6291ec25c\material-1.3.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\Saferoad-Dev1\Desktop\desctop files\B2B and AstroGPS on Store-20191204T151004Z-001\B2B and AstroGPS on Store\SafeRoad All\caches\transforms-2\files-2.1\4bfdd2dae3f37b2c1eee604506fe32e3\constraintlayout-2.0.4\AndroidManifest.xml:2:1-11:12
 MERGED from [com.valdesekamdem.library:md-toast:0.9.0] C:\Users\Saferoad-Dev1\Desktop\desctop files\B2B and AstroGPS on Store-20191204T151004Z-001\B2B and AstroGPS on Store\SafeRoad All\caches\transforms-2\files-2.1\af5f13d607b9e894742de46927d13884\jetified-md-toast-0.9.0\AndroidManifest.xml:2:1-17:12
@@ -96,22 +96,22 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Saferoad-Dev1
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Saferoad-Dev1\Desktop\desctop files\B2B and AstroGPS on Store-20191204T151004Z-001\B2B and AstroGPS on Store\SafeRoad All\caches\transforms-2\files-2.1\3d35c58ca022b0b26d5e5129da645bd0\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Saferoad-Dev1\Desktop\desctop files\B2B and AstroGPS on Store-20191204T151004Z-001\B2B and AstroGPS on Store\SafeRoad All\caches\transforms-2\files-2.1\8df5cda1385d31f2704ac5c93cfee9a4\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\Saferoad-Dev1\Desktop\desctop files\B2B and AstroGPS on Store-20191204T151004Z-001\B2B and AstroGPS on Store\SafeRoad All\caches\transforms-2\files-2.1\d2b22259df2f5f1891d97843b864b46d\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:2:1-138:12
-INJECTED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:2:1-138:12
-INJECTED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:2:1-138:12
+INJECTED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:2:1-141:12
+INJECTED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:2:1-141:12
+INJECTED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:2:1-141:12
 	package
 		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:4:5-18
 		INJECTED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml
 		INJECTED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:2:1-138:12
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:2:1-141:12
 		INJECTED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:2:1-138:12
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:2:1-141:12
 		INJECTED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:2:11-69
@@ -120,7 +120,7 @@ ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\Androi
 	android:name
 		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:6:22-78
 uses-permission#android.permission.INTERNET
-ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:13:5-67
+ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:16:5-67
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Saferoad-Dev1\Desktop\desctop files\B2B and AstroGPS on Store-20191204T151004Z-001\B2B and AstroGPS on Store\SafeRoad All\caches\transforms-2\files-2.1\22d9f8fd8a2ee31e321a50525b035f05\jetified-play-services-maps-17.0.0\AndroidManifest.xml:24:5-67
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Saferoad-Dev1\Desktop\desctop files\B2B and AstroGPS on Store-20191204T151004Z-001\B2B and AstroGPS on Store\SafeRoad All\caches\transforms-2\files-2.1\22d9f8fd8a2ee31e321a50525b035f05\jetified-play-services-maps-17.0.0\AndroidManifest.xml:24:5-67
 MERGED from [com.google.firebase:firebase-database:19.6.0] C:\Users\Saferoad-Dev1\Desktop\desctop files\B2B and AstroGPS on Store-20191204T151004Z-001\B2B and AstroGPS on Store\SafeRoad All\caches\transforms-2\files-2.1\e8e4cd1a5918a2dd7fd2de0bf78270c5\jetified-firebase-database-19.6.0\AndroidManifest.xml:26:5-67
@@ -144,21 +144,21 @@ MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.2] C:
 MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Saferoad-Dev1\Desktop\desctop files\B2B and AstroGPS on Store-20191204T151004Z-001\B2B and AstroGPS on Store\SafeRoad All\caches\transforms-2\files-2.1\482e758d7dd27d637e23cdf82a4d7647\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:26:5-67
 MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\Saferoad-Dev1\Desktop\desctop files\B2B and AstroGPS on Store-20191204T151004Z-001\B2B and AstroGPS on Store\SafeRoad All\caches\transforms-2\files-2.1\482e758d7dd27d637e23cdf82a4d7647\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:26:5-67
 	android:name
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:13:22-64
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:16:22-64
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:14:5-80
+ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:17:5-80
 	android:name
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:14:22-77
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:17:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:15:5-81
+ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:18:5-81
 	android:name
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:15:22-78
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:18:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:22:5-79
+ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:25:5-79
 	android:name
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:22:22-76
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:25:22-76
 application
-ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:25:5-136:19
+ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:28:5-139:19
 MERGED from [com.google.android.material:material:1.3.0] C:\Users\Saferoad-Dev1\Desktop\desctop files\B2B and AstroGPS on Store-20191204T151004Z-001\B2B and AstroGPS on Store\SafeRoad All\caches\transforms-2\files-2.1\bd645d10e31b05350eea6cd6291ec25c\material-1.3.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.3.0] C:\Users\Saferoad-Dev1\Desktop\desctop files\B2B and AstroGPS on Store-20191204T151004Z-001\B2B and AstroGPS on Store\SafeRoad All\caches\transforms-2\files-2.1\bd645d10e31b05350eea6cd6291ec25c\material-1.3.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\Saferoad-Dev1\Desktop\desctop files\B2B and AstroGPS on Store-20191204T151004Z-001\B2B and AstroGPS on Store\SafeRoad All\caches\transforms-2\files-2.1\4bfdd2dae3f37b2c1eee604506fe32e3\constraintlayout-2.0.4\AndroidManifest.xml:9:5-20
@@ -244,165 +244,165 @@ MERGED from [com.google.android.datatransport:transport-runtime:2.2.5] C:\Users\
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.3.1] C:\Users\Saferoad-Dev1\Desktop\desctop files\B2B and AstroGPS on Store-20191204T151004Z-001\B2B and AstroGPS on Store\SafeRoad All\caches\transforms-2\files-2.1\5a6e1c69d3c41078cdf5ae2e979d97d3\core-1.3.1\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:31:9-35
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:34:9-35
 	android:label
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:28:9-41
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:31:9-41
 		REJECTED from [com.valdesekamdem.library:md-toast:0.9.0] C:\Users\Saferoad-Dev1\Desktop\desctop files\B2B and AstroGPS on Store-20191204T151004Z-001\B2B and AstroGPS on Store\SafeRoad All\caches\transforms-2\files-2.1\af5f13d607b9e894742de46927d13884\jetified-md-toast-0.9.0\AndroidManifest.xml:13:9-41
 		REJECTED from [com.muditsen.multilevelrecyclerview:multilevelview:1.0.0] C:\Users\Saferoad-Dev1\Desktop\desctop files\B2B and AstroGPS on Store-20191204T151004Z-001\B2B and AstroGPS on Store\SafeRoad All\caches\transforms-2\files-2.1\7b14fda21073fab324a754373c7414e7\jetified-multilevelview-1.0.0\AndroidManifest.xml:13:9-41
 	android:allowClearUserData
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:35:9-42
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:38:9-42
 	android:fullBackupContent
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:34:9-42
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:37:9-42
 	android:roundIcon
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:30:9-46
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:33:9-46
 	android:largeHeap
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:29:9-33
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:32:9-33
 	android:icon
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:27:9-41
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:30:9-41
 	android:allowBackup
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:32:9-36
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:35:9-36
 		REJECTED from [com.valdesekamdem.library:md-toast:0.9.0] C:\Users\Saferoad-Dev1\Desktop\desctop files\B2B and AstroGPS on Store-20191204T151004Z-001\B2B and AstroGPS on Store\SafeRoad All\caches\transforms-2\files-2.1\af5f13d607b9e894742de46927d13884\jetified-md-toast-0.9.0\AndroidManifest.xml:12:9-35
 		REJECTED from [com.muditsen.multilevelrecyclerview:multilevelview:1.0.0] C:\Users\Saferoad-Dev1\Desktop\desctop files\B2B and AstroGPS on Store-20191204T151004Z-001\B2B and AstroGPS on Store\SafeRoad All\caches\transforms-2\files-2.1\7b14fda21073fab324a754373c7414e7\jetified-multilevelview-1.0.0\AndroidManifest.xml:12:9-35
 	android:theme
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:36:141-172
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:39:141-172
 	tools:replace
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:36:9-133
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:39:9-133
 	android:fullBackupOnly
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:33:9-39
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:36:9-39
 	android:name
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:26:9-50
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:29:9-50
 uses-library#org.apache.http.legacy
-ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:37:9-88
+ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:40:9-88
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Saferoad-Dev1\Desktop\desctop files\B2B and AstroGPS on Store-20191204T151004Z-001\B2B and AstroGPS on Store\SafeRoad All\caches\transforms-2\files-2.1\22d9f8fd8a2ee31e321a50525b035f05\jetified-play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Saferoad-Dev1\Desktop\desctop files\B2B and AstroGPS on Store-20191204T151004Z-001\B2B and AstroGPS on Store\SafeRoad All\caches\transforms-2\files-2.1\22d9f8fd8a2ee31e321a50525b035f05\jetified-play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
 	android:required
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:37:61-85
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:40:61-85
 	android:name
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:37:23-60
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:40:23-60
 activity#com.activities.BaseActivity
-ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:38:9-61
+ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:41:9-61
 	android:name
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:38:19-58
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:41:19-58
 activity#com.activities.SplashActivity
-ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:39:9-48:20
+ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:42:9-51:20
 	android:label
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:41:13-45
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:44:13-45
 	android:theme
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:42:13-56
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:45:13-56
 	android:name
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:40:13-54
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:43:13-54
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:43:13-47:29
+ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:46:13-50:29
 action#android.intent.action.MAIN
-ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:44:17-69
+ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:47:17-69
 	android:name
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:44:25-66
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:47:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:46:17-77
+ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:49:17-77
 	android:name
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:46:27-74
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:49:27-74
 activity#com.activities.MainActivity
-ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:49:9-51:59
-	android:theme
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:51:13-56
-	android:name
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:50:13-52
-activity#com.activities.LoginActivity
 ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:52:9-54:59
 	android:theme
 		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:54:13-56
 	android:name
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:53:13-53
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:53:13-52
+activity#com.activities.LoginActivity
+ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:55:9-57:59
+	android:theme
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:57:13-56
+	android:name
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:56:13-53
 service#com.services.SignalRService
-ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:56:9-60:39
+ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:59:9-63:39
 	android:enabled
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:58:13-35
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:61:13-35
 	android:exported
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:60:13-36
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:63:13-36
 	android:stopWithTask
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:59:13-41
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:62:13-41
 	android:name
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:57:13-52
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:60:13-52
 meta-data#io.fabric.ApiKey
-ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:63:9-66:15
+ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:66:9-69:15
 	android:value
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:65:13-69
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:68:13-69
 	android:name
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:64:13-44
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:67:13-44
 meta-data#com.here.android.maps.appid
-ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:69:9-71:52
+ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:72:9-74:52
 	android:value
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:71:13-49
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:74:13-49
 	android:name
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:70:13-55
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:73:13-55
 meta-data#com.here.android.maps.apptoken
-ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:72:9-74:54
+ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:75:9-77:54
 	android:value
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:74:13-51
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:77:13-51
 	android:name
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:73:13-58
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:76:13-58
 meta-data#com.here.android.maps.license.key
-ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:75:9-77:715
+ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:78:9-80:715
 	android:value
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:77:13-713
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:80:13-713
 	android:name
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:76:13-61
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:79:13-61
 meta-data#com.google.android.geo.API_KEY
-ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:92:9-95:16
+ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:95:9-98:16
 	android:value
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:94:13-53
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:97:13-53
 	android:name
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:93:13-58
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:96:13-58
 service#com.services.MyFirebaseMessagingService
-ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:99:9-103:19
+ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:102:9-106:19
 	android:name
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:99:18-69
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:102:18-69
 intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
-ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:100:13-102:29
+ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:103:13-105:29
 action#com.google.firebase.MESSAGING_EVENT
-ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:101:17-78
+ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:104:17-78
 	android:name
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:101:25-75
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:104:25-75
 service#com.services.MyFirebaseInstanceIDService
-ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:104:9-108:19
+ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:107:9-111:19
 	android:name
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:104:18-70
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:107:18-70
 intent-filter#action:name:com.google.firebase.INSTANCE_ID_EVENT
-ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:105:13-107:29
+ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:108:13-110:29
 action#com.google.firebase.INSTANCE_ID_EVENT
-ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:106:17-80
+ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:109:17-80
 	android:name
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:106:25-77
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:109:25-77
 meta-data#com.google.firebase.messaging.default_notification_icon
-ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:114:9-116:49
+ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:117:9-119:49
 	android:resource
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:116:13-46
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:119:13-46
 	android:name
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:115:13-83
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:118:13-83
 meta-data#com.google.firebase.messaging.default_notification_color
-ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:122:9-124:53
+ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:125:9-127:53
 	android:resource
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:124:13-50
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:127:13-50
 	android:name
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:123:13-84
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:126:13-84
 meta-data#com.google.firebase.messaging.default_notification_channel_id
-ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:125:9-127:71
+ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:128:9-130:71
 	android:value
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:127:13-68
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:130:13-68
 	android:name
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:126:13-89
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:129:13-89
 activity#com.activities.AddReportsActivity
-ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:129:9-131:59
+ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:132:9-134:59
 	android:theme
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:131:13-56
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:134:13-56
 	android:name
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:130:13-58
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:133:13-58
 activity#com.activities.AddReportsSingleActivity
-ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:133:9-135:59
+ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:136:9-138:59
 	android:theme
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:135:13-56
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:138:13-56
 	android:name
-		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:134:13-64
+		ADDED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml:137:13-64
 uses-sdk
 INJECTED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\SafeRoad All-20210414T190422Z-001\SafeRoad All\app\src\main\AndroidManifest.xml

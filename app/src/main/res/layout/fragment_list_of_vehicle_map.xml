@@ -102,7 +102,146 @@
         android:layout_height="match_parent"
         android:alpha="0"
         android:background="@color/trans_black"
-        android:fitsSystemWindows="true" />
+        android:fitsSystemWindows="true" >
+
+        <com.google.android.material.circularreveal.coordinatorlayout.CircularRevealCoordinatorLayout
+            android:id="@+id/allViewSlideLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.fragments.LisOfVehiclesMapFragment">
+
+            <LinearLayout
+                android:id="@+id/singleCarMoreOptionsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:background="@drawable/background_shape_with_top_corners_blue"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_8"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/shareLocationImageView"
+                    android:layout_width="@dimen/dp_32"
+                    android:layout_height="@dimen/dp_32"
+                    android:layout_marginEnd="@dimen/dp_20"
+                    android:contentDescription="@string/more_options"
+                    android:src="@drawable/ic_share_white_24dp" />
+
+                <ImageView
+                    android:id="@+id/singleCarSliderArrowImageView"
+                    android:layout_width="@dimen/dp_32"
+                    android:layout_height="@dimen/dp_32"
+                    android:contentDescription="@string/more_options"
+                    android:src="@drawable/ic_arrow_up_white" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_20"
+                            android:layout_height="@dimen/_15_dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/ic_car_filled" />
+
+                        <com.views.TextViewRegular
+                            android:id="@+id/singleCarSliderTitleTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/dp_16"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:textColor="@color/white"
+                            tools:ignore="RelativeOverlap" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_20"
+                            android:layout_height="@dimen/_15_dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/ic_marker_white" />
+
+                        <com.views.TextViewLight
+                            android:id="@+id/singleCarSliderAddressTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/dp_16"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="@string/more_options"
+                            android:textColor="@color/white"
+                            android:textSize="13sp"
+                            tools:ignore="RelativeOverlap" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/moreOptionsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:background="@drawable/background_shape_white_top_corners"
+                android:padding="@dimen/dp_8">
+
+                <ImageView
+                    android:id="@+id/sliderArrowImageView"
+                    android:layout_width="@dimen/dp_32"
+                    android:layout_height="@dimen/dp_32"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@string/more_options"
+                    android:src="@drawable/ic_arrow_up" />
+
+                <com.views.TextViewRegular
+                    android:id="@+id/sliderTitleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:text="@string/more_options"
+                    android:textColor="@color/text_gray_dark"
+                    tools:ignore="RelativeOverlap" />
+            </RelativeLayout>
+
+            <include
+                layout="@layout/layout_map_vehicles_slider"
+                tools:visibility="gone" />
+
+            <include
+                layout="@layout/layout_map_vehicles_slider_one_view"
+                tools:visibility="gone" />
+
+        </com.google.android.material.circularreveal.coordinatorlayout.CircularRevealCoordinatorLayout>
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -133,144 +272,6 @@
         <!--android:textColor="@color/white"-->
         <!--android:visibility="gone" />-->
     </LinearLayout>
-
-    <com.google.android.material.circularreveal.coordinatorlayout.CircularRevealCoordinatorLayout
-        android:id="@+id/allViewSlideLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context="com.fragments.LisOfVehiclesMapFragment">
-
-        <RelativeLayout
-            android:id="@+id/moreOptionsLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginStart="@dimen/dp_16"
-            android:layout_marginEnd="@dimen/dp_16"
-            android:background="@drawable/background_shape_white_top_corners"
-            android:padding="@dimen/dp_8">
-
-            <com.views.TextViewRegular
-                android:id="@+id/sliderTitleTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="@dimen/dp_16"
-                android:text="@string/more_options"
-                android:textColor="@color/text_gray_dark"
-                tools:ignore="RelativeOverlap" />
-
-            <ImageView
-                android:id="@+id/sliderArrowImageView"
-                android:layout_width="@dimen/dp_32"
-                android:layout_height="@dimen/dp_32"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:contentDescription="@string/more_options"
-                android:src="@drawable/ic_arrow_up" />
-        </RelativeLayout>
-
-        <LinearLayout
-            android:id="@+id/singleCarMoreOptionsLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginStart="@dimen/dp_16"
-            android:layout_marginEnd="@dimen/dp_16"
-            android:background="@drawable/background_shape_with_top_corners_blue"
-            android:orientation="horizontal"
-            android:padding="@dimen/dp_8"
-            android:visibility="gone">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="@dimen/dp_20"
-                        android:layout_height="@dimen/_15_dp"
-                        android:layout_gravity="center"
-                        android:background="@drawable/ic_car_filled" />
-
-                    <com.views.TextViewRegular
-                        android:id="@+id/singleCarSliderTitleTextView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="@dimen/dp_16"
-                        android:ellipsize="end"
-                        android:maxLines="1"
-                        android:textColor="@color/white"
-                        tools:ignore="RelativeOverlap" />
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="@dimen/dp_20"
-                        android:layout_height="@dimen/_15_dp"
-                        android:layout_gravity="center"
-                        android:background="@drawable/ic_marker_white" />
-
-                    <com.views.TextViewLight
-                        android:id="@+id/singleCarSliderAddressTextView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="@dimen/dp_16"
-                        android:ellipsize="end"
-                        android:maxLines="1"
-                        android:text="@string/more_options"
-                        android:textColor="@color/white"
-                        android:textSize="13sp"
-                        tools:ignore="RelativeOverlap" />
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-            <ImageView
-                android:id="@+id/shareLocationImageView"
-                android:layout_width="@dimen/dp_32"
-                android:layout_height="@dimen/dp_32"
-                android:layout_marginEnd="@dimen/dp_20"
-                android:contentDescription="@string/more_options"
-                android:src="@drawable/ic_share_white_24dp" />
-
-            <ImageView
-                android:id="@+id/singleCarSliderArrowImageView"
-                android:layout_width="@dimen/dp_32"
-                android:layout_height="@dimen/dp_32"
-                android:contentDescription="@string/more_options"
-                android:src="@drawable/ic_arrow_up_white" />
-
-        </LinearLayout>
-
-        <include
-            layout="@layout/layout_map_vehicles_slider"
-            tools:visibility="gone" />
-
-        <include
-            layout="@layout/layout_map_vehicles_slider_one_view"
-            tools:visibility="gone" />
-
-    </com.google.android.material.circularreveal.coordinatorlayout.CircularRevealCoordinatorLayout>
 
     <RelativeLayout
         android:id="@+id/progressRelativeLayout"

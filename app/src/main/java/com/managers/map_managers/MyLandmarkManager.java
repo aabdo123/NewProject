@@ -94,7 +94,7 @@ public class MyLandmarkManager {
             }
             if (ShortTermManager.getInstance().getLandMarkRequest() == null) {
                 Progress.showLoadingDialog(activity);
-                BusinessManager.postLandMarkList("-1", new ApiCallResponse() {
+                BusinessManager.postLandMarkList("1", new ApiCallResponse() {
                     @Override
                     public void onSuccess(int statusCode, Object responseObject) {
                         Progress.dismissLoadingDialog();
@@ -113,7 +113,7 @@ public class MyLandmarkManager {
                 LandmarkModel[] geoFenceModel = (LandmarkModel[]) ShortTermManager.getInstance().getLandMarkRequest();
                 Collections.addAll(landmarkList, geoFenceModel);
                 addLandMarkersOnMap();
-                BusinessManager.postLandMarkList("-1", new ApiCallResponse() {
+                BusinessManager.postLandMarkList("1", new ApiCallResponse() {
                     @Override
                     public void onSuccess(int statusCode, Object responseObject) {
                         ShortTermManager.getInstance().setLandMarkRequest(responseObject);
